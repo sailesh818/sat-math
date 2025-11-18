@@ -1,12 +1,27 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+import java.util.Properties
+import java.io.FileInputStream
+import org.gradle.api.GradleException
+
+// -------------------------------
+// Load keystore properties
+// -------------------------------
+val keystoreProperties = Properties()
+
+// Since key.properties is now in android/app/, use this path
+val keystorePropertiesFile = file("key.properties")
+if (!keystorePropertiesFile.exists()) {
+    throw GradleException("key.properties file not found at ${keystorePropertiesFile.absolutePath}")
+}
+keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+
 android {
-    namespace = "com.example.sat_math"
+    namespace = "com.satmath.sat_math"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,21 +35,46 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.sat_math"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "com.satmath.sat_math"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
+    // -------------------------------
+    // Signing configuration for release
+    // -------------------------------
+    signingConfigs {
+        create("release") {
+            val storeFilePath = keystoreProperties["storeFile"] as String?
+                ?: throw GradleException("storeFile path is missing in key.properties")
+
+            // Make storeFile path relative to android/app folder
+            val storeFileRef = file(storeFilePath)
+            if (!storeFileRef.exists()) {
+                throw GradleException("Keystore file not found at ${storeFileRef.absolutePath}")
+            }
+
+            keyAlias = keystoreProperties["keyAlias"] as String?
+                ?: throw GradleException("keyAlias is missing in key.properties")
+            keyPassword = keystoreProperties["keyPassword"] as String?
+                ?: throw GradleException("keyPassword is missing in key.properties")
+            storeFile = storeFileRef
+            storePassword = keystoreProperties["storePassword"] as String?
+                ?: throw GradleException("storePassword is missing in key.properties")
+        }
+    }
+
     buildTypes {
+        debug {
+            // Default debug signing (no keystore needed)
+        }
+
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = false
+            isShrinkResources = false
         }
     }
 }
