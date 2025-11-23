@@ -8,168 +8,206 @@ class AlgebraHardPractise5 extends StatefulWidget {
 }
 
 class _AlgebraHardPractise5State extends State<AlgebraHardPractise5> {
-  final List<Map<String, dynamic>> _questions = [
+  int currentQuestionIndex = 0;
+  int? selectedAnswerIndex;
+  bool answerChecked = false;
+  bool showHint = false;
+
+  final List<Map<String, dynamic>> questions = [
     {
       'question': '1. Simplify: (x^2 - 9)/(x^2 - 6x + 9)',
       'options': ['(x+3)/(x-3)', '(x-3)/(x+3)', '(x-3)/(x-3)', '(x+3)/(x+3)'],
-      'correctIndex': 0
+      'correctIndex': 0,
+      'hint': 'Factor numerator and denominator.',
+      'explanation': 'x^2 - 9 = (x-3)(x+3), x^2 -6x +9 = (x-3)^2 ⇒ simplify: (x+3)/(x-3)'
     },
     {
       'question': '2. Simplify: (2x^2 - 8)/(4x)',
       'options': ['(x-2)/1', '(x+2)/2', '(x-2)/2', '(x+2)/1'],
-      'correctIndex': 2
+      'correctIndex': 2,
+      'hint': 'Factor numerator: 2(x^2 - 4)',
+      'explanation': '2(x^2 -4)/4x = 2(x-2)(x+2)/4x = (x-2)(x+2)/2x, simplify further if needed'
     },
     {
       'question': '3. Simplify: (x^2 + 5x + 6)/(x+3)',
       'options': ['x+2', 'x+3', 'x+6', 'x+1'],
-      'correctIndex': 0
+      'correctIndex': 0,
+      'hint': 'Factor numerator: x^2+5x+6=(x+2)(x+3)',
+      'explanation': '(x+2)(x+3)/(x+3) = x+2'
     },
     {
       'question': '4. Simplify: (x^2 - 4x + 4)/(x-2)',
       'options': ['x-2', 'x+2', 'x-4', 'x+4'],
-      'correctIndex': 0
+      'correctIndex': 0,
+      'hint': 'Factor numerator: x^2 -4x +4=(x-2)^2',
+      'explanation': '(x-2)^2/(x-2) = x-2'
     },
     {
       'question': '5. Simplify: (x^2 - 16)/(x^2 + 4x + 4)',
       'options': ['(x-4)/(x+2)', '(x+4)/(x+2)', '(x-4)/(x-2)', '(x+4)/(x-2)'],
-      'correctIndex': 0
+      'correctIndex': 0,
+      'hint': 'Factor both numerator and denominator.',
+      'explanation': 'x^2 -16=(x-4)(x+4), x^2 +4x+4=(x+2)^2 ⇒ (x-4)(x+4)/(x+2)^2 = (x-4)/(x+2)'
     },
   ];
 
-  final Map<int,int> _selectedAnswers = {};
+  void checkAnswer(int index) {
+    if (!answerChecked) {
+      setState(() {
+        selectedAnswerIndex = index;
+        answerChecked = true;
+      });
+    }
+  }
 
-  void _selectAnswer(int qIndex, int selIndex) {
-    setState(() {
-      _selectedAnswers[qIndex] = selIndex;
-    });
+  void nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+      setState(() {
+        currentQuestionIndex++;
+        selectedAnswerIndex = null;
+        answerChecked = false;
+        showHint = false;
+      });
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: const Text('🎉 Completed!'),
+          content: const Text('You have finished all questions.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('OK'),
+            )
+          ],
+        ),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final question = questions[currentQuestionIndex];
+
     return Scaffold(
-      backgroundColor: Colors.orange.shade50,
+      backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
         title: const Text('Algebra Hard - Practise 5'),
-        backgroundColor: Colors.orange.shade700,
+        backgroundColor: Colors.blue.shade700,
         centerTitle: true,
-        elevation: 3,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Topic: Rational Expressions Simplification',
-              style: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.w600, color: Colors.orange),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Simplify rational expressions by factoring and reducing.',
-              style: TextStyle(fontSize: 15),
-            ),
-            const SizedBox(height: 20),
-            ...List.generate(_questions.length, (index) {
-              final q = _questions[index];
-              final sel = _selectedAnswers[index];
-              return Card(
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                elevation: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        q['question'],
-                        style: const TextStyle(
-                            fontSize: 17, fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(height: 12),
-                      ...List.generate(q['options'].length, (optIndex) {
-                        final isSelected = sel == optIndex;
-                        return GestureDetector(
-                          onTap: () => _selectAnswer(index, optIndex),
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(vertical: 5),
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: isSelected
-                                  ? Colors.orange.shade100
-                                  : Colors.white,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                  color: isSelected
-                                      ? Colors.orange
-                                      : Colors.grey.shade300,
-                                  width: 1.5),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  isSelected
-                                      ? Icons.radio_button_checked
-                                      : Icons.radio_button_off,
-                                  color:
-                                      isSelected ? Colors.orange : Colors.grey,
-                                ),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Text(
-                                    q['options'][optIndex],
-                                    style: const TextStyle(fontSize: 16),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      }),
-                    ],
-                  ),
-                ),
-              );
-            }),
-            const SizedBox(height: 20),
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  int score = 0;
-                  for (int i = 0; i < _questions.length; i++) {
-                    if (_selectedAnswers[i] == _questions[i]['correctIndex'])
-                      score++;
-                  }
-                  showDialog(
-                    context: context,
-                    builder: (_) => AlertDialog(
-                      title: const Text('Your Score'),
-                      content: Text(
-                          'You got $score out of ${_questions.length} correct!'),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text('OK'),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                icon: const Icon(Icons.check_circle_outline),
-                label: const Text('Check Answers'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange.shade700,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18)),
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Text(
+                  question['question'],
+                  style: const TextStyle(
+                      fontSize: 19, fontWeight: FontWeight.w600, height: 1.4),
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
+            ...List.generate(question['options'].length, (index) {
+              final option = question['options'][index];
+              final isSelected = selectedAnswerIndex == index;
+              final isCorrect =
+                  answerChecked && index == question['correctIndex'];
+              final isWrong = answerChecked && isSelected && !isCorrect;
+
+              return Card(
+                color: isCorrect
+                    ? Colors.lightGreen.shade200
+                    : isWrong
+                        ? Colors.red.shade200
+                        : Colors.white,
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.blue,
+                    child: Text("${index + 1}",
+                        style: const TextStyle(color: Colors.white)),
+                  ),
+                  title: Text(option, style: const TextStyle(fontSize: 17)),
+                  onTap: () => checkAnswer(index),
+                ),
+              );
+            }),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text("Hint",
+                      style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child:
+                    Text(question['hint'], style: const TextStyle(fontSize: 16)),
+              ),
+            const SizedBox(height: 20),
+            if (answerChecked)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue.shade700,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14)),
+                ),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? "Finish"
+                      : "Next Question",
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
+            )
           ],
         ),
       ),
