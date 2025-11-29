@@ -116,13 +116,13 @@ class _AlgebraMediumPageState extends State<AlgebraMediumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow.shade50,
+      backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
         title: const Text(
           'Algebra - Medium',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.amber.shade700,
+        backgroundColor: Colors.blue,
         centerTitle: true,
         elevation: 4,
       ),
@@ -139,7 +139,7 @@ class _AlgebraMediumPageState extends State<AlgebraMediumPage> {
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.shade700,
+                backgroundColor:Colors.blue,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -152,7 +152,7 @@ class _AlgebraMediumPageState extends State<AlgebraMediumPage> {
                     const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               trailing:
-                  Icon(Icons.arrow_forward_ios, color: Colors.amber.shade700),
+                  Icon(Icons.arrow_forward_ios, color: Colors.blue),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

@@ -117,13 +117,13 @@ class _GeometryEasyState extends State<GeometryEasy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade50,
+      backgroundColor: Colors.green.shade50,
       appBar: AppBar(
         title: const Text(
           'Geometry - Easy',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
         centerTitle: true,
         elevation: 4,
       ),
@@ -140,7 +140,7 @@ class _GeometryEasyState extends State<GeometryEasy> {
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.green,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -152,7 +152,7 @@ class _GeometryEasyState extends State<GeometryEasy> {
                 style: const TextStyle(
                     fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.blue),
+              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.green),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

@@ -117,13 +117,13 @@ class _FunctionsEasyState extends State<FunctionsEasy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade50,
+      backgroundColor: Colors.green.shade50,
       appBar: AppBar(
         title: const Text(
           'Functions - Easy',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.green,
         centerTitle: true,
         elevation: 4,
       ),
@@ -140,7 +140,7 @@ class _FunctionsEasyState extends State<FunctionsEasy> {
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.green,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -153,7 +153,7 @@ class _FunctionsEasyState extends State<FunctionsEasy> {
                     fontSize: 18, fontWeight: FontWeight.w500),
               ),
               trailing:
-                  const Icon(Icons.arrow_forward_ios, color: Colors.orange),
+                  const Icon(Icons.arrow_forward_ios, color: Colors.green),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

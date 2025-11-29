@@ -117,13 +117,13 @@ class _GeometryMediumState extends State<GeometryMedium> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade50,
+      backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
         title: const Text(
           'Geometry - Medium',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.blue,
         centerTitle: true,
         elevation: 4,
       ),
@@ -140,7 +140,7 @@ class _GeometryMediumState extends State<GeometryMedium> {
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.blue,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -153,7 +153,7 @@ class _GeometryMediumState extends State<GeometryMedium> {
                     fontSize: 18, fontWeight: FontWeight.w500),
               ),
               trailing:
-                  const Icon(Icons.arrow_forward_ios, color: Colors.orange),
+                  const Icon(Icons.arrow_forward_ios, color: Colors.blue),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

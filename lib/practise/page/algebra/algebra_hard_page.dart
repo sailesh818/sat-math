@@ -115,13 +115,13 @@ class _AlgebraHardPageState extends State<AlgebraHardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade50,
+      backgroundColor:Colors.red.shade50,
       appBar: AppBar(
         title: const Text(
           'Algebra - Hard',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.orange.shade700,
+        backgroundColor: Colors.red,
         centerTitle: true,
         elevation: 4,
       ),
@@ -138,7 +138,7 @@ class _AlgebraHardPageState extends State<AlgebraHardPage> {
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.orange.shade700,
+                backgroundColor: Colors.red,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -148,7 +148,7 @@ class _AlgebraHardPageState extends State<AlgebraHardPage> {
                 practiseList[index],
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              trailing: Icon(Icons.arrow_forward_ios, color: Colors.orange.shade700),
+              trailing: Icon(Icons.arrow_forward_ios, color: Colors.red),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

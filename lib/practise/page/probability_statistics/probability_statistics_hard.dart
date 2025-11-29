@@ -117,13 +117,13 @@ class _ProbabilityStatisticsHardState extends State<ProbabilityStatisticsHard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple.shade50,
+      backgroundColor: Colors.red.shade50,
       appBar: AppBar(
         title: const Text(
           'Probability & Statistics - Hard',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.red,
         centerTitle: true,
         elevation: 4,
       ),
@@ -140,7 +140,7 @@ class _ProbabilityStatisticsHardState extends State<ProbabilityStatisticsHard> {
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.purple,
+                backgroundColor: Colors.red,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -153,7 +153,7 @@ class _ProbabilityStatisticsHardState extends State<ProbabilityStatisticsHard> {
                     fontSize: 18, fontWeight: FontWeight.w500),
               ),
               trailing:
-                  const Icon(Icons.arrow_forward_ios, color: Colors.purple),
+                  const Icon(Icons.arrow_forward_ios, color: Colors.red),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

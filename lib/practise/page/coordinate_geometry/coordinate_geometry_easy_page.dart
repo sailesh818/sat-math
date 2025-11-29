@@ -118,13 +118,13 @@ class _CoordinateGeometryEasyPageState extends State<CoordinateGeometryEasyPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: Colors.green.shade50,
       appBar: AppBar(
         title: const Text(
           'Coordinate Geometry - Easy',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.green,
         centerTitle: true,
         elevation: 4,
       ),
@@ -141,7 +141,7 @@ class _CoordinateGeometryEasyPageState extends State<CoordinateGeometryEasyPage>
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.lightBlue,
+                backgroundColor: Colors.green,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -153,7 +153,7 @@ class _CoordinateGeometryEasyPageState extends State<CoordinateGeometryEasyPage>
                 style: const TextStyle(
                     fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+              trailing: const Icon(Icons.arrow_forward_ios, color: Colors.green),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );

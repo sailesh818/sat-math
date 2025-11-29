@@ -120,13 +120,13 @@ class _CoordinateGeometryMediumPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange.shade50,
+      backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
         title: const Text(
           'Coordinate Geometry - Medium',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.blue,
         centerTitle: true,
         elevation: 4,
       ),
@@ -143,7 +143,7 @@ class _CoordinateGeometryMediumPageState
             color: Colors.white,
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.blue,
                 child: Text(
                   '${index + 1}',
                   style: const TextStyle(
@@ -156,7 +156,7 @@ class _CoordinateGeometryMediumPageState
                     fontSize: 18, fontWeight: FontWeight.w500),
               ),
               trailing:
-                  const Icon(Icons.arrow_forward_ios, color: Colors.orange),
+                  const Icon(Icons.arrow_forward_ios, color: Colors.blue),
               onTap: () => _navigateToPractisePage(context, index),
             ),
           );
