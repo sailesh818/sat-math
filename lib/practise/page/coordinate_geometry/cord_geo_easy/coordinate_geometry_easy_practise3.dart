@@ -13,6 +13,7 @@ class _CoordinateGeometryEasyPractise3State
   int currentQuestionIndex = 0;
   int? selectedAnswerIndex;
   bool answerChecked = false;
+  bool showHint = false;
 
   final List<Map<String, dynamic>> questions = [
     {
@@ -24,29 +25,27 @@ class _CoordinateGeometryEasyPractise3State
         'y = 2x − 4',
         'y = 2x + 1'
       ],
-      'correctIndex': 3,
+      'correctIndex': 1,
+      'hint': 'Use y − y₁ = m(x − x₁)',
       'explanation':
-          'Equation form: y − y₁ = m(x − x₁) → y − 3 = 2(x − 2) → y = 2x − 1.'
+          'y − 3 = 2(x − 2) → y − 3 = 2x − 4 → y = 2x − 1.'
     },
     {
-      'question':
-          '2. What is the x-intercept of the line 2x + 3y = 6?',
+      'question': '2. What is the x-intercept of the line 2x + 3y = 6?',
       'options': ['2', '3', '4', '6'],
-      'correctIndex': 0,
-      'explanation':
-          'Set y = 0 → 2x = 6 → x = 3. So x-intercept = 3.'
+      'correctIndex': 1,
+      'hint': 'Set y = 0 and solve for x',
+      'explanation': '2x = 6 → x = 3. So x-intercept = 3.'
     },
     {
-      'question':
-          '3. Find the y-intercept of the line 4x + 2y = 8.',
+      'question': '3. Find the y-intercept of the line 4x + 2y = 8.',
       'options': ['(0, 2)', '(0, 3)', '(0, 4)', '(0, 5)'],
-      'correctIndex': 0,
-      'explanation':
-          'Set x = 0 → 2y = 8 → y = 4. So intercept is (0, 4).'
+      'correctIndex': 2,
+      'hint': 'Set x = 0 and solve for y',
+      'explanation': '2y = 8 → y = 4 → intercept = (0, 4).'
     },
     {
-      'question':
-          '4. Which of the following lines is parallel to y = 3x + 1?',
+      'question': '4. Which of the following lines is parallel to y = 3x + 1?',
       'options': [
         'y = −3x + 4',
         'y = 3x − 2',
@@ -54,16 +53,15 @@ class _CoordinateGeometryEasyPractise3State
         'y = x + 3'
       ],
       'correctIndex': 1,
-      'explanation':
-          'Parallel lines have equal slopes. So slope = 3 → y = 3x − 2 is correct.'
+      'hint': 'Parallel lines have the same slope',
+      'explanation': 'Slope = 3 → y = 3x − 2 is parallel.'
     },
     {
-      'question':
-          '5. Find the slope of a line perpendicular to y = −½x + 6.',
+      'question': '5. Find the slope of a line perpendicular to y = −½x + 6.',
       'options': ['½', '−½', '2', '−2'],
       'correctIndex': 2,
-      'explanation':
-          'Perpendicular slope = negative reciprocal of −½ = 2.'
+      'hint': 'Perpendicular slope = negative reciprocal',
+      'explanation': 'Negative reciprocal of −½ = 2.'
     },
   ];
 
@@ -82,17 +80,31 @@ class _CoordinateGeometryEasyPractise3State
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
+        showHint = false;
       });
     } else {
       showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Great Work!'),
+          title: const Text('🎯 Practice Completed!'),
           content: const Text('You have finished all Coordinate Geometry Easy 3 questions!'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child: const Text('Restart'),
             ),
           ],
         ),
@@ -115,10 +127,16 @@ class _CoordinateGeometryEasyPractise3State
         centerTitle: true,
         elevation: 4,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            LinearProgressIndicator(
+              value: (currentQuestionIndex + 1) / questions.length,
+              color: Colors.green,
+              backgroundColor: Colors.green.shade100,
+            ),
+            const SizedBox(height: 20),
             // Question Card
             Card(
               color: Colors.white,
@@ -136,7 +154,6 @@ class _CoordinateGeometryEasyPractise3State
               ),
             ),
             const SizedBox(height: 20),
-
             // Options
             ...List.generate(question['options'].length, (index) {
               final option = question['options'][index];
@@ -161,9 +178,47 @@ class _CoordinateGeometryEasyPractise3State
                 ),
               );
             }),
-
+            const SizedBox(height: 10),
+            // Hint Button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text(
+                    "Hint",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'],
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
             const SizedBox(height: 20),
-
             // Explanation
             if (answerChecked)
               Container(
@@ -177,25 +232,26 @@ class _CoordinateGeometryEasyPractise3State
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-
-            const Spacer(),
-
+            const SizedBox(height: 20),
             // Next Button
-            ElevatedButton(
-              onPressed: nextQuestion,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
-              ),
-              child: Text(
-                currentQuestionIndex == questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
-                style: const TextStyle(fontSize: 18, color: Colors.white),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? 'Finish'
+                      : 'Next Question',
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
           ],

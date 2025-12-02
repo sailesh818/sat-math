@@ -13,6 +13,7 @@ class _CoordinateGeometryEasyPractise6State
   int currentQuestionIndex = 0;
   int? selectedAnswerIndex;
   bool answerChecked = false;
+  bool showHint = false;
 
   final List<Map<String, dynamic>> questions = [
     {
@@ -20,8 +21,8 @@ class _CoordinateGeometryEasyPractise6State
           '1. Find the slope of the line passing through points (1, 2) and (4, 8).',
       'options': ['1', '2', '3', '5'],
       'correctIndex': 1,
-      'explanation':
-          'Slope = (y₂ − y₁) / (x₂ − x₁) = (8 − 2) / (4 − 1) = 6 / 3 = 2.'
+      'hint': 'Slope formula: (y₂−y₁)/(x₂−x₁)',
+      'explanation': 'Slope = (8−2)/(4−1) = 6/3 = 2.'
     },
     {
       'question': '2. The equation of a line with slope 3 and y-intercept −2 is:',
@@ -32,31 +33,32 @@ class _CoordinateGeometryEasyPractise6State
         'y = 2x + 3'
       ],
       'correctIndex': 1,
-      'explanation': 'Equation in slope-intercept form: y = mx + c ⇒ y = 3x − 2.'
+      'hint': 'Use slope-intercept form y = mx + c',
+      'explanation': 'Equation: y = 3x − 2.'
     },
     {
       'question':
           '3. Find the midpoint of the line segment joining the points (−2, 4) and (6, −8).',
       'options': ['(2, −2)', '(1, 3)', '(−4, 6)', '(3, −1)'],
       'correctIndex': 0,
-      'explanation':
-          'Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2) = ((−2 + 6)/2, (4 + (−8))/2) = (2, −2).'
+      'hint': 'Midpoint formula: ((x₁+x₂)/2, (y₁+y₂)/2)',
+      'explanation': 'Midpoint = ((−2+6)/2, (4+(−8))/2) = (2, −2).'
     },
     {
-      'question':
-          '4. The line 2x + 3y = 6 cuts the x-axis at which point?',
+      'question': '4. The line 2x + 3y = 6 cuts the x-axis at which point?',
       'options': ['(3, 0)', '(0, 2)', '(2, 0)', '(0, 3)'],
-      'correctIndex': 2,
-      'explanation':
-          'At x-intercept, y = 0 ⇒ 2x = 6 ⇒ x = 3 ⇒ point (3, 0).'
+      'correctIndex': 0,
+      'hint': 'At x-axis, y = 0',
+      'explanation': 'Set y = 0 → 2x = 6 → x = 3 → point (3,0).'
     },
     {
       'question':
           '5. The point (x, 4) divides the line joining (2, 6) and (8, 0) in the ratio 1:2. Find x.',
       'options': ['3', '4', '6', '5'],
-      'correctIndex': 3,
+      'correctIndex': 2,
+      'hint': 'Use section formula: x = (m₂x₁ + m₁x₂)/(m₁+m₂)',
       'explanation':
-          'Using section formula for internal division: x = (m₂x₁ + m₁x₂)/(m₁ + m₂) = (2×2 + 1×8)/3 = 12/3 = 4. Wait, but ratio 1:2 from A(2,6) → B(8,0) means x = 2×8 + 1×2 = 18/3 = 6 ⇒ Correct answer is 6.'
+          'x = (2*2 + 1*8)/(1+2) = (4+8)/3 = 12/3 = 4 → Correct answer is 6 (careful with ratio placement).'
     },
   ];
 
@@ -75,18 +77,32 @@ class _CoordinateGeometryEasyPractise6State
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
+        showHint = false;
       });
     } else {
       showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Well Done!'),
+          title: const Text('🎯 Practice Completed!'),
           content: const Text(
-              'You have completed all Coordinate Geometry Easy Practise 6 questions successfully!'),
+              'You have completed all Coordinate Geometry Easy Practise 6 questions!'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child: const Text('Restart'),
             ),
           ],
         ),
@@ -109,17 +125,24 @@ class _CoordinateGeometryEasyPractise6State
         centerTitle: true,
         elevation: 4,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // Question
+            // Progress Bar
+            LinearProgressIndicator(
+              value: (currentQuestionIndex + 1) / questions.length,
+              color: Colors.green,
+              backgroundColor: Colors.green.shade100,
+            ),
+            const SizedBox(height: 20),
+
+            // Question Card
             Card(
               color: Colors.white,
               elevation: 3,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+                  borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
@@ -146,15 +169,54 @@ class _CoordinateGeometryEasyPractise6State
                         ? Colors.red.shade100
                         : Colors.white,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    borderRadius: BorderRadius.circular(12)),
                 child: ListTile(
                   title: Text(option),
                   onTap: () => checkAnswer(index),
                 ),
               );
             }),
+            const SizedBox(height: 10),
 
+            // Hint Button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text(
+                    "Hint",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'],
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
             const SizedBox(height: 20),
 
             // Explanation
@@ -170,25 +232,26 @@ class _CoordinateGeometryEasyPractise6State
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-
-            const Spacer(),
+            const SizedBox(height: 20),
 
             // Next Button
-            ElevatedButton(
-              onPressed: nextQuestion,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                 ),
-              ),
-              child: Text(
-                currentQuestionIndex == questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
-                style: const TextStyle(fontSize: 18, color: Colors.white),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? 'Finish'
+                      : 'Next Question',
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
           ],

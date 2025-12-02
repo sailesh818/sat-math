@@ -13,6 +13,7 @@ class _CoordinateGeometryMediumPractise10State
   int currentQuestionIndex = 0;
   int? selectedAnswerIndex;
   bool answerChecked = false;
+  bool showHint = false;
 
   final List<Map<String, dynamic>> questions = [
     {
@@ -20,36 +21,36 @@ class _CoordinateGeometryMediumPractise10State
           '1. Find the slope of the line perpendicular to y = −2x + 3.',
       'options': ['1/2', '−1/2', '2', '−2'],
       'correctIndex': 0,
+      'hint': 'Slope of perpendicular line = negative reciprocal of −2',
       'explanation':
           'Slope of perpendicular line = negative reciprocal of −2 ⇒ 1/2'
     },
     {
-      'question':
-          '2. Determine the midpoint of points (5,−1) and (−3,7).',
+      'question': '2. Determine the midpoint of points (5,−1) and (−3,7).',
       'options': ['(1,3)', '(−1,3)', '(1,2)', '(−2,3)'],
       'correctIndex': 0,
+      'hint': 'Midpoint formula: ((x1+x2)/2, (y1+y2)/2)',
       'explanation':
           'Midpoint = ((5+−3)/2,(−1+7)/2) = (2/2,6/2) = (1,3)'
     },
     {
-      'question':
-          '3. Check whether points (1,2), (3,6), (5,10) are collinear.',
+      'question': '3. Check whether points (1,2), (3,6), (5,10) are collinear.',
       'options': ['Yes', 'No', 'Cannot Determine', 'Partially'],
       'correctIndex': 0,
+      'hint': 'Compare slopes between consecutive points.',
       'explanation':
           'Slope 1-2 = (6−2)/(3−1)=4/2=2; Slope 2-3 = (10−6)/(5−3)=4/2=2 ⇒ Yes, collinear'
     },
     {
-      'question':
-          '4. Distance between points (−2,−3) and (4,1):',
+      'question': '4. Distance between points (−2,−3) and (4,1):',
       'options': ['√52', '√36', '√32', '√48'],
       'correctIndex': 0,
+      'hint': 'Use distance formula: √[(x2−x1)² + (y2−y1)²]',
       'explanation':
           'Distance = √[(4−(−2))² + (1−(−3))²] = √[36+16] = √52'
     },
     {
-      'question':
-          '5. Find the equation of the line passing through (3,−2) with slope 5.',
+      'question': '5. Find the equation of the line passing through (3,−2) with slope 5.',
       'options': [
         'y + 2 = 5(x − 3)',
         'y − 2 = 5(x − 3)',
@@ -57,8 +58,8 @@ class _CoordinateGeometryMediumPractise10State
         'y − 3 = 5(x − 2)'
       ],
       'correctIndex': 0,
-      'explanation':
-          'Equation of line: y−y1 = m(x−x1) ⇒ y+2 = 5(x−3)'
+      'hint': 'Use point-slope form: y−y1 = m(x−x1)',
+      'explanation': 'Equation of line: y−y1 = m(x−x1) ⇒ y+2 = 5(x−3)'
     },
   ];
 
@@ -77,10 +78,12 @@ class _CoordinateGeometryMediumPractise10State
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
+        showHint = false;
       });
     } else {
       showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (_) => AlertDialog(
           title: const Text('🎉 Well Done!'),
           content: const Text(
@@ -89,6 +92,18 @@ class _CoordinateGeometryMediumPractise10State
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child: const Text('Restart'),
             ),
           ],
         ),
@@ -111,17 +126,21 @@ class _CoordinateGeometryMediumPractise10State
         centerTitle: true,
         elevation: 4,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // Question Box
+            LinearProgressIndicator(
+              value: (currentQuestionIndex + 1) / questions.length,
+              color: Colors.orange,
+              backgroundColor: Colors.orange.shade100,
+            ),
+            const SizedBox(height: 20),
             Card(
               color: Colors.white,
               elevation: 3,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+                  borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
@@ -132,8 +151,6 @@ class _CoordinateGeometryMediumPractise10State
               ),
             ),
             const SizedBox(height: 20),
-
-            // Options
             ...List.generate(question['options'].length, (index) {
               final option = question['options'][index];
               final isSelected = selectedAnswerIndex == index;
@@ -143,23 +160,57 @@ class _CoordinateGeometryMediumPractise10State
 
               return Card(
                 color: isCorrect
-                    ? Colors.orange.shade100
+                    ? Colors.green.shade100
                     : isWrong
                         ? Colors.red.shade100
                         : Colors.white,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    borderRadius: BorderRadius.circular(12)),
                 child: ListTile(
                   title: Text(option),
                   onTap: () => checkAnswer(index),
                 ),
               );
             }),
-
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text(
+                    "Hint",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.deepOrange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'],
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
             const SizedBox(height: 20),
-
-            // Explanation
             if (answerChecked)
               Container(
                 padding: const EdgeInsets.all(12),
@@ -172,25 +223,24 @@ class _CoordinateGeometryMediumPractise10State
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-
-            const Spacer(),
-
-            // Next Button
-            ElevatedButton(
-              onPressed: nextQuestion,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                 ),
-              ),
-              child: Text(
-                currentQuestionIndex == questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
-                style: const TextStyle(fontSize: 18, color: Colors.white),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? 'Finish'
+                      : 'Next Question',
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
           ],

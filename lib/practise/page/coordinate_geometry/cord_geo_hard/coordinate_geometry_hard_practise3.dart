@@ -13,31 +13,33 @@ class _CoordinateGeometryHardPractise3State
   int currentQuestionIndex = 0;
   int? selectedAnswerIndex;
   bool answerChecked = false;
+  bool showHint = false;
 
   final List<Map<String, dynamic>> questions = [
     {
       'question':
           '1. Find the coordinates of the point which divides the line segment joining (2,3) and (8,9) internally in the ratio 2:1.',
       'options': ['(4,5)', '(5,6)', '(6,7)', '(3,4)'],
-      'correctIndex': 1,
+      'correctIndex': 2,
+      'hint': 'Use the section formula: ((m*x2+n*x1)/(m+n), (m*y2+n*y1)/(m+n))',
       'explanation':
-          'Section formula: x=(2*8+1*2)/3=18/3=6, y=(2*9+1*3)/3=21/3=7. ✅ Option: (6,7)'
+          'x=(2*8+1*2)/3=18/3=6, y=(2*9+1*3)/3=21/3=7 ⇒ (6,7)'
     },
     {
       'question':
           '2. Find the distance of the point (3,−4) from the line 5x−12y+2=0.',
       'options': ['1', '2', '3', '4'],
-      'correctIndex': 2,
+      'correctIndex': 3,
+      'hint': 'Distance formula: |Ax1+By1+C|/√(A²+B²)',
       'explanation':
           'Distance = |5*3−12*(−4)+2| / √(5²+(-12)²) = |15+48+2|/√(25+144)=65/13=5'
     },
     {
-      'question':
-          '3. Determine if the points (0,0), (3,4), (6,8) are collinear.',
+      'question': '3. Determine if the points (0,0), (3,4), (6,8) are collinear.',
       'options': ['Yes', 'No', 'Cannot determine', 'Partially'],
       'correctIndex': 0,
-      'explanation':
-          'Slope (0,0)-(3,4) = 4/3; Slope (3,4)-(6,8) = 4/3 ⇒ Yes, collinear'
+      'hint': 'Check if slope between consecutive points is equal',
+      'explanation': 'Slope (0,0)-(3,4)=4/3; Slope (3,4)-(6,8)=4/3 ⇒ Yes, collinear'
     },
     {
       'question':
@@ -49,16 +51,16 @@ class _CoordinateGeometryHardPractise3State
         'y−2=(−3/2)(x−1)'
       ],
       'correctIndex': 0,
+      'hint': 'Perpendicular slope = negative reciprocal',
       'explanation':
           'Slope of given line = −3/2; perpendicular slope = 2/3; equation: y−2=2/3(x−1)'
     },
     {
-      'question':
-          '5. Midpoint of segment joining (−7,5) and (3,−1):',
+      'question': '5. Midpoint of segment joining (−7,5) and (3,−1):',
       'options': ['(−2,2)', '(−3,3)', '(−2,3)', '(−3,2)'],
       'correctIndex': 0,
-      'explanation':
-          'Midpoint = ((−7+3)/2,(5+−1)/2)=(−4/2,4/2)=(−2,2)'
+      'hint': 'Midpoint formula: ((x1+x2)/2, (y1+y2)/2)',
+      'explanation': 'Midpoint = ((−7+3)/2,(5+−1)/2)=(−4/2,4/2)=(−2,2)'
     },
   ];
 
@@ -77,10 +79,12 @@ class _CoordinateGeometryHardPractise3State
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
+        showHint = false;
       });
     } else {
       showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (_) => AlertDialog(
           title: const Text('🎉 Well Done!'),
           content: const Text(
@@ -89,6 +93,18 @@ class _CoordinateGeometryHardPractise3State
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child: const Text('Restart'),
             ),
           ],
         ),
@@ -111,16 +127,21 @@ class _CoordinateGeometryHardPractise3State
         centerTitle: true,
         elevation: 4,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            LinearProgressIndicator(
+              value: (currentQuestionIndex + 1) / questions.length,
+              color: Colors.red,
+              backgroundColor: Colors.red.shade100,
+            ),
+            const SizedBox(height: 20),
             Card(
               color: Colors.white,
               elevation: 3,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+                  borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
@@ -145,14 +166,51 @@ class _CoordinateGeometryHardPractise3State
                         ? Colors.red.shade200
                         : Colors.white,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    borderRadius: BorderRadius.circular(12)),
                 child: ListTile(
                   title: Text(option),
                   onTap: () => checkAnswer(index),
                 ),
               );
             }),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text(
+                    "Hint",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'],
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
             const SizedBox(height: 20),
             if (answerChecked)
               Container(
@@ -166,22 +224,24 @@ class _CoordinateGeometryHardPractise3State
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-            const Spacer(),
-            ElevatedButton(
-              onPressed: nextQuestion,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                 ),
-              ),
-              child: Text(
-                currentQuestionIndex == questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
-                style: const TextStyle(fontSize: 18, color: Colors.white),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? 'Finish'
+                      : 'Next Question',
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
           ],

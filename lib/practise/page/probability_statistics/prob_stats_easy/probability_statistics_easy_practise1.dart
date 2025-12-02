@@ -10,110 +10,106 @@ class ProbabilityStatisticsEasyPractise1 extends StatefulWidget {
 
 class _ProbabilityStatisticsEasyPractise1State
     extends State<ProbabilityStatisticsEasyPractise1> {
-  final List<Map<String, Object>> _questions = [
+  int currentQuestionIndex = 0;
+  int? selectedAnswerIndex;
+  bool answerChecked = false;
+  bool showHint = false;
+
+  final List<Map<String, dynamic>> questions = [
     {
       'question':
           '1. A bag contains 3 red balls and 2 blue balls. What is the probability of picking a red ball?',
       'options': ['3/5', '2/5', '1/2', '1/5'],
-      'answer': '3/5',
+      'correctIndex': 0,
+      'hint': 'Probability = favorable outcomes / total outcomes',
+      'explanation': 'There are 3 red balls out of 5 total balls → Probability = 3/5'
     },
     {
-      'question':
-          '2. The mean of the numbers 4, 6, 8, and 12 is:',
+      'question': '2. The mean of the numbers 4, 6, 8, and 12 is:',
       'options': ['6', '7.5', '8', '10'],
-      'answer': '7.5',
+      'correctIndex': 1,
+      'hint': 'Mean = sum of numbers / count of numbers',
+      'explanation': 'Mean = (4+6+8+12)/4 = 30/4 = 7.5'
     },
     {
-      'question':
-          '3. What is the median of the following set: 2, 5, 7, 8, 10?',
+      'question': '3. What is the median of the following set: 2, 5, 7, 8, 10?',
       'options': ['5', '7', '8', '10'],
-      'answer': '7',
+      'correctIndex': 1,
+      'hint': 'Median is the middle value of a sorted set',
+      'explanation': 'Sorted set: 2, 5, 7, 8, 10 → middle value = 7'
     },
     {
-      'question':
-          '4. A coin is tossed once. What is the probability of getting heads?',
+      'question': '4. A coin is tossed once. What is the probability of getting heads?',
       'options': ['1', '0', '1/2', '2/3'],
-      'answer': '1/2',
+      'correctIndex': 2,
+      'hint': 'Coin has 2 sides',
+      'explanation': 'Favorable outcomes = 1 (heads), total outcomes = 2 → Probability = 1/2'
     },
     {
-      'question':
-          '5. The mode of the numbers 1, 3, 3, 4, 6, 6, 6 is:',
+      'question': '5. The mode of the numbers 1, 3, 3, 4, 6, 6, 6 is:',
       'options': ['3', '4', '6', 'None'],
-      'answer': '6',
+      'correctIndex': 2,
+      'hint': 'Mode is the number that appears most frequently',
+      'explanation': '6 appears 3 times, more than any other number → Mode = 6'
     },
   ];
 
-  int _currentQuestionIndex = 0;
-  int _score = 0;
-  String? _selectedAnswer;
-  bool _answered = false;
-
-  void _checkAnswer(String selectedOption) {
-    if (_answered) return;
-
-    final correctAnswer = _questions[_currentQuestionIndex]['answer'] as String;
-    setState(() {
-      _selectedAnswer = selectedOption;
-      _answered = true;
-      if (selectedOption == correctAnswer) {
-        _score++;
-      }
-    });
-  }
-
-  void _nextQuestion() {
-    if (_currentQuestionIndex < _questions.length - 1) {
+  void checkAnswer(int index) {
+    if (!answerChecked) {
       setState(() {
-        _currentQuestionIndex++;
-        _selectedAnswer = null;
-        _answered = false;
+        selectedAnswerIndex = index;
+        answerChecked = true;
       });
-    } else {
-      _showResultDialog();
     }
   }
 
-  void _showResultDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('🎯 Practice Completed!'),
-        content: Text(
-          'You scored $_score out of ${_questions.length}',
-          style: const TextStyle(fontSize: 18),
+  void nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+      setState(() {
+        currentQuestionIndex++;
+        selectedAnswerIndex = null;
+        answerChecked = false;
+        showHint = false;
+      });
+    } else {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: const Text('🎯 Practice Completed!'),
+          content: Text(
+            'You completed all questions!',
+            style: const TextStyle(fontSize: 18),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Back', style: TextStyle(color: Colors.green)),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child:
+                  const Text('Restart', style: TextStyle(color: Colors.green)),
+            ),
+          ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.pop(context);
-            },
-            child:
-                const Text('Back', style: TextStyle(color: Colors.green)),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              setState(() {
-                _score = 0;
-                _currentQuestionIndex = 0;
-                _selectedAnswer = null;
-                _answered = false;
-              });
-            },
-            child: const Text('Restart',
-                style: TextStyle(color: Colors.green)),
-          ),
-        ],
-      ),
-    );
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final question = _questions[_currentQuestionIndex];
+    final question = questions[currentQuestionIndex];
 
     return Scaffold(
       backgroundColor: Colors.blue.shade50,
@@ -124,63 +120,112 @@ class _ProbabilityStatisticsEasyPractise1State
           'Probability & Statistics - Easy Practise 1',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        elevation: 3,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             LinearProgressIndicator(
-              value: (_currentQuestionIndex + 1) / _questions.length,
+              value: (currentQuestionIndex + 1) / questions.length,
               color: Colors.blue,
               backgroundColor: Colors.blue.shade100,
             ),
             const SizedBox(height: 20),
-            Text(
-              question['question'] as String,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(height: 30),
-            ...(question['options'] as List<String>).map((option) {
-              final isSelected = option == _selectedAnswer;
-              final isCorrect = option == question['answer'];
-
-              Color getColor() {
-                if (!_answered) return Colors.white;
-                if (isCorrect) return Colors.green.shade200;
-                if (isSelected && !isCorrect) return Colors.red.shade200;
-                return Colors.white;
-              }
-
-              return Card(
-                color: getColor(),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18)),
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Text(
+                  question['question'],
+                  style: const TextStyle(
+                      fontSize: 19, fontWeight: FontWeight.w600, height: 1.4),
                 ),
-                child: ListTile(
-                  title: Text(option, style: const TextStyle(fontSize: 18)),
-                  onTap: () => _checkAnswer(option),
-                ),
-              );
-            }),
-            const Spacer(),
-            ElevatedButton(
-              onPressed: _answered ? _nextQuestion : null,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
-                ),
-              ),
-              child: Text(
-                _currentQuestionIndex == _questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
-                style: const TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
             const SizedBox(height: 20),
+            ...List.generate(question['options'].length, (index) {
+              final option = question['options'][index];
+              final isSelected = selectedAnswerIndex == index;
+              final isCorrect =
+                  answerChecked && index == question['correctIndex'];
+              final isWrong = answerChecked && isSelected && !isCorrect;
+
+              return Card(
+                color: isCorrect
+                    ? Colors.green.shade200
+                    : isWrong
+                        ? Colors.red.shade200
+                        : Colors.white,
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14)),
+                child: ListTile(
+                  title: Text(option, style: const TextStyle(fontSize: 17)),
+                  onTap: () => checkAnswer(index),
+                ),
+              );
+            }),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => setState(() => showHint = !showHint),
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label:
+                      const Text("Hint", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade200,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(question['hint'], style: const TextStyle(fontSize: 16)),
+              ),
+            const SizedBox(height: 20),
+            if (answerChecked)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade200,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text("Explanation: ${question['explanation']}",
+                    style: const TextStyle(fontSize: 16)),
+              ),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: answerChecked ? nextQuestion : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14)),
+                ),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? "Finish"
+                      : "Next Question",
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
       ),

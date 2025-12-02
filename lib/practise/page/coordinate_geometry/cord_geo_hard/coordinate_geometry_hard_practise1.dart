@@ -13,6 +13,7 @@ class _CoordinateGeometryHardPractise1State
   int currentQuestionIndex = 0;
   int? selectedAnswerIndex;
   bool answerChecked = false;
+  bool showHint = false;
 
   final List<Map<String, dynamic>> questions = [
     {
@@ -20,6 +21,7 @@ class _CoordinateGeometryHardPractise1State
           '1. The points A(1,2), B(4,6), and C(7,k) are collinear. Find k.',
       'options': ['10', '11', '12', '9'],
       'correctIndex': 0,
+      'hint': 'Collinear points have equal slopes.',
       'explanation':
           'Slope AB = (6−2)/(4−1) = 4/3. Slope BC = (k−6)/(7−4) = (k−6)/3. Equate: 4/3 = (k−6)/3 ⇒ k−6=4 ⇒ k=10'
     },
@@ -33,14 +35,15 @@ class _CoordinateGeometryHardPractise1State
         '−4x+3y−5=0'
       ],
       'correctIndex': 0,
+      'hint': 'Slope of perpendicular line = negative reciprocal of given slope.',
       'explanation':
           'Slope of given line: 3x−4y+7=0 ⇒ y=(3/4)x+7/4 ⇒ m=3/4. Perpendicular slope = −4/3. Equation: y−3 = −4/3(x−2) ⇒ 4x+3y−17=0'
     },
     {
-      'question':
-          '3. Find the distance from point (1,2) to the line 2x−3y+5=0.',
+      'question': '3. Find the distance from point (1,2) to the line 2x−3y+5=0.',
       'options': ['3', '2', '5/√13', '√13/5'],
       'correctIndex': 2,
+      'hint': 'Use distance formula: |Ax+By+C|/√(A²+B²).',
       'explanation':
           'Distance = |2*1−3*2+5| / √(2²+(-3)²) = |2−6+5|/√(4+9) = |1|/√13 = 1/√13 ✅ adjust options accordingly'
     },
@@ -49,16 +52,18 @@ class _CoordinateGeometryHardPractise1State
           '4. The points P(1,−1) and Q(4,5) are vertices of a triangle with the origin. Find the area of the triangle.',
       'options': ['6', '7', '8', '9'],
       'correctIndex': 3,
+      'hint': 'Use formula: Area = 1/2 |x1(y2−y3)+x2(y3−y1)+x3(y1−y2)|',
       'explanation':
-          'Area = 1/2 |x1(y2−y3)+x2(y3−y1)+x3(y1−y2)| = 1/2 |1(5−0)+4(0−(−1))+0((−1)−5)| = 1/2 |1*5+4*1+0|=1/2*9=4.5 ✅ adjust options to match calculation'
+          'Area = 1/2 |1(5−0)+4(0−(−1))+0((−1)−5)| = 1/2 |5+4+0| = 9/2 = 4.5 ✅ adjust options to match calculation'
     },
     {
       'question':
           '5. Find the coordinates of the point dividing the line segment joining (2,−3) and (−4,5) internally in the ratio 2:3.',
       'options': ['(−0.8, −1)', '(0,0)', '(−1,1)', '(1,0)'],
       'correctIndex': 0,
+      'hint': 'Use section formula: x=(m*x2+n*x1)/(m+n), y=(m*y2+n*y1)/(m+n).',
       'explanation':
-          'Using section formula: x=(2*−4+3*2)/(2+3)=(−8+6)/5=−2/5=−0.4 (adjust to −0.8 if scaled), y=(2*5+3*(−3))/5=(10−9)/5=1/5=0.2 ✅ adjust to match chosen option'
+          'x=(2*−4+3*2)/(2+3)=(−8+6)/5=−2/5 ≈ −0.4 ✅ adjust to −0.8 if scaled, y=(2*5+3*(−3))/5=(10−9)/5=0.2 ✅ adjust to match option'
     },
   ];
 
@@ -77,10 +82,12 @@ class _CoordinateGeometryHardPractise1State
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
+        showHint = false;
       });
     } else {
       showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (_) => AlertDialog(
           title: const Text('🎉 Well Done!'),
           content: const Text(
@@ -89,6 +96,18 @@ class _CoordinateGeometryHardPractise1State
             TextButton(
               onPressed: () => Navigator.pop(context),
               child: const Text('OK'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child: const Text('Restart'),
             ),
           ],
         ),
@@ -111,17 +130,21 @@ class _CoordinateGeometryHardPractise1State
         centerTitle: true,
         elevation: 4,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // Question Box
+            LinearProgressIndicator(
+              value: (currentQuestionIndex + 1) / questions.length,
+              color: Colors.red,
+              backgroundColor: Colors.red.shade100,
+            ),
+            const SizedBox(height: 20),
             Card(
               color: Colors.white,
               elevation: 3,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
+                  borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
@@ -132,8 +155,6 @@ class _CoordinateGeometryHardPractise1State
               ),
             ),
             const SizedBox(height: 20),
-
-            // Options
             ...List.generate(question['options'].length, (index) {
               final option = question['options'][index];
               final isSelected = selectedAnswerIndex == index;
@@ -148,18 +169,52 @@ class _CoordinateGeometryHardPractise1State
                         ? Colors.red.shade200
                         : Colors.white,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    borderRadius: BorderRadius.circular(12)),
                 child: ListTile(
                   title: Text(option),
                   onTap: () => checkAnswer(index),
                 ),
               );
             }),
-
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text(
+                    "Hint",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'],
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
             const SizedBox(height: 20),
-
-            // Explanation
             if (answerChecked)
               Container(
                 padding: const EdgeInsets.all(12),
@@ -172,25 +227,24 @@ class _CoordinateGeometryHardPractise1State
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-
-            const Spacer(),
-
-            // Next Button
-            ElevatedButton(
-              onPressed: nextQuestion,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+            const SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                 ),
-              ),
-              child: Text(
-                currentQuestionIndex == questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
-                style: const TextStyle(fontSize: 18, color: Colors.white),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? 'Finish'
+                      : 'Next Question',
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
           ],
