@@ -13,26 +13,36 @@ class _GeometryHardPractise3State extends State<GeometryHardPractise3> {
       'question': '1. A circle has a diameter of 18 cm. What is the area of the circle? (Use π ≈ 3.14)',
       'options': ['254.34 cm²', '256 cm²', '250 cm²', '260 cm²'],
       'answer': '254.34 cm²',
+      'hint': 'Use the formula: Area = π * r². First, find the radius.',
+      'explanation': 'Radius = diameter / 2 = 18 / 2 = 9 cm. Area = 3.14 * 9² = 254.34 cm².'
     },
     {
       'question': '2. In a right triangle, the legs are 7 cm and 24 cm. What is the hypotenuse?',
       'options': ['25 cm', '26 cm', '23 cm', '24 cm'],
       'answer': '25 cm',
+      'hint': 'Use Pythagoras theorem: a² + b² = c²',
+      'explanation': 'Using the Pythagoras theorem: 7² + 24² = c² => 49 + 576 = c² => c = √625 = 25 cm.'
     },
     {
       'question': '3. A square has a diagonal of 10√2 cm. What is its area?',
       'options': ['100 cm²', '50 cm²', '80 cm²', '120 cm²'],
       'answer': '100 cm²',
+      'hint': 'Use the formula: Area = (diagonal²) / 2',
+      'explanation': 'Area = (10√2)² / 2 = 200 / 2 = 100 cm².'
     },
     {
       'question': '4. A trapezoid has bases 14 cm and 22 cm, with height 9 cm. What is its area?',
       'options': ['162 cm²', '150 cm²', '160 cm²', '170 cm²'],
       'answer': '162 cm²',
+      'hint': 'Use the formula: Area = (1/2) * (b1 + b2) * h',
+      'explanation': 'Area = (1/2) * (14 + 22) * 9 = 162 cm².'
     },
     {
       'question': '5. An equilateral triangle has side length 12 cm. What is its area?',
       'options': ['36√3 cm²', '32√3 cm²', '30√3 cm²', '34√3 cm²'],
       'answer': '36√3 cm²',
+      'hint': 'Use the formula: Area = (√3 / 4) * a²',
+      'explanation': 'Area = (√3 / 4) * 12² = 36√3 cm².'
     },
   ];
 
@@ -40,6 +50,7 @@ class _GeometryHardPractise3State extends State<GeometryHardPractise3> {
   int _score = 0;
   String? _selectedAnswer;
   bool _answered = false;
+  bool _showHint = false;
 
   void _checkAnswer(String selectedOption) {
     if (_answered) return;
@@ -60,6 +71,7 @@ class _GeometryHardPractise3State extends State<GeometryHardPractise3> {
         _currentQuestionIndex++;
         _selectedAnswer = null;
         _answered = false;
+        _showHint = false;
       });
     } else {
       _showResultDialog();
@@ -153,7 +165,60 @@ class _GeometryHardPractise3State extends State<GeometryHardPractise3> {
                 ),
               );
             }),
+            const SizedBox(height: 20),
+
+            // Hint button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => setState(() {
+                    _showHint = !_showHint;
+                  }),
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text("Hint", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+
+            if (_showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'] as String,
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // Explanation
+            if (_answered)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
             const Spacer(),
+
+            // Next button
             ElevatedButton(
               onPressed: _answered ? _nextQuestion : null,
               style: ElevatedButton.styleFrom(
@@ -164,9 +229,7 @@ class _GeometryHardPractise3State extends State<GeometryHardPractise3> {
                 ),
               ),
               child: Text(
-                _currentQuestionIndex == _questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
+                _currentQuestionIndex == _questions.length - 1 ? 'Finish' : 'Next',
                 style: const TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),

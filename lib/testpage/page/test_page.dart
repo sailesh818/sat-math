@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sat_math/testpage/test1/page/test1model1_page.dart'; // Import Test1model1Page
-import 'package:sat_math/testpage/test1/page/test1model2_page.dart'; // Import Test1model2Page
+import 'package:sat_math/testpage/test1/page/test1model1_page.dart';
+import 'package:sat_math/testpage/test1/page/test1model2_page.dart';
+import 'package:sat_math/testpage/test/test2model1_page.dart';
+import 'package:sat_math/testpage/test/test2model2_page.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
@@ -10,28 +12,42 @@ class TestPage extends StatefulWidget {
 }
 
 class _TestPageState extends State<TestPage> {
-  // Function to navigate to Model 1 Page
-  void _goToModel1Page() {
+  // Navigation functions for Test 1
+  void _goToTest1Model1() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => const Test1model1Page()),
     );
   }
 
-  // Function to navigate to Model 2 Page
-  void _goToModel2Page() {
+  void _goToTest1Model2() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (_) => const Test1model2Page()),
     );
   }
 
-  // Function to show modal with test options
-  void _showTestOptions(BuildContext context) {
+  // Navigation functions for Test 2
+  void _goToTest2Model1() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const Test2Model1Page()),
+    );
+  }
+
+  void _goToTest2Model2() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const Test2Model2Page()),
+    );
+  }
+
+  // Show modal for Test 1 Models
+  void _showTest1Models() {
     showModalBottomSheet(
       context: context,
-      isScrollControlled: true, // Allow modal to take full height
-      backgroundColor: Colors.transparent, // Transparent background for the modal
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -40,14 +56,18 @@ class _TestPageState extends State<TestPage> {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Model 1 Button
+              const Text(
+                "Test 1 Models",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 24),
               ElevatedButton(
-                onPressed: _goToModel1Page,
+                onPressed: _goToTest1Model1,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
                   shape: RoundedRectangleBorder(
@@ -56,14 +76,12 @@ class _TestPageState extends State<TestPage> {
                 ),
                 child: const Text(
                   "Model 1",
-                  style: TextStyle(fontSize: 22, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
-              const SizedBox(height: 16),
-
-              // Model 2 Button
+              const SizedBox(height: 12),
               ElevatedButton(
-                onPressed: _goToModel2Page,
+                onPressed: _goToTest1Model2,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
                   shape: RoundedRectangleBorder(
@@ -72,9 +90,69 @@ class _TestPageState extends State<TestPage> {
                 ),
                 child: const Text(
                   "Model 2",
-                  style: TextStyle(fontSize: 22, color: Colors.black),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
+              const SizedBox(height: 16),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // Show modal for Test 2 Models
+  void _showTest2Models() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (_) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                "Test 2 Models",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: _goToTest2Model1,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  "Model 1",
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
+              ),
+              const SizedBox(height: 12),
+              ElevatedButton(
+                onPressed: _goToTest2Model2,
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  "Model 2",
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
+              ),
+              const SizedBox(height: 16),
             ],
           ),
         );
@@ -87,30 +165,25 @@ class _TestPageState extends State<TestPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Test Page"),
-        backgroundColor: Colors.green, // Green color for app bar
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
-      backgroundColor: Colors.grey[100], // Light background for the page
-      body: SingleChildScrollView( // Make the body scrollable
-        padding: const EdgeInsets.all(16), // Added padding to the main body
+      backgroundColor: Colors.grey[100],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-
-            // Heading Text
             const Text(
               "SAT Math Test Preparation",
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.green, // Green color for heading
+                color: Colors.green,
               ),
             ),
-
             const SizedBox(height: 20),
-
-            // Information Text
             const Text(
               "Take the test to evaluate your scores and get ready for SAT preparation!",
               style: TextStyle(
@@ -119,10 +192,9 @@ class _TestPageState extends State<TestPage> {
                 color: Colors.black54,
               ),
             ),
-
             const SizedBox(height: 40),
 
-            // Card for Test Options
+            // Test 1 Card
             Card(
               elevation: 8,
               shape: RoundedRectangleBorder(
@@ -133,25 +205,22 @@ class _TestPageState extends State<TestPage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: Colors.green[50], // Light green background
+                  color: Colors.green[50],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Text(
-                      "Choose your test model to get started",
+                      "Take Test 1",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                         color: Colors.green,
                       ),
-                      textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 32),
-
-                    // Start Test Button
+                    const SizedBox(height: 24),
                     ElevatedButton(
-                      onPressed: () => _showTestOptions(context), // Show options when pressed
+                      onPressed: _showTest1Models,
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
                         shape: RoundedRectangleBorder(
@@ -159,8 +228,8 @@ class _TestPageState extends State<TestPage> {
                         ),
                       ),
                       child: const Text(
-                        "Start Test",
-                        style: TextStyle(fontSize: 22, color: Colors.black),
+                        "Take Test",
+                        style: TextStyle(fontSize: 18, color: Colors.black),
                       ),
                     ),
                   ],
@@ -168,9 +237,52 @@ class _TestPageState extends State<TestPage> {
               ),
             ),
 
-            const SizedBox(height: 50), // Add space for future content or actions
+            const SizedBox(height: 24),
 
-            // Footer Section (Optional - Placeholder for future use)
+            // Test 2 Card
+            Card(
+              elevation: 8,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.blue[50],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Take Test 2",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      onPressed: _showTest2Models,
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      child: const Text(
+                        "Take Test",
+                        style: TextStyle(fontSize: 18, color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 50),
             const Align(
               alignment: Alignment.center,
               child: Text(

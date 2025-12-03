@@ -13,26 +13,36 @@ class _GeometryMediumPractise20State extends State<GeometryMediumPractise20> {
       'question': '1. A triangle has sides 8 cm, 15 cm, and 17 cm. What type of triangle is it?',
       'options': ['Right triangle', 'Acute triangle', 'Obtuse triangle', 'Isosceles triangle'],
       'answer': 'Right triangle',
+      'hint': 'Check if the sides satisfy the Pythagorean theorem.',
+      'explanation': 'A triangle with sides 8, 15, and 17 satisfies the Pythagorean theorem: 8² + 15² = 17², hence it is a right triangle.'
     },
     {
       'question': '2. A circle has a radius of 7 cm. What is its area? (Use π ≈ 3.14)',
       'options': ['153.86 cm²', '150 cm²', '145 cm²', '160 cm²'],
       'answer': '153.86 cm²',
+      'hint': 'Use the formula: Area = π × radius².',
+      'explanation': 'Area = 3.14 × 7² = 3.14 × 49 = 153.86 cm².'
     },
     {
       'question': '3. A rectangle has length 21 cm and width 28 cm. What is the diagonal?',
       'options': ['35 cm', '34 cm', '36 cm', '33 cm'],
       'answer': '35 cm',
+      'hint': 'Use the Pythagorean theorem: diagonal² = length² + width².',
+      'explanation': 'Diagonal = √(21² + 28²) = √(441 + 784) = √1225 = 35 cm.'
     },
     {
       'question': '4. A rhombus has diagonals of 12 cm and 16 cm. What is its area?',
       'options': ['96 cm²', '100 cm²', '92 cm²', '98 cm²'],
       'answer': '96 cm²',
+      'hint': 'Use the formula: Area = (diagonal1 × diagonal2) / 2.',
+      'explanation': 'Area = (12 × 16) / 2 = 96 cm².'
     },
     {
       'question': '5. A regular hexagon has a perimeter of 78 cm. What is the length of one side?',
       'options': ['13 cm', '12 cm', '14 cm', '15 cm'],
       'answer': '13 cm',
+      'hint': 'Use the formula: Side length = Perimeter / 6.',
+      'explanation': 'Side length = 78 / 6 = 13 cm.'
     },
   ];
 
@@ -40,6 +50,7 @@ class _GeometryMediumPractise20State extends State<GeometryMediumPractise20> {
   int _score = 0;
   String? _selectedAnswer;
   bool _answered = false;
+  bool _showHint = false;
 
   void _checkAnswer(String selectedOption) {
     if (_answered) return;
@@ -60,6 +71,7 @@ class _GeometryMediumPractise20State extends State<GeometryMediumPractise20> {
         _currentQuestionIndex++;
         _selectedAnswer = null;
         _answered = false;
+        _showHint = false;
       });
     } else {
       _showResultDialog();
@@ -153,7 +165,60 @@ class _GeometryMediumPractise20State extends State<GeometryMediumPractise20> {
                 ),
               );
             }),
+            const SizedBox(height: 20),
+
+            // Hint button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => setState(() {
+                    _showHint = !_showHint;
+                  }),
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text("Hint", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+
+            if (_showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'] as String,
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // Explanation
+            if (_answered)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
             const Spacer(),
+
+            // Next button
             ElevatedButton(
               onPressed: _answered ? _nextQuestion : null,
               style: ElevatedButton.styleFrom(
@@ -164,13 +229,10 @@ class _GeometryMediumPractise20State extends State<GeometryMediumPractise20> {
                 ),
               ),
               child: Text(
-                _currentQuestionIndex == _questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
+                _currentQuestionIndex == _questions.length - 1 ? 'Finish' : 'Next',
                 style: const TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
-            const SizedBox(height: 20),
           ],
         ),
       ),

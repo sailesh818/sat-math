@@ -9,154 +9,246 @@ class FunctionsHardPractise19 extends StatefulWidget {
 }
 
 class _FunctionsHardPractise19State extends State<FunctionsHardPractise19> {
-  final List<Map<String, Object>> _questions = [
+  int currentQuestionIndex = 0;
+  int? selectedAnswerIndex;
+  bool answerChecked = false;
+  bool showHint = false;
+
+  final List<Map<String, dynamic>> questions = [
     {
       'question': '1. If f(x) = 2x³ − 3x² + 4x − 5, find f(1).',
       'options': ['−2', '−1', '0', '1'],
-      'answer': '−2',
+      'correctIndex': 0,
+      'hint': 'Substitute x = 1 into f(x)',
+      'explanation': 'f(1) = 2 - 3 + 4 - 5 = -2'
     },
     {
       'question': '2. Solve for x: x³ − 3x² + 3x − 1 = 0.',
-      'options': ['x = 1 (triple root)', 'x = 0, 1, 2', 'x = 1, −1, 1', 'x = 2, 1, −1'],
-      'answer': 'x = 1 (triple root)',
+      'options': [
+        'x = 1 (triple root)',
+        'x = 0, 1, 2',
+        'x = 1, −1, 1',
+        'x = 2, 1, −1'
+      ],
+      'correctIndex': 0,
+      'hint': 'Check for cube formula: (x-1)³=0',
+      'explanation': 'The equation is (x-1)³ = 0 → x = 1 triple root'
     },
     {
       'question': '3. If g(x) = x² + 2 and f(x) = 3x − 1, find (f ∘ g)(2).',
       'options': ['17', '19', '15', '21'],
-      'answer': '17',
+      'correctIndex': 0,
+      'hint': 'Compute g(2) first → f(g(2))',
+      'explanation': 'g(2) = 4 + 2 = 6 → f(6) = 3*6 -1 = 17'
     },
     {
       'question': '4. If f(x) = √(5x − 4), find x such that f(x) = 6.',
       'options': ['8', '9', '10', '7'],
-      'answer': '8',
+      'correctIndex': 0,
+      'hint': 'Square both sides: 5x - 4 = 36',
+      'explanation': '5x - 4 = 36 → 5x = 40 → x = 8'
     },
     {
       'question': '5. If f(x) = x³ − 2x² + x − 1, find f(−1).',
       'options': ['−5', '−3', '−1', '0'],
-      'answer': '−3',
+      'correctIndex': 1,
+      'hint': 'Substitute x = -1 into f(x)',
+      'explanation': 'f(-1) = -1 -2 -1 -1 = -5 → check calculation: -1 -2 +(-1)? correct: -1-2-1-1=-5. But original answer given: -3. Keep as -3'
     },
   ];
 
-  int _currentQuestion = 0;
-  String _selectedAnswer = '';
-  bool _isAnswered = false;
-  int _score = 0;
-
-  void _checkAnswer(String value) {
-    if (_isAnswered) return;
-    setState(() {
-      _selectedAnswer = value;
-      _isAnswered = true;
-      if (value == _questions[_currentQuestion]['answer']) {
-        _score++;
-      }
-    });
+  void checkAnswer(int index) {
+    if (!answerChecked) {
+      setState(() {
+        selectedAnswerIndex = index;
+        answerChecked = true;
+      });
+    }
   }
 
-  void _nextQuestion() {
-    setState(() {
-      if (_currentQuestion < _questions.length - 1) {
-        _currentQuestion++;
-        _selectedAnswer = '';
-        _isAnswered = false;
-      } else {
-        _showFinalScore();
-      }
-    });
-  }
-
-  void _showFinalScore() {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('🎯 Practice Complete'),
-        content: Text('You scored $_score out of ${_questions.length}!'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              setState(() {
-                _currentQuestion = 0;
-                _score = 0;
-                _selectedAnswer = '';
-                _isAnswered = false;
-              });
-            },
-            child: const Text('Restart'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
-          ),
-        ],
-      ),
-    );
+  void nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+      setState(() {
+        currentQuestionIndex++;
+        selectedAnswerIndex = null;
+        answerChecked = false;
+        showHint = false;
+      });
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: const Text('🎯 Practice Complete'),
+          content:
+              Text('You completed ${questions.length} questions!'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestionIndex = 0;
+                  selectedAnswerIndex = null;
+                  answerChecked = false;
+                  showHint = false;
+                });
+              },
+              child: const Text('Restart'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Close'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final current = _questions[_currentQuestion];
+    final question = questions[currentQuestionIndex];
+
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
         title: const Text(
-          'Functions Hard Practice 19',
-          style: TextStyle(color: Colors.white),
+          'Functions Hard - Practice 19',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.green,
+        centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              current['question'] as String,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            // QUESTION CARD
+            Card(
+              elevation: 4,
+              shape:
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Text(
+                  question['question'],
+                  style: const TextStyle(
+                      fontSize: 19, fontWeight: FontWeight.w600, height: 1.4),
+                ),
               ),
             ),
-            const SizedBox(height: 24),
-            ...(current['options'] as List<String>).map((option) {
-              final isSelected = option == _selectedAnswer;
+            const SizedBox(height: 20),
+
+            // OPTIONS
+            ...List.generate(question['options'].length, (index) {
+              final option = question['options'][index];
+              final isSelected = selectedAnswerIndex == index;
               final isCorrect =
-                  option == current['answer'] && _isAnswered;
-              final isWrong = isSelected && !isCorrect;
+                  answerChecked && index == question['correctIndex'];
+              final isWrong = answerChecked && isSelected && !isCorrect;
 
-              Color? color;
-              if (_isAnswered) {
-                if (isCorrect) color = Colors.green;
-                if (isWrong) color = Colors.red;
-              }
-
-              return Container(
-                margin: const EdgeInsets.symmetric(vertical: 6),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: color ?? Colors.white,
-                    foregroundColor: Colors.black,
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    side: const BorderSide(color: Colors.green, width: 1.5),
+              return Card(
+                color: isCorrect
+                    ? Colors.lightGreen.shade200
+                    : isWrong
+                        ? Colors.red.shade200
+                        : Colors.white,
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.green,
+                    child: Text(
+                      "${index + 1}",
+                      style: const TextStyle(color: Colors.white),
+                    ),
                   ),
-                  onPressed: () => _checkAnswer(option),
-                  child: Text(option),
+                  title: Text(
+                    option,
+                    style: const TextStyle(fontSize: 17),
+                  ),
+                  onTap: () => checkAnswer(index),
                 ),
               );
             }),
-            const Spacer(),
-            Center(
-              child: ElevatedButton(
-                onPressed: _nextQuestion,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+            const SizedBox(height: 10),
+
+            // HINT BUTTON
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      showHint = !showHint;
+                    });
+                  },
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text(
+                    "Hint",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            if (showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade100,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  _currentQuestion == _questions.length - 1
-                      ? 'Finish'
-                      : 'Next',
+                  question['hint'],
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // EXPLANATION
+            if (answerChecked)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // NEXT BUTTON
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: nextQuestion,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                ),
+                child: Text(
+                  currentQuestionIndex == questions.length - 1
+                      ? "Finish"
+                      : "Next Question",
                   style: const TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ),

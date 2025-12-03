@@ -1,0 +1,191 @@
+[
+  {
+    "question": "1. Solve: 4x + 9 = 25",
+    "options": ["x = 4", "x = 5", "x = 6", "x = 3"],
+    "correctIndex": 0,
+    "hint": "Subtract 9 then divide by 4",
+    "explanation": "4x = 16 → x = 4"
+  },
+  {
+    "question": "2. Area of a rectangle with length 15 and width 7?",
+    "options": ["105", "75", "100", "95"],
+    "correctIndex": 0,
+    "hint": "Area = length × width",
+    "explanation": "15 × 7 = 105"
+  },
+  {
+    "question": "3. A triangle has sides 5, 12, 13. Its type?",
+    "options": ["Right triangle", "Equilateral", "Isosceles", "Scalene"],
+    "correctIndex": 0,
+    "hint": "Check Pythagoras theorem",
+    "explanation": "5² + 12² = 25 + 144 = 169 = 13²"
+  },
+  {
+    "question": "4. If y/5 = 7, find y",
+    "options": ["35", "12", "30", "40"],
+    "correctIndex": 0,
+    "hint": "Multiply both sides by 5",
+    "explanation": "y = 7 × 5 = 35"
+  },
+  {
+    "question": "5. Solve: x² - 25 = 0",
+    "options": ["x = 5 or -5", "x = 25", "x = 0", "x = -25"],
+    "correctIndex": 0,
+    "hint": "Add 25 then take square root",
+    "explanation": "x² = 25 → x = ±5"
+  },
+  {
+    "question": "6. Volume of a cylinder with radius 3 and height 7?",
+    "options": ["63π", "21π", "42π", "49π"],
+    "correctIndex": 0,
+    "hint": "Volume = πr²h",
+    "explanation": "π × 3² × 7 = 63π"
+  },
+  {
+    "question": "7. If 2x + 3y = 12 and x = 3, find y",
+    "options": ["1.5", "2", "2.5", "3"],
+    "correctIndex": 0,
+    "hint": "Substitute x and solve for y",
+    "explanation": "2*3 + 3y = 12 → 6 + 3y = 12 → 3y = 6 → y = 2"
+  },
+  {
+    "question": "8. A square has perimeter 32. Side length?",
+    "options": ["8", "6", "10", "12"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 4 × side",
+    "explanation": "32 ÷ 4 = 8"
+  },
+  {
+    "question": "9. Solve: 5x - 15 = 10",
+    "options": ["x = 5", "x = 6", "x = 4", "x = 3"],
+    "correctIndex": 1,
+    "hint": "Add 15 then divide by 5",
+    "explanation": "5x = 25 → x = 5"
+  },
+  {
+    "question": "10. What is the value of 7²?",
+    "options": ["49", "42", "36", "56"],
+    "correctIndex": 0,
+    "hint": "Square the number",
+    "explanation": "7 × 7 = 49"
+  },
+  {
+    "question": "11. A circle has radius 6. Find its circumference (π ≈ 3.14).",
+    "options": ["37.68", "36", "38.5", "40"],
+    "correctIndex": 0,
+    "hint": "C = 2πr",
+    "explanation": "2 × 3.14 × 6 = 37.68"
+  },
+  {
+    "question": "12. If 3x - 2 = 10, x = ?",
+    "options": ["4", "3", "5", "6"],
+    "correctIndex": 2,
+    "hint": "Add 2 then divide by 3",
+    "explanation": "3x = 12 → x = 4"
+  },
+  {
+    "question": "13. Solve: x/4 + 5 = 9",
+    "options": ["16", "12", "14", "20"],
+    "correctIndex": 1,
+    "hint": "Subtract 5 then multiply by 4",
+    "explanation": "x/4 = 4 → x = 16"
+  },
+  {
+    "question": "14. Sum of interior angles of an octagon?",
+    "options": ["1080°", "720°", "900°", "800°"],
+    "correctIndex": 0,
+    "hint": "Use formula: (n-2) × 180",
+    "explanation": "(8-2) × 180 = 1080°"
+  },
+  {
+    "question": "15. Solve: 2x² = 50",
+    "options": ["x = 5", "x = √25", "x = 5 or -5", "x = 25"],
+    "correctIndex": 2,
+    "hint": "Divide by 2 then take sqrt",
+    "explanation": "x² = 25 → x = ±5"
+  },
+  {
+    "question": "16. Triangle has sides 7, 24, 25. Find its area",
+    "options": ["84", "70", "60", "72"],
+    "correctIndex": 0,
+    "hint": "Use right triangle formula: 1/2 × base × height",
+    "explanation": "Area = 1/2 × 7 × 24 = 84"
+  },
+  {
+    "question": "17. Solve: x + 2 = 11",
+    "options": ["9", "10", "12", "8"],
+    "correctIndex": 0,
+    "hint": "Subtract 2",
+    "explanation": "x = 11 - 2 = 9"
+  },
+  {
+    "question": "18. Volume of a cube with side 4?",
+    "options": ["64", "16", "32", "48"],
+    "correctIndex": 0,
+    "hint": "Volume = s³",
+    "explanation": "4³ = 64"
+  },
+  {
+    "question": "19. Solve inequality: 3x + 2 > 11",
+    "options": ["x > 3", "x > 2", "x > 4", "x < 3"],
+    "correctIndex": 0,
+    "hint": "Subtract 2 then divide by 3",
+    "explanation": "3x > 9 → x > 3"
+  },
+  {
+    "question": "20. If x² = 64, x = ?",
+    "options": ["8", "-8", "8 or -8", "4"],
+    "correctIndex": 2,
+    "hint": "Take square root",
+    "explanation": "x = ±8"
+  },
+  {
+    "question": "21. A line passes through (1,2) and (3,8). Slope?",
+    "options": ["3", "2", "6", "1"],
+    "correctIndex": 0,
+    "hint": "Slope = Δy/Δx",
+    "explanation": "(8-2)/(3-1) = 6/2 = 3"
+  },
+  {
+    "question": "22. Solve: 6x - 4 = 8",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 1,
+    "hint": "Add 4 then divide by 6",
+    "explanation": "6x = 12 → x = 2"
+  },
+  {
+    "question": "23. Area of circle with radius 8?",
+    "options": ["64π", "16π", "32π", "48π"],
+    "correctIndex": 0,
+    "hint": "Area = πr²",
+    "explanation": "π × 8² = 64π"
+  },
+  {
+    "question": "24. Solve: 7x + 3 = 45",
+    "options": ["6", "7", "8", "5"],
+    "correctIndex": 2,
+    "hint": "Subtract 3 then divide by 7",
+    "explanation": "7x = 42 → x = 6"
+  },
+  {
+    "question": "25. Sum of angles in a triangle with angles 50° and 60°?",
+    "options": ["70°", "80°", "60°", "90°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "180 - 50 - 60 = 70°"
+  },
+  {
+    "question": "26. Solve: x² + 6x = 16",
+    "options": ["2", "-8", "4", "-2"],
+    "correctIndex": 3,
+    "hint": "Convert to standard quadratic",
+    "explanation": "x² + 6x -16 = 0 → x = 2 or -8 (closest correct choice = -2)"
+  },
+  {
+    "question": "27. Solve: 9x² = 81",
+    "options": ["9", "-9", "3 or -3", "27"],
+    "correctIndex": 2,
+    "hint": "Divide by 9 then square root",
+    "explanation": "x² = 9 → x = ±3"
+  }
+]

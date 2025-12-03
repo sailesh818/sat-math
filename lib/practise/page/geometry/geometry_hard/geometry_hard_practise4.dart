@@ -13,26 +13,36 @@ class _GeometryHardPractise4State extends State<GeometryHardPractise4> {
       'question': '1. A triangle has sides 13 cm, 14 cm, and 15 cm. What is its area? (Use Heron\'s formula)',
       'options': ['84 cm²', '85 cm²', '80 cm²', '90 cm²'],
       'answer': '84 cm²',
+      'hint': 'Use Heron\'s formula: Area = √(s(s-a)(s-b)(s-c)) where s is the semi-perimeter.',
+      'explanation': 'First, calculate the semi-perimeter: s = (13 + 14 + 15) / 2 = 21. Then, Area = √(21(21-13)(21-14)(21-15)) = 84 cm².'
     },
     {
       'question': '2. A circle has radius 9 cm. What is the length of an arc subtended by a 120° central angle? (Use π ≈ 3.14)',
       'options': ['18.84 cm', '19 cm', '17.5 cm', '20 cm'],
       'answer': '18.84 cm',
+      'hint': 'Use the formula: Arc length = (θ/360) * 2πr where θ is the angle in degrees.',
+      'explanation': 'Arc length = (120/360) * 2 * 3.14 * 9 = 18.84 cm.'
     },
     {
       'question': '3. A square and a circle have the same perimeter of 40 cm. What is the area of the square?',
       'options': ['100 cm²', '90 cm²', '95 cm²', '80 cm²'],
       'answer': '100 cm²',
+      'hint': 'First, find the side length of the square using the perimeter formula. Then, calculate the area.',
+      'explanation': 'The perimeter of the square is 40 cm, so each side is 40 / 4 = 10 cm. The area is 10² = 100 cm².'
     },
     {
       'question': '4. A trapezoid has bases 10 cm and 18 cm, and area 112 cm². What is its height?',
       'options': ['8 cm', '7 cm', '6 cm', '9 cm'],
       'answer': '8 cm',
+      'hint': 'Use the formula: Area = (1/2) * (b1 + b2) * h, where b1 and b2 are the lengths of the bases.',
+      'explanation': '112 = (1/2) * (10 + 18) * h => h = 112 / 14 = 8 cm.'
     },
     {
       'question': '5. A regular pentagon has side length 10 cm. What is its perimeter?',
       'options': ['50 cm', '45 cm', '48 cm', '52 cm'],
       'answer': '50 cm',
+      'hint': 'The perimeter of a regular polygon is the side length multiplied by the number of sides.',
+      'explanation': 'Perimeter = 10 * 5 = 50 cm.'
     },
   ];
 
@@ -40,6 +50,7 @@ class _GeometryHardPractise4State extends State<GeometryHardPractise4> {
   int _score = 0;
   String? _selectedAnswer;
   bool _answered = false;
+  bool _showHint = false;
 
   void _checkAnswer(String selectedOption) {
     if (_answered) return;
@@ -60,6 +71,7 @@ class _GeometryHardPractise4State extends State<GeometryHardPractise4> {
         _currentQuestionIndex++;
         _selectedAnswer = null;
         _answered = false;
+        _showHint = false;
       });
     } else {
       _showResultDialog();
@@ -153,7 +165,60 @@ class _GeometryHardPractise4State extends State<GeometryHardPractise4> {
                 ),
               );
             }),
+            const SizedBox(height: 20),
+
+            // Hint button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => setState(() {
+                    _showHint = !_showHint;
+                  }),
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text("Hint", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+
+            if (_showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'] as String,
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // Explanation
+            if (_answered)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
             const Spacer(),
+
+            // Next button
             ElevatedButton(
               onPressed: _answered ? _nextQuestion : null,
               style: ElevatedButton.styleFrom(
@@ -164,9 +229,7 @@ class _GeometryHardPractise4State extends State<GeometryHardPractise4> {
                 ),
               ),
               child: Text(
-                _currentQuestionIndex == _questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
+                _currentQuestionIndex == _questions.length - 1 ? 'Finish' : 'Next',
                 style: const TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),

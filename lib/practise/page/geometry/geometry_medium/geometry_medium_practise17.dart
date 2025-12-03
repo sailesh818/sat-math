@@ -13,26 +13,36 @@ class _GeometryMediumPractise17State extends State<GeometryMediumPractise17> {
       'question': '1. A triangle has angles 50°, 60°, and 70°. What type of triangle is it?',
       'options': ['Acute triangle', 'Obtuse triangle', 'Right triangle', 'Isosceles triangle'],
       'answer': 'Acute triangle',
+      'hint': 'All angles are less than 90°.',
+      'explanation': 'An acute triangle has all angles less than 90°. Here, 50°, 60°, and 70° are all acute angles.'
     },
     {
       'question': '2. A circle has a radius of 9 cm. What is its circumference? (Use π ≈ 3.14)',
       'options': ['56.52 cm', '50 cm', '55 cm', '60 cm'],
       'answer': '56.52 cm',
+      'hint': 'Circumference = 2 × π × radius.',
+      'explanation': 'Circumference = 2 × 3.14 × 9 = 56.52 cm.'
     },
     {
       'question': '3. A rectangle has length 18 cm and width 24 cm. What is the diagonal?',
       'options': ['30 cm', '29 cm', '31 cm', '32 cm'],
       'answer': '30 cm',
+      'hint': 'Use the Pythagorean theorem: diagonal² = length² + width².',
+      'explanation': 'Diagonal = √(18² + 24²) = √(324 + 576) = √900 = 30 cm.'
     },
     {
       'question': '4. A rhombus has diagonals of 14 cm and 48 cm. What is its area?',
       'options': ['336 cm²', '350 cm²', '340 cm²', '320 cm²'],
       'answer': '336 cm²',
+      'hint': 'Area of a rhombus = (diagonal1 × diagonal2) / 2.',
+      'explanation': 'Area = (14 × 48) / 2 = 336 cm².'
     },
     {
       'question': '5. A regular hexagon has perimeter 96 cm. What is the length of one side?',
       'options': ['16 cm', '14 cm', '15 cm', '12 cm'],
       'answer': '16 cm',
+      'hint': 'Perimeter of a regular hexagon = 6 × length of one side.',
+      'explanation': 'Side length = 96 / 6 = 16 cm.'
     },
   ];
 
@@ -40,6 +50,7 @@ class _GeometryMediumPractise17State extends State<GeometryMediumPractise17> {
   int _score = 0;
   String? _selectedAnswer;
   bool _answered = false;
+  bool _showHint = false;
 
   void _checkAnswer(String selectedOption) {
     if (_answered) return;
@@ -60,6 +71,7 @@ class _GeometryMediumPractise17State extends State<GeometryMediumPractise17> {
         _currentQuestionIndex++;
         _selectedAnswer = null;
         _answered = false;
+        _showHint = false;
       });
     } else {
       _showResultDialog();
@@ -112,7 +124,7 @@ class _GeometryMediumPractise17State extends State<GeometryMediumPractise17> {
         backgroundColor: Colors.deepOrange,
         centerTitle: true,
         title: const Text(
-          'Geometry - Medium Practise 17',
+          'Geometry - Medium Practice 17',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         elevation: 3,
@@ -153,7 +165,60 @@ class _GeometryMediumPractise17State extends State<GeometryMediumPractise17> {
                 ),
               );
             }),
+            const SizedBox(height: 20),
+
+            // Hint button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => setState(() {
+                    _showHint = !_showHint;
+                  }),
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text("Hint", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+
+            if (_showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.deepOrange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'] as String,
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // Explanation
+            if (_answered)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.deepOrange.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
             const Spacer(),
+
+            // Next button
             ElevatedButton(
               onPressed: _answered ? _nextQuestion : null,
               style: ElevatedButton.styleFrom(
@@ -164,13 +229,10 @@ class _GeometryMediumPractise17State extends State<GeometryMediumPractise17> {
                 ),
               ),
               child: Text(
-                _currentQuestionIndex == _questions.length - 1
-                    ? 'Finish'
-                    : 'Next',
+                _currentQuestionIndex == _questions.length - 1 ? 'Finish' : 'Next',
                 style: const TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
-            const SizedBox(height: 20),
           ],
         ),
       ),

@@ -13,26 +13,36 @@ class _GeometryHardPractise5State extends State<GeometryHardPractise5> {
       'question': '1. A right triangle has legs 8 cm and 15 cm. What is the hypotenuse?',
       'options': ['17 cm', '16 cm', '18 cm', '15 cm'],
       'answer': '17 cm',
+      'hint': 'Use Pythagoras theorem: a² + b² = c².',
+      'explanation': 'Using Pythagoras theorem: c² = 8² + 15² = 64 + 225 = 289, so c = √289 = 17 cm.'
     },
     {
       'question': '2. A circle has radius 7 cm. What is the area of a sector with a 90° central angle? (Use π ≈ 3.14)',
       'options': ['38.465 cm²', '35 cm²', '40 cm²', '39 cm²'],
       'answer': '38.465 cm²',
+      'hint': 'Use the formula for the area of a sector: Area = (θ/360) * π * r².',
+      'explanation': 'Area = (90/360) * 3.14 * 7² = 0.25 * 3.14 * 49 = 38.465 cm².'
     },
     {
       'question': '3. A rectangle has length 14 cm and diagonal 20 cm. What is the width?',
       'options': ['12 cm', '10 cm', '15 cm', '8 cm'],
       'answer': '12 cm',
+      'hint': 'Use Pythagoras theorem: a² + b² = c², where c is the diagonal.',
+      'explanation': 'Using Pythagoras theorem: 14² + width² = 20² => 196 + width² = 400 => width² = 400 - 196 = 204 => width = √204 = 12 cm.'
     },
     {
       'question': '4. An equilateral triangle has perimeter 18 cm. What is its area?',
       'options': ['9√3 cm²', '12√3 cm²', '6√3 cm²', '10√3 cm²'],
       'answer': '9√3 cm²',
+      'hint': 'Use the formula: Area = (s²√3)/4, where s is the side of the equilateral triangle.',
+      'explanation': 'Side of triangle = 18 / 3 = 6 cm. Area = (6²√3)/4 = (36√3)/4 = 9√3 cm².'
     },
     {
       'question': '5. A trapezoid has bases 11 cm and 19 cm with height 7 cm. What is its area?',
       'options': ['105 cm²', '100 cm²', '110 cm²', '115 cm²'],
       'answer': '105 cm²',
+      'hint': 'Use the formula for the area of a trapezoid: Area = (1/2) * (b1 + b2) * h.',
+      'explanation': 'Area = (1/2) * (11 + 19) * 7 = (1/2) * 30 * 7 = 105 cm².'
     },
   ];
 
@@ -40,6 +50,7 @@ class _GeometryHardPractise5State extends State<GeometryHardPractise5> {
   int _score = 0;
   String? _selectedAnswer;
   bool _answered = false;
+  bool _showHint = false;
 
   void _checkAnswer(String selectedOption) {
     if (_answered) return;
@@ -60,6 +71,7 @@ class _GeometryHardPractise5State extends State<GeometryHardPractise5> {
         _currentQuestionIndex++;
         _selectedAnswer = null;
         _answered = false;
+        _showHint = false;
       });
     } else {
       _showResultDialog();
@@ -153,7 +165,59 @@ class _GeometryHardPractise5State extends State<GeometryHardPractise5> {
                 ),
               );
             }),
+
+            // Hint Button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => setState(() {
+                    _showHint = !_showHint;
+                  }),
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  label: const Text("Hint", style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
+                ),
+              ],
+            ),
+
+            if (_showHint)
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  question['hint'] as String,
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
+            const SizedBox(height: 20),
+
+            // Explanation Section
+            if (_answered)
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade100,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  "Explanation: ${question['explanation']}",
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ),
+
             const Spacer(),
+
+            // Next/Finish Button
             ElevatedButton(
               onPressed: _answered ? _nextQuestion : null,
               style: ElevatedButton.styleFrom(

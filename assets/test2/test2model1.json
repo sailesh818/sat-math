@@ -1,0 +1,191 @@
+[
+  {
+    "question": "1. If 3x + 7 = 22, what is the value of x?",
+    "options": ["x = 5", "x = 6", "x = 4", "x = 3"],
+    "correctIndex": 0,
+    "hint": "Subtract 7, then divide by 3.",
+    "explanation": "3x = 15 → x = 5."
+  },
+  {
+    "question": "2. The sum of interior angles of a pentagon is?",
+    "options": ["540°", "360°", "720°", "600°"],
+    "correctIndex": 0,
+    "hint": "Use formula: (n - 2) × 180°",
+    "explanation": "(5 - 2) × 180 = 540°"
+  },
+  {
+    "question": "3. What is the slope of the line passing through points (2, 3) and (5, 9)?",
+    "options": ["2", "1/2", "3", "3/2"],
+    "correctIndex": 3,
+    "hint": "Slope = Δy / Δx",
+    "explanation": "Slope = (9 - 3)/(5 - 2) = 6/3 = 2"
+  },
+  {
+    "question": "4. If x² = 49, what is x?",
+    "options": ["7", "-7", "Both 7 and -7", "0"],
+    "correctIndex": 2,
+    "hint": "Take square root of both sides.",
+    "explanation": "x² = 49 → x = ±7"
+  },
+  {
+    "question": "5. What is the area of a triangle with base 10 and height 6?",
+    "options": ["30", "16", "60", "36"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 × base × height",
+    "explanation": "Area = 1/2 × 10 × 6 = 30"
+  },
+  {
+    "question": "6. Solve for y: 2y - 5 = 9",
+    "options": ["y = 7", "y = 2", "y = -7", "y = 5"],
+    "correctIndex": 0,
+    "hint": "Add 5 then divide by 2",
+    "explanation": "2y = 14 → y = 7"
+  },
+  {
+    "question": "7. A circle has diameter 14. What is its radius?",
+    "options": ["7", "14", "28", "10"],
+    "correctIndex": 0,
+    "hint": "Radius = diameter ÷ 2",
+    "explanation": "Radius = 14 ÷ 2 = 7"
+  },
+  {
+    "question": "8. Solve inequality: 5x + 3 ≤ 18",
+    "options": ["x ≤ 3", "x ≥ 3", "x ≤ 5", "x ≥ 5"],
+    "correctIndex": 0,
+    "hint": "Subtract 3 and divide by 5",
+    "explanation": "5x ≤ 15 → x ≤ 3"
+  },
+  {
+    "question": "9. If f(x) = 2x + 1, what is f(4)?",
+    "options": ["9", "8", "7", "10"],
+    "correctIndex": 0,
+    "hint": "Substitute x = 4",
+    "explanation": "f(4) = 2×4 + 1 = 9"
+  },
+  {
+    "question": "10. The sum of two numbers is 25, one number is 9. What is the other?",
+    "options": ["16", "14", "15", "17"],
+    "correctIndex": 0,
+    "hint": "Subtract known number from sum",
+    "explanation": "25 - 9 = 16"
+  },
+  {
+    "question": "11. What is the value of 5³?",
+    "options": ["125", "15", "25", "75"],
+    "correctIndex": 0,
+    "hint": "Cube the number",
+    "explanation": "5 × 5 × 5 = 125"
+  },
+  {
+    "question": "12. A rectangle has length 12 and width 5. Its perimeter?",
+    "options": ["34", "60", "17", "30"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2(L + W)",
+    "explanation": "2 × (12 + 5) = 34"
+  },
+  {
+    "question": "13. What is √121?",
+    "options": ["10", "11", "12", "13"],
+    "correctIndex": 1,
+    "hint": "Find the number whose square is 121",
+    "explanation": "11 × 11 = 121"
+  },
+  {
+    "question": "14. Solve: 4x - 7 = 13",
+    "options": ["x = 5", "x = 4", "x = 6", "x = 7"],
+    "correctIndex": 0,
+    "hint": "Add 7 and divide by 4",
+    "explanation": "4x = 20 → x = 5"
+  },
+  {
+    "question": "15. Volume of a cube with side 3?",
+    "options": ["9", "27", "18", "12"],
+    "correctIndex": 1,
+    "hint": "Volume = s³",
+    "explanation": "3³ = 27"
+  },
+  {
+    "question": "16. If x + 7 = 15, what is x?",
+    "options": ["8", "7", "9", "6"],
+    "correctIndex": 0,
+    "hint": "Subtract 7",
+    "explanation": "x = 15 - 7 = 8"
+  },
+  {
+    "question": "17. Solve for x: 3x² = 48",
+    "options": ["4", "8", "6", "12"],
+    "correctIndex": 0,
+    "hint": "Divide and take square root",
+    "explanation": "x² = 16 → x = 4"
+  },
+  {
+    "question": "18. Find y: 7y - 14 = 0",
+    "options": ["2", "0", "14", "1"],
+    "correctIndex": 0,
+    "hint": "Add 14 and divide by 7",
+    "explanation": "7y = 14 → y = 2"
+  },
+  {
+    "question": "19. If x/3 = 6, then x = ?",
+    "options": ["18", "9", "6", "12"],
+    "correctIndex": 0,
+    "hint": "Multiply both sides by 3",
+    "explanation": "x = 6 × 3 = 18"
+  },
+  {
+    "question": "20. A triangle has angles 50° and 60°. Third angle?",
+    "options": ["70°", "60°", "80°", "90°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles = 180°",
+    "explanation": "180 - 50 - 60 = 70°"
+  },
+  {
+    "question": "21. Solve: 2x + 5 = 17",
+    "options": ["6", "7", "5", "8"],
+    "correctIndex": 0,
+    "hint": "Subtract 5, divide by 2",
+    "explanation": "2x = 12 → x = 6"
+  },
+  {
+    "question": "22. What is the product of 7 and 8?",
+    "options": ["56", "54", "64", "49"],
+    "correctIndex": 0,
+    "hint": "Multiply",
+    "explanation": "7 × 8 = 56"
+  },
+  {
+    "question": "23. If 5x + 10 = 35, x = ?",
+    "options": ["5", "7", "4", "6"],
+    "correctIndex": 0,
+    "hint": "Subtract 10 then divide by 5",
+    "explanation": "5x = 25 → x = 5"
+  },
+  {
+    "question": "24. Area of circle with radius 5?",
+    "options": ["25π", "10π", "50π", "20π"],
+    "correctIndex": 0,
+    "hint": "Area = πr²",
+    "explanation": "π × 5² = 25π"
+  },
+  {
+    "question": "25. Solve: x² - 16 = 0",
+    "options": ["x = 4 or -4", "x = 16", "x = 8", "x = -8"],
+    "correctIndex": 0,
+    "hint": "Add 16, take square root",
+    "explanation": "x² = 16 → x = ±4"
+  },
+  {
+    "question": "26. Slope of line through (0,0) and (3,6)?",
+    "options": ["2", "1/2", "3", "3/2"],
+    "correctIndex": 0,
+    "hint": "Slope = Δy/Δx",
+    "explanation": "Slope = (6-0)/(3-0) = 2"
+  },
+  {
+    "question": "27. Solve: 9x - 3 = 24",
+    "options": ["3", "2", "4", "5"],
+    "correctIndex": 0,
+    "hint": "Add 3, divide by 9",
+    "explanation": "9x = 27 → x = 3"
+  }
+]
