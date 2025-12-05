@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "920186495722",
+    "project_id": "sat-math-22cc7",
+    "storage_bucket": "sat-math-22cc7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920186495722:android:1db9a55b381e2c3f842d93",
+        "android_client_info": {
+          "package_name": "com.satmath.sat_math"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfHvNOWpbDCxRpfaajnLcqHFlvaKcYIEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

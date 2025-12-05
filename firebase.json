@@ -1,0 +1,33 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "sat-math-22cc7",
+          "appId": "1:920186495722:android:1db9a55b381e2c3f842d93",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "sat-math-22cc7",
+          "configurations": {
+            "android": "1:920186495722:android:1db9a55b381e2c3f842d93",
+            "ios": "1:920186495722:ios:496cc4e69aefa9e2842d93",
+            "macos": "1:920186495722:ios:496cc4e69aefa9e2842d93",
+            "web": "1:920186495722:web:4a99b6465672d4ec842d93",
+            "windows": "1:920186495722:web:a2a60ded99592d3a842d93"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
