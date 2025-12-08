@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the equation of the line passing through (2,3) and parallel to y = x + 5.",
+    "options": ["y−3 = 1(x−2)", "y−3 = −1(x−2)", "y+3 = 1(x−2)", "y−2 = 1(x−3)"],
+    "correctIndex": 0,
+    "hint": "Parallel lines have the same slope.",
+    "explanation": "Slope = 1 (parallel lines have same slope); y−3 = 1(x−2)"
+  },
+  {
+    "question": "2. Find the midpoint of segment joining points (−4,−2) and (6,8).",
+    "options": ["(1,3)", "(0,3)", "(1,2)", "(2,3)"],
+    "correctIndex": 0,
+    "hint": "Use midpoint formula: ((x1+x2)/2, (y1+y2)/2)",
+    "explanation": "Midpoint = ((−4+6)/2, (−2+8)/2) = (2/2,6/2) = (1,3)"
+  },
+  {
+    "question": "3. Check whether points (−1,−2), (2,1), (4,3) are collinear.",
+    "options": ["Yes", "No", "Cannot Determine", "Partially"],
+    "correctIndex": 0,
+    "hint": "Check if slopes between consecutive points are equal.",
+    "explanation": "Slope −1-2 = (1−(−2))/(2−(−1)) = 3/3 =1, slope 2-3 = (3−1)/(4−2) =2/2 =1 ⇒ Yes, collinear"
+  },
+  {
+    "question": "4. Distance between points (−3,5) and (3,−1):",
+    "options": ["√72", "√36", "√64", "√60"],
+    "correctIndex": 0,
+    "hint": "Use distance formula: √[(x2−x1)² + (y2−y1)²]",
+    "explanation": "Distance = √[(3−(−3))² + (−1−5)²] = √[36+36] = √72"
+  },
+  {
+    "question": "5. Find slope of line passing through points (−2,1) and (3,−4).",
+    "options": ["−1", "1", "−5/3", "5/3"],
+    "correctIndex": 0,
+    "hint": "Slope formula: (y2−y1)/(x2−x1)",
+    "explanation": "Slope = (−4−1)/(3−(−2)) = −5/5 = −1"
+  }
+]

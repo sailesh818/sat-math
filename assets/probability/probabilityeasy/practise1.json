@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag contains 4 red balls and 6 blue balls. If one ball is drawn at random, what is the probability that it is red?",
+    "options": ["2/5", "3/5", "1/2", "1/3"],
+    "correctIndex": 0,
+    "hint": "Probability = favorable outcomes / total outcomes",
+    "explanation": "Probability = 4/10 = 2/5"
+  },
+  {
+    "question": "2. A die is rolled once. What is the probability of getting an even number?",
+    "options": ["1/2", "1/3", "1/6", "2/3"],
+    "correctIndex": 0,
+    "hint": "Even numbers on a die are 2, 4, 6",
+    "explanation": "3 even outcomes / 6 total = 1/2"
+  },
+  {
+    "question": "3. A coin is tossed three times. What is the probability of getting exactly two heads?",
+    "options": ["1/8", "1/2", "3/8", "1/4"],
+    "correctIndex": 2,
+    "hint": "Use combinations to count favorable outcomes",
+    "explanation": "Favorable outcomes: HHT, HTH, THH → 3/8"
+  },
+  {
+    "question": "4. A class has 10 boys and 15 girls. If a student is chosen at random, what is the probability that the student is a girl?",
+    "options": ["2/5", "3/5", "1/2", "3/4"],
+    "correctIndex": 1,
+    "hint": "Probability = favorable outcomes / total outcomes",
+    "explanation": "15 girls / 25 students = 3/5"
+  },
+  {
+    "question": "5. The mean of 5 numbers is 8. If one of the numbers is 10, what is the mean of the remaining 4 numbers?",
+    "options": ["7", "8", "7.5", "9"],
+    "correctIndex": 2,
+    "hint": "Sum = mean × number of terms",
+    "explanation": "Total sum = 40, remaining sum = 40-10=30 → mean = 30/4 = 7.5"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the slope of the line joining points (5,−2) and (−1,4).",
+    "options": ["−1", "1", "−6", "1/2"],
+    "correctIndex": 0,
+    "hint": "Slope formula: (y2−y1)/(x2−x1)",
+    "explanation": "Slope = (4−(−2))/(−1−5) = 6/(-6) = -1"
+  },
+  {
+    "question": "2. Find the midpoint of points (−3,1) and (7,5).",
+    "options": ["(2,3)", "(3,3)", "(2,2)", "(3,2)"],
+    "correctIndex": 0,
+    "hint": "Midpoint = ((x1+x2)/2, (y1+y2)/2)",
+    "explanation": "Midpoint = ((−3+7)/2, (1+5)/2) = (4/2,6/2) = (2,3)"
+  },
+  {
+    "question": "3. Are points (0,0), (2,5), (4,10) collinear?",
+    "options": ["Yes", "No", "Cannot Determine", "Partially"],
+    "correctIndex": 0,
+    "hint": "Check slopes of consecutive points.",
+    "explanation": "Slope 1-2 = (5−0)/(2−0)=5/2; slope 2-3 = (10−5)/(4−2)=5/2 ⇒ Yes, collinear"
+  },
+  {
+    "question": "4. Distance between points (−1,−1) and (3,2):",
+    "options": ["√20", "√18", "√16", "√25"],
+    "correctIndex": 3,
+    "hint": "Distance formula: √[(x2−x1)² + (y2−y1)²]",
+    "explanation": "Distance = √[(3−(−1))² + (2−(−1))²] = √[16 + 9] = √25 = 5"
+  },
+  {
+    "question": "5. Equation of line passing through (2,−3) with slope 4:",
+    "options": ["y+3 = 4(x−2)", "y−3 = 4(x−2)", "y+3 = −4(x−2)", "y−3 = −4(x−2)"],
+    "correctIndex": 0,
+    "hint": "Use point-slope form: y−y1 = m(x−x1)",
+    "explanation": "Equation: y−y1 = m(x−x1) ⇒ y−(−3)=4(x−2) ⇒ y+3 = 4(x−2)"
+  }
+]

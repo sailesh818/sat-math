@@ -1,0 +1,42 @@
+[
+  {
+    "question": "1. Find the equation of the line perpendicular to y = 2x + 3 passing through (1,−1).",
+    "options": [
+      "y +1 = −1/2(x−1)",
+      "y +1 = 2(x−1)",
+      "y−1 = −1/2(x−1)",
+      "y−1 = 2(x−1)"
+    ],
+    "correctIndex": 0,
+    "hint": "Slope of perpendicular line m = −1/(original slope)",
+    "explanation": "Slope of perpendicular line m = −1/2; Equation: y+1 = −1/2(x−1)"
+  },
+  {
+    "question": "2. Determine if points (−1,2), (2,−4), (5,−10) are collinear.",
+    "options": ["Yes", "No", "Cannot Determine", "Partially"],
+    "correctIndex": 0,
+    "hint": "Check slopes between consecutive points",
+    "explanation": "Slope (−1,2)-(2,−4) = −6/3 = −2; Slope (2,−4)-(5,−10) = −6/3=−2 ⇒ collinear"
+  },
+  {
+    "question": "3. Find the midpoint of the line segment joining (3,−5) and (9,7).",
+    "options": ["(6,1)", "(5,1)", "(6,−1)", "(5,0)"],
+    "correctIndex": 0,
+    "hint": "Midpoint formula: ((x1+x2)/2,(y1+y2)/2)",
+    "explanation": "Midpoint = ((3+9)/2,(−5+7)/2) = (6,1)"
+  },
+  {
+    "question": "4. Distance between points (−3,4) and (3,−2) is:",
+    "options": ["√72", "√36", "√48", "√60"],
+    "correctIndex": 0,
+    "hint": "Distance formula: √[(x2−x1)² + (y2−y1)²]",
+    "explanation": "Distance = √[(3+3)² + (−2−4)²] = √[36+36]=√72"
+  },
+  {
+    "question": "5. Equation of the line passing through (0,1) with slope −3 is:",
+    "options": ["y−1 = −3x", "y+1 = −3x", "y−1 = 3x", "y+1 = 3x"],
+    "correctIndex": 0,
+    "hint": "Point-slope formula: y−y1 = m(x−x1)",
+    "explanation": "Equation: y−1 = −3(x−0) ⇒ y−1 = −3x"
+  }
+]

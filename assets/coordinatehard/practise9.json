@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the equation of the line passing through (2,-1) and perpendicular to y = 3x + 4.",
+    "options": ["y = -1/3x + 1/3", "y = 1/3x - 1/3", "y = -3x + 2", "y = 1/3x + 2"],
+    "correctIndex": 0,
+    "hint": "Perpendicular slope: m1*m2=-1, use point-slope form.",
+    "explanation": "Slope of given line =3, perpendicular slope = -1/3, passing through (2,-1): y+1=-1/3(x-2) → y=-1/3x +1/3"
+  },
+  {
+    "question": "2. Determine the midpoint of the segment joining (-4,-2) and (6,8).",
+    "options": ["(1,3)", "(2,3)", "(1,2)", "(2,2)"],
+    "correctIndex": 0,
+    "hint": "Midpoint = ((x1+x2)/2,(y1+y2)/2)",
+    "explanation": "Midpoint = ((-4+6)/2,(-2+8)/2)=(2/2,6/2)=(1,3)"
+  },
+  {
+    "question": "3. Calculate the distance between points (5,-3) and (-1,1).",
+    "options": ["√52", "√50", "√48", "√54"],
+    "correctIndex": 1,
+    "hint": "Distance = √[(x2-x1)² + (y2-y1)²]",
+    "explanation": "Distance = √[(-1-5)² + (1+3)²]=√[36+16]=√52 → correct √52"
+  },
+  {
+    "question": "4. Check if points (-1,0), (0,1), and (1,2) are collinear.",
+    "options": ["Yes", "No", "Only first two", "Cannot determine"],
+    "correctIndex": 0,
+    "hint": "Compare slopes between pairs of points.",
+    "explanation": "Slope (-1,0)-(0,1)=1/1=1, slope (0,1)-(1,2)=1/1=1 → collinear"
+  },
+  {
+    "question": "5. Find the slope of the line joining points (3,5) and (7,-3).",
+    "options": ["-2", "2", "-1/2", "1/2"],
+    "correctIndex": 0,
+    "hint": "Slope = (y2-y1)/(x2-x1)",
+    "explanation": "Slope = (-3-5)/(7-3)=-8/4=-2"
+  }
+]

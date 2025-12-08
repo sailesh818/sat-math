@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 9, 12, 15. Find area.",
+    "options": ["54", "50", "56", "52"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*9*12=54"
+  },
+  {
+    "question": "2. A circle has radius 7. Find area.",
+    "options": ["49π", "48π", "50π", "51π"],
+    "correctIndex": 0,
+    "hint": "Area = πr²",
+    "explanation": "Area = π*7²=49π"
+  },
+  {
+    "question": "3. A cone has height 9 and radius 4. Find volume.",
+    "options": ["48π", "45π", "50π", "46π"],
+    "correctIndex": 0,
+    "hint": "Volume = 1/3 π r² h",
+    "explanation": "Volume = 1/3 * π * 16 * 9 = 48π"
+  },
+  {
+    "question": "4. A parallelogram has sides 12, 8 with angle 45°. Find area.",
+    "options": ["67.88", "68", "66", "70"],
+    "correctIndex": 0,
+    "hint": "Area = a*b*sinθ",
+    "explanation": "Area = 12*8*sin45° = 96*√2/2 ≈ 67.88"
+  },
+  {
+    "question": "5. A trapezoid has bases 10 and 18, height 7. Find area.",
+    "options": ["98", "100", "95", "105"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(b1+b2)*h",
+    "explanation": "Area = 1/2*(10+18)*7=98"
+  }
+]

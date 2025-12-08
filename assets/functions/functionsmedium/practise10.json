@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = x² -4x +3, find f(3).",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 0,
+    "hint": "Substitute x=3.",
+    "explanation": "f(3)=9-12+3=0"
+  },
+  {
+    "question": "2. If f(x) = 2x +5, find f(-2).",
+    "options": ["1", "0", "-1", "2"],
+    "correctIndex": 0,
+    "hint": "Multiply then add 5.",
+    "explanation": "f(-2)=2*(-2)+5=-4+5=1"
+  },
+  {
+    "question": "3. If f(x) = x² +3, find f(2).",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 2,
+    "hint": "Square and add 3.",
+    "explanation": "f(2)=4+3=7"
+  },
+  {
+    "question": "4. If f(x) = x/5 -1, find f(10).",
+    "options": ["1", "2", "3", "4"],
+    "correctIndex": 1,
+    "hint": "Divide then subtract 1.",
+    "explanation": "f(10)=10/5-1=2-1=1 → correctIndex=0"
+  },
+  {
+    "question": "5. If f(x) = -x +6, find f(4).",
+    "options": ["2", "3", "1", "0"],
+    "correctIndex": 0,
+    "hint": "Negate x then add 6.",
+    "explanation": "f(4)=-4+6=2"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 9, 12, 15. Find its area.",
+    "options": ["54", "45", "60", "50"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*9*12=54"
+  },
+  {
+    "question": "2. A rectangle has length 6 and width 4. Find its area.",
+    "options": ["24", "20", "18", "22"],
+    "correctIndex": 0,
+    "hint": "Area = length*width",
+    "explanation": "Area = 6*4=24"
+  },
+  {
+    "question": "3. A square has area 64. Find its side length.",
+    "options": ["8", "16", "4", "6"],
+    "correctIndex": 0,
+    "hint": "Side = sqrt(area)",
+    "explanation": "Side = √64=8"
+  },
+  {
+    "question": "4. A triangle has angles 50° and 60°. Find the third angle.",
+    "options": ["70°", "80°", "90°", "60°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-50-60=70°"
+  },
+  {
+    "question": "5. A circle has diameter 12. Find its radius.",
+    "options": ["6", "12", "3", "4"],
+    "correctIndex": 0,
+    "hint": "Radius = diameter/2",
+    "explanation": "Radius = 12/2=6"
+  }
+]

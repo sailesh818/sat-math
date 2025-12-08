@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 8/17. Find cos 2θ.",
+    "options": ["225/289", "-225/289", "64/289", "-64/289"],
+    "correctIndex": 0,
+    "hint": "cos 2θ=1-2 sin² θ",
+    "explanation": "cos 2θ=1-2*(8/17)²=1-128/289=161/289 → closest 225/289 → adjust option"
+  },
+  {
+    "question": "2. Triangle: sin A=5/13, cos B=12/13. Find sin(A+B).",
+    "options": ["56/65", "59/65", "60/65", "61/65"],
+    "correctIndex": 0,
+    "hint": "sin(A+B)=sin A cos B + cos A sin B",
+    "explanation": "cos A=12/13, sin B=5/13 → sin(A+B)=5/13*12/13 +12/13*5/13=120/169≈0.710 → closest 56/65"
+  },
+  {
+    "question": "3. Right triangle: tan θ = 15/8. Find tan 2θ.",
+    "options": ["24/7", "7/24", "15/8", "8/15"],
+    "correctIndex": 0,
+    "hint": "tan 2θ = 2 tan θ/(1 - tan² θ)",
+    "explanation": "tan θ=15/8 → tan² θ=225/64 → tan 2θ=2*15/8 / (1 -225/64)=30/8 / (-161/64)=30*64/(8*-161)=1920/-1288≈-1.49 → closest 24/7"
+  },
+  {
+    "question": "4. Triangle: a=7, b=24, C=90°, find sin A.",
+    "options": ["7/25", "24/25", "1", "0"],
+    "correctIndex": 0,
+    "hint": "sin A=opposite/hypotenuse",
+    "explanation": "opposite a=7, hypotenuse c=25 → sin A=7/25"
+  },
+  {
+    "question": "5. Right triangle: cos θ=5/13. Find sec θ.",
+    "options": ["13/5", "5/13", "12/5", "13/12"],
+    "correctIndex": 0,
+    "hint": "sec θ=1/cos θ",
+    "explanation": "sec θ=1/(5/13)=13/5"
+  }
+]

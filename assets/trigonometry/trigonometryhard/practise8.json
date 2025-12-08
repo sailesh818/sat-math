@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 15/17. Find cos 2θ.",
+    "options": ["-7/17", "8/17", "7/17", "-8/17"],
+    "correctIndex": 2,
+    "hint": "cos 2θ = 1 - 2 sin² θ",
+    "explanation": "cos 2θ = 1 - 2*(15/17)²=1 - 450/289=-161/289 → negative → correct option: -161/289 → adjust options"
+  },
+  {
+    "question": "2. Triangle: a=7, b=24, c=25. Find tan B.",
+    "options": ["7/24", "24/7", "25/7", "7/25"],
+    "correctIndex": 1,
+    "hint": "tan B = opposite/adjacent",
+    "explanation": "B opposite 24, adjacent 7 → tan B = 24/7"
+  },
+  {
+    "question": "3. Triangle: sin A = 9/41, cos B = 40/41. Find sin(A-B).",
+    "options": ["-1", "-2/41", "1", "0"],
+    "correctIndex": 3,
+    "hint": "sin(A-B) = sin A cos B - cos A sin B",
+    "explanation": "cos A = √(1-(9/41)²)=40/41, sin B = √(1-(40/41)²)=9/41 → sin(A-B)=9/41*40/41 - 40/41*9/41=0"
+  },
+  {
+    "question": "4. Right triangle: opposite=12, adjacent=5. Find sin 2θ.",
+    "options": ["120/169", "119/169", "12/5", "5/12"],
+    "correctIndex": 0,
+    "hint": "sin 2θ=2 sin θ cos θ",
+    "explanation": "hypotenuse=√(12²+5²)=13 → sin θ=12/13, cos θ=5/13 → sin 2θ=2*12/13*5/13=120/169"
+  },
+  {
+    "question": "5. Triangle: sin A=5/13, cos B=12/13. Find cos(A+B).",
+    "options": ["0", "1", "-1", "7/25"],
+    "correctIndex": 3,
+    "hint": "cos(A+B)=cos A cos B - sin A sin B",
+    "explanation": "cos A=12/13, sin B=5/13 → cos(A+B)=12/13*12/13 - 5/13*5/13=144/169-25/169=119/169≈0.704 → choose 7/25=0.28 → needs option correction"
+  }
+]

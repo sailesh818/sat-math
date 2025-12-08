@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 4x² - 3x +1, find f(-1).",
+    "options": ["-6", "0", "2", "4"],
+    "correctIndex": 1,
+    "hint": "Compute square and multiply.",
+    "explanation": "f(-1)=4*1 +3 +1=4+3+1=8 → correctIndex=3"
+  },
+  {
+    "question": "2. If f(x) = -2x² +5x -3, find f(2).",
+    "options": ["-1", "0", "1", "2"],
+    "correctIndex": 0,
+    "hint": "Compute each term.",
+    "explanation": "f(2)=-8+10-3=-1"
+  },
+  {
+    "question": "3. If f(x) = 3x² -4x +2, find f(0).",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 2,
+    "hint": "Plug x=0.",
+    "explanation": "f(0)=0-0+2=2"
+  },
+  {
+    "question": "4. If f(x) = x² - 6x + 8, find f(5).",
+    "options": ["3", "5", "8", "10"],
+    "correctIndex": 0,
+    "hint": "Compute square first.",
+    "explanation": "f(5)=25-30+8=3"
+  },
+  {
+    "question": "5. If f(x) = 0.5x² - x + 1, find f(4).",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 1,
+    "hint": "Compute 0.5*4² -4 +1.",
+    "explanation": "f(4)=8-4+1=5 → correctIndex=0"
+  }
+]

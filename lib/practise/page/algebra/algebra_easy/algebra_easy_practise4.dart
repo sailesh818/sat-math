@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AlgebraEasyPractise4 extends StatefulWidget {
   const AlgebraEasyPractise4({super.key});
@@ -12,8 +15,11 @@ class _AlgebraEasyPractise4State extends State<AlgebraEasyPractise4> {
   int? selectedAnswerIndex;
   bool answerChecked = false;
   bool showHint = false;
+  bool isLoadingPoints = true;
+  int userPoints = 0;
 
-  // 🔹 Topic: Using the Distributive Property
+  RewardedAd? _rewardedAd;
+
   final List<Map<String, dynamic>> questions = [
     {
       'question': '1. Simplify: 3(x + 2)',
@@ -48,19 +54,88 @@ class _AlgebraEasyPractise4State extends State<AlgebraEasyPractise4> {
       'options': ['10x + 3', '6x + 3', '6x + 6', '10x + 6'],
       'correctIndex': 1,
       'hint': 'Expand first, then combine like terms.',
-      'explanation': '2(5x + 3) = 10x + 6 → (10x + 6) - 4x = 6x + 3.'
+      'explanation':
+          '2(5x + 3) = 10x + 6 → (10x + 6) - 4x = 6x + 3.'
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    loadUserPoints();
+    loadRewardedAd();
+  }
+
+  // 🔹 Load Firestore points
+  Future<void> loadUserPoints() async {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null) return;
+
+    final doc =
+        await FirebaseFirestore.instance.collection('users').doc(uid).get();
+
+    setState(() {
+      userPoints = doc.data()?['points'] ?? 0;
+      isLoadingPoints = false;
+    });
+  }
+
+  // 🔹 Update points to Firestore
+  Future<void> updatePoints(int newPoints) async {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null) return;
+
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(uid)
+        .update({'points': newPoints});
+
+    setState(() {
+      userPoints = newPoints;
+    });
+  }
+
+  // 🔹 Load Rewarded Ad
+  void loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-3940256099942544/5224354917', // test ID
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) => _rewardedAd = ad,
+        onAdFailedToLoad: (_) => _rewardedAd = null,
+      ),
+    );
+  }
+
+  // 🔹 Watch ad to get hint
+  void showRewardedAd() {
+    if (_rewardedAd == null) return;
+
+    _rewardedAd!.show(
+      onUserEarnedReward: (ad, reward) {
+        setState(() => showHint = true);
+      },
+    );
+
+    loadRewardedAd();
+  }
+
+  // 🔹 Check answer
   void checkAnswer(int index) {
     if (!answerChecked) {
       setState(() {
         selectedAnswerIndex = index;
         answerChecked = true;
       });
+
+      // Give +1 point for correct answer
+      if (index == questions[currentQuestionIndex]['correctIndex']) {
+        updatePoints(userPoints + 1);
+      }
     }
   }
 
+  // 🔹 Load next question
   void nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
@@ -73,8 +148,8 @@ class _AlgebraEasyPractise4State extends State<AlgebraEasyPractise4> {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Great Job!'),
-          content: const Text('You have completed all practise questions!'),
+          title: const Text('🎉 Completed!'),
+          content: const Text('You finished all practise questions!'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -84,6 +159,37 @@ class _AlgebraEasyPractise4State extends State<AlgebraEasyPractise4> {
         ),
       );
     }
+  }
+
+  // 🔹 Ask user: Use 5 points OR Watch Ad
+  void askHintChoice() {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text("Need a Hint?"),
+        content: Text(
+            "You can use 5 points (You have $userPoints) or watch a rewarded ad."),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              if (userPoints >= 5) {
+                updatePoints(userPoints - 5);
+                setState(() => showHint = true);
+              }
+            },
+            child: const Text("Use 5 Points"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              showRewardedAd();
+            },
+            child: const Text("Watch Ad"),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -101,149 +207,153 @@ class _AlgebraEasyPractise4State extends State<AlgebraEasyPractise4> {
         centerTitle: true,
       ),
 
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            /// QUESTION CARD
-            Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Text(
-                  question['question'],
-                  style: const TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w600,
-                    height: 1.4,
-                  ),
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            /// OPTIONS
-            ...List.generate(question['options'].length, (index) {
-              final option = question['options'][index];
-              final isSelected = selectedAnswerIndex == index;
-              final isCorrect =
-                  answerChecked && index == question['correctIndex'];
-              final isWrong = answerChecked && isSelected && !isCorrect;
-
-              return Card(
-                color: isCorrect
-                    ? Colors.lightGreen.shade200
-                    : isWrong
-                        ? Colors.red.shade200
-                        : Colors.white,
-                elevation: 2,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: ListTile(
-                  leading: CircleAvatar(
-                    backgroundColor: Colors.green,
-                    child: Text(
-                      "${index + 1}",
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  title: Text(
-                    option,
-                    style: const TextStyle(fontSize: 17),
-                  ),
-                  onTap: () => checkAnswer(index),
-                ),
-              );
-            }),
-
-            const SizedBox(height: 10),
-
-            /// HINT BUTTON
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      showHint = !showHint;
-                    });
-                  },
-                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
-                  label: const Text(
-                    "Hint",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      body: isLoadingPoints
+          ? const Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  /// QUESTION CARD
+                  Card(
+                    elevation: 4,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Text(
+                        question['question'],
+                        style: const TextStyle(
+                          fontSize: 19,
+                          fontWeight: FontWeight.w600,
+                          height: 1.4,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
 
-            if (showHint)
-              Container(
-                margin: const EdgeInsets.only(top: 12),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade100,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  question['hint'],
-                  style: const TextStyle(fontSize: 16),
-                ),
-              ),
+                  const SizedBox(height: 20),
 
-            const SizedBox(height: 20),
+                  /// OPTIONS
+                  ...List.generate(question['options'].length, (index) {
+                    final option = question['options'][index];
+                    final isSelected = selectedAnswerIndex == index;
+                    final isCorrect = answerChecked &&
+                        index == question['correctIndex'];
+                    final isWrong = answerChecked &&
+                        isSelected &&
+                        !isCorrect;
 
-            if (answerChecked)
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.green.shade100,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  "Explanation: ${question['explanation']}",
-                  style: const TextStyle(fontSize: 16),
-                ),
-              ),
+                    return Card(
+                      color: isCorrect
+                          ? Colors.lightGreen.shade200
+                          : isWrong
+                              ? Colors.red.shade200
+                              : Colors.white,
+                      elevation: 2,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.green,
+                          child: Text(
+                            "${index + 1}",
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        title: Text(
+                          option,
+                          style: const TextStyle(fontSize: 17),
+                        ),
+                        onTap: () => checkAnswer(index),
+                      ),
+                    );
+                  }),
 
-            const SizedBox(height: 20),
+                  const SizedBox(height: 10),
 
-            /// NEXT BUTTON
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: nextQuestion,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
+                  /// HINT BUTTON
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      ElevatedButton.icon(
+                        onPressed: askHintChoice,
+                        icon: const Icon(Icons.lightbulb_outline,
+                            color: Colors.white),
+                        label: const Text(
+                          "Hint",
+                          style:
+                              TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                child: Text(
-                  currentQuestionIndex == questions.length - 1
-                      ? "Finish"
-                      : "Next Question",
-                  style: const TextStyle(fontSize: 18, color: Colors.white),
-                ),
+
+                  if (showHint)
+                    Container(
+                      margin: const EdgeInsets.only(top: 12),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.orange.shade100,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        question['hint'],
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                    ),
+
+                  const SizedBox(height: 20),
+
+                  if (answerChecked)
+                    Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        color: Colors.green.shade100,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        "Explanation: ${question['explanation']}",
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                    ),
+
+                  const SizedBox(height: 20),
+
+                  /// NEXT BUTTON
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: nextQuestion,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        padding:
+                            const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      child: Text(
+                        currentQuestionIndex == questions.length - 1
+                            ? "Finish"
+                            : "Next Question",
+                        style: const TextStyle(
+                            fontSize: 18, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
     );
   }
 }

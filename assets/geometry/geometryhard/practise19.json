@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A rectangular prism has sides 3, 4, 12. Find volume.",
+    "options": ["144", "140", "150", "148"],
+    "correctIndex": 0,
+    "hint": "Volume = l*w*h",
+    "explanation": "Volume = 3*4*12=144"
+  },
+  {
+    "question": "2. A triangle has vertices (1,2),(4,6),(7,3). Find area.",
+    "options": ["6", "8", "10", "12"],
+    "correctIndex": 3,
+    "hint": "Area = 1/2*|x₁(y₂−y₃)+x₂(y₃−y₁)+x₃(y₁−y₂)|",
+    "explanation": "Area = 1/2*|1(6−3)+4(3−2)+7(2−6)|=12"
+  },
+  {
+    "question": "3. A cone has radius 3 and slant height 5. Find lateral surface area.",
+    "options": ["15π", "18π", "20π", "16π"],
+    "correctIndex": 0,
+    "hint": "Lateral area = π*r*l",
+    "explanation": "Area = π*3*5=15π"
+  },
+  {
+    "question": "4. A circle has circumference 24π. Find radius.",
+    "options": ["12", "10", "8", "6"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "24π=2πr → r=12"
+  },
+  {
+    "question": "5. A square has area 100. Find diagonal.",
+    "options": ["10√2", "12", "14", "15"],
+    "correctIndex": 0,
+    "hint": "Diagonal = side*√2",
+    "explanation": "Side = √100=10 → Diagonal = 10√2"
+  }
+]

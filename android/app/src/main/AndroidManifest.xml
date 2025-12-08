@@ -10,8 +10,8 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6704136477020125~9742416190"/>  <!-- real ad unit-->
-            <!-- android:value="ca-app-pub-3940256099942544~3347511713"--> <!-- Test App ID -->
+            android:value="ca-app-pub-6704136477020125~9742416190"/>  <!-- real ad unit ID   ca-app-pub-6704136477020125~9742416190  -->
+            <!-- android:value="ca-app-pub-3940256099942544~3347511713"--> <!-- Test App ID  -->
             
         <activity
             android:name=".MainActivity"

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag: 2 red, 3 green, 5 blue. Draw 1. Probability red?",
+    "options": ["1/5", "1/10", "1/2", "2/5"],
+    "correctIndex": 0,
+    "hint": "Favorable/total",
+    "explanation": "2/10=1/5"
+  },
+  {
+    "question": "2. Coin tossed 3 times. Probability exactly 1 tail?",
+    "options": ["1/8", "3/8", "1/2", "1/4"],
+    "correctIndex": 1,
+    "hint": "Use C(3,1)*(1/2)^3",
+    "explanation": "3*(1/8)=3/8"
+  },
+  {
+    "question": "3. Mean=10 for 5 numbers: 8,12,9,11,x. Find x.",
+    "options": ["10", "11", "9", "12"],
+    "correctIndex": 0,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=50 → 8+12+9+11=40 → x=10"
+  },
+  {
+    "question": "4. Standard deviation unchanged if numbers multiplied by 1. True/False?",
+    "options": ["True", "False", "Cannot say", "Depends"],
+    "correctIndex": 0,
+    "hint": "Multiplier=1 does not change SD",
+    "explanation": "SD same"
+  },
+  {
+    "question": "5. Probability of drawing red or blue from bag 2 red,3 green,5 blue?",
+    "options": ["1/2", "7/10", "4/5", "3/5"],
+    "correctIndex": 1,
+    "hint": "Add probabilities",
+    "explanation": "P(red or blue)=2/10+5/10=7/10"
+  }
+]

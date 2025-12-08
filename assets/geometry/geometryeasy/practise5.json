@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the area of a rectangle with length 7 and width 3.",
+    "options": ["21", "10", "24", "18"],
+    "correctIndex": 0,
+    "hint": "Area = length * width",
+    "explanation": "Area = 7*3=21"
+  },
+  {
+    "question": "2. A triangle has sides 6, 8, 10. Find its area.",
+    "options": ["24", "20", "30", "28"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*6*8=24"
+  },
+  {
+    "question": "3. A square has side 9. Find its area.",
+    "options": ["81", "72", "64", "90"],
+    "correctIndex": 0,
+    "hint": "Area = side²",
+    "explanation": "Area = 9²=81"
+  },
+  {
+    "question": "4. Find the perimeter of a triangle with sides 3, 4, 5.",
+    "options": ["12", "10", "11", "13"],
+    "correctIndex": 0,
+    "hint": "Perimeter = sum of sides",
+    "explanation": "Perimeter = 3+4+5=12"
+  },
+  {
+    "question": "5. The sum of interior angles of a quadrilateral is?",
+    "options": ["360°", "180°", "540°", "720°"],
+    "correctIndex": 0,
+    "hint": "Sum = (n-2)*180",
+    "explanation": "Sum = (4-2)*180=360°"
+  }
+]

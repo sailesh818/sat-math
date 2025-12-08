@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 2x + 4, what is f(7)?",
+    "options": ["16", "17", "18", "19"],
+    "correctIndex": 2,
+    "hint": "Multiply by 2, then add 4.",
+    "explanation": "f(7) = 14 + 4 = 18"
+  },
+  {
+    "question": "2. If f(x) = x - 6, what is f(11)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 1,
+    "hint": "Subtract 6 from x.",
+    "explanation": "f(11) = 11 - 6 = 5"
+  },
+  {
+    "question": "3. If f(x) = x² + 6, what is f(5)?",
+    "options": ["30", "31", "32", "33"],
+    "correctIndex": 1,
+    "hint": "Square x, then add 6.",
+    "explanation": "f(5) = 25 + 6 = 31"
+  },
+  {
+    "question": "4. If f(x) = 28/x, what is f(7)?",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 1,
+    "hint": "Divide 28 by x.",
+    "explanation": "f(7) = 28 ÷ 7 = 4"
+  },
+  {
+    "question": "5. If f(x) = 4x - 3, what is f(5)?",
+    "options": ["16", "17", "18", "19"],
+    "correctIndex": 0,
+    "hint": "Multiply by 4, then subtract 3.",
+    "explanation": "f(5) = 20 - 3 = 17"
+  }
+]

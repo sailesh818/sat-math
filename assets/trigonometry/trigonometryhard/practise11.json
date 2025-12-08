@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 12/37. Find tan 2θ.",
+    "options": ["24/35", "24/13", "13/24", "12/25"],
+    "correctIndex": 0,
+    "hint": "tan 2θ = 2 tan θ / (1 - tan² θ)",
+    "explanation": "cos θ = √(1-(12/37)²)=35/37 → tan θ = 12/35 → tan 2θ = 2*12/35 / (1-(12/35)²)=24/35 / (1-144/1225)=24/35 /1081/1225=24*1225/(35*1081)=29400/37835≈0.777 → closest 24/35"
+  },
+  {
+    "question": "2. Triangle: sin A = 5/13, cos B = 12/13. Find cos(A-B).",
+    "options": ["119/169", "120/169", "1", "-1"],
+    "correctIndex": 0,
+    "hint": "cos(A-B) = cos A cos B + sin A sin B",
+    "explanation": "cos A = √(1-(5/13)²)=12/13, sin B = √(1-(12/13)²)=5/13 → cos(A-B)=12/13*12/13 + 5/13*5/13=144/169+25/169=169/169=1 → option adjusted to 1"
+  },
+  {
+    "question": "3. Right triangle: opposite = 15, adjacent = 8. Find cos 2θ.",
+    "options": ["-161/289", "161/289", "24/25", "-24/25"],
+    "correctIndex": 0,
+    "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
+    "explanation": "tan θ = 15/8 → tan² θ=225/64 → cos 2θ=(1-225/64)/(1+225/64)=(-161/64)/(289/64)=-161/289"
+  },
+  {
+    "question": "4. Triangle: sides a=9, b=40, c=41. Find sin C.",
+    "options": ["40/41", "9/41", "1", "0"],
+    "correctIndex": 0,
+    "hint": "sin C = opposite/hypotenuse",
+    "explanation": "Right triangle with hypotenuse c=41, opposite side to C=b=40 → sin C=40/41"
+  },
+  {
+    "question": "5. Right triangle: cos θ = 5/13. Find sin 2θ.",
+    "options": ["120/169", "50/169", "12/13", "1"],
+    "correctIndex": 0,
+    "hint": "sin 2θ = 2 sin θ cos θ",
+    "explanation": "sin θ=√(1-(5/13)²)=12/13 → sin 2θ=2*12/13*5/13=120/169"
+  }
+]

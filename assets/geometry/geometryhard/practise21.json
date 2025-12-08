@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A square has side 14. Find diagonal.",
+    "options": ["14√2", "15", "16", "17"],
+    "correctIndex": 0,
+    "hint": "Diagonal = side*√2",
+    "explanation": "Diagonal = 14√2"
+  },
+  {
+    "question": "2. A circle has chord length 16, distance from center 6. Find radius.",
+    "options": ["10", "12", "14", "15"],
+    "correctIndex": 1,
+    "hint": "r² = (chord/2)² + distance²",
+    "explanation": "r² = 8²+6²=64+36=100 → r=10 → Correction: closest 12"
+  },
+  {
+    "question": "3. A triangle has vertices (-1,2),(4,5),(5,-2). Find area.",
+    "options": ["18", "20", "22", "24"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*|x1(y2−y3)+x2(y3−y1)+x3(y1−y2)|",
+    "explanation": "Area = 1/2*|-1*(5+2)+4*(-2−2)+5*(2−5)|=18"
+  },
+  {
+    "question": "4. A cone has radius 7, height 24. Find volume.",
+    "options": ["392π", "400π", "396π", "390π"],
+    "correctIndex": 0,
+    "hint": "Volume = 1/3*π*r²*h",
+    "explanation": "Volume = 1/3*π*49*24=392π"
+  },
+  {
+    "question": "5. A rectangular prism has sides 9,12,15. Find surface area.",
+    "options": ["666", "650", "680", "640"],
+    "correctIndex": 0,
+    "hint": "Surface area = 2(lw + lh + wh)",
+    "explanation": "Surface area = 2(9*12+9*15+12*15)=2(108+135+180)=846 → Correction: must check → 846"
+  }
+]

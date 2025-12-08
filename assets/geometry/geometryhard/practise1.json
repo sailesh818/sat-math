@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 7, 24, and 25. Prove that this is a right triangle and find its area.",
+    "options": ["84", "88", "90", "92"],
+    "correctIndex": 0,
+    "hint": "Use the Pythagorean theorem to verify if the triangle is right-angled.",
+    "explanation": "7² + 24² = 25², so this is a right triangle. Area = 1/2 * 7 * 24 = 84"
+  },
+  {
+    "question": "2. A circle has an arc of length 10π and radius 10. What is the measure of the central angle of the arc in radians?",
+    "options": ["1", "2", "π", "3"],
+    "correctIndex": 0,
+    "hint": "Arc length = radius * central angle (in radians)",
+    "explanation": "Arc length = 10π → 10π = 10 * central angle → central angle = π"
+  },
+  {
+    "question": "3. A right triangle has one leg of length 9 and the hypotenuse of length 15. Find the length of the other leg.",
+    "options": ["12", "10", "11", "13"],
+    "correctIndex": 1,
+    "hint": "Use the Pythagorean theorem to solve for the missing leg.",
+    "explanation": "9² + b² = 15² → 81 + b² = 225 → b² = 144 → b = 12"
+  },
+  {
+    "question": "4. A parallelogram has diagonals of lengths 10 and 24. The diagonals bisect each other at an angle of 60°. Find the area of the parallelogram.",
+    "options": ["120", "130", "140", "150"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * d₁ * d₂ * sin(θ), where d₁ and d₂ are the diagonals, and θ is the angle between them.",
+    "explanation": "Area = 1/2 * 10 * 24 * sin(60°) = 120"
+  },
+  {
+    "question": "5. A sphere has a volume of 288π cubic units. Find the radius of the sphere.",
+    "options": ["6", "8", "10", "12"],
+    "correctIndex": 0,
+    "hint": "Volume of a sphere = (4/3)πr³",
+    "explanation": "288π = (4/3)πr³ → r³ = 288 * 3 / 4 = 216 → r = 6"
+  }
+]

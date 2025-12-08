@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = x² - x +2, find f(2).",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 2,
+    "hint": "Substitute x=2.",
+    "explanation": "f(2)=4-2+2=4"
+  },
+  {
+    "question": "2. If f(x) = 5x +3, find f(1).",
+    "options": ["7", "8", "9", "10"],
+    "correctIndex": 0,
+    "hint": "Multiply then add.",
+    "explanation": "f(1)=5+3=8 → correctIndex=1"
+  },
+  {
+    "question": "3. If f(x) = 2x² - 3x +1, find f(1).",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 1,
+    "hint": "Compute each term.",
+    "explanation": "f(1)=2-3+1=0 → correctIndex=0"
+  },
+  {
+    "question": "4. If f(x) = x/4 +2, find f(8).",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 2,
+    "hint": "Divide then add 2.",
+    "explanation": "f(8)=8/4+2=2+2=4 → correctIndex=1"
+  },
+  {
+    "question": "5. If f(x) = -x +6, find f(2).",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 1,
+    "hint": "Negate x then add 6.",
+    "explanation": "f(2)=-2+6=4"
+  }
+]

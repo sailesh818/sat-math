@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has hypotenuse 13 and one leg 5. Find the other leg.",
+    "options": ["12", "10", "11", "8"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: a²+b²=c²",
+    "explanation": "5² + b² = 13² → b²=144 → b=12"
+  },
+  {
+    "question": "2. A rectangle has area 84 and width 6. Find its length.",
+    "options": ["14", "12", "15", "13"],
+    "correctIndex": 0,
+    "hint": "Area = length*width",
+    "explanation": "Length = 84/6=14"
+  },
+  {
+    "question": "3. A square has perimeter 48. Find its diagonal.",
+    "options": ["12√2", "10√2", "14√2", "8√2"],
+    "correctIndex": 0,
+    "hint": "Diagonal = side*√2, side=perimeter/4",
+    "explanation": "Side=48/4=12 → diagonal=12√2"
+  },
+  {
+    "question": "4. A circle has diameter 16. Find its area in terms of π.",
+    "options": ["64π", "72π", "80π", "60π"],
+    "correctIndex": 0,
+    "hint": "Radius = diameter/2, Area = π*r²",
+    "explanation": "Radius=8 → Area=π*8²=64π"
+  },
+  {
+    "question": "5. A triangle has angles 35° and 55°. Find the third angle.",
+    "options": ["90°", "80°", "85°", "75°"],
+    "correctIndex": 1,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-35-55=90°"
+  }
+]

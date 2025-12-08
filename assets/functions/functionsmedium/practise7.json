@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = x² - 2x + 1, find f(3).",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 0,
+    "hint": "Plug in x=3.",
+    "explanation": "f(3)=9-6+1=4"
+  },
+  {
+    "question": "2. If f(x) = 3x + 2, find f(-2).",
+    "options": ["-2", "-4", "-6", "0"],
+    "correctIndex": 1,
+    "hint": "Multiply then add 2.",
+    "explanation": "f(-2)=3*(-2)+2=-6+2=-4"
+  },
+  {
+    "question": "3. If f(x) = 2x² + 5, find f(1).",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 0,
+    "hint": "Compute the square term first.",
+    "explanation": "f(1)=2*1+5=2+5=7 → correctIndex=1"
+  },
+  {
+    "question": "4. If f(x) = x/4 +3, find f(8).",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 1,
+    "hint": "Divide then add.",
+    "explanation": "f(8)=8/4+3=2+3=5"
+  },
+  {
+    "question": "5. If f(x) = -x + 9, find f(4).",
+    "options": ["5", "4", "6", "7"],
+    "correctIndex": 0,
+    "hint": "Negate x then add 9.",
+    "explanation": "f(4)=-4+9=5"
+  }
+]

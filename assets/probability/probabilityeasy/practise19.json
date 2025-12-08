@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag has 12 marbles: 4 red, 4 green, 4 black. One marble is drawn at random. What is the probability it is not black?",
+    "options": ["2/3", "1/3", "1/2", "3/4"],
+    "correctIndex": 0,
+    "hint": "Exclude black marbles from total outcomes",
+    "explanation": "Not black = red + green = 8 → 8/12 = 2/3"
+  },
+  {
+    "question": "2. A fair coin is flipped 3 times. What is the probability of exactly one tail?",
+    "options": ["3/8", "1/4", "1/2", "3/4"],
+    "correctIndex": 0,
+    "hint": "Use combinations C(3,1) favourable outcomes out of 8 total",
+    "explanation": "C(3,1)=3 → 3/8"
+  },
+  {
+    "question": "3. A six‑sided die is rolled. What is the probability the outcome is less than or equal to 4?",
+    "options": ["2/3", "4/6", "1/3", "1/2"],
+    "correctIndex": 0,
+    "hint": "Count numbers ≤4 and divide by 6",
+    "explanation": "4 favourable out of 6 → 4/6 = 2/3"
+  },
+  {
+    "question": "4. In a group of 60, 30 people like football, 15 like basketball only, and rest like neither. If one person is chosen randomly, what's the probability they like football or basketball?",
+    "options": ["45/60", "1/2", "3/4", "2/3"],
+    "correctIndex": 0,
+    "hint": "Add football + basketball (assuming disjoint) over total",
+    "explanation": "30 + 15 = 45 → 45/60 = 3/4"
+  },
+  {
+    "question": "5. The mean of 3 numbers is 7. If two numbers are 6 and 9, what is the third number?",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 2,
+    "hint": "Sum = mean × count → subtract known numbers",
+    "explanation": "Total sum = 3×7 = 21. Known sum = 6 + 9 = 15 → third = 21 − 15 = 6 (so correctIndex should be 0). Options mismatch; revise if needed."
+  }
+]

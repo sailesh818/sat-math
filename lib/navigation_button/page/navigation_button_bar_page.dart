@@ -15,8 +15,8 @@ class _NavigationButtonBarPageState extends State<NavigationButtonBarPage> {
   int _currentIndex = 0;
 
   final List<Widget> pages = [
-    TestPage(),
     HomePage(),
+    TestPage(),
   ];
 
   @override
@@ -34,7 +34,7 @@ class _NavigationButtonBarPageState extends State<NavigationButtonBarPage> {
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Learn"),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Test"),
         ],
       ),
     );

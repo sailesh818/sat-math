@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 3 red, 4 blue, 5 green. Draw 3 without replacement. Probability at least 2 green?",
+    "options": ["17/44", "15/44", "11/44", "19/44"],
+    "correctIndex": 0,
+    "hint": "Use complement or add probabilities for 2 or 3 green",
+    "explanation": "P(2 green)=5C2*7C1/12C3=10*7/220=70/220; P(3 green)=5C3/220=10/220 → total=80/220=17/44"
+  },
+  {
+    "question": "2. Coin tossed 5 times. Probability at most 1 head?",
+    "options": ["3/16", "5/16", "6/16", "1/4"],
+    "correctIndex": 1,
+    "hint": "Add probabilities for 0 and 1 head",
+    "explanation": "P(0 heads)=1/32, P(1 head)=5/32 → total=6/32=3/16? Actually 6/32=3/16"
+  },
+  {
+    "question": "3. Dataset: 1,2,3,4,5. Multiply by 4. New SD?",
+    "options": ["√20", "4√2", "√16", "8"],
+    "correctIndex": 1,
+    "hint": "SD scales by multiplier",
+    "explanation": "Original SD=√2 → multiply by 4 → 4√2"
+  },
+  {
+    "question": "4. Probability drawing exactly 1 ace in 2 draws with replacement?",
+    "options": ["3/13", "6/13", "2/13", "1/13"],
+    "correctIndex": 0,
+    "hint": "Use P(ace, not ace)+P(not ace, ace)",
+    "explanation": "P=4/52*48/52 + 48/52*4/52=384/2704=3/13"
+  },
+  {
+    "question": "5. SD=3. Multiply by -2 → new SD?",
+    "options": ["3", "6", "9", "1.5"],
+    "correctIndex": 1,
+    "hint": "SD scales with absolute multiplier",
+    "explanation": "3*2=6"
+  }
+]

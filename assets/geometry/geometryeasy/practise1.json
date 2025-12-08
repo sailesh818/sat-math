@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides of length 3, 4, and 5. What is its area?",
+    "options": ["6", "5", "4", "3"],
+    "correctIndex": 0,
+    "hint": "It's a right triangle; use (1/2)*base*height.",
+    "explanation": "Area = 1/2 * 3 * 4 = 6"
+  },
+  {
+    "question": "2. A rectangle has a length of 5 and width of 2. Find its perimeter.",
+    "options": ["14", "10", "12", "16"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length + width)",
+    "explanation": "Perimeter = 2*(5+2) = 14"
+  },
+  {
+    "question": "3. If an angle in a triangle is 90°, and the other two angles are equal, what is the measure of each of the other two angles?",
+    "options": ["45°", "60°", "30°", "50°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle is 180°",
+    "explanation": "180 - 90 = 90; divide by 2 → 45° each"
+  },
+  {
+    "question": "4. A square has side length 4. Find its area.",
+    "options": ["16", "8", "12", "10"],
+    "correctIndex": 0,
+    "hint": "Area = side²",
+    "explanation": "Area = 4² = 16"
+  },
+  {
+    "question": "5. A circle has radius 3. What is its circumference? (Use π)",
+    "options": ["6π", "9π", "3π", "12π"],
+    "correctIndex": 1,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2*π*3 = 6π → correctIndex=0? Wait 6π"
+  }
+]

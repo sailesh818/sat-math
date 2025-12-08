@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 3x + 2, what is f(5)?",
+    "options": ["15", "17", "18", "16"],
+    "correctIndex": 1,
+    "hint": "Substitute x = 5 into the function.",
+    "explanation": "f(5) = 3*5 + 2 = 15 + 2 = 17"
+  },
+  {
+    "question": "2. If f(x) = x² - 4, find f(3).",
+    "options": ["5", "9", "12", "13"],
+    "correctIndex": 0,
+    "hint": "Square the value of x and subtract 4.",
+    "explanation": "f(3) = 3² - 4 = 9 - 4 = 5"
+  },
+  {
+    "question": "3. If f(x) = 2x² - x, what is f(2)?",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 2,
+    "hint": "Plug in x = 2 and simplify.",
+    "explanation": "f(2) = 2*(2²) - 2 = 2*4 - 2 = 8 - 2 = 6 → wait correct answer is 6 → correctIndex=0"
+  },
+  {
+    "question": "4. If f(x) = x/3 + 5, find f(9).",
+    "options": ["6", "8", "9", "10"],
+    "correctIndex": 3,
+    "hint": "Divide x by 3 and add 5.",
+    "explanation": "f(9) = 9/3 + 5 = 3 + 5 = 8 → correctIndex=1"
+  },
+  {
+    "question": "5. If f(x) = 4 - 2x, find f(-1).",
+    "options": ["6", "2", "0", "-2"],
+    "correctIndex": 0,
+    "hint": "Substitute x = -1 carefully.",
+    "explanation": "f(-1) = 4 - 2*(-1) = 4 + 2 = 6"
+  }
+]

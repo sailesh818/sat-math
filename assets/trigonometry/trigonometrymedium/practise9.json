@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 9/41. Find cos θ and tan θ.",
+    "options": ["cos θ = 40/41, tan θ = 9/40", "cos θ = 40/41, tan θ = 40/9", "cos θ = 9/41, tan θ = 9/40", "cos θ = 9/41, tan θ = 40/9"],
+    "correctIndex": 1,
+    "hint": "cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1 - (9/41)²) = 40/41 → tan θ = 9/40"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 12/37. Find sin θ and tan θ.",
+    "options": ["sin θ = 35/37, tan θ = 35/12", "sin θ = 35/37, tan θ = 12/35", "sin θ = 12/37, tan θ = 35/12", "sin θ = 12/35, tan θ = 35/37"],
+    "correctIndex": 0,
+    "hint": "Use sin² + cos² = 1, tan θ = sin θ / cos θ",
+    "explanation": "sin θ = √(1 - (12/37)²) = 35/37 → tan θ = 35/12"
+  },
+  {
+    "question": "3. Right triangle: opposite = 21, adjacent = 20. Find θ in degrees.",
+    "options": ["45°, 46°, 47°, 48°"],
+    "correctIndex": 2,
+    "hint": "θ = arctan(opposite/adjacent)",
+    "explanation": "θ = arctan(21/20) ≈ 47°"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 29, opposite = 21. Find cos θ.",
+    "options": ["20/29", "21/29", "21/20", "29/21"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = √(29² - 21²) = 20 → cos θ = 20/29"
+  },
+  {
+    "question": "5. Right triangle: tan θ = 21/20. Find sin θ.",
+    "options": ["21/29", "20/29", "21/20", "20/21"],
+    "correctIndex": 0,
+    "hint": "opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
+    "explanation": "Hypotenuse = √(21²+20²) = 29 → sin θ = 21/29"
+  }
+]

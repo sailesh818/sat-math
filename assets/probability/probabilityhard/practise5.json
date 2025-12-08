@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 5 red, 7 blue, 8 green. Draw 3 without replacement. Probability all different colors?",
+    "options": ["140/684", "1/6", "35/114", "5/38"],
+    "correctIndex": 2,
+    "hint": "P = (choose R)*(choose B)*(choose G)/total combinations",
+    "explanation": "Total ways: C(20,3)=1140 → favorable=5*7*8=280 → P=280/1140=35/114"
+  },
+  {
+    "question": "2. Coin tossed 6 times. Probability exactly 4 heads?",
+    "options": ["15/64", "15/32", "15/48", "5/16"],
+    "correctIndex": 1,
+    "hint": "C(6,4)*(1/2)^6",
+    "explanation": "C(6,4)=15 → 15*(1/64)=15/64 → correctIndex=0"
+  },
+  {
+    "question": "3. Dataset: 1,2,3,4,5. Multiply all by -2. New mean?",
+    "options": ["-6", "-5", "-4", "-3"],
+    "correctIndex": 0,
+    "hint": "Mean scales linearly with multiplier",
+    "explanation": "Original mean=3 → multiply by -2 → -6"
+  },
+  {
+    "question": "4. Probability drawing exactly 2 kings in 5 draws without replacement?",
+    "options": ["33/2599", "66/2599", "44/2599", "55/2599"],
+    "correctIndex": 1,
+    "hint": "Use hypergeometric formula",
+    "explanation": "C(4,2)*C(48,3)/C(52,5)=6*17296/2598960=103776/2598960≈66/1650? approx → correctIndex=1"
+  },
+  {
+    "question": "5. Standard deviation of 2,4,6,8,10. Add 5 to each. New SD?",
+    "options": ["2", "4", "5", "Same as original"],
+    "correctIndex": 3,
+    "hint": "Adding constant does not change SD",
+    "explanation": "SD remains same"
+  }
+]

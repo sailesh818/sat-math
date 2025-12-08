@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AlgebraEasyPractise3 extends StatefulWidget {
   const AlgebraEasyPractise3({super.key});
@@ -13,6 +16,72 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
   bool answerChecked = false;
   bool showHint = false;
 
+  int userPoints = 0;
+
+  RewardedAd? rewardedAd;
+
+  @override
+  void initState() {
+    super.initState();
+    loadUserPoints();
+    loadRewardedAd();
+  }
+
+  /// ----------------- LOAD USER POINTS -----------------
+  Future<void> loadUserPoints() async {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null) return;
+
+    final doc = await FirebaseFirestore.instance.collection("users").doc(uid).get();
+    setState(() {
+      userPoints = (doc.data()?["points"] ?? 0);
+    });
+  }
+
+  /// ----------------- UPDATE POINTS -----------------
+  Future<void> updatePoints(int change) async {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    if (uid == null) return;
+
+    userPoints += change;
+
+    await FirebaseFirestore.instance.collection("users").doc(uid).update({
+      "points": userPoints,
+    });
+
+    setState(() {});
+  }
+
+  /// ----------------- LOAD REWARDED AD -----------------
+  void loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: "ca-app-pub-3940256099942544/5224354917", // Test Ad ID
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          rewardedAd = ad;
+        },
+        onAdFailedToLoad: (error) {
+          rewardedAd = null;
+        },
+      ),
+    );
+  }
+
+  /// ----------------- SHOW AD -----------------
+  void showRewardedAdForHint() {
+    if (rewardedAd != null) {
+      rewardedAd!.show(
+        onUserEarnedReward: (ad, reward) {
+          setState(() => showHint = true);
+        },
+      );
+      rewardedAd = null;
+      loadRewardedAd();
+    }
+  }
+
+  /// ----------------- QUESTIONS -----------------
   final List<Map<String, dynamic>> questions = [
     {
       'question': '1. If x = 4, find the value of 3x + 2.',
@@ -39,11 +108,11 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
       'question': '4. If x = 2 and y = 3, evaluate 4x + y.',
       'options': ['11', '10', '9', '12'],
       'correctIndex': 0,
-      'hint': 'Multiply 4×x and then add y.',
+      'hint': 'Multiply 4×x then add y.',
       'explanation': '4(2) + 3 = 8 + 3 = 11.'
     },
     {
-      'question': '5. If p = 6, find the value of p² - 3p.',
+      'question': '5. If p = 6, find p² - 3p.',
       'options': ['12', '18', '21', '27'],
       'correctIndex': 1,
       'hint': 'Square p first, then subtract 3p.',
@@ -51,15 +120,25 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
     },
   ];
 
+  /// ----------------- CHECK ANSWER -----------------
   void checkAnswer(int index) {
-    if (!answerChecked) {
-      setState(() {
-        selectedAnswerIndex = index;
-        answerChecked = true;
-      });
+    if (answerChecked) return;
+
+    setState(() {
+      selectedAnswerIndex = index;
+      answerChecked = true;
+    });
+
+    final correct = index == questions[currentQuestionIndex]['correctIndex'];
+
+    if (correct) {
+      updatePoints(5); // +5 points for correct answer
+    } else {
+      updatePoints(-2); // -2 points for wrong answer
     }
   }
 
+  /// ----------------- NEXT QUESTION -----------------
   void nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
@@ -72,13 +151,13 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Great Work!'),
-          content: const Text('You completed all practice questions!'),
+          title: const Text("🎉 Completed!"),
+          content: const Text("You solved all questions in this practice!"),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
+              child: const Text("OK"),
+            )
           ],
         ),
       );
@@ -87,33 +166,43 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
 
   @override
   Widget build(BuildContext context) {
-    final question = questions[currentQuestionIndex];
+    final q = questions[currentQuestionIndex];
 
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
-        title: const Text(
-          'Algebra Easy - Practise 3',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
         backgroundColor: Colors.green,
         centerTitle: true,
+        title: const Text(
+          "Algebra Easy - Practise 3",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: Center(
+              child: Text(
+                "⭐ $userPoints",
+                style: const TextStyle(fontSize: 18, color: Colors.white),
+              ),
+            ),
+          )
+        ],
       ),
 
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            /// QUESTION CARD
+            /// ----------------- QUESTION -----------------
             Card(
               elevation: 4,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
+                  borderRadius: BorderRadius.circular(18)),
               child: Padding(
-                padding: const EdgeInsets.all(18.0),
+                padding: const EdgeInsets.all(18),
                 child: Text(
-                  question['question'],
+                  q['question'],
                   style: const TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w600,
@@ -125,68 +214,60 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
 
             const SizedBox(height: 20),
 
-            /// OPTIONS
-            ...List.generate(question['options'].length, (index) {
-              final option = question['options'][index];
-              final isSelected = selectedAnswerIndex == index;
-              final isCorrect =
-                  answerChecked && index == question['correctIndex'];
-              final isWrong = answerChecked && isSelected && !isCorrect;
+            /// ----------------- OPTIONS -----------------
+            ...List.generate(q['options'].length, (i) {
+              final option = q['options'][i];
+              final isCorrect = answerChecked && i == q['correctIndex'];
+              final isWrong =
+                  answerChecked && selectedAnswerIndex == i && !isCorrect;
 
               return Card(
                 color: isCorrect
-                    ? Colors.lightGreen.shade200
+                    ? Colors.green.shade200
                     : isWrong
                         ? Colors.red.shade200
                         : Colors.white,
-                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),
                 ),
+                elevation: 2,
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.green,
-                    child: Text(
-                      "${index + 1}",
-                      style: const TextStyle(color: Colors.white),
-                    ),
+                    child: Text("${i + 1}", style: const TextStyle(color: Colors.white)),
                   ),
-                  title: Text(
-                    option,
-                    style: const TextStyle(fontSize: 17),
-                  ),
-                  onTap: () => checkAnswer(index),
+                  title: Text(option, style: const TextStyle(fontSize: 17)),
+                  onTap: () => checkAnswer(i),
                 ),
               );
             }),
 
             const SizedBox(height: 10),
 
-            /// HINT BUTTON
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      showHint = !showHint;
-                    });
-                  },
-                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
-                  label: const Text(
-                    "Hint",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
+            /// ----------------- HINT BUTTON -----------------
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  if (showHint) return;
+
+                  if (userPoints >= 10) {
+                    updatePoints(-10);
+                    setState(() => showHint = true);
+                  } else {
+                    showRewardedAdForHint();
+                  }
+                },
+                icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
+                label: const Text("Hint", style: TextStyle(color: Colors.white)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
                   ),
                 ),
-              ],
+              ),
             ),
 
             if (showHint)
@@ -197,14 +278,12 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
                   color: Colors.orange.shade100,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Text(
-                  question['hint'],
-                  style: const TextStyle(fontSize: 16),
-                ),
+                child: Text(q['hint'], style: const TextStyle(fontSize: 16)),
               ),
 
             const SizedBox(height: 20),
 
+            /// ----------------- EXPLANATION -----------------
             if (answerChecked)
               Container(
                 padding: const EdgeInsets.all(14),
@@ -213,14 +292,14 @@ class _AlgebraEasyPractise3State extends State<AlgebraEasyPractise3> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  "Explanation: ${question['explanation']}",
+                  "Explanation: ${q['explanation']}",
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
 
             const SizedBox(height: 20),
 
-            /// NEXT BUTTON
+            /// ----------------- NEXT BUTTON -----------------
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

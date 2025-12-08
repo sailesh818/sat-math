@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 3/5. Find cos θ and tan θ.",
+    "options": ["cos θ = 4/5, tan θ = 3/4", "cos θ = 4/5, tan θ = 4/3", "cos θ = 3/5, tan θ = 4/3", "cos θ = 3/5, tan θ = 3/4"],
+    "correctIndex": 0,
+    "hint": "cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1 - (3/5)²) = 4/5 → tan θ = 3/4"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 5/13. Find sin θ and tan θ.",
+    "options": ["sin θ = 12/13, tan θ = 12/5", "sin θ = 12/13, tan θ = 5/12", "sin θ = 5/13, tan θ = 12/5", "sin θ = 5/13, tan θ = 5/12"],
+    "correctIndex": 0,
+    "hint": "sin² + cos² = 1, tan θ = sin θ / cos θ",
+    "explanation": "sin θ = √(1 - (5/13)²) = 12/13 → tan θ = 12/5"
+  },
+  {
+    "question": "3. Right triangle: opposite = 7, adjacent = 24. Find θ in degrees.",
+    "options": ["16°, 17°, 18°, 19°"],
+    "correctIndex": 1,
+    "hint": "θ = arctan(opposite/adjacent)",
+    "explanation": "θ = arctan(7/24) ≈ 17°"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 25, opposite = 7. Find cos θ.",
+    "options": ["24/25", "7/25", "7/24", "25/7"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = √(25² - 7²) = 24 → cos θ = 24/25"
+  },
+  {
+    "question": "5. Right triangle: tan θ = 7/24. Find sin θ.",
+    "options": ["7/25", "24/25", "7/24", "24/7"],
+    "correctIndex": 0,
+    "hint": "opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
+    "explanation": "Hypotenuse = √(7² + 24²) = 25 → sin θ = 7/25"
+  }
+]

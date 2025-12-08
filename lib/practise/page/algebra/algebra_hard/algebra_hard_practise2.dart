@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AlgebraHardPractise2 extends StatefulWidget {
   const AlgebraHardPractise2({super.key});
@@ -13,20 +16,29 @@ class _AlgebraHardPractise2State extends State<AlgebraHardPractise2> {
   bool answerChecked = false;
   bool showHint = false;
 
+  int correctCount = 0;
+  int hintPenalty = 0;
+  int totalPoints = 0;
+  bool loadingPoints = true;
+
+  RewardedAd? _rewardedAd;
+  bool _isRewardedAdReady = false;
+  bool _hintAdShown = false;
+
   final List<Map<String, dynamic>> questions = [
     {
       'question': '1. Solve by completing the square: x^2 + 6x + 5 = 0',
       'options': ['x=-1, -5', 'x=1, -5', 'x=-2, -3', 'x=2, -3'],
       'correctIndex': 0,
       'hint': 'Move the constant term and complete the square.',
-      'explanation': 'x^2 + 6x + 5 = 0 ⇒ x^2 + 6x = -5 ⇒ add 9 ⇒ x^2 + 6x + 9 = 4 ⇒ (x+3)^2=4 ⇒ x=-1 or -5'
+      'explanation': 'x^2 + 6x + 5 = 0 ⇒ x^2 + 6x = -5 ⇒ add 9 ⇒ (x+3)^2=4 ⇒ x=-1 or -5'
     },
     {
       'question': '2. Solve by completing the square: x^2 - 4x - 5 = 0',
       'options': ['x=5, -1', 'x=-1, 5', 'x=1, -5', 'x=-5, 1'],
       'correctIndex': 1,
       'hint': 'Complete the square on x terms.',
-      'explanation': 'x^2 - 4x - 5 = 0 ⇒ x^2 - 4x = 5 ⇒ add 4 ⇒ x^2 - 4x + 4 = 9 ⇒ (x-2)^2=9 ⇒ x=-1 or 5'
+      'explanation': 'x^2 - 4x - 5 = 0 ⇒ x^2 - 4x = 5 ⇒ add 4 ⇒ (x-2)^2=9 ⇒ x=-1 or 5'
     },
     {
       'question': '3. Solve: x^2 + 10x + 21 = 0',
@@ -51,34 +63,192 @@ class _AlgebraHardPractise2State extends State<AlgebraHardPractise2> {
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadUserPoints();
+    _loadRewardedAd();
+  }
+
+  Future<void> _loadUserPoints() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    setState(() => loadingPoints = true);
+
+    try {
+      final doc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.uid)
+          .get();
+
+      if (doc.exists && doc.data() != null) {
+        final data = doc.data()!;
+        setState(() => totalPoints = data["totalPoints"] ?? 0);
+      }
+    } catch (e) {
+      debugPrint("Error loading points: $e");
+    }
+
+    setState(() => loadingPoints = false);
+  }
+
+  Future<void> savePointsToFirebase(int pointsToAdd) async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user.uid)
+        .set({
+      "totalPoints": FieldValue.increment(pointsToAdd),
+    }, SetOptions(merge: true));
+
+    setState(() => totalPoints += pointsToAdd);
+  }
+
   void checkAnswer(int index) {
     if (!answerChecked) {
       setState(() {
         selectedAnswerIndex = index;
         answerChecked = true;
+        if (index == questions[currentQuestionIndex]['correctIndex']) {
+          correctCount++;
+        }
       });
     }
   }
 
-  void nextQuestion() {
+  void nextQuestion() async {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
         showHint = false;
+        _hintAdShown = false;
+      });
+    } else {
+      int basePoints = 4 + correctCount;
+      int finalPoints = basePoints - hintPenalty;
+      if (finalPoints < 0) finalPoints = 0;
+
+      await savePointsToFirebase(finalPoints);
+      _showCompletionDialog(finalPoints);
+    }
+  }
+
+  void _showCompletionDialog(int finalPoints) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => AlertDialog(
+        title: const Text('🎉 Quiz Completed!'),
+        content: Text(
+          'Correct Answers: $correctCount\n'
+          'Hint Penalty: -$hintPenalty\n'
+          'Final Score: $finalPoints\n\n'
+          'Watch an ad to earn extra reward points!',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('No, Thanks'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _showRewardedAd(forHint: false);
+            },
+            child: const Text('Watch Ad'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-6704136477020125/4913789019',
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          _rewardedAd = ad;
+          _isRewardedAdReady = true;
+        },
+        onAdFailedToLoad: (err) {
+          debugPrint('Failed to load rewarded ad: ${err.message}');
+          _isRewardedAdReady = false;
+        },
+      ),
+    );
+  }
+
+  void _showRewardedAd({required bool forHint}) {
+    if (!_isRewardedAdReady || _rewardedAd == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Ad not ready yet')),
+      );
+      return;
+    }
+
+    _rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+      onAdFailedToShowFullScreenContent: (ad, err) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+    );
+
+    _rewardedAd!.show(onUserEarnedReward: (ad, reward) async {
+      if (forHint) {
+        setState(() {
+          showHint = true;
+          _hintAdShown = true;
+        });
+      } else {
+        await savePointsToFirebase(5);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('You earned 5 reward points!')),
+        );
+      }
+    });
+
+    _rewardedAd = null;
+    _isRewardedAdReady = false;
+  }
+
+  Future<void> _useHint() async {
+    if (_hintAdShown) return;
+
+    if (totalPoints >= 2) {
+      await savePointsToFirebase(-2);
+      setState(() {
+        showHint = true;
+        hintPenalty += 2;
       });
     } else {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Completed!'),
-          content: const Text('You have finished all questions.'),
+          title: const Text('Insufficient Points'),
+          content: const Text(
+              'You have less than 2 reward points. Watch an ad to unlock this hint?'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            )
+              child: const Text('No, Thanks'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                _showRewardedAd(forHint: true);
+              },
+              child: const Text('Watch Ad'),
+            ),
           ],
         ),
       );
@@ -147,16 +317,12 @@ class _AlgebraHardPractise2State extends State<AlgebraHardPractise2> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      showHint = !showHint;
-                    });
-                  },
+                  onPressed: _useHint,
                   icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
                   label: const Text("Hint",
                       style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.orange,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 12),
                     shape: RoundedRectangleBorder(
@@ -170,7 +336,7 @@ class _AlgebraHardPractise2State extends State<AlgebraHardPractise2> {
                 margin: const EdgeInsets.only(top: 12),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.blue.shade100,
+                  color: Colors.orange.shade100,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child:

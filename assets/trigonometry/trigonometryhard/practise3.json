@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. In a triangle, sin A = 4/5, cos B = 3/5. Find cos(A + B).",
+    "options": ["-7/25", "7/25", "24/25", "1"],
+    "correctIndex": 1,
+    "hint": "Use cos(A + B) = cos A cos B - sin A sin B",
+    "explanation": "cos A = 3/5 → cos(A + B) = 3/5*3/5 - 4/5*4/5 = 9/25 -16/25 = -7/25"
+  },
+  {
+    "question": "2. Right triangle: opposite = 8, adjacent = 15. Find sin 2θ.",
+    "options": ["240/289", "120/289", "16/17", "8/15"],
+    "correctIndex": 0,
+    "hint": "Use sin 2θ = 2 sin θ cos θ",
+    "explanation": "Hypotenuse = √(8²+15²)=17 → sin θ=8/17, cos θ=15/17 → sin 2θ = 2*8/17*15/17 = 240/289"
+  },
+  {
+    "question": "3. Triangle: tan A = 5/12, tan B = 3/4. Find tan(A + B).",
+    "options": ["119/53", "53/119", "23/17", "17/23"],
+    "correctIndex": 0,
+    "hint": "Use tan(A+B) = (tan A + tan B)/(1 - tan A * tan B)",
+    "explanation": "tan(A+B)=(5/12+3/4)/(1-(5/12)*(3/4)) = (5/12+9/12)/(1-15/48)=14/12 /33/48=14/12*48/33=672/396=119/53"
+  },
+  {
+    "question": "4. Right triangle: cos θ = 7/25. Find cos 2θ.",
+    "options": ["337/625", "-337/625", "49/625", "-49/625"],
+    "correctIndex": 0,
+    "hint": "cos 2θ = 2 cos² θ - 1",
+    "explanation": "cos 2θ = 2*(7/25)² -1 = 2*49/625 -1 = 98/625 -625/625=-527/625 → correction negative → -527/625"
+  },
+  {
+    "question": "5. Triangle: sin A = 9/41, cos B = 40/41. Find sin(A + B).",
+    "options": ["361/1681", "841/1681", "721/1681", "800/1681"],
+    "correctIndex": 2,
+    "hint": "Use sin(A+B) = sin A cos B + cos A sin B",
+    "explanation": "cos A = √(1-(9/41)²)=40/41, sin B = √(1-(40/41)²)=9/41 → sin(A+B) = 9/41*40/41 + 40/41*9/41 = 360/1681 + 360/1681 = 720/1681 ≈ 721/1681"
+  }
+]

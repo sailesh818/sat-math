@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 3 red, 4 blue, 5 green. Draw 2 with replacement. Probability at least one green?",
+    "options": ["61/72", "5/9", "7/12", "2/3"],
+    "correctIndex": 0,
+    "hint": "Use complement",
+    "explanation": "P(no green)=(7/12)^2=49/144 → P(at least one)=95/144≈61/72"
+  },
+  {
+    "question": "2. Coin tossed 4 times. Probability at least 1 tail?",
+    "options": ["15/16", "1/16", "14/16", "7/8"],
+    "correctIndex": 0,
+    "hint": "Complement method",
+    "explanation": "P(all heads)=1/16 → P(at least one tail)=15/16"
+  },
+  {
+    "question": "3. Dataset: 1,2,3,4,5. Multiply by -3 → new SD?",
+    "options": ["√20", "3√2", "√45", "3√5"],
+    "correctIndex": 1,
+    "hint": "SD scales by absolute multiplier",
+    "explanation": "Original SD=√2 → multiply by 3 →3√2"
+  },
+  {
+    "question": "4. Two dice rolled. Probability sum = even?",
+    "options": ["1/2", "3/4", "2/3", "5/12"],
+    "correctIndex": 0,
+    "hint": "Sum even when both even or both odd",
+    "explanation": "Half of outcomes sum even →18/36=1/2"
+  },
+  {
+    "question": "5. SD=6. Add 5 → new SD?",
+    "options": ["11", "6", "1", "10"],
+    "correctIndex": 1,
+    "hint": "Adding constant does not change SD",
+    "explanation": "SD remains 6"
+  }
+]

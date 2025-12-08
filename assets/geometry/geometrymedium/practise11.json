@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 9, 12, 15. Find its area.",
+    "options": ["54", "54", "55", "56"],
+    "correctIndex": 0,
+    "hint": "Use Heron's formula to find the area.",
+    "explanation": "Semi-perimeter = (9+12+15)/2 = 18. Area = √(18*(18-9)*(18-12)*(18-15)) = 54"
+  },
+  {
+    "question": "2. A rectangle has length 16 and diagonal 20. Find its width.",
+    "options": ["12", "14", "13", "11"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: length² + width² = diagonal²",
+    "explanation": "16² + width² = 20² → width²=144 → width=12"
+  },
+  {
+    "question": "3. A circle has area 100π. Find its radius.",
+    "options": ["10", "12", "14", "8"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "100π = π*r² → r² = 100 → r = 10"
+  },
+  {
+    "question": "4. A triangle has angles 40°, 60°, and x°. If the sum of the angles is 180°, find x.",
+    "options": ["80°", "85°", "75°", "90°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles = 180°",
+    "explanation": "x = 180° - 40° - 60° = 80°"
+  },
+  {
+    "question": "5. A parallelogram has base 10 and height 5. Find its area.",
+    "options": ["50", "45", "40", "55"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 10 * 5 = 50"
+  }
+]

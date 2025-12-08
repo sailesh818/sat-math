@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag contains 5 white and 3 black balls. One ball is drawn. Probability it is black?",
+    "options": ["3/8", "5/8", "1/2", "1/4"],
+    "correctIndex": 0,
+    "hint": "Favorable outcomes / total outcomes",
+    "explanation": "3/8"
+  },
+  {
+    "question": "2. A coin is tossed twice. Probability of two heads?",
+    "options": ["1/4", "1/2", "1/3", "1/8"],
+    "correctIndex": 0,
+    "hint": "Sample space has 4 outcomes",
+    "explanation": "HH only → 1/4"
+  },
+  {
+    "question": "3. A class has 12 boys and 8 girls. Student chosen randomly. Probability of boy?",
+    "options": ["1/2", "3/5", "2/5", "1/3"],
+    "correctIndex": 1,
+    "hint": "Favorable outcomes / total",
+    "explanation": "12/20 = 3/5"
+  },
+  {
+    "question": "4. A spinner numbered 1–6 is spun. Probability of odd number?",
+    "options": ["1/2", "1/3", "1/4", "2/3"],
+    "correctIndex": 0,
+    "hint": "Odd numbers: 1, 3, 5",
+    "explanation": "3/6 = 1/2"
+  },
+  {
+    "question": "5. Average of 6 numbers is 10. One number is 12. Average of remaining 5?",
+    "options": ["9.6", "10", "9", "10.5"],
+    "correctIndex": 0,
+    "hint": "Sum = mean × count",
+    "explanation": "Sum = 60, remaining = 48 → 48/5 = 9.6"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A circle has an area of 196π. Find its radius.",
+    "options": ["14", "13", "12", "15"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "196π = π*r² → r² = 196 → r = 14"
+  },
+  {
+    "question": "2. A right triangle has legs 9 and 12. Find the length of the hypotenuse.",
+    "options": ["15", "13", "14", "16"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: c² = a² + b²",
+    "explanation": "c² = 9² + 12² = 225 → c = 15"
+  },
+  {
+    "question": "3. A rectangular prism has length 6, width 8, height 10. Find its volume.",
+    "options": ["480", "500", "450", "460"],
+    "correctIndex": 0,
+    "hint": "Volume = length * width * height",
+    "explanation": "Volume = 6 * 8 * 10 = 480"
+  },
+  {
+    "question": "4. A rhombus has diagonals of 16 and 30. Find its area.",
+    "options": ["240", "250", "245", "260"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * d₁ * d₂",
+    "explanation": "Area = 1/2 * 16 * 30 = 240"
+  },
+  {
+    "question": "5. A cone has a volume of 36π and height 6. Find the radius of its base.",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 0,
+    "hint": "Volume = (1/3)πr²h",
+    "explanation": "36π = (1/3)π*r²*6 → r² = 18 → r = 3√2 ≈ 4.24, closest to 3"
+  }
+]

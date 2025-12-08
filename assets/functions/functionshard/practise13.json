@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = x² - 6x + 8, find f(5).",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 1,
+    "hint": "Compute each term.",
+    "explanation": "f(5)=25-30+8=3"
+  },
+  {
+    "question": "2. If f(x) = -x² + 5x -3, find f(2).",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 1,
+    "hint": "Compute each term.",
+    "explanation": "f(2)=-4+10-3=3 → correctIndex=3"
+  },
+  {
+    "question": "3. If f(x) = 2x² - 7x +4, find f(3).",
+    "options": ["1", "2", "3", "4"],
+    "correctIndex": 0,
+    "hint": "Compute each term.",
+    "explanation": "f(3)=18-21+4=1"
+  },
+  {
+    "question": "4. If f(x) = 0.5x² -2x +5, find f(4).",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 3,
+    "hint": "Compute 0.5*16 -8 +5.",
+    "explanation": "f(4)=8-8+5=5 → correctIndex=1"
+  },
+  {
+    "question": "5. If f(x) = -x² +4x -1, find f(3).",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 0,
+    "hint": "Compute each term.",
+    "explanation": "f(3)=-9+12-1=2"
+  }
+]

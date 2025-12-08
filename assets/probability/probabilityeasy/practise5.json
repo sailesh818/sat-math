@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag has 2 red, 3 yellow, 5 green balls. One is drawn. Probability it is red?",
+    "options": ["1/5", "1/2", "2/10", "1/3"],
+    "correctIndex": 0,
+    "hint": "Favorable / total",
+    "explanation": "2/10 = 1/5"
+  },
+  {
+    "question": "2. A coin is tossed twice. Probability of at least one head?",
+    "options": ["1/2", "3/4", "1/4", "2/3"],
+    "correctIndex": 1,
+    "hint": "All outcomes except no head",
+    "explanation": "HH, HT, TH, TT → favorable = HH, HT, TH → 3/4"
+  },
+  {
+    "question": "3. Die rolled. Probability of number >4?",
+    "options": ["1/6", "1/3", "1/2", "2/3"],
+    "correctIndex": 1,
+    "hint": "Numbers >4: 5,6",
+    "explanation": "2/6 = 1/3"
+  },
+  {
+    "question": "4. 15 students like math, 10 like science. Random pick → probability likes math?",
+    "options": ["1/2", "3/5", "2/5", "1/3"],
+    "correctIndex": 1,
+    "hint": "Favorable / total",
+    "explanation": "15/25 = 3/5"
+  },
+  {
+    "question": "5. Mean of 5 numbers = 9. One number = 12. Average of remaining?",
+    "options": ["8", "8.25", "9", "9.5"],
+    "correctIndex": 1,
+    "hint": "Sum = mean × count",
+    "explanation": "Sum = 45, remaining sum = 33 → 33/4 = 8.25"
+  }
+]

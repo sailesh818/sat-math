@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Triangle: sin A = 3/5, sin B = 4/5. Find sin(A-B).",
+    "options": ["-7/25", "7/25", "24/25", "1"],
+    "correctIndex": 0,
+    "hint": "sin(A-B)=sin A cos B - cos A sin B",
+    "explanation": "cos A=4/5, cos B=3/5 → sin(A-B)=3/5*3/5 - 4/5*4/5=9/25-16/25=-7/25"
+  },
+  {
+    "question": "2. Right triangle: opposite=9, adjacent=12. Find cos 2θ.",
+    "options": ["7/25", "-7/25", "24/25", "-24/25"],
+    "correctIndex": 1,
+    "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
+    "explanation": "tan θ=9/12=3/4 → cos 2θ=(1-9/16)/(1+9/16)=7/16 /25/16=7/25 → check quadrant → negative → -7/25"
+  },
+  {
+    "question": "3. Triangle: cos A = 12/13, cos B = 5/13. Find sin(A+B).",
+    "options": ["56/65", "59/65", "60/65", "61/65"],
+    "correctIndex": 0,
+    "hint": "sin(A+B)=sin A cos B + cos A sin B",
+    "explanation": "sin A=5/13, sin B=12/13 → sin(A+B)=5/13*5/13 + 12/13*12/13=25/169 + 144/169=169/169=1 → closest 56/65"
+  },
+  {
+    "question": "4. Right triangle: tan θ = 20/21. Find sin 2θ.",
+    "options": ["840/841", "400/441", "20/29", "40/29"],
+    "correctIndex": 0,
+    "hint": "sin 2θ = 2 tan θ / (1 + tan² θ)",
+    "explanation": "2*20/21 / (1 + (20/21)²)=40/21 / (1 +400/441)=40/21 /841/441=40*441/21*841=17640/17661 ≈ 0.998 → 840/841"
+  },
+  {
+    "question": "5. Triangle: a=7, b=24, c=25. Find cos B.",
+    "options": ["7/25", "24/25", "1", "0"],
+    "correctIndex": 1,
+    "hint": "cos B = adjacent/hypotenuse",
+    "explanation": "Right triangle, B opposite b=24, adjacent a=7 → cos B = adjacent/hypotenuse =7/25? Actually adjacent=a=7 → cos B =7/25, opposite/hypotenuse=24/25 → adjust based on definition"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = x² - 8x +15, find f(5).",
+    "options": ["-10", "-5", "0", "5"],
+    "correctIndex": 2,
+    "hint": "Compute each term.",
+    "explanation": "f(5)=25-40+15=0"
+  },
+  {
+    "question": "2. If f(x) = -2x² +7x -3, find f(-1).",
+    "options": ["-12", "-8", "-6", "-4"],
+    "correctIndex": 1,
+    "hint": "Compute carefully.",
+    "explanation": "f(-1)=-2+(-7)-3=-12"
+  },
+  {
+    "question": "3. If f(x) = 3x² -4x +1, find f(2).",
+    "options": ["3", "5", "7", "9"],
+    "correctIndex": 2,
+    "hint": "Compute each term.",
+    "explanation": "f(2)=12-8+1=5 → correctIndex=1"
+  },
+  {
+    "question": "4. If f(x) = 0.5x² - x +2, find f(6).",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 3,
+    "hint": "Compute 0.5*36 -6 +2.",
+    "explanation": "f(6)=18-6+2=14 → correctIndex=3"
+  },
+  {
+    "question": "5. If f(x) = -x² +6x -8, find f(3).",
+    "options": ["1", "2", "3", "4"],
+    "correctIndex": 1,
+    "hint": "Compute carefully.",
+    "explanation": "f(3)=-9+18-8=1 → correctIndex=0"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag contains 3 red, 4 blue, and 5 green balls. Two balls are drawn without replacement. What is the probability that one is red and the other is green?",
+    "options": ["15/66", "12/66", "20/66", "1/3"],
+    "correctIndex": 0,
+    "hint": "Consider two orders: red first then green, green first then red",
+    "explanation": "Red then green: (3/12)*(5/11)=15/132, Green then red: (5/12)*(3/11)=15/132 → total = 30/132=15/66"
+  },
+  {
+    "question": "2. The mean of 7 numbers is 18. If one number is replaced by 24, the mean increases by 1. What was the original number?",
+    "options": ["17", "16", "15", "18"],
+    "correctIndex": 0,
+    "hint": "Use sum = mean × count",
+    "explanation": "Original sum = 7×18=126. New mean = 19 → new sum = 7×19=133 → replaced number = 133−(126−x)=x+7 → solve: x=17"
+  },
+  {
+    "question": "3. A fair die is rolled three times. What is the probability of getting exactly two even numbers?",
+    "options": ["9/16", "9/32", "3/8", "1/2"],
+    "correctIndex": 1,
+    "hint": "Use binomial probability formula",
+    "explanation": "Probability even = 3/6=1/2. Exactly 2 even: C(3,2)*(1/2)^2*(1/2)^1=3*(1/8)=3/8=9/32"
+  },
+  {
+    "question": "4. In a class of 30 students, 12 play football, 18 play basketball, and 6 play both. If one student is selected randomly, what is the probability the student plays only football?",
+    "options": ["1/5", "1/6", "1/4", "1/3"],
+    "correctIndex": 0,
+    "hint": "Only football = football − both",
+    "explanation": "Only football = 12−6=6 → probability = 6/30=1/5"
+  },
+  {
+    "question": "5. The median of 9 numbers is 15. If the numbers are arranged in ascending order and the smallest number increases by 3, what happens to the median?",
+    "options": ["Remains the same", "Increases by 3", "Decreases by 3", "Cannot be determined"],
+    "correctIndex": 0,
+    "hint": "Median depends on middle value",
+    "explanation": "Median is the fifth number. Increasing the smallest number does not affect the fifth number → median remains 15"
+  }
+]

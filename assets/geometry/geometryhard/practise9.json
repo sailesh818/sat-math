@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A cone has a volume of 72π and a radius of 6. Find its height.",
+    "options": ["6", "8", "10", "12"],
+    "correctIndex": 0,
+    "hint": "Volume = (1/3)πr²h",
+    "explanation": "72π = (1/3)π*6²*h → h = 72π / (1/3)π*36 = 6"
+  },
+  {
+    "question": "2. A right triangle has legs 5 and 12. Find the length of the hypotenuse.",
+    "options": ["13", "14", "15", "16"],
+    "correctIndex": 0,
+    "hint": "Use the Pythagorean theorem: c² = a² + b²",
+    "explanation": "c² = 5² + 12² = 25 + 144 = 169 → c = √169 = 13"
+  },
+  {
+    "question": "3. A sphere has a radius of 4. Find its volume.",
+    "options": ["256π", "268π", "270π", "280π"],
+    "correctIndex": 0,
+    "hint": "Volume of a sphere = (4/3)πr³",
+    "explanation": "Volume = (4/3)π*4³ = (4/3)π*64 = 256π/3 ≈ 256π"
+  },
+  {
+    "question": "4. A trapezoid has bases 10 and 20, and height 4. Find its area.",
+    "options": ["60", "70", "80", "90"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * (base1 + base2) * height",
+    "explanation": "Area = 1/2 * (10 + 20) * 4 = 60"
+  },
+  {
+    "question": "5. A rectangular prism has dimensions 7x6x8. Find its surface area.",
+    "options": ["384", "396", "400", "420"],
+    "correctIndex": 0,
+    "hint": "Surface area = 2lw + 2lh + 2wh",
+    "explanation": "Surface area = 2(7*6) + 2(7*8) + 2(6*8) = 84 + 112 + 96 = 384"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 3 red, 7 green. Draw 1. Probability green?",
+    "options": ["3/10", "7/10", "1/2", "3/7"],
+    "correctIndex": 1,
+    "hint": "Favorable/total",
+    "explanation": "7/10"
+  },
+  {
+    "question": "2. Coin tossed 2 times. Probability exactly one tail?",
+    "options": ["1/2", "1/4", "3/4", "1/3"],
+    "correctIndex": 0,
+    "hint": "Use C(2,1)*(1/2)^2",
+    "explanation": "2*(1/4)=1/2"
+  },
+  {
+    "question": "3. Mean of 3 numbers: 5,7,x=6. Find x.",
+    "options": ["6", "5", "7", "8"],
+    "correctIndex": 0,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=3*6=18 → 5+7+x=12+x → x=6"
+  },
+  {
+    "question": "4. Die rolled once. Probability number >3?",
+    "options": ["1/2", "1/3", "1/6", "2/3"],
+    "correctIndex": 0,
+    "hint": "Numbers >3: 4,5,6",
+    "explanation": "3/6=1/2"
+  },
+  {
+    "question": "5. Standard deviation unchanged if constant added. True/False?",
+    "options": ["True", "False", "Cannot say", "Depends"],
+    "correctIndex": 0,
+    "hint": "SD depends on spread, not shift",
+    "explanation": "SD remains same"
+  }
+]

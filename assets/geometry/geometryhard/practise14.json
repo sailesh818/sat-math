@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A cylinder has radius 6 and height 14. Find its volume.",
+    "options": ["504π", "500π", "490π", "510π"],
+    "correctIndex": 0,
+    "hint": "Volume = πr²h",
+    "explanation": "Volume = π*6²*14 = 504π"
+  },
+  {
+    "question": "2. A cone has slant height 13 and radius 5. Find surface area.",
+    "options": ["180π", "175π", "185π", "190π"],
+    "correctIndex": 0,
+    "hint": "Surface area = πr(r + l)",
+    "explanation": "Area = π*5*(5+13)=180π"
+  },
+  {
+    "question": "3. A triangle has sides 9, 40, 41. Find area.",
+    "options": ["180", "190", "200", "210"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 9 * 40 = 180"
+  },
+  {
+    "question": "4. A rhombus has side 10 and height 6. Find area.",
+    "options": ["60", "65", "70", "75"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 10*6 = 60"
+  },
+  {
+    "question": "5. A circle has a radius 9. Find its area.",
+    "options": ["81π", "80π", "85π", "90π"],
+    "correctIndex": 0,
+    "hint": "Area = πr²",
+    "explanation": "Area = π*9² = 81π"
+  }
+]

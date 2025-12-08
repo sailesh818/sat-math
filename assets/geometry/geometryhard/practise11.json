@@ -1,0 +1,72 @@
+[
+  {
+    "question": "1. The length of the diagonal of a rectangular prism is 14 units. If the dimensions of the prism are 6, 8, and x, find the value of x.",
+    "options": ["12", "13", "14", "15"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras in three dimensions: d² = l² + w² + h²",
+    "explanation": "14² = 6² + 8² + x² → 196 = 36 + 64 + x² → x² = 96 → x = 12"
+  },
+  {
+    "question": "2. A sector of a circle has area 24π square units, and the radius is 6. Find the central angle of the sector.",
+    "options": ["90°", "120°", "150°", "180°"],
+    "correctIndex": 1,
+    "hint": "Sector area = (θ/360) * π * r²",
+    "explanation": "24π = (θ/360) * π * 6² → 24 = (θ/360) * 36 → θ = 120°"
+  },
+  {
+    "question": "3. A rectangle has a perimeter of 30 and a length of 9. What is its width?",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2(length + width)",
+    "explanation": "30 = 2(9 + width) → width = 6"
+  },
+  {
+    "question": "4. A circle has a radius of 5. What is the length of an arc subtended by a central angle of 60°?",
+    "options": ["5π/3", "5π/6", "5π/2", "5π/4"],
+    "correctIndex": 1,
+    "hint": "Arc length = (θ/360) * 2πr",
+    "explanation": "Arc length = (60/360) * 2π * 5 = (1/6) * 10π = 5π/3"
+  },
+  {
+    "question": "5. A triangle has a base of 10 and a height of 8. Find its area.",
+    "options": ["36", "40", "45", "50"],
+    "correctIndex": 1,
+    "hint": "Area of triangle = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 10 * 8 = 40"
+  },
+  {
+    "question": "6. A cube has a volume of 27 cubic units. What is the length of each side?",
+    "options": ["3", "6", "9", "12"],
+    "correctIndex": 0,
+    "hint": "Volume of cube = side³",
+    "explanation": "Volume = 27 → side³ = 27 → side = 3"
+  },
+  {
+    "question": "7. A cone has a radius of 4 and a height of 9. What is its volume?",
+    "options": ["48π", "50π", "52π", "56π"],
+    "correctIndex": 0,
+    "hint": "Volume = (1/3) * π * r² * h",
+    "explanation": "Volume = (1/3) * π * 4² * 9 = (1/3) * π * 16 * 9 = 48π"
+  },
+  {
+    "question": "8. A circle has an area of 36π square units. What is its radius?",
+    "options": ["6", "8", "9", "10"],
+    "correctIndex": 0,
+    "hint": "Area = π * r²",
+    "explanation": "36π = π * r² → r² = 36 → r = 6"
+  },
+  {
+    "question": "9. A rectangular prism has dimensions 3, 4, and 12. Find its surface area.",
+    "options": ["144", "150", "160", "170"],
+    "correctIndex": 0,
+    "hint": "Surface area = 2(lw + lh + wh)",
+    "explanation": "Surface area = 2(3*4 + 3*12 + 4*12) = 2(12 + 36 + 48) = 2 * 96 = 192"
+  },
+  {
+    "question": "10. A circle has a circumference of 10π units. What is its radius?",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "10π = 2πr → r = 5"
+  }
+]

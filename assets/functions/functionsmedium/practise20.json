@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = x² +2x +1, find f(3).",
+    "options": ["12", "13", "14", "15"],
+    "correctIndex": 1,
+    "hint": "Compute carefully.",
+    "explanation": "f(3)=9+6+1=16 → correctIndex=3"
+  },
+  {
+    "question": "2. If f(x) = 5x -4, find f(2).",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 2,
+    "hint": "Multiply then subtract 4.",
+    "explanation": "f(2)=10-4=6 → correctIndex=1"
+  },
+  {
+    "question": "3. If f(x) = 2x² +3x -1, find f(1).",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 1,
+    "hint": "Compute each term.",
+    "explanation": "f(1)=2+3-1=4"
+  },
+  {
+    "question": "4. If f(x) = x/2 +7, find f(6).",
+    "options": ["9", "10", "11", "12"],
+    "correctIndex": 1,
+    "hint": "Divide then add 7.",
+    "explanation": "f(6)=3+7=10"
+  },
+  {
+    "question": "5. If f(x) = -x +9, find f(4).",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 2,
+    "hint": "Negate x then add 9.",
+    "explanation": "f(4)=-4+9=5 → correctIndex=1"
+  }
+]

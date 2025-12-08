@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 4x + 3, what is f(5)?",
+    "options": ["20", "21", "22", "23"],
+    "correctIndex": 3,
+    "hint": "Multiply by 4, then add 3.",
+    "explanation": "f(5) = 4(5) + 3 = 23"
+  },
+  {
+    "question": "2. If f(x) = x - 2, what is f(7)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 2,
+    "hint": "Subtract 2 from x.",
+    "explanation": "f(7) = 7 - 2 = 5"
+  },
+  {
+    "question": "3. If f(x) = x² + 4, what is f(3)?",
+    "options": ["9", "12", "13", "16"],
+    "correctIndex": 2,
+    "hint": "Square x, then add 4.",
+    "explanation": "f(3) = 3² + 4 = 9 + 4 = 13"
+  },
+  {
+    "question": "4. If f(x) = 10/x, what is f(2)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 1,
+    "hint": "Divide 10 by x.",
+    "explanation": "f(2) = 10 ÷ 2 = 5"
+  },
+  {
+    "question": "5. If f(x) = 2x - 1, what is f(6)?",
+    "options": ["10", "11", "12", "13"],
+    "correctIndex": 3,
+    "hint": "Multiply by 2, then subtract 1.",
+    "explanation": "f(6) = 12 - 1 = 11"
+  }
+]

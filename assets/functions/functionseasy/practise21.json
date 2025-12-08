@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 7x + 2, what is f(3)?",
+    "options": ["21", "22", "23", "24"],
+    "correctIndex": 2,
+    "hint": "Multiply by 7, then add 2.",
+    "explanation": "f(3) = 21 + 2 = 23"
+  },
+  {
+    "question": "2. If f(x) = x - 5, what is f(12)?",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 1,
+    "hint": "Subtract 5 from x.",
+    "explanation": "f(12) = 12 - 5 = 7"
+  },
+  {
+    "question": "3. If f(x) = x² + 3, what is f(4)?",
+    "options": ["18", "19", "20", "21"],
+    "correctIndex": 1,
+    "hint": "Square x, then add 3.",
+    "explanation": "f(4) = 16 + 3 = 19"
+  },
+  {
+    "question": "4. If f(x) = 35/x, what is f(7)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 1,
+    "hint": "Divide 35 by x.",
+    "explanation": "f(7) = 35 ÷ 7 = 5"
+  },
+  {
+    "question": "5. If f(x) = 4x - 1, what is f(5)?",
+    "options": ["18", "19", "20", "21"],
+    "correctIndex": 1,
+    "hint": "Multiply by 4, then subtract 1.",
+    "explanation": "f(5) = 20 - 1 = 19"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 12/13. Find cos θ and tan θ.",
+    "options": ["cos θ = 5/13, tan θ = 12/5", "cos θ = 5/13, tan θ = 5/12", "cos θ = 12/13, tan θ = 5/12", "cos θ = 12/13, tan θ = 12/5"],
+    "correctIndex": 0,
+    "hint": "cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1 - (12/13)²) = 5/13 → tan θ = 12/5"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 9/41. Find sin θ and tan θ.",
+    "options": ["sin θ = 40/41, tan θ = 40/9", "sin θ = 40/41, tan θ = 9/40", "sin θ = 9/41, tan θ = 40/9", "sin θ = 9/40, tan θ = 40/41"],
+    "correctIndex": 0,
+    "hint": "Use sin² + cos² = 1, tan θ = sin θ / cos θ",
+    "explanation": "sin θ = √(1 - (9/41)²) = 40/41 → tan θ = 40/9"
+  },
+  {
+    "question": "3. Right triangle: opposite = 14, adjacent = 48. Find θ in degrees.",
+    "options": ["16°, 17°, 18°, 19°"],
+    "correctIndex": 2,
+    "hint": "θ = arctan(opposite/adjacent)",
+    "explanation": "θ = arctan(14/48) ≈ 16.3° → nearest 16°"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 50, opposite = 14. Find cos θ.",
+    "options": ["48/50", "14/50", "14/48", "50/14"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = √(50² - 14²) = 48 → cos θ = 48/50"
+  },
+  {
+    "question": "5. Right triangle: tan θ = 14/48. Find sin θ.",
+    "options": ["7/25", "14/50", "7/25", "14/50"],
+    "correctIndex": 1,
+    "hint": "opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
+    "explanation": "Hypotenuse = √(14²+48²) = 50 → sin θ = 14/50"
+  }
+]

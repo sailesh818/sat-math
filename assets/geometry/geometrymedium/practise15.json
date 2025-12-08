@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A rectangle has diagonal 13 and width 5. Find its length.",
+    "options": ["12", "13", "14", "15"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: length² + width² = diagonal²",
+    "explanation": "5² + length² = 13² → length² = 144 → length = 12"
+  },
+  {
+    "question": "2. A circle has area 36π. Find its radius.",
+    "options": ["6", "7", "5", "4"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "36π = π*r² → r² = 36 → r = 6"
+  },
+  {
+    "question": "3. A square has perimeter 36. Find its side length.",
+    "options": ["9", "10", "8", "7"],
+    "correctIndex": 0,
+    "hint": "Side = perimeter / 4",
+    "explanation": "Side = 36 / 4 = 9"
+  },
+  {
+    "question": "4. A triangle has base 10 and height 12. Find its area.",
+    "options": ["60", "50", "55", "45"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 10 * 12 = 60"
+  },
+  {
+    "question": "5. A trapezoid has bases 9 and 13, height 4. Find its area.",
+    "options": ["44", "42", "45", "48"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(base1 + base2)*height",
+    "explanation": "Area = 1/2*(9+13)*4 = 44"
+  }
+]

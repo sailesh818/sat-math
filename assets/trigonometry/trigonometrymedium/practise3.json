@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. In a right triangle, sin θ = 5/13. Find cos θ and tan θ.",
+    "options": ["cos θ = 12/13, tan θ = 5/12", "cos θ = 12/13, tan θ = 12/5", "cos θ = 5/13, tan θ = 12/5", "cos θ = 5/13, tan θ = 5/12"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1 - (5/13)²) = 12/13 → tan θ = (5/13)/(12/13) = 5/12"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 9/41. Find sin θ and tan θ.",
+    "options": ["sin θ = 40/41, tan θ = 40/9", "sin θ = 40/41, tan θ = 9/40", "sin θ = 9/41, tan θ = 40/9", "sin θ = 9/40, tan θ = 40/41"],
+    "correctIndex": 0,
+    "hint": "Use sin² + cos² = 1, tan θ = sin θ / cos θ",
+    "explanation": "sin θ = √(1 - (9/41)²) = 40/41 → tan θ = (40/41)/(9/41) = 40/9"
+  },
+  {
+    "question": "3. Right triangle: opposite = 9, adjacent = 12. Find θ in degrees.",
+    "options": ["36°, 37°, 38°, 39°"],
+    "correctIndex": 2,
+    "hint": "θ = arctan(opposite/adjacent)",
+    "explanation": "θ = arctan(9/12) = arctan(0.75) ≈ 37°"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 17, opposite = 8. Find cos θ.",
+    "options": ["15/17", "8/17", "8/15", "17/8"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = √(17² - 8²) = 15 → cos θ = 15/17"
+  },
+  {
+    "question": "5. Right triangle: tan θ = 15/8. Find sin θ.",
+    "options": ["15/17", "8/17", "15/8", "8/15"],
+    "correctIndex": 0,
+    "hint": "Use opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
+    "explanation": "Hypotenuse = √(15² + 8²) = 17 → sin θ = 15/17"
+  }
+]

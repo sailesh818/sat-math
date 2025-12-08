@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 5x + 1, what is f(2)?",
+    "options": ["9", "10", "11", "12"],
+    "correctIndex": 2,
+    "hint": "Multiply 5 by x, then add 1.",
+    "explanation": "f(2) = 5(2) + 1 = 10 + 1 = 11"
+  },
+  {
+    "question": "2. If f(x) = x - 3, what is f(8)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 2,
+    "hint": "Subtract 3 from x.",
+    "explanation": "f(8) = 8 - 3 = 5"
+  },
+  {
+    "question": "3. If f(x) = x² - 5, what is f(7)?",
+    "options": ["44", "45", "46", "47"],
+    "correctIndex": 1,
+    "hint": "Square x first, then subtract 5.",
+    "explanation": "f(7) = 49 - 5 = 44"
+  },
+  {
+    "question": "4. If f(x) = 24/x, what is f(6)?",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 1,
+    "hint": "Divide 24 by x.",
+    "explanation": "f(6) = 24 ÷ 6 = 4"
+  },
+  {
+    "question": "5. If f(x) = 3x - 4, what is f(5)?",
+    "options": ["11", "12", "13", "14"],
+    "correctIndex": 2,
+    "hint": "Multiply by 3, then subtract 4.",
+    "explanation": "f(5) = 15 - 4 = 11"
+  }
+]

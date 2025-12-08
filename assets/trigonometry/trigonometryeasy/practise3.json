@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: opposite = 3, adjacent = 4. Find sin θ.",
+    "options": ["3/5", "4/5", "1/2", "√3/2"],
+    "correctIndex": 0,
+    "hint": "sin θ = opposite/hypotenuse; find hypotenuse first",
+    "explanation": "Hypotenuse = √(3²+4²)=5 → sin θ = 3/5"
+  },
+  {
+    "question": "2. Right triangle: opposite = 3, adjacent = 4. Find cos θ.",
+    "options": ["3/5", "4/5", "1/2", "√3/2"],
+    "correctIndex": 1,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "cos θ = 4/5"
+  },
+  {
+    "question": "3. Right triangle: opposite = 7, hypotenuse = 25. Find sin θ.",
+    "options": ["7/25", "24/25", "1/2", "√2/2"],
+    "correctIndex": 0,
+    "hint": "sin θ = opposite/hypotenuse",
+    "explanation": "sin θ = 7/25"
+  },
+  {
+    "question": "4. Right triangle: adjacent = 8, hypotenuse = 17. Find cos θ.",
+    "options": ["8/17", "15/17", "1/2", "√2/2"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "cos θ = 8/17"
+  },
+  {
+    "question": "5. tan θ = 1. Find θ in degrees.",
+    "options": ["30°", "45°", "60°", "90°"],
+    "correctIndex": 1,
+    "hint": "tan 45° = 1",
+    "explanation": "θ = 45°"
+  }
+]

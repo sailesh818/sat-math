@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the slope of the line joining points (−3,5) and (3,−1).",
+    "options": ["−1", "1", "−6", "−1"],
+    "correctIndex": 0,
+    "hint": "Slope formula: (y2−y1)/(x2−x1)",
+    "explanation": "Slope = (−1−5)/(3−(−3)) = (−6)/6 = −1"
+  },
+  {
+    "question": "2. Determine the midpoint of points (−7,2) and (5,−6).",
+    "options": ["(−1,−2)", "(-1, -1)", "(0, -2)", "(-2, -2)"],
+    "correctIndex": 0,
+    "hint": "Midpoint = ((x1+x2)/2, (y1+y2)/2)",
+    "explanation": "Midpoint = ((−7+5)/2, (2+−6)/2) = (−2/2, −4/2) = (−1, −2)"
+  },
+  {
+    "question": "3. Are points (1,2), (4,6), (5,8) collinear?",
+    "options": ["Yes", "No", "Cannot Determine", "Partially"],
+    "correctIndex": 1,
+    "hint": "Check slopes of consecutive points.",
+    "explanation": "Slope 1-2 = (6−2)/(4−1)=4/3; slope 2-3 = (8−6)/(5−4)=2 ⇒ Not collinear"
+  },
+  {
+    "question": "4. Distance between points (−2,−3) and (2,1):",
+    "options": ["√20", "√18", "√16", "√25"],
+    "correctIndex": 0,
+    "hint": "Distance formula: √[(x2−x1)² + (y2−y1)²]",
+    "explanation": "Distance = √[(2−(−2))² + (1−(−3))²] = √[16 + 16] = √32"
+  },
+  {
+    "question": "5. Equation of line passing through (−1,1) with slope 2:",
+    "options": ["y−1 = 2(x+1)", "y+1 = 2(x+1)", "y−1 = −2(x+1)", "y+1 = −2(x+1)"],
+    "correctIndex": 0,
+    "hint": "Use point-slope form: y−y1 = m(x−x1)",
+    "explanation": "Equation: y−y1 = m(x−x1) ⇒ y−1 = 2(x−(−1)) = y−1 = 2(x+1)"
+  }
+]

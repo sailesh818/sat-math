@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has legs 5 and 12. Find its area.",
+    "options": ["30", "35", "40", "50"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*base*height",
+    "explanation": "Area = 1/2*5*12=30"
+  },
+  {
+    "question": "2. A rectangle has width 7 and length 13. Find its perimeter.",
+    "options": ["40", "36", "38", "42"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length + width)",
+    "explanation": "Perimeter = 2*(13+7)=40"
+  },
+  {
+    "question": "3. A square has side 14. Find its diagonal.",
+    "options": ["14√2", "15√2", "16√2", "13√2"],
+    "correctIndex": 0,
+    "hint": "Diagonal = side * √2",
+    "explanation": "Diagonal = 14 * √2 = 14√2"
+  },
+  {
+    "question": "4. A circle has radius 6. Find its circumference in terms of π.",
+    "options": ["12π", "10π", "11π", "14π"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2π*6 = 12π"
+  },
+  {
+    "question": "5. A triangle has angles 45° and 60°. Find the third angle.",
+    "options": ["75°", "70°", "80°", "65°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 45° - 60° = 75°"
+  }
+]

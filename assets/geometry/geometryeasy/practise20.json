@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has base 12 and height 7. Find its area.",
+    "options": ["42", "40", "45", "50"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*base*height",
+    "explanation": "Area = 1/2*12*7=42"
+  },
+  {
+    "question": "2. A rectangle has length 16 and width 5. Find its perimeter.",
+    "options": ["42", "40", "44", "46"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length+width)",
+    "explanation": "Perimeter = 2*(16+5)=42"
+  },
+  {
+    "question": "3. A square has side 8. Find its area.",
+    "options": ["64", "60", "72", "70"],
+    "correctIndex": 0,
+    "hint": "Area = side²",
+    "explanation": "Area = 8²=64"
+  },
+  {
+    "question": "4. A circle has diameter 18. Find its radius.",
+    "options": ["9", "18", "8", "10"],
+    "correctIndex": 0,
+    "hint": "Radius = diameter/2",
+    "explanation": "Radius = 18/2=9"
+  },
+  {
+    "question": "5. A triangle has angles 50° and 60°. Find the third angle.",
+    "options": ["70°", "60°", "50°", "80°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-50-60=70°"
+  }
+]

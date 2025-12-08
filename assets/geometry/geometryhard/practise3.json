@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A regular polygon has 20 sides. Find the measure of each interior angle.",
+    "options": ["162°", "170°", "172°", "168°"],
+    "correctIndex": 0,
+    "hint": "Each interior angle = (n-2) * 180° / n, where n is the number of sides.",
+    "explanation": "Each interior angle = (20-2)*180° / 20 = 162°"
+  },
+  {
+    "question": "2. A circle has a chord of length 10. The perpendicular distance from the center to the chord is 6. Find the radius of the circle.",
+    "options": ["8", "9", "10", "11"],
+    "correctIndex": 0,
+    "hint": "Use the Pythagorean theorem in the right triangle formed by the radius, half of the chord, and the perpendicular distance.",
+    "explanation": "Let the radius be r. Then, (r - 6)² + 5² = r² → r = 8"
+  },
+  {
+    "question": "3. A cone has a volume of 120π cubic units and a height of 12 units. Find the radius of the cone.",
+    "options": ["6", "5", "7", "8"],
+    "correctIndex": 0,
+    "hint": "Volume of a cone = (1/3)πr²h",
+    "explanation": "120π = (1/3)πr²*12 → r² = 30 → r = 6"
+  },
+  {
+    "question": "4. A rhombus has diagonals of lengths 8 and 15. Find its area.",
+    "options": ["60", "45", "65", "72"],
+    "correctIndex": 0,
+    "hint": "Area of a rhombus = (1/2) * d₁ * d₂, where d₁ and d₂ are the diagonals.",
+    "explanation": "Area = (1/2) * 8 * 15 = 60"
+  },
+  {
+    "question": "5. A trapezoid has bases 10 and 18, and height 7. Find its area.",
+    "options": ["98", "106", "112", "120"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * (base₁ + base₂) * height",
+    "explanation": "Area = 1/2 * (10 + 18) * 7 = 98"
+  }
+]

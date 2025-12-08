@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 3x + 2, what is f(6)?",
+    "options": ["18", "19", "20", "21"],
+    "correctIndex": 2,
+    "hint": "Multiply by 3, then add 2.",
+    "explanation": "f(6) = 18 + 2 = 20"
+  },
+  {
+    "question": "2. If f(x) = x - 5, what is f(9)?",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 1,
+    "hint": "Subtract 5 from x.",
+    "explanation": "f(9) = 9 - 5 = 4"
+  },
+  {
+    "question": "3. If f(x) = x² + 4, what is f(7)?",
+    "options": ["48", "49", "50", "51"],
+    "correctIndex": 2,
+    "hint": "Square x, then add 4.",
+    "explanation": "f(7) = 49 + 4 = 53"
+  },
+  {
+    "question": "4. If f(x) = 42/x, what is f(6)?",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 2,
+    "hint": "Divide 42 by x.",
+    "explanation": "f(6) = 42 ÷ 6 = 7"
+  },
+  {
+    "question": "5. If f(x) = 5x - 4, what is f(3)?",
+    "options": ["10", "11", "12", "13"],
+    "correctIndex": 2,
+    "hint": "Multiply by 5, then subtract 4.",
+    "explanation": "f(3) = 15 - 4 = 11"
+  }
+]

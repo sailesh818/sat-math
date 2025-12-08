@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 4/5. Find cos θ and tan θ.",
+    "options": ["cos θ = 3/5, tan θ = 4/3", "cos θ = 3/5, tan θ = 3/4", "cos θ = 4/5, tan θ = 4/3", "cos θ = 4/5, tan θ = 3/4"],
+    "correctIndex": 0,
+    "hint": "cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1 - (4/5)²) = 3/5 → tan θ = 4/3"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 7/25. Find sin θ and tan θ.",
+    "options": ["sin θ = 24/25, tan θ = 24/7", "sin θ = 24/25, tan θ = 7/24", "sin θ = 7/25, tan θ = 24/7", "sin θ = 7/25, tan θ = 7/24"],
+    "correctIndex": 0,
+    "hint": "sin² + cos² = 1, tan θ = sin θ / cos θ",
+    "explanation": "sin θ = √(1 - (7/25)²) = 24/25 → tan θ = 24/7"
+  },
+  {
+    "question": "3. Right triangle: opposite = 12, adjacent = 16. Find θ in degrees.",
+    "options": ["36°, 37°, 38°, 39°"],
+    "correctIndex": 2,
+    "hint": "θ = arctan(opposite/adjacent)",
+    "explanation": "θ = arctan(12/16) = arctan(3/4) ≈ 37°"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 20, opposite = 12. Find cos θ.",
+    "options": ["16/20", "12/20", "12/16", "20/12"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = √(20² - 12²) = 16 → cos θ = 16/20"
+  },
+  {
+    "question": "5. Right triangle: tan θ = 12/16. Find sin θ.",
+    "options": ["3/5", "12/20", "12/16", "16/12"],
+    "correctIndex": 0,
+    "hint": "opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
+    "explanation": "Hypotenuse = √(12²+16²) = 20 → sin θ = 12/20 = 3/5"
+  }
+]

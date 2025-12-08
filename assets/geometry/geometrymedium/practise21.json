@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A rectangle has length 16 and area 96. Find its width.",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 0,
+    "hint": "Area = length * width",
+    "explanation": "Width = 96 / 16 = 6"
+  },
+  {
+    "question": "2. A square has side 12. Find its perimeter.",
+    "options": ["48", "50", "52", "54"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 4 * side",
+    "explanation": "Perimeter = 4 * 12 = 48"
+  },
+  {
+    "question": "3. A circle has radius 15. Find its circumference in terms of π.",
+    "options": ["30π", "32π", "34π", "35π"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2π*15 = 30π"
+  },
+  {
+    "question": "4. A triangle has angles 60° and 60°. Find the third angle.",
+    "options": ["60°", "70°", "50°", "40°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 60° - 60° = 60°"
+  },
+  {
+    "question": "5. A parallelogram has base 6 and height 8. Find its area.",
+    "options": ["48", "44", "46", "50"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 6 * 8 = 48"
+  }
+]

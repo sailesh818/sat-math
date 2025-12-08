@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: opposite = 7, adjacent = 24. Find tan θ.",
+    "options": ["7/24", "24/7", "1/2", "√3/2"],
+    "correctIndex": 0,
+    "hint": "tan θ = opposite/adjacent",
+    "explanation": "tan θ = 7/24"
+  },
+  {
+    "question": "2. Right triangle: hypotenuse = 25, opposite = 7. Find sin θ.",
+    "options": ["7/25", "24/25", "1/2", "√3/2"],
+    "correctIndex": 0,
+    "hint": "sin θ = opposite/hypotenuse",
+    "explanation": "sin θ = 7/25"
+  },
+  {
+    "question": "3. Right triangle: hypotenuse = 25, adjacent = 24. Find cos θ.",
+    "options": ["24/25", "7/25", "1/2", "√3/2"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "cos θ = 24/25"
+  },
+  {
+    "question": "4. If sin θ = 5/13, find cos θ (right triangle).",
+    "options": ["12/13", "5/13", "3/5", "1/2"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: sin² + cos² = 1",
+    "explanation": "cos² θ = 1 - (5/13)² = 1 - 25/169 = 144/169 → cos θ = 12/13"
+  },
+  {
+    "question": "5. If cos θ = 12/13, find sin θ (right triangle).",
+    "options": ["5/13", "12/13", "1/2", "√2/2"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: sin² + cos² = 1",
+    "explanation": "sin² θ = 1 - (12/13)² = 1 - 144/169 = 25/169 → sin θ = 5/13"
+  }
+]

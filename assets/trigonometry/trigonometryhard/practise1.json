@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. In a right triangle, sin θ = 5/13. If the triangle is reflected over the hypotenuse, what is the new value of sin θ?",
+    "options": ["5/13", "12/13", "13/5", "-5/13"],
+    "correctIndex": 3,
+    "hint": "Reflecting over the hypotenuse flips the opposite side relative to θ.",
+    "explanation": "Reflection over the hypotenuse changes the orientation of θ → sin θ becomes negative → -5/13"
+  },
+  {
+    "question": "2. A triangle has sides 7, 24, and 25. Find the exact value of cos θ opposite the side 7.",
+    "options": ["24/25", "7/25", "7/24", "25/24"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = 24, Hypotenuse = 25 → cos θ = 24/25"
+  },
+  {
+    "question": "3. Right triangle: tan θ = 9/12. If the angle is doubled, find tan 2θ.",
+    "options": ["39/7", "24/7", "15/7", "7/15"],
+    "correctIndex": 1,
+    "hint": "Use double angle formula: tan 2θ = 2 tan θ / (1 - tan² θ)",
+    "explanation": "tan 2θ = 2*(9/12) / (1 - (9/12)²) = 24/7"
+  },
+  {
+    "question": "4. In a triangle, sin A = 3/5, cos B = 12/13. Find sin(A + B).",
+    "options": ["56/65", "59/65", "60/65", "61/65"],
+    "correctIndex": 0,
+    "hint": "Use sin(A + B) = sin A cos B + cos A sin B",
+    "explanation": "cos A = 4/5, sin B = 5/13 → sin(A+B) = 3/5*12/13 + 4/5*5/13 = 56/65"
+  },
+  {
+    "question": "5. Triangle with sides a=8, b=15, c=17. Find cos C using Law of Cosines.",
+    "options": ["0", "8/17", "-8/17", "15/17"],
+    "correctIndex": 0,
+    "hint": "cos C = (a² + b² - c²)/(2ab)",
+    "explanation": "cos C = (64 + 225 - 289)/(2*8*15) = 0"
+  }
+]

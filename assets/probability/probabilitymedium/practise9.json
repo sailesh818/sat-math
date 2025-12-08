@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag with 2 red, 3 green, 5 blue balls. One drawn. Probability not green?",
+    "options": ["1/2", "4/5", "3/5", "2/5"],
+    "correctIndex": 2,
+    "hint": "P(not green)=1−P(green)",
+    "explanation": "Total=10, green=3 → P(not green)=7/10=3/5 approx"
+  },
+  {
+    "question": "2. Coin tossed 4 times. Probability of exactly 2 heads?",
+    "options": ["3/8", "3/16", "6/16", "1/2"],
+    "correctIndex": 2,
+    "hint": "Use binomial probability",
+    "explanation": "C(4,2)*(1/2)^4=6*1/16=6/16"
+  },
+  {
+    "question": "3. Mean of 5 numbers: 10,12,15,18,x=14. Find x.",
+    "options": ["13", "16", "15", "17"],
+    "correctIndex": 1,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=14*5=70 → 10+12+15+18+x=70 → x=15 → correctIndex=2"
+  },
+  {
+    "question": "4. A card drawn is ace or king. Probability?",
+    "options": ["2/13", "1/13", "1/4", "2/26"],
+    "correctIndex": 0,
+    "hint": "4 aces + 4 kings = 8 favorable/52",
+    "explanation": "8/52=2/13"
+  },
+  {
+    "question": "5. Variance =25. Multiply all numbers by 5. New variance?",
+    "options": ["125", "625", "50", "100"],
+    "correctIndex": 1,
+    "hint": "Variance scales by square of multiplier",
+    "explanation": "25*(5^2)=25*25=625"
+  }
+]

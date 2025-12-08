@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has base 10 and height 14. Find its area.",
+    "options": ["70", "72", "74", "75"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 10 * 14 = 70"
+  },
+  {
+    "question": "2. A rectangle has length 14 and width 8. Find its perimeter.",
+    "options": ["44", "46", "48", "50"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length + width)",
+    "explanation": "Perimeter = 2*(14 + 8) = 44"
+  },
+  {
+    "question": "3. A circle has radius 9. Find its area in terms of π.",
+    "options": ["81π", "82π", "84π", "83π"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "Area = π*9² = 81π"
+  },
+  {
+    "question": "4. A triangle has angles 60° and 70°. Find the third angle.",
+    "options": ["50°", "55°", "45°", "40°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 60° - 70° = 50°"
+  },
+  {
+    "question": "5. A trapezoid has bases 7 and 13, height 4. Find its area.",
+    "options": ["40", "42", "45", "50"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(base1 + base2)*height",
+    "explanation": "Area = 1/2*(7 + 13)*4 = 40"
+  }
+]

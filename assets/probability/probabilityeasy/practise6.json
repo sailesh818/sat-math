@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A fair coin is flipped 4 times. What is the probability of getting exactly one head?",
+    "options": ["1/8", "1/4", "1/2", "1/16"],
+    "correctIndex": 1,
+    "hint": "Count the number of ways to get exactly one head out of 4 flips",
+    "explanation": "Number of outcomes = 2^4 = 16. Exactly one head = 4 outcomes → probability = 4/16 = 1/4"
+  },
+  {
+    "question": "2. A bag contains 3 red, 4 white, and 3 blue balls. One ball is drawn at random. What is the probability it is white or blue?",
+    "options": ["1/2", "5/10", "7/10", "4/10"],
+    "correctIndex": 2,
+    "hint": "Add probabilities of white and blue (mutually exclusive)",
+    "explanation": "White + Blue = 4 + 3 = 7 balls, total = 10 → 7/10"
+  },
+  {
+    "question": "3. A six-sided die is rolled twice. What is the probability of getting a 6 on the first roll and an even number on the second roll?",
+    "options": ["1/12", "1/6", "1/4", "1/8"],
+    "correctIndex": 0,
+    "hint": "Multiply probabilities because events are independent",
+    "explanation": "First roll 6 → 1/6; second roll even (2,4,6) → 3/6 = 1/2 → Combined = 1/6 × 1/2 = 1/12"
+  },
+  {
+    "question": "4. In a class of 25 students, 15 passed a test. If one student is selected at random, what is the probability that the student failed?",
+    "options": ["10/25", "3/5", "1/5", "2/5"],
+    "correctIndex": 0,
+    "hint": "Failed = total – passed",
+    "explanation": "Total = 25, passed = 15 → failed = 10 → probability = 10/25 = 2/5 (i.e. 10/25)"
+  },
+  {
+    "question": "5. The average of 3 numbers is 20. If two of the numbers are 15 and 25, what is the third number?",
+    "options": ["20", "18", "22", "25"],
+    "correctIndex": 0,
+    "hint": "Sum = mean × number of terms",
+    "explanation": "Total sum = 3 × 20 = 60. Other two sum = 15 + 25 = 40 → third = 60 − 40 = 20"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the area of a triangle with base 6 and height 5.",
+    "options": ["15", "20", "30", "10"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 6 * 5 = 15"
+  },
+  {
+    "question": "2. The sum of interior angles of a pentagon is?",
+    "options": ["540°", "360°", "720°", "450°"],
+    "correctIndex": 0,
+    "hint": "Sum = (n-2)*180",
+    "explanation": "Sum = (5-2)*180 = 540°"
+  },
+  {
+    "question": "3. A rectangle has length 8 and width 3. Find its area.",
+    "options": ["24", "22", "20", "26"],
+    "correctIndex": 0,
+    "hint": "Area = length*width",
+    "explanation": "Area = 8*3 = 24"
+  },
+  {
+    "question": "4. An angle of 60° and another of 30° are in a triangle. Find the third angle.",
+    "options": ["90°", "60°", "50°", "120°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "180 - 60 - 30 = 90°"
+  },
+  {
+    "question": "5. A square has perimeter 20. Find its area.",
+    "options": ["16", "20", "25", "10"],
+    "correctIndex": 2,
+    "hint": "Side = perimeter/4, area = side²",
+    "explanation": "Side = 20/4=5, area=5²=25"
+  }
+]

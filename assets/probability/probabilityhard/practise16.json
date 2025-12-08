@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 3 red, 5 blue, 2 green. Draw 2 with replacement. Probability both red?",
+    "options": ["9/64", "9/100", "1/12", "1/16"],
+    "correctIndex": 1,
+    "hint": "Multiply independent probabilities",
+    "explanation": "(3/10)*(3/10)=9/100"
+  },
+  {
+    "question": "2. Coin tossed 7 times. Probability exactly 3 tails?",
+    "options": ["35/128", "21/128", "35/256", "21/256"],
+    "correctIndex": 0,
+    "hint": "Use binomial formula",
+    "explanation": "C(7,3)*(1/2)^7=35/128"
+  },
+  {
+    "question": "3. Dataset: 2,4,6,8. Add 3 → new mean?",
+    "options": ["6", "7", "8", "9"],
+    "correctIndex": 2,
+    "hint": "Mean shifts by constant",
+    "explanation": "Original mean=5 → +3=8"
+  },
+  {
+    "question": "4. Two dice rolled. Probability sum ≥11?",
+    "options": ["1/12", "1/18", "1/6", "1/9"],
+    "correctIndex": 0,
+    "hint": "Sum=11(2),12(1)",
+    "explanation": "3/36=1/12"
+  },
+  {
+    "question": "5. SD=5. Subtract 4 → new SD?",
+    "options": ["5", "1", "9", "4"],
+    "correctIndex": 0,
+    "hint": "Subtracting constant does not change SD",
+    "explanation": "SD remains 5"
+  }
+]

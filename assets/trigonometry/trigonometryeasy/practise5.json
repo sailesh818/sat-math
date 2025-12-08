@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. sin θ = 1. Find θ in degrees.",
+    "options": ["0°", "90°", "45°", "60°"],
+    "correctIndex": 1,
+    "hint": "Use basic sine values",
+    "explanation": "sin 90° = 1 → θ = 90°"
+  },
+  {
+    "question": "2. cos θ = 1. Find θ in degrees.",
+    "options": ["0°", "90°", "45°", "60°"],
+    "correctIndex": 0,
+    "hint": "Use basic cosine values",
+    "explanation": "cos 0° = 1 → θ = 0°"
+  },
+  {
+    "question": "3. Right triangle: opposite = 9, adjacent = 12. Find tan θ.",
+    "options": ["3/4", "4/3", "9/12", "1/2"],
+    "correctIndex": 0,
+    "hint": "tan θ = opposite/adjacent",
+    "explanation": "tan θ = 9/12 = 3/4"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 10, opposite = 8. Find sin θ.",
+    "options": ["4/5", "3/5", "1/2", "√3/2"],
+    "correctIndex": 0,
+    "hint": "sin θ = opposite/hypotenuse",
+    "explanation": "sin θ = 8/10 = 4/5"
+  },
+  {
+    "question": "5. Right triangle: hypotenuse = 13, adjacent = 12. Find cos θ.",
+    "options": ["12/13", "5/13", "1/2", "√3/2"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "cos θ = 12/13"
+  }
+]

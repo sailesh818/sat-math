@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 4 red, 6 blue. Draw 1. Probability red?",
+    "options": ["2/5", "4/10", "3/5", "1/2"],
+    "correctIndex": 0,
+    "hint": "Favorable/total",
+    "explanation": "4/10=2/5"
+  },
+  {
+    "question": "2. Coin tossed 3 times. Probability at least 1 head?",
+    "options": ["7/8", "1/2", "1/8", "3/4"],
+    "correctIndex": 0,
+    "hint": "Use complement",
+    "explanation": "P(all tails)=1/8 → P(at least 1 head)=1−1/8=7/8"
+  },
+  {
+    "question": "3. Mean of 5 numbers: 2,4,6,8,x=5. Find x.",
+    "options": ["5", "6", "4", "7"],
+    "correctIndex": 0,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=5*5=25 → sum of 4 numbers=20 → x=5"
+  },
+  {
+    "question": "4. Probability of drawing a heart from deck?",
+    "options": ["1/4", "1/13", "1/2", "1/12"],
+    "correctIndex": 0,
+    "hint": "13 hearts out of 52",
+    "explanation": "13/52=1/4"
+  },
+  {
+    "question": "5. Multiply numbers by 2 → variance original=16 → new variance?",
+    "options": ["32", "64", "48", "16"],
+    "correctIndex": 1,
+    "hint": "Variance scales by square of multiplier",
+    "explanation": "16*4=64"
+  }
+]

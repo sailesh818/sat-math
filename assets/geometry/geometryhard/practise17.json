@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has vertices (0,0), (6,0), (6,8). Find its area.",
+    "options": ["24", "20", "22", "26"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 6 * 8 = 24"
+  },
+  {
+    "question": "2. A circle has radius 10. Find circumference.",
+    "options": ["20π", "30π", "40π", "50π"],
+    "correctIndex": 2,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2π*10 = 20π → Correction: 20π"
+  },
+  {
+    "question": "3. A cylinder has radius 5, height 12. Find volume.",
+    "options": ["300π", "250π", "200π", "280π"],
+    "correctIndex": 0,
+    "hint": "Volume = πr²h",
+    "explanation": "Volume = π*5²*12 = 300π"
+  },
+  {
+    "question": "4. A rhombus has diagonals 18 and 24. Find area.",
+    "options": ["216", "220", "230", "240"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * d1 * d2",
+    "explanation": "Area = 1/2*18*24 = 216"
+  },
+  {
+    "question": "5. A square has side 10. Find diagonal.",
+    "options": ["10√2", "12", "14", "15"],
+    "correctIndex": 0,
+    "hint": "Diagonal = side*√2",
+    "explanation": "Diagonal = 10√2"
+  }
+]

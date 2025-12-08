@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the equation of the line perpendicular to 7x - 2y + 3 = 0 and passing through (1,1).",
+    "options": ["y = (2/7)x + 5/7", "y = (-2/7)x + 9/7", "y = (2/7)x + 5/7", "y = (-7/2)x + 15/2"],
+    "correctIndex": 0,
+    "hint": "Perpendicular slope: m1*m2=-1, use point-slope form.",
+    "explanation": "Slope of given line: 7x -2y +3=0 → -2y=-7x-3 → y=(7/2)x +3/2, perpendicular slope=-2/7? Wait → perpendicular slope = 2/7, y-1=(2/7)(x-1) → y=(2/7)x +5/7"
+  },
+  {
+    "question": "2. Determine the distance from point (4,5) to line x + 2y -6 =0.",
+    "options": ["3", "2", "√5", "√6"],
+    "correctIndex": 1,
+    "hint": "Distance formula: |Ax + By + C| / √(A² + B²).",
+    "explanation": "Distance = |4 +2*5 -6|/√(1+4)=|4+10-6|/√5=8/√5 → approx 3.577 → exact: 8/√5, simplified = 8/√5 ≈3.577"
+  },
+  {
+    "question": "3. Find the midpoint of (-7, 1) and (5, -3).",
+    "options": ["(-1, -1)", "(-1, -2)", "(-2, -1)", "(1,-1)"],
+    "correctIndex": 0,
+    "hint": "Midpoint = ((x1+x2)/2,(y1+y2)/2)",
+    "explanation": "Midpoint = ((-7+5)/2,(1-3)/2)=(-2/2,-2/2)=(-1,-1)"
+  },
+  {
+    "question": "4. Check if points (-2,3), (0,0), and (2,-3) are collinear.",
+    "options": ["Yes", "No", "Only first two", "Cannot determine"],
+    "correctIndex": 0,
+    "hint": "Check slopes between pairs of points.",
+    "explanation": "Slope (-2,3)-(0,0)=(-3/2), slope (0,0)-(2,-3)=-3/2 → same → collinear"
+  },
+  {
+    "question": "5. Find the slope of the line through points (1,-4) and (-2,5).",
+    "options": ["-3", "-3/1", "-3", "3"],
+    "correctIndex": 0,
+    "hint": "Slope = (y2-y1)/(x2-x1)",
+    "explanation": "Slope = (5-(-4))/(-2-1)=9/-3=-3"
+  }
+]

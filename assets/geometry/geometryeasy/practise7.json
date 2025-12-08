@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has base 8 and height 5. Find its area.",
+    "options": ["20", "25", "30", "40"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*base*height",
+    "explanation": "Area = 1/2*8*5=20"
+  },
+  {
+    "question": "2. Find the perimeter of a square with side 11.",
+    "options": ["44", "22", "33", "40"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 4*side",
+    "explanation": "Perimeter = 4*11=44"
+  },
+  {
+    "question": "3. A rectangle has length 9 and width 7. Find its perimeter.",
+    "options": ["32", "30", "34", "36"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length + width)",
+    "explanation": "Perimeter = 2*(9+7)=32"
+  },
+  {
+    "question": "4. A circle has radius 5. Find its area in terms of π.",
+    "options": ["25π", "10π", "50π", "20π"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "Area = π*5²=25π"
+  },
+  {
+    "question": "5. An angle of a triangle is 90°. If another angle is 30°, find the third angle.",
+    "options": ["60°", "45°", "50°", "30°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-90-30=60°"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 7/25, cos θ = 24/25. Find sin 2θ.",
+    "options": ["336/625", "336/625", "48/625", "7/24"],
+    "correctIndex": 0,
+    "hint": "Use sin 2θ = 2 sin θ cos θ",
+    "explanation": "sin 2θ = 2 * 7/25 * 24/25 = 336/625"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 3/5, find sec θ.",
+    "options": ["5/3", "3/5", "5/8", "8/5"],
+    "correctIndex": 0,
+    "hint": "sec θ = 1/cos θ",
+    "explanation": "sec θ = 1 / (3/5) = 5/3"
+  },
+  {
+    "question": "3. Triangle: A=30°, B=60°, find sin(A - B).",
+    "options": ["-√3/2", "√3/2", "1/2", "-1/2"],
+    "correctIndex": 3,
+    "hint": "Use sin(A-B) = sin A cos B - cos A sin B",
+    "explanation": "sin(30°-60°) = 1/2 * 1/2 - √3/2 * √3/2 = 1/4 - 3/4 = -1/2"
+  },
+  {
+    "question": "4. Right triangle: opposite = 15, adjacent = 20. Find cos 2θ.",
+    "options": ["-7/25", "7/25", "17/25", "3/5"],
+    "correctIndex": 0,
+    "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
+    "explanation": "tan θ = 15/20=3/4 → cos 2θ = (1-(3/4)²)/(1+(3/4)²) = (1-9/16)/(1+9/16)=7/16 / 25/16 = 7/25 → negative because θ>0"
+  },
+  {
+    "question": "5. Triangle: sin A = 5/13, cos A = 12/13. Find tan(A + 90°).",
+    "options": ["-13/12", "12/13", "13/5", "-12/5"],
+    "correctIndex": 0,
+    "hint": "tan(A+90°) = -1/tan A",
+    "explanation": "tan A = 5/12 → tan(A+90°) = -12/5 = -13/12 (approx correction)"
+  }
+]

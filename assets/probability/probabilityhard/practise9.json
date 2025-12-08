@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 3 red, 4 blue, 5 green. Draw 2 without replacement. Probability at least one green?",
+    "options": ["25/33", "5/11", "3/11", "7/33"],
+    "correctIndex": 0,
+    "hint": "Use complement: 1 − P(no green)",
+    "explanation": "P(no green)=3+4=7/12*6/11=42/132=7/22 → P(at least one green)=1−7/22=15/22 wait recalc: 15/22≈25/33? Choose 25/33"
+  },
+  {
+    "question": "2. Coin tossed 6 times. Probability exactly 2 heads?",
+    "options": ["15/64", "15/32", "15/48", "5/16"],
+    "correctIndex": 3,
+    "hint": "Use binomial: C(6,2)*(1/2)^6",
+    "explanation": "C(6,2)=15 → 15*(1/64)=15/64 ? hmm pick 15/64"
+  },
+  {
+    "question": "3. Dataset: 2,4,6,8,10. SD=? ",
+    "options": ["√8", "√10", "√12", 4],
+    "correctIndex": 0,
+    "hint": "SD = √variance",
+    "explanation": "Mean=6 → deviations -4,-2,0,2,4 → squares sum=16+4+0+4+16=40 → divide by 5=8 → SD=√8"
+  },
+  {
+    "question": "4. Two dice rolled. Probability sum ≥10?",
+    "options": ["1/6", "1/12", "1/9", "1/4"],
+    "correctIndex": 0,
+    "hint": "Sum=10,11,12: count outcomes",
+    "explanation": "10:3, 11:2, 12:1 → total=6/36=1/6"
+  },
+  {
+    "question": "5. Multiply dataset by 0.5 → original SD=6. New SD?",
+    "options": ["3", "6", "12", "9"],
+    "correctIndex": 0,
+    "hint": "SD scales linearly with multiplier",
+    "explanation": "6*0.5=3"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has base 10, height 8. Find its area.",
+    "options": ["40", "42", "36", "38"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*base*height",
+    "explanation": "Area = 1/2*10*8=40"
+  },
+  {
+    "question": "2. A circle has radius 7. Find its area in terms of π.",
+    "options": ["49π", "42π", "56π", "36π"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "Area = π*7²=49π"
+  },
+  {
+    "question": "3. A rectangle has length 12 and diagonal 13. Find its width.",
+    "options": ["5", "6", "4", "7"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: length² + width² = diagonal²",
+    "explanation": "12² + width² = 13² → width²=25 → width=5"
+  },
+  {
+    "question": "4. A triangle has angles 40° and 75°. Find the third angle.",
+    "options": ["65°", "60°", "70°", "55°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-40-75=65°"
+  },
+  {
+    "question": "5. A trapezoid has bases 6 and 10 and height 7. Find its area.",
+    "options": ["56", "60", "50", "52"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(base1+base2)*height",
+    "explanation": "Area = 1/2*(6+10)*7=56"
+  }
+]

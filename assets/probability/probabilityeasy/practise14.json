@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A spinner is divided into 8 equal sectors numbered 1 through 8. What is the probability of landing on a number divisible by 4?",
+    "options": ["1/2", "1/4", "1/8", "3/8"],
+    "correctIndex": 1,
+    "hint": "Which numbers between 1 and 8 are divisible by 4?",
+    "explanation": "Divisible by 4: 4 and 8 → 2 out of 8 → 1/4"
+  },
+  {
+    "question": "2. A die is rolled twice. What is the probability of getting doubles (same number both times)?",
+    "options": ["1/6", "1/36", "1/12", "1/3"],
+    "correctIndex": 0,
+    "hint": "There are 6 favorable pairs out of 36 total",
+    "explanation": "6/36 = 1/6"
+  },
+  {
+    "question": "3. A bag contains 5 black and 7 white balls. Two balls are drawn without replacement. What is the probability both are white?",
+    "options": ["7/12 × 6/11", "7/12 × 7/11", "5/12 × 7/11", "1/4"],
+    "correctIndex": 0,
+    "hint": "First draw white then second white (without replacement)",
+    "explanation": "(7/12) × (6/11) = 42/132 = 7/22 ≈ 0.318"
+  },
+  {
+    "question": "4. In a class, the average score of 10 students is 75. If one more student joins and scores 85, what is the new average?",
+    "options": ["76", "77", "80", "75.5"],
+    "correctIndex": 0,
+    "hint": "Compute new total sum and divide by new total number",
+    "explanation": "Old sum = 750. New sum = 750 + 85 = 835. New average = 835 / 11 ≈ 75.91 ≈ 76"
+  },
+  {
+    "question": "5. A bag has 3 red and 2 blue balls. One ball is drawn at random. What is the probability it is red, given the ball is not blue?",
+    "options": ["3/5", "3/3", "3/2", "1"],
+    "correctIndex": 1,
+    "hint": "Conditional on 'not blue' means only red balls remain",
+    "explanation": "If it's not blue, only 3 red remain → probability = 3/3 = 1"
+  }
+]

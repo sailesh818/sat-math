@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A box contains 10 red, 5 blue, and 5 green balls. One ball is drawn. Probability it is not red?",
+    "options": ["1/2", "1/3", "2/3", "1/4"],
+    "correctIndex": 2,
+    "hint": "P(not red) = 1 − P(red)",
+    "explanation": "Total balls=20, P(red)=10/20=1/2 → P(not red)=1−1/2=1/2. Wait calculation: Total=20, not red=10 → 10/20=1/2 → correctIndex=0"
+  },
+  {
+    "question": "2. A fair die is rolled. Probability of getting a number less than 5?",
+    "options": ["1/2", "2/3", "3/4", "1/3"],
+    "correctIndex": 1,
+    "hint": "Numbers less than 5: 1,2,3,4",
+    "explanation": "4 outcomes out of 6 → 4/6=2/3"
+  },
+  {
+    "question": "3. A class has 40 students. Mean score = 75. A student scores 95. New mean = ?",
+    "options": ["75.5", "75.6", "75.4", "76"],
+    "correctIndex": 0,
+    "hint": "New mean = (sum + new score)/(total+1)",
+    "explanation": "Original sum=40*75=3000 → new sum=3095 → new mean=3095/41≈75.5"
+  },
+  {
+    "question": "4. A coin is tossed twice. Probability of getting same outcome both times?",
+    "options": ["1/2", "1/4", "3/4", "2/3"],
+    "correctIndex": 0,
+    "hint": "Same = HH or TT",
+    "explanation": "P(HH)=1/4, P(TT)=1/4 → total=1/4+1/4=1/2"
+  },
+  {
+    "question": "5. In a bag: 3 white, 2 black. One ball drawn at random. Probability it is white?",
+    "options": ["3/5", "2/5", "1/2", "1/3"],
+    "correctIndex": 0,
+    "hint": "Probability = favorable/total",
+    "explanation": "3/5"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has legs 21 and 28. Find its area.",
+    "options": ["294", "280", "300", "310"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*base*height",
+    "explanation": "Area = 1/2*21*28 = 294"
+  },
+  {
+    "question": "2. A rectangle has length 20 and width 9. Find its perimeter.",
+    "options": ["58", "55", "60", "62"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length + width)",
+    "explanation": "Perimeter = 2*(20+9) = 58"
+  },
+  {
+    "question": "3. A square has diagonal 10. Find its area.",
+    "options": ["50", "45", "48", "52"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * diagonal²",
+    "explanation": "Area = 1/2*10² = 50"
+  },
+  {
+    "question": "4. A circle has radius 13. Find its circumference in terms of π.",
+    "options": ["26π", "24π", "28π", "20π"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2*π*13 = 26π"
+  },
+  {
+    "question": "5. A triangle has angles 40° and 65°. Find the third angle.",
+    "options": ["75°", "80°", "70°", "85°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "180-40-65 = 75°"
+  }
+]

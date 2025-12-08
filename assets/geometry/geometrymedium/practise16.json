@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has one leg 8 and the hypotenuse 10. Find the length of the other leg.",
+    "options": ["6", "7", "5", "4"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: a² + b² = c²",
+    "explanation": "8² + b² = 10² → b² = 64 → b = 6"
+  },
+  {
+    "question": "2. A rectangle has length 18 and area 144. Find its width.",
+    "options": ["8", "7", "9", "6"],
+    "correctIndex": 0,
+    "hint": "Area = length * width",
+    "explanation": "Width = 144 / 18 = 8"
+  },
+  {
+    "question": "3. A square has diagonal 20. Find its area.",
+    "options": ["200", "400", "150", "250"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * diagonal²",
+    "explanation": "Area = 1/2 * 20² = 200"
+  },
+  {
+    "question": "4. A circle has radius 12. Find its area in terms of π.",
+    "options": ["144π", "130π", "120π", "110π"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "Area = π*12² = 144π"
+  },
+  {
+    "question": "5. A triangle has angles 25° and 45°. Find the third angle.",
+    "options": ["110°", "100°", "90°", "105°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 25° - 45° = 110°"
+  }
+]

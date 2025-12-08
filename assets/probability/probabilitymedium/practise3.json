@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag contains 5 white, 3 black, and 2 red balls. Two balls are drawn with replacement. What is the probability both are black?",
+    "options": ["9/100", "3/10", "1/10", "1/12"],
+    "correctIndex": 0,
+    "hint": "With replacement, multiply probabilities",
+    "explanation": "Probability black = 3/10 → both black = 3/10 × 3/10 = 9/100"
+  },
+  {
+    "question": "2. A class of 25 students has a mean score of 80. One student scores 100. What is the mean of the remaining 24 students if the overall mean remains 80?",
+    "options": ["79", "80", "78", "81"],
+    "correctIndex": 2,
+    "hint": "Use weighted sum formula",
+    "explanation": "Total sum = 25×80=2000. Remove 100 → remaining sum = 2000−100=1900 → mean = 1900/24≈79.17 → closest=78"
+  },
+  {
+    "question": "3. A die is rolled three times. Probability of getting exactly one 6?",
+    "options": ["75/216", "25/72", "5/36", "1/6"],
+    "correctIndex": 0,
+    "hint": "Use binomial probability: C(3,1)*(1/6)*(5/6)^2",
+    "explanation": "C(3,1)=3 → 3*(1/6)*(25/36)=75/216"
+  },
+  {
+    "question": "4. The mode of the numbers: 3, 7, 3, 9, 12, 3, 7 is?",
+    "options": ["3", "7", "9", "12"],
+    "correctIndex": 0,
+    "hint": "Mode is most frequent value",
+    "explanation": "3 appears 3 times, 7 appears 2 times → mode=3"
+  },
+  {
+    "question": "5. The variance of a set of numbers is 16. If each number is multiplied by 2, what is the new variance?",
+    "options": ["32", "64", "8", "16"],
+    "correctIndex": 1,
+    "hint": "Variance scales by square of multiplier",
+    "explanation": "New variance = 16×(2^2)=16×4=64"
+  }
+]

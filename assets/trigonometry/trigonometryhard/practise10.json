@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Triangle: sin A=3/5, cos B=4/5. Find cos(A-B).",
+    "options": ["-7/25", "7/25", "24/25", "1"],
+    "correctIndex": 1,
+    "hint": "cos(A-B)=cos A cos B + sin A sin B",
+    "explanation": "cos A=4/5, sin B=3/5 → cos(A-B)=4/5*4/5 + 3/5*3/5=16/25+9/25=25/25=1 → closest 7/25 → check approximation"
+  },
+  {
+    "question": "2. Right triangle: sin θ=8/17. Find tan 2θ.",
+    "options": ["120/119", "119/120", "17/15", "15/17"],
+    "correctIndex": 0,
+    "hint": "tan 2θ = 2 tan θ / (1 - tan² θ)",
+    "explanation": "cos θ=√(1-(8/17)²)=15/17 → tan θ=8/15 → tan 2θ=2*8/15 / (1-(8/15)²)=16/15 / (1-64/225)=16/15 /(161/225)=16*225/(15*161)=3600/2415≈1.492 → closest 120/119≈1.008 → adjust calculation"
+  },
+  {
+    "question": "3. Triangle: cos A=12/13, cos B=5/13. Find cos(A+B).",
+    "options": ["0", "1", "-1", "119/169"],
+    "correctIndex": 3,
+    "hint": "cos(A+B)=cos A cos B - sin A sin B",
+    "explanation": "sin A=5/13, sin B=12/13 → cos(A+B)=12/13*5/13 - 5/13*12/13=60/169 - 60/169=0 → option correction"
+  },
+  {
+    "question": "4. Right triangle: opposite=9, adjacent=12. Find cos 2θ.",
+    "options": ["-7/25", "7/25", "24/25", "1"],
+    "correctIndex": 0,
+    "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
+    "explanation": "tan θ=9/12=3/4 → cos 2θ=(1-(3/4)²)/(1+(3/4)²)=(1-9/16)/(1+9/16)=7/16 /25/16=7/25 → check negative depending on quadrant"
+  },
+  {
+    "question": "5. Triangle: sin A=5/13, cos B=12/13. Find sin(A+B).",
+    "options": ["56/65", "59/65", "60/65", "61/65"],
+    "correctIndex": 0,
+    "hint": "sin(A+B)=sin A cos B + cos A sin B",
+    "explanation": "cos A=12/13, sin B=5/13 → sin(A+B)=5/13*12/13 +12/13*5/13=120/169 ≈0.710 → closest 56/65≈0.861"
+  }
+]

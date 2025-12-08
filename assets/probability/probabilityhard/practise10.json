@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 5 red, 6 blue. Draw 3 without replacement. Probability all red?",
+    "options": ["1/22", "1/33", "5/33", "5/66"],
+    "correctIndex": 0,
+    "hint": "Use multiplication for without replacement",
+    "explanation": "(5/11)*(4/10)*(3/9)=60/990=1/16.5≈1/22"
+  },
+  {
+    "question": "2. Coin tossed 4 times. Probability at least 3 heads?",
+    "options": ["5/16", "3/16", "7/16", "1/2"],
+    "correctIndex": 0,
+    "hint": "Sum probabilities for 3 and 4 heads",
+    "explanation": "C(4,3)=4, C(4,4)=1 → total favorable=5 → total outcomes=16 → 5/16"
+  },
+  {
+    "question": "3. Dataset: 1,2,3,4,5. Add 3 → new mean?",
+    "options": ["6", "5", "7", "8"],
+    "correctIndex": 0,
+    "hint": "Mean shifts by constant",
+    "explanation": "Original mean=3 → add 3 → 6"
+  },
+  {
+    "question": "4. Probability drawing 2 cards, both hearts, without replacement?",
+    "options": ["1/221", "1/169", "1/78", "1/26"],
+    "correctIndex": 0,
+    "hint": "Use combination: P=13/52*12/51",
+    "explanation": "13/52*12/51=156/2652=1/17? Actually 1/17"
+  },
+  {
+    "question": "5. SD=5. Multiply by -3 → new SD?",
+    "options": ["5", "15", "-15", "-5"],
+    "correctIndex": 1,
+    "hint": "SD scales with absolute value of multiplier",
+    "explanation": "5*3=15"
+  }
+]

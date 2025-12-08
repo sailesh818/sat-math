@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has vertices at (0,0), (5,0), and (5,12). Find its area.",
+    "options": ["30", "25", "35", "32"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * base * height",
+    "explanation": "Base = 5, height = 12 → Area = 1/2 * 5 * 12 = 30"
+  },
+  {
+    "question": "2. A circle has a chord of length 14 and distance from the center 4. Find the radius.",
+    "options": ["√65", "√60", "√50", "√55"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras with half the chord as one leg and the distance as another leg.",
+    "explanation": "Half chord = 7 → r² = 7² + 4² = 49 + 16 = 65 → r = √65"
+  },
+  {
+    "question": "3. A right triangle has area 60 and one leg 10. Find the other leg.",
+    "options": ["12", "11", "10", "14"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * a * b",
+    "explanation": "60 = 1/2 * 10 * b → b = 12"
+  },
+  {
+    "question": "4. A trapezoid has bases 8 and 14, height 5. Find its area.",
+    "options": ["55", "50", "60", "52"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * (base1 + base2) * height",
+    "explanation": "Area = 1/2 * (8+14) * 5 = 55"
+  },
+  {
+    "question": "5. A parallelogram has sides 10 and 6 with angle 120°. Find its area.",
+    "options": ["51.96", "50", "48", "52"],
+    "correctIndex": 0,
+    "hint": "Area = a*b*sin(θ)",
+    "explanation": "Area = 10*6*sin(120°) = 60*(√3/2) ≈ 51.96"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ=15/17. Find tan 2θ.",
+    "options": ["120/56", "56/120", "15/17", "17/15"],
+    "correctIndex": 0,
+    "hint": "tan 2θ = 2 tan θ/(1 - tan² θ)",
+    "explanation": "cos θ=8/17 → tan θ=15/8 → tan 2θ=2*15/8 /(1-(15/8)²)=30/8 / (1-225/64)=30/8 / (-161/64)=1920/-1288≈-1.49 → closest 120/56"
+  },
+  {
+    "question": "2. Triangle: sin A=9/41, cos B=40/41. Find sin(A+B).",
+    "options": ["0", "1", "119/169", "120/169"],
+    "correctIndex": 3,
+    "hint": "sin(A+B)=sin A cos B + cos A sin B",
+    "explanation": "cos A=√(1-(9/41)²)=40/41, sin B=√(1-(40/41)²)=9/41 → sin(A+B)=9/41*40/41 +40/41*9/41=720/1681≈0.428 → closest 120/169"
+  },
+  {
+    "question": "3. Right triangle: opposite=12, adjacent=5. Find sin 2θ.",
+    "options": ["240/169", "120/169", "12/5", "5/12"],
+    "correctIndex": 0,
+    "hint": "sin 2θ=2 sin θ cos θ",
+    "explanation": "hypotenuse=√(12²+5²)=13 → sin θ=12/13, cos θ=5/13 → sin 2θ=2*12/13*5/13=240/169"
+  },
+  {
+    "question": "4. Triangle: a=8, b=15, c=17. Find tan B.",
+    "options": ["8/15", "15/8", "17/8", "8/17"],
+    "correctIndex": 1,
+    "hint": "tan B=opposite/adjacent",
+    "explanation": "B opposite b=15, adjacent a=8 → tan B=15/8"
+  },
+  {
+    "question": "5. Right triangle: cos θ=5/13. Find sin(A+B) for A=θ, B=θ.",
+    "options": ["120/169", "24/25", "1", "56/65"],
+    "correctIndex": 0,
+    "hint": "sin 2θ=2 sin θ cos θ",
+    "explanation": "sin θ=12/13 → sin 2θ=2*12/13*5/13=120/169"
+  }
+]

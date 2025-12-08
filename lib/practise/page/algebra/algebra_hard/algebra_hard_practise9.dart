@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AlgebraHardPractise9 extends StatefulWidget {
   const AlgebraHardPractise9({super.key});
@@ -13,19 +16,27 @@ class _AlgebraHardPractise9State extends State<AlgebraHardPractise9> {
   bool answerChecked = false;
   bool showHint = false;
 
+  int correctCount = 0;
+  int hintPenalty = 0;
+  int totalPoints = 0;
+
+  RewardedAd? _rewardedAd;
+  bool _isRewardedAdReady = false;
+  bool _hintAdShown = false;
+
   final List<Map<String, dynamic>> questions = [
     {
       'question': '1. Solve the inequality: x^2 - 5x + 6 < 0',
       'options': ['1 < x < 3', '2 < x < 3', 'x < 2 or x > 3', 'x > 1 and x < 2'],
       'correctIndex': 0,
-      'hint': 'Factor the quadratic: x^2 -5x +6 = (x-2)(x-3). Determine where the product is negative.',
+      'hint': 'Factor: x^2 -5x +6 = (x-2)(x-3). Determine where product is negative.',
       'explanation': 'The inequality is negative between the roots: 1 < x < 3.'
     },
     {
       'question': '2. Solve: x^2 + x - 6 ≥ 0',
       'options': ['x ≤ -3 or x ≥ 2', 'x ≤ 2 or x ≥ -3', 'x < -3 or x > 2', 'x > -3 and x < 2'],
       'correctIndex': 0,
-      'hint': 'Factor: x^2 + x -6 = (x+3)(x-2) and find intervals where the product is ≥ 0.',
+      'hint': 'Factor: x^2 + x -6 = (x+3)(x-2) and find intervals where product ≥ 0.',
       'explanation': 'Product ≥ 0 when x ≤ -3 or x ≥ 2.'
     },
     {
@@ -39,7 +50,7 @@ class _AlgebraHardPractise9State extends State<AlgebraHardPractise9> {
       'question': '4. Solve: 2x^2 - 3x - 2 ≤ 0',
       'options': ['-0.5 ≤ x ≤ 2', '-2 ≤ x ≤ 0.5', 'x ≤ -0.5 or x ≥ 2', 'x < -2 or x > 0.5'],
       'correctIndex': 0,
-      'hint': 'Factor or use quadratic formula to find roots, then check intervals for ≤ 0.',
+      'hint': 'Factor or use quadratic formula to find roots, then check intervals ≤ 0.',
       'explanation': 'Roots: x=-0.5 and x=2 ⇒ inequality holds for -0.5 ≤ x ≤ 2.'
     },
     {
@@ -51,34 +62,188 @@ class _AlgebraHardPractise9State extends State<AlgebraHardPractise9> {
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadUserPoints();
+    _loadRewardedAd();
+  }
+
+  Future<void> _loadUserPoints() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    try {
+      final doc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.uid)
+          .get();
+
+      if (doc.exists && doc.data() != null) {
+        final data = doc.data()!;
+        setState(() => totalPoints = data["totalPoints"] ?? 0);
+      }
+    } catch (e) {
+      debugPrint("Error loading points: $e");
+    }
+  }
+
+  Future<void> savePointsToFirebase(int pointsToAdd) async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user.uid)
+        .set({
+      "totalPoints": FieldValue.increment(pointsToAdd),
+    }, SetOptions(merge: true));
+
+    setState(() => totalPoints += pointsToAdd);
+  }
+
   void checkAnswer(int index) {
     if (!answerChecked) {
       setState(() {
         selectedAnswerIndex = index;
         answerChecked = true;
+        if (index == questions[currentQuestionIndex]['correctIndex']) {
+          correctCount++;
+        }
       });
     }
   }
 
-  void nextQuestion() {
+  void nextQuestion() async {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
         showHint = false;
+        _hintAdShown = false;
+      });
+    } else {
+      int basePoints = 4 + correctCount;
+      int finalPoints = basePoints - hintPenalty;
+      if (finalPoints < 0) finalPoints = 0;
+
+      await savePointsToFirebase(finalPoints);
+      _showCompletionDialog(finalPoints);
+    }
+  }
+
+  void _showCompletionDialog(int finalPoints) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => AlertDialog(
+        title: const Text('🎉 Quiz Completed!'),
+        content: Text(
+          'Correct Answers: $correctCount\n'
+          'Hint Penalty: -$hintPenalty\n'
+          'Final Score: $finalPoints\n\n'
+          'Watch an ad to earn extra reward points!',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('No, Thanks'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _showRewardedAd(forHint: false);
+            },
+            child: const Text('Watch Ad'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-6704136477020125/4913789019',
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          _rewardedAd = ad;
+          _isRewardedAdReady = true;
+        },
+        onAdFailedToLoad: (err) {
+          debugPrint('Failed to load rewarded ad: ${err.message}');
+          _isRewardedAdReady = false;
+        },
+      ),
+    );
+  }
+
+  void _showRewardedAd({required bool forHint}) {
+    if (!_isRewardedAdReady || _rewardedAd == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Ad not ready yet')),
+      );
+      return;
+    }
+
+    _rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+      onAdFailedToShowFullScreenContent: (ad, err) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+    );
+
+    _rewardedAd!.show(onUserEarnedReward: (ad, reward) async {
+      if (forHint) {
+        setState(() {
+          showHint = true;
+          _hintAdShown = true;
+        });
+      } else {
+        await savePointsToFirebase(5);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('You earned 5 reward points!')),
+        );
+      }
+    });
+
+    _rewardedAd = null;
+    _isRewardedAdReady = false;
+  }
+
+  Future<void> _useHint() async {
+    if (_hintAdShown) return;
+
+    if (totalPoints >= 2) {
+      await savePointsToFirebase(-2);
+      setState(() {
+        showHint = true;
+        hintPenalty += 2;
       });
     } else {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Completed!'),
-          content: const Text('You have finished all questions.'),
+          title: const Text('Insufficient Points'),
+          content: const Text(
+              'You have less than 2 reward points. Watch an ad to unlock this hint?'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            )
+              child: const Text('No, Thanks'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                _showRewardedAd(forHint: true);
+              },
+              child: const Text('Watch Ad'),
+            ),
           ],
         ),
       );
@@ -92,7 +257,10 @@ class _AlgebraHardPractise9State extends State<AlgebraHardPractise9> {
     return Scaffold(
       backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
-        title: const Text('Algebra Hard - Practise 9'),
+        title: Text(
+          'Algebra Hard - Practise 9 (Points: $totalPoints)',
+          style: const TextStyle(fontSize: 16),
+        ),
         backgroundColor: Colors.blue.shade700,
         centerTitle: true,
       ),
@@ -147,16 +315,12 @@ class _AlgebraHardPractise9State extends State<AlgebraHardPractise9> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      showHint = !showHint;
-                    });
-                  },
+                  onPressed: _useHint,
                   icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
                   label: const Text("Hint",
                       style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.orange,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 12),
                     shape: RoundedRectangleBorder(
@@ -170,7 +334,7 @@ class _AlgebraHardPractise9State extends State<AlgebraHardPractise9> {
                 margin: const EdgeInsets.only(top: 12),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.blue.shade100,
+                  color: Colors.orange.shade100,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child:

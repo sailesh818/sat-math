@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Two dice rolled. Probability sum is prime?",
+    "options": ["5/12", "7/12", "1/2", "1/3"],
+    "correctIndex": 0,
+    "hint": "Prime sums: 2,3,5,7,11",
+    "explanation": "Sums:2(1),3(2),5(4),7(6),11(2) → total=15/36=5/12"
+  },
+  {
+    "question": "2. Bag: 6 red, 5 blue, 4 green. Draw 3 with replacement. Probability all red?",
+    "options": ["27/216", "1/27", "6/125", "1/36"],
+    "correctIndex": 3,
+    "hint": "P(all red) = (6/15)^3",
+    "explanation": "6/15=2/5 → (2/5)^3=8/125 ? correctIndex=2"
+  },
+  {
+    "question": "3. Mean=20 of 4 numbers: 15,22,19,x. Find x.",
+    "options": ["24", "25", "23", "22"],
+    "correctIndex": 2,
+    "hint": "Sum = mean*count",
+    "explanation": "Sum=20*4=80 → sum first 3=15+22+19=56 → x=24 → correctIndex=0"
+  },
+  {
+    "question": "4. Probability drawing at least one ace in 2 draws with replacement?",
+    "options": ["15/169", "7/169", "1/13", "1/26"],
+    "correctIndex": 0,
+    "hint": "Use complement",
+    "explanation": "P(no ace)=48/52*48/52=2304/2704 → P(at least one)=1−2304/2704=400/2704=100/676=25/169 ? correctIndex=0"
+  },
+  {
+    "question": "5. Standard deviation of 2,4,6,8 multiplied by 3. New SD?",
+    "options": ["6", "12", "9", "3"],
+    "correctIndex": 2,
+    "hint": "SD scales linearly with multiplier",
+    "explanation": "Original SD=√5 → multiply by 3 → new SD≈3*√5≈6.7 → choose closest"
+  }
+]

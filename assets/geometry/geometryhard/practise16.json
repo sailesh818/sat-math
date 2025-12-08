@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 15, 20, 25. Find its area.",
+    "options": ["150", "140", "145", "155"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 15 * 20 = 150"
+  },
+  {
+    "question": "2. A circle has a chord of 12 with perpendicular distance from center 5. Find radius.",
+    "options": ["13", "14", "15", "12"],
+    "correctIndex": 0,
+    "hint": "r² = (chord/2)² + distance²",
+    "explanation": "r² = 6² + 5² = 36 + 25 = 61 → r = √61 ≈ 13"
+  },
+  {
+    "question": "3. A cone has radius 6 and slant height 10. Find lateral surface area.",
+    "options": ["60π", "65π", "70π", "75π"],
+    "correctIndex": 0,
+    "hint": "Lateral area = π * r * l",
+    "explanation": "Area = π * 6 * 10 = 60π"
+  },
+  {
+    "question": "4. A rectangular prism has dimensions 5, 12, 13. Find its space diagonal.",
+    "options": ["18", "19", "20", "21"],
+    "correctIndex": 2,
+    "hint": "Diagonal = √(l² + w² + h²)",
+    "explanation": "Diagonal = √(5²+12²+13²)=√25+144+169=√338≈18.38 → closest 20"
+  },
+  {
+    "question": "5. A trapezoid has bases 14 and 22, height 5. Find area.",
+    "options": ["90", "95", "95", "92"],
+    "correctIndex": 1,
+    "hint": "Area = 1/2*(b1+b2)*h",
+    "explanation": "Area = 1/2*(14+22)*5=90"
+  }
+]

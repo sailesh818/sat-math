@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If cos θ = √3/2, what is θ in degrees?",
+    "options": ["30°", "45°", "60°", "90°"],
+    "correctIndex": 0,
+    "hint": "Use special right triangle values",
+    "explanation": "cos 30° = √3/2 → θ = 30°"
+  },
+  {
+    "question": "2. In a right triangle, opposite = 1, adjacent = √3. Find tan θ.",
+    "options": ["1/√3", "√3", "1", "√2"],
+    "correctIndex": 0,
+    "hint": "tan θ = opposite/adjacent",
+    "explanation": "tan θ = 1/√3"
+  },
+  {
+    "question": "3. sin θ = √2/2. Find θ in degrees.",
+    "options": ["30°", "45°", "60°", "90°"],
+    "correctIndex": 1,
+    "hint": "Use special triangles",
+    "explanation": "sin 45° = √2/2 → θ = 45°"
+  },
+  {
+    "question": "4. Right triangle: opposite = 5, adjacent = 12. Find tan θ.",
+    "options": ["5/12", "12/5", "5/13", "12/13"],
+    "correctIndex": 0,
+    "hint": "tan θ = opposite/adjacent",
+    "explanation": "tan θ = 5/12"
+  },
+  {
+    "question": "5. cos θ = 1/2. Find θ in degrees.",
+    "options": ["30°", "45°", "60°", "90°"],
+    "correctIndex": 2,
+    "hint": "Use special triangles",
+    "explanation": "cos 60° = 1/2 → θ = 60°"
+  }
+]

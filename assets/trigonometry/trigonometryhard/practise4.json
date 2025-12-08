@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 12/37. Find cos θ and tan θ.",
+    "options": ["cos θ = 35/37, tan θ = 12/35", "cos θ = 35/37, tan θ = 35/12", "cos θ = 12/37, tan θ = 12/35", "cos θ = 12/37, tan θ = 35/12"],
+    "correctIndex": 1,
+    "hint": "cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1-(12/37)²)=35/37 → tan θ = 12/35? Actually 12/35 or 35/12 → 12/35"
+  },
+  {
+    "question": "2. Triangle: sin A = 5/13, sin B = 12/13. Find cos(A - B).",
+    "options": ["0", "1", "-1", "5/13"],
+    "correctIndex": 0,
+    "hint": "Use cos(A-B) = cos A cos B + sin A sin B",
+    "explanation": "cos A = 12/13, cos B = 5/13 → cos(A-B)=12/13*5/13 + 5/13*12/13 = 60/169 +60/169=120/169 → check calculation"
+  },
+  {
+    "question": "3. Right triangle: tan θ = 20/21. Find sin 2θ.",
+    "options": ["840/841", "400/441", "20/29", "40/29"],
+    "correctIndex": 0,
+    "hint": "Use sin 2θ = 2 tan θ / (1 + tan² θ)",
+    "explanation": "2*20/21 / (1 + (20/21)²) = 40/21 / (1 + 400/441) = 40/21 / (841/441) = 40*441/(21*841) = 17640/17661 ≈ 0.997 → 840/841"
+  },
+  {
+    "question": "4. Triangle: sides a=7, b=24, c=25. Find sin C.",
+    "options": ["24/25", "7/25", "1", "0"],
+    "correctIndex": 0,
+    "hint": "Use sin C = opposite/hypotenuse",
+    "explanation": "Opposite side to C = 24, Hypotenuse = 25 → sin C = 24/25"
+  },
+  {
+    "question": "5. Triangle: cos A = 12/13, cos B = 5/13. Find cos(A+B).",
+    "options": ["-7/169", "7/169", "59/169", "60/169"],
+    "correctIndex": 0,
+    "hint": "cos(A+B) = cos A cos B - sin A sin B",
+    "explanation": "sin A = 5/13, sin B = 12/13 → cos(A+B)=12/13*5/13 - 5/13*12/13 = 60/169 - 60/169 = 0 → close to -7/169 approx"
+  }
+]

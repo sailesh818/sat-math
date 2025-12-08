@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 8, 15, 17. Find its area.",
+    "options": ["60", "58", "62", "64"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2 * base * height",
+    "explanation": "Area = 1/2*8*15 = 60"
+  },
+  {
+    "question": "2. A rectangle has diagonal 25 and width 7. Find its length.",
+    "options": ["24", "23", "22", "21"],
+    "correctIndex": 0,
+    "hint": "Pythagoras: length² + width² = diagonal²",
+    "explanation": "Length² + 7² = 25² → Length²=576 → Length=24"
+  },
+  {
+    "question": "3. A circle has circumference 36π. Find its radius.",
+    "options": ["18", "16", "17", "20"],
+    "correctIndex": 0,
+    "hint": "C = 2πr",
+    "explanation": "2πr = 36π → r=18"
+  },
+  {
+    "question": "4. A triangle has angles 35° and 75°. Find the third angle.",
+    "options": ["70°", "65°", "60°", "75°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "180-35-75=70°"
+  },
+  {
+    "question": "5. A trapezoid has bases 12 and 18, height 5. Find its area.",
+    "options": ["75", "70", "72", "78"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(base1+base2)*height",
+    "explanation": "Area = 1/2*(12+18)*5 = 75"
+  }
+]

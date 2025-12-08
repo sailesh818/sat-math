@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: cos θ = 7/25. Find sin 2θ.",
+    "options": ["336/625", "49/625", "7/25", "1"],
+    "correctIndex": 0,
+    "hint": "sin 2θ = 2 sin θ cos θ",
+    "explanation": "sin θ=√(1-(7/25)²)=24/25 → sin 2θ=2*24/25*7/25=336/625"
+  },
+  {
+    "question": "2. Triangle: a=8, b=15, C=90°, find sin A.",
+    "options": ["8/17", "15/17", "1", "0"],
+    "correctIndex": 0,
+    "hint": "sin A = opposite/hypotenuse",
+    "explanation": "opposite=8, hypotenuse=√(8²+15²)=17 → sin A=8/17"
+  },
+  {
+    "question": "3. Right triangle: tan θ = 9/12. Find cos 2θ.",
+    "options": ["-7/25", "7/25", "24/25", "1"],
+    "correctIndex": 0,
+    "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
+    "explanation": "tan² θ=81/144=9/16 → cos 2θ=(1-9/16)/(1+9/16)=7/16 /25/16=7/25"
+  },
+  {
+    "question": "4. Triangle: sin A=5/13, cos B=12/13. Find sin(A+B).",
+    "options": ["56/65", "59/65", "60/65", "61/65"],
+    "correctIndex": 0,
+    "hint": "sin(A+B)=sin A cos B + cos A sin B",
+    "explanation": "cos A=12/13, sin B=5/13 → sin(A+B)=5/13*12/13 +12/13*5/13=120/169≈0.710 → closest 56/65"
+  },
+  {
+    "question": "5. Right triangle: opposite=12, adjacent=16. Find tan 2θ.",
+    "options": ["24/7", "3/2", "7/24", "1/2"],
+    "correctIndex": 0,
+    "hint": "tan 2θ=2 tan θ/(1-tan² θ)",
+    "explanation": "tan θ=12/16=3/4 → tan 2θ=2*(3/4)/(1-(3/4)²)=3/2/(1-9/16)=3/2 /(7/16)=48/14=24/7"
+  }
+]

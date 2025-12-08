@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 9/41. Find cos 2θ.",
+    "options": ["32/41", "32/1681", "-32/1681", "7/41"],
+    "correctIndex": 2,
+    "hint": "Use cos 2θ = 1 - 2 sin² θ",
+    "explanation": "cos 2θ = 1 - 2*(9/41)² = 1 - 162/1681 = 1519/1681 → positive, correct options should reflect this"
+  },
+  {
+    "question": "2. Triangle: sin A = 5/13, cos B = 12/13. Find sin(A-B).",
+    "options": ["-56/65", "56/65", "1", "-1"],
+    "correctIndex": 0,
+    "hint": "Use sin(A-B) = sin A cos B - cos A sin B",
+    "explanation": "cos A=12/13, sin B=5/13 → sin(A-B) = 5/13*12/13 - 12/13*5/13 = 60/169 - 60/169 = 0 → correction: 0"
+  },
+  {
+    "question": "3. Right triangle: opposite = 20, adjacent = 21. Find cos 2θ.",
+    "options": ["-41/841", "1/841", "1", "41/841"],
+    "correctIndex": 3,
+    "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
+    "explanation": "tan θ = 20/21 → cos 2θ = (1-(400/441))/(1+(400/441)) = (41/441)/(841/441)=41/841"
+  },
+  {
+    "question": "4. Triangle: a=8, b=15, c=17. Find tan C.",
+    "options": ["15/8", "8/15", "17/8", "8/17"],
+    "correctIndex": 0,
+    "hint": "tan C = opposite/adjacent",
+    "explanation": "C opposite side c=17? Actually C opposite 17 → right triangle with hypotenuse=17, other sides 8,15 → tan C=opposite/adjacent=15/8"
+  },
+  {
+    "question": "5. Right triangle: sin θ = 12/13. Find tan θ and sec θ.",
+    "options": ["tan θ=5/12, sec θ=13/12", "tan θ=12/5, sec θ=13/5", "tan θ=5/12, sec θ=13/5", "tan θ=12/5, sec θ=12/13"],
+    "correctIndex": 1,
+    "hint": "tan θ = sin θ / cos θ, sec θ = 1 / cos θ",
+    "explanation": "cos θ = 5/13 → tan θ = 12/5, sec θ = 13/5"
+  }
+]

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AlgebraEasyPractise6 extends StatefulWidget {
   const AlgebraEasyPractise6({super.key});
@@ -13,7 +16,71 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
   bool answerChecked = false;
   bool showHint = false;
 
-  // 🔹 Topic: Simplifying Expressions (Distribution + Like Terms)
+  int userPoints = 0;
+  bool isAdLoaded = false;
+  RewardedAd? rewardedAd;
+
+  // ⭐ Load User Points
+  @override
+  void initState() {
+    super.initState();
+    loadUserPoints();
+    loadRewardedAd();
+  }
+
+  Future<void> loadUserPoints() async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    final snap = await FirebaseFirestore.instance.collection('users').doc(uid).get();
+
+    if (snap.exists && snap.data()!.containsKey('points')) {
+      setState(() {
+        userPoints = snap['points'];
+      });
+    }
+  }
+
+  Future<void> saveUserPoints() async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    await FirebaseFirestore.instance.collection('users').doc(uid).update({
+      'points': userPoints,
+    });
+  }
+
+  // ⭐ Load Rewarded Ad
+  void loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-3940256099942544/5224354917', // Test ad
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          rewardedAd = ad;
+          setState(() => isAdLoaded = true);
+        },
+        onAdFailedToLoad: (error) {
+          isAdLoaded = false;
+        },
+      ),
+    );
+  }
+
+  void showRewardedAd(Function rewardCallback) {
+    if (rewardedAd == null) return;
+
+    rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        loadRewardedAd();
+      },
+    );
+
+    rewardedAd!.show(
+      onUserEarnedReward: (ad, reward) {
+        rewardCallback();
+      },
+    );
+  }
+
+  // 🔹 Topic Questions
   final List<Map<String, dynamic>> questions = [
     {
       'question': '1. Simplify: 2(x + 3) + 4x',
@@ -57,6 +124,12 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
       setState(() {
         selectedAnswerIndex = index;
         answerChecked = true;
+
+        /// ⭐ Earn Points for Correct Answer
+        if (index == questions[currentQuestionIndex]['correctIndex']) {
+          userPoints += 3;
+          saveUserPoints();
+        }
       });
     }
   }
@@ -70,19 +143,66 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
         showHint = false;
       });
     } else {
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: const Text('🎉 Great Job!'),
-          content: const Text('You have completed all practise questions!'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
+      showCompletionDialog();
+    }
+  }
+
+  void showCompletionDialog() {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text("🎉 Great Job!"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text("You finished all questions."),
+            const SizedBox(height: 10),
+            Text("⭐ Points Earned: $userPoints"),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                if (!isAdLoaded) return;
+                showRewardedAd(() {
+                  setState(() {
+                    userPoints += 10;
+                  });
+                  saveUserPoints();
+                });
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              child: const Text("Watch Ad to Earn +10 Points"),
+            )
           ],
         ),
-      );
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pop(context);
+            },
+            child: const Text("OK"),
+          )
+        ],
+      ),
+    );
+  }
+
+  void handleHint() {
+    if (userPoints >= 2) {
+      setState(() {
+        userPoints -= 2;
+        showHint = true;
+      });
+      saveUserPoints();
+    } else {
+      if (isAdLoaded) {
+        showRewardedAd(() {
+          setState(() {
+            userPoints += 5;
+          });
+          saveUserPoints();
+        });
+      }
     }
   }
 
@@ -105,21 +225,34 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            // ⭐ Points Display
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green.shade200,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                "⭐ Points: $userPoints",
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
             /// QUESTION CARD
             Card(
               elevation: 4,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
-              ),
+                  borderRadius: BorderRadius.circular(18)),
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Text(
                   question['question'],
                   style: const TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w600,
-                    height: 1.4,
-                  ),
+                      fontSize: 19,
+                      fontWeight: FontWeight.w600,
+                      height: 1.4),
                 ),
               ),
             ),
@@ -152,10 +285,7 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
-                  title: Text(
-                    option,
-                    style: const TextStyle(fontSize: 17),
-                  ),
+                  title: Text(option, style: const TextStyle(fontSize: 17)),
                   onTap: () => checkAnswer(index),
                 ),
               );
@@ -168,23 +298,15 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      showHint = !showHint;
-                    });
-                  },
+                  onPressed: handleHint,
                   icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
                   label: const Text(
-                    "Hint",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    "Hint (-2 pts)",
+                    style: TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   ),
                 ),
               ],
@@ -229,9 +351,6 @@ class _AlgebraEasyPractise6State extends State<AlgebraEasyPractise6> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
                 ),
                 child: Text(
                   currentQuestionIndex == questions.length - 1

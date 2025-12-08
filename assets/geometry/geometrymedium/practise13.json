@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has hypotenuse 15 and one leg 9. Find the length of the other leg.",
+    "options": ["12", "13", "14", "10"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: a² + b² = c²",
+    "explanation": "9² + b² = 15² → b² = 144 → b = 12"
+  },
+  {
+    "question": "2. A rectangle has length 20 and area 120. Find its width.",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 0,
+    "hint": "Area = length * width",
+    "explanation": "Width = 120 / 20 = 6"
+  },
+  {
+    "question": "3. A circle has circumference 18π. Find its radius.",
+    "options": ["9", "10", "8", "7"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "2πr = 18π → r = 9"
+  },
+  {
+    "question": "4. A triangle has angles 55° and 65°. Find the third angle.",
+    "options": ["60°", "70°", "65°", "75°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 55° - 65° = 60°"
+  },
+  {
+    "question": "5. A parallelogram has base 8 and height 6. Find its area.",
+    "options": ["48", "42", "44", "46"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 8 * 6 = 48"
+  }
+]

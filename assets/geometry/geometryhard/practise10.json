@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A parallelogram has base 10 and height 7. What is the area of the parallelogram?",
+    "options": ["70", "72", "75", "76"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 10 * 7 = 70"
+  },
+  {
+    "question": "2. A circle has a radius of 8. Find its circumference in terms of π.",
+    "options": ["16π", "14π", "12π", "10π"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2π*8 = 16π"
+  },
+  {
+    "question": "3. The area of a triangle is 36. The base of the triangle is 12. What is the height?",
+    "options": ["6", "8", "7", "5"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * base * height",
+    "explanation": "36 = 1/2 * 12 * height → height = 6"
+  },
+  {
+    "question": "4. A square has a diagonal of 10√2. What is its side length?",
+    "options": ["10", "12", "8", "7"],
+    "correctIndex": 0,
+    "hint": "Diagonal of square = s√2",
+    "explanation": "10√2 = s√2 → s = 10"
+  },
+  {
+    "question": "5. The area of a circle is 36π. Find its radius.",
+    "options": ["6", "5", "4", "3"],
+    "correctIndex": 0,
+    "hint": "Area = πr²",
+    "explanation": "36π = πr² → r² = 36 → r = 6"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the slope of the line joining points (−2, 5) and (3, −5).",
+    "options": ["−2", "2", "−10/5", "10/5"],
+    "correctIndex": 0,
+    "hint": "Slope formula: (y2−y1)/(x2−x1)",
+    "explanation": "Slope = (−5−5)/(3−(−2)) = −10/5 = −2"
+  },
+  {
+    "question": "2. Determine the midpoint of segment connecting (−4,−2) and (6,8).",
+    "options": ["(1,3)", "(2,3)", "(1,2)", "(0,3)"],
+    "correctIndex": 0,
+    "hint": "Midpoint formula: ((x1+x2)/2, (y1+y2)/2)",
+    "explanation": "Midpoint = ((−4+6)/2,(−2+8)/2) = (1,3)"
+  },
+  {
+    "question": "3. Are points (0,0), (2,3), (4,6) collinear?",
+    "options": ["Yes", "No", "Cannot Determine", "Partially"],
+    "correctIndex": 0,
+    "hint": "Check if slopes between consecutive points are equal",
+    "explanation": "Slope 0-1 = 3/2, slope 1-2 = 3/2 ⇒ Yes, collinear"
+  },
+  {
+    "question": "4. Find distance between points (5,−1) and (1,3).",
+    "options": ["√32", "√16", "√25", "√20"],
+    "correctIndex": 0,
+    "hint": "Distance formula: √[(x2−x1)² + (y2−y1)²]",
+    "explanation": "Distance = √[(1−5)² + (3+1)²] = √[16+16]=√32"
+  },
+  {
+    "question": "5. Equation of line passing through (2,1) with slope −1/2:",
+    "options": ["y−1 = −1/2(x−2)", "y+1 = −1/2(x−2)", "y−1 = 2(x−2)", "y+1 = 2(x−2)"],
+    "correctIndex": 0,
+    "hint": "Use point-slope formula: y−y1 = m(x−x1)",
+    "explanation": "y−y1 = m(x−x1) ⇒ y−1 = −1/2(x−2)"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag has 6 red, 5 blue, 4 green. Draw 3 balls without replacement. Probability all different colors?",
+    "options": ["5/38", "1/19", "10/19", "5/19"],
+    "correctIndex": 0,
+    "hint": "P = (choose red first)*(choose blue second)*(choose green third)",
+    "explanation": "(6/15)*(5/14)*(4/13)=120/2730=5/38"
+  },
+  {
+    "question": "2. Coin tossed 5 times. Probability exactly 3 heads?",
+    "options": ["5/16", "10/32", "5/32", "10/32"],
+    "correctIndex": 1,
+    "hint": "Binomial formula: C(5,3)*(1/2)^5",
+    "explanation": "C(5,3)*(1/2)^5 = 10*1/32=10/32"
+  },
+  {
+    "question": "3. Dataset: 2, 4, 6, 8, 10. Add 5 to each number. New variance?",
+    "options": ["10", "16", "25", "20"],
+    "correctIndex": 0,
+    "hint": "Adding constant does not change variance",
+    "explanation": "Original variance = 8 → wait calculate: mean=6 → deviations: -4,-2,0,2,4 → squares:16,4,0,4,16 sum=40 → divide by 5=8 → adding 5 does not change variance=8"
+  },
+  {
+    "question": "4. Two dice rolled. Probability sum=7 or 11?",
+    "options": ["8/36", "2/9", "5/36", "7/36"],
+    "correctIndex": 0,
+    "hint": "Sum=7 (6 outcomes), sum=11 (2 outcomes)",
+    "explanation": "6+2=8 outcomes → 8/36=2/9"
+  },
+  {
+    "question": "5. Probability of drawing 3 aces in 4 draws with replacement?",
+    "options": ["64/28561", "1/28561", "64/456976", "27/28561"],
+    "correctIndex": 0,
+    "hint": "Binomial probability",
+    "explanation": "P= C(4,3)*(4/52)^3*(48/52)^1 = 4*(64/140608)*(48/52) → approx 64/28561"
+  }
+]

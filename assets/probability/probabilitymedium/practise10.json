@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A die rolled once. Probability number >4?",
+    "options": ["1/3", "1/2", "1/6", "2/3"],
+    "correctIndex": 0,
+    "hint": "Numbers >4: 5,6",
+    "explanation": "2/6=1/3"
+  },
+  {
+    "question": "2. Two coins tossed. Probability both heads?",
+    "options": ["1/2", "1/4", "1/3", "3/4"],
+    "correctIndex": 1,
+    "hint": "Only HH counts",
+    "explanation": "1/4"
+  },
+  {
+    "question": "3. Mean=20 for 5 numbers: 18,22,19,20,x. Find x.",
+    "options": ["21", "20", "19", "22"],
+    "correctIndex": 0,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=20*5=100 → 18+22+19+20+x=79+x=100 → x=21"
+  },
+  {
+    "question": "4. A bag: 3 white, 7 black. Pick one. Probability white?",
+    "options": ["3/10", "7/10", "1/2", "3/7"],
+    "correctIndex": 0,
+    "hint": "Probability = favorable/total",
+    "explanation": "3/10"
+  },
+  {
+    "question": "5. Standard deviation unchanged if each number increased by 4. True/False?",
+    "options": ["True", "False", "Cannot say", "Depends"],
+    "correctIndex": 0,
+    "hint": "SD depends on spread, not shift",
+    "explanation": "Adding a constant shifts mean but spread remains → SD same"
+  }
+]

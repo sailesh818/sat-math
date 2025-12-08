@@ -3,11 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sat_math/login/pages/login_page.dart';
 
-// Import Test 1 Pages
+// Import Test Pages
 import 'package:sat_math/testpage/test1/page/test1model1_page.dart';
 import 'package:sat_math/testpage/test1/page/test1model2_page.dart';
-
-// Import Test 2 Pages
 import 'package:sat_math/testpage/test/test2model1_page.dart';
 import 'package:sat_math/testpage/test/test2model2_page.dart';
 
@@ -23,6 +21,8 @@ class _TestPageState extends State<TestPage> {
   int totalPoints = 0;
   bool loadingPoints = true;
   bool autoLoginChecked = false;
+
+  final int requiredPoints = 1000;
 
   @override
   void initState() {
@@ -62,7 +62,7 @@ class _TestPageState extends State<TestPage> {
         }
       }
     } catch (e) {
-      // handle errors silently
+      debugPrint("Error loading points: $e");
     }
 
     loadingPoints = false;
@@ -91,28 +91,52 @@ class _TestPageState extends State<TestPage> {
     _autoAnonymousLogin();
   }
 
-  // Navigation
-  void _goToTest1Model1() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const Test1model1Page()));
+  // Navigation Functions
+  void _openTest(Widget page) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => page));
   }
 
-  void _goToTest1Model2() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const Test1model2Page()));
+  Future<void> _checkAndOpenTest(Widget testPage, String testName) async {
+    if (totalPoints >= requiredPoints) {
+      bool confirm = await showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text("Access $testName"),
+          content: Text(
+              "This test requires $requiredPoints points. You currently have $totalPoints points. Do you want to continue?"),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text("Cancel"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context, true),
+              child: const Text("Continue"),
+            ),
+          ],
+        ),
+      );
+
+      if (confirm) _openTest(testPage);
+    } else {
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: const Text("Insufficient Points"),
+          content: Text(
+              "You need $requiredPoints points to take $testName. Practice lessons to earn more points!"),
+          actions: [
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("OK"),
+            ),
+          ],
+        ),
+      );
+    }
   }
 
-  void _goToTest2Model1() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const Test2Model1Page()));
-  }
-
-  void _goToTest2Model2() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (_) => const Test2Model2Page()));
-  }
-
-  // Bottom Sheet
+  // Bottom Sheet for Models
   Widget _modelSheet(String title, VoidCallback model1, VoidCallback model2) {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -124,7 +148,8 @@ class _TestPageState extends State<TestPage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(title,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              style:
+                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           const SizedBox(height: 24),
           ElevatedButton(onPressed: model1, child: const Text("Model 1")),
           const SizedBox(height: 12),
@@ -141,8 +166,8 @@ class _TestPageState extends State<TestPage> {
       backgroundColor: Colors.transparent,
       builder: (_) => _modelSheet(
         "Test 1 Models",
-        _goToTest1Model1,
-        _goToTest1Model2,
+        () => _checkAndOpenTest(const Test1model1Page(), "Test 1 Model 1"),
+        () => _checkAndOpenTest(const Test1model2Page(), "Test 1 Model 2"),
       ),
     );
   }
@@ -153,8 +178,8 @@ class _TestPageState extends State<TestPage> {
       backgroundColor: Colors.transparent,
       builder: (_) => _modelSheet(
         "Test 2 Models",
-        _goToTest2Model1,
-        _goToTest2Model2,
+        () => _checkAndOpenTest(const Test2Model1Page(), "Test 2 Model 1"),
+        () => _checkAndOpenTest(const Test2Model2Page(), "Test 2 Model 2"),
       ),
     );
   }
@@ -220,7 +245,6 @@ class _TestPageState extends State<TestPage> {
               ),
               const SizedBox(height: 10),
 
-              // ⭐ Navigate to Login Page
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -272,34 +296,47 @@ class _TestPageState extends State<TestPage> {
                           fontWeight: FontWeight.bold,
                           color: Colors.green)),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   const Text("Take the test to evaluate your scores!",
                       style: TextStyle(fontSize: 16, color: Colors.black54)),
                   const SizedBox(height: 40),
 
                   // TEST 1 CARD
-                  Card(
-                    elevation: 8,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)),
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.green[50],
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Column(
-                        children: [
-                          const Text("Take Test 1",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.green)),
-                          const SizedBox(height: 24),
-                          ElevatedButton(
-                              onPressed: _showTest1Models,
-                              child: const Text("Take Test")),
-                        ],
+                  GestureDetector(
+                    onTap: _showTest1Models,
+                    child: Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      shadowColor: Colors.greenAccent,
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Colors.greenAccent, Colors.green],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(
+                          children: const [
+                            Icon(Icons.school,
+                                size: 60, color: Colors.white),
+                            SizedBox(height: 12),
+                            Text("Take Test 1",
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
+                            SizedBox(height: 8),
+                            Text("Requires 1000 points",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                    fontStyle: FontStyle.italic)),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -307,28 +344,41 @@ class _TestPageState extends State<TestPage> {
                   const SizedBox(height: 24),
 
                   // TEST 2 CARD
-                  Card(
-                    elevation: 8,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)),
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.blue[50],
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Column(
-                        children: [
-                          const Text("Take Test 2",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.blue)),
-                          const SizedBox(height: 24),
-                          ElevatedButton(
-                              onPressed: _showTest2Models,
-                              child: const Text("Take Test")),
-                        ],
+                  GestureDetector(
+                    onTap: _showTest2Models,
+                    child: Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      shadowColor: Colors.blueAccent,
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Colors.lightBlueAccent, Colors.blue],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(
+                          children: const [
+                            Icon(Icons.calculate,
+                                size: 60, color: Colors.white),
+                            SizedBox(height: 12),
+                            Text("Take Test 2",
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
+                            SizedBox(height: 8),
+                            Text("Requires 1000 points",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                    fontStyle: FontStyle.italic)),
+                          ],
+                        ),
                       ),
                     ),
                   ),

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 13, 14, and 15. Find its area using Heron’s formula.",
+    "options": ["84", "85", "86", "87"],
+    "correctIndex": 0,
+    "hint": "Heron's formula: Area = √(s(s-a)(s-b)(s-c)), where s = (a+b+c)/2",
+    "explanation": "s = (13+14+15)/2 = 21; Area = √(21*(21-13)*(21-14)*(21-15)) = √(21*8*7*6) = 84"
+  },
+  {
+    "question": "2. A circle has radius 12 and a sector with central angle 120°. Find the area of the sector.",
+    "options": ["48π", "50π", "52π", "55π"],
+    "correctIndex": 0,
+    "hint": "Sector area = (θ/360) * π * r²",
+    "explanation": "Area = (120/360) * π * 12² = 48π"
+  },
+  {
+    "question": "3. A right circular cylinder has height 10 and base radius 3. Find its volume.",
+    "options": ["90π", "100π", "80π", "70π"],
+    "correctIndex": 0,
+    "hint": "Volume = π*r²*h",
+    "explanation": "Volume = π*3²*10 = 90π"
+  },
+  {
+    "question": "4. A trapezoid has bases 12 and 20, and height 6. Find its area.",
+    "options": ["96", "100", "102", "104"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * (base1 + base2) * height",
+    "explanation": "Area = 1/2 * (12 + 20) * 6 = 96"
+  },
+  {
+    "question": "5. A parallelogram has sides 10 and 14, with the angle between them 60°. Find its area.",
+    "options": ["70√3", "72√3", "75√3", "68√3"],
+    "correctIndex": 0,
+    "hint": "Area = base * height = a * b * sin(θ)",
+    "explanation": "Area = 10 * 14 * sin(60°) = 140 * √3/2 = 70√3"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 6/10. Find cos θ and tan θ.",
+    "options": ["cos θ = 8/10, tan θ = 3/4", "cos θ = 8/10, tan θ = 6/8", "cos θ = 6/10, tan θ = 8/6", "cos θ = 6/10, tan θ = 3/4"],
+    "correctIndex": 1,
+    "hint": "cos² θ = 1 - sin² θ, tan θ = sin θ / cos θ",
+    "explanation": "cos θ = √(1 - (6/10)²) = 8/10 → tan θ = (6/10)/(8/10) = 6/8 = 3/4"
+  },
+  {
+    "question": "2. Right triangle: cos θ = 12/13. Find sin θ and tan θ.",
+    "options": ["sin θ = 5/13, tan θ = 5/12", "sin θ = 5/13, tan θ = 12/5", "sin θ = 12/13, tan θ = 5/12", "sin θ = 12/13, tan θ = 12/5"],
+    "correctIndex": 0,
+    "hint": "Use sin² + cos² = 1, tan θ = sin θ / cos θ",
+    "explanation": "sin θ = √(1 - (12/13)²) = 5/13 → tan θ = 5/12"
+  },
+  {
+    "question": "3. Right triangle: opposite = 10, adjacent = 24. Find θ in degrees.",
+    "options": ["22°, 23°, 24°, 25°"],
+    "correctIndex": 2,
+    "hint": "θ = arctan(opposite/adjacent)",
+    "explanation": "θ = arctan(10/24) ≈ 23°"
+  },
+  {
+    "question": "4. Right triangle: hypotenuse = 13, opposite = 5. Find cos θ.",
+    "options": ["12/13", "5/13", "5/12", "13/5"],
+    "correctIndex": 0,
+    "hint": "cos θ = adjacent/hypotenuse",
+    "explanation": "Adjacent = √(13² - 5²) = 12 → cos θ = 12/13"
+  },
+  {
+    "question": "5. Right triangle: tan θ = 10/24. Find sin θ.",
+    "options": ["5/13", "10/13", "10/24", "24/10"],
+    "correctIndex": 1,
+    "hint": "opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
+    "explanation": "Hypotenuse = √(10²+24²) = 26 → sin θ = 10/26 = 5/13"
+  }
+]

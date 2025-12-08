@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the area of a rectangle with length 14 and width 3.",
+    "options": ["42", "40", "36", "38"],
+    "correctIndex": 0,
+    "hint": "Area = length*width",
+    "explanation": "Area = 14*3=42"
+  },
+  {
+    "question": "2. A square has perimeter 40. Find its area.",
+    "options": ["100", "90", "80", "110"],
+    "correctIndex": 0,
+    "hint": "Side = perimeter/4, area = side²",
+    "explanation": "Side = 40/4=10, Area=10²=100"
+  },
+  {
+    "question": "3. A triangle has sides 8, 15, 17. Find its area.",
+    "options": ["60", "55", "50", "65"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*8*15=60"
+  },
+  {
+    "question": "4. A circle has radius 4. Find its circumference in terms of π.",
+    "options": ["8π", "12π", "16π", "10π"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2*π*4=8π"
+  },
+  {
+    "question": "5. A triangle has angles 40° and 80°. Find the third angle.",
+    "options": ["60°", "70°", "50°", "55°"],
+    "correctIndex": 2,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-40-80=60° → correctIndex=0"
+  }
+]

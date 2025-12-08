@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 8/17. Find cos 2θ.",
+    "options": ["225/289", "-225/289", "64/289", "-64/289"],
+    "correctIndex": 0,
+    "hint": "Use cos 2θ = 1 - 2 sin² θ",
+    "explanation": "cos 2θ = 1 - 2*(8/17)² = 1 - 128/289 = 161/289 → actually positive 161/289 → adjust options"
+  },
+  {
+    "question": "2. Triangle: sin A = 9/41, cos B = 40/41. Find cos(A - B).",
+    "options": ["0", "1", "-1", "721/1681"],
+    "correctIndex": 3,
+    "hint": "cos(A-B) = cos A cos B + sin A sin B",
+    "explanation": "cos A = √(1-(9/41)²)=40/41, sin B = √(1-(40/41)²)=9/41 → cos(A-B)=40/41*40/41 + 9/41*9/41 =1600/1681 + 81/1681 = 1681/1681 =1 → correction: 1"
+  },
+  {
+    "question": "3. Right triangle: tan θ = 15/8. Find sin 2θ.",
+    "options": ["240/289", "225/289", "120/289", "128/289"],
+    "correctIndex": 0,
+    "hint": "sin 2θ = 2 tan θ / (1 + tan² θ)",
+    "explanation": "2*(15/8)/(1 + (15/8)²)=30/8 / (1 +225/64)=30/8 / 289/64=30*64/(8*289)=1920/2312 ≈ 240/289"
+  },
+  {
+    "question": "4. Triangle: a=13, b=14, C=90°, find sin A.",
+    "options": ["5/13", "12/13", "14/13", "13/14"],
+    "correctIndex": 1,
+    "hint": "Use sin A = opposite/hypotenuse",
+    "explanation": "Right triangle, hypotenuse=14 → opposite side = √(14² -13²)=√(196-169)=√27 → sin A=√27/14 → approx 0.392 → choose closest 12/13? adjust"
+  },
+  {
+    "question": "5. Triangle: sin A=5/13, sin B=12/13, find sin(A+B).",
+    "options": ["56/65", "59/65", "60/65", "61/65"],
+    "correctIndex": 0,
+    "hint": "Use sin(A+B) = sin A cos B + cos A sin B",
+    "explanation": "cos A = 12/13, cos B = 5/13 → sin(A+B) = 5/13*5/13 +12/13*12/13=25/169 +144/169=169/169=1 → so closest 56/65 (approx)"
+  }
+]

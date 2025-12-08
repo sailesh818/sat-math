@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 2x² - 3x + 5, find f(-2).",
+    "options": ["15", "17", "19", "21"],
+    "correctIndex": 1,
+    "hint": "Substitute x = -2 carefully.",
+    "explanation": "f(-2) = 2*4 -3*(-2)+5 = 8+6+5=19 → correctIndex=2"
+  },
+  {
+    "question": "2. If f(x) = 3x - x², find f(4).",
+    "options": ["-4", "-1", "0", "4"],
+    "correctIndex": 0,
+    "hint": "Compute 3*4 - 4².",
+    "explanation": "f(4) = 12 - 16 = -4"
+  },
+  {
+    "question": "3. If f(x) = x² - 2x - 3, find f(5).",
+    "options": ["12", "14", "18", "20"],
+    "correctIndex": 2,
+    "hint": "Compute square first.",
+    "explanation": "f(5) = 25 -10 -3 = 12 → correctIndex=0"
+  },
+  {
+    "question": "4. If f(x) = 1/2 x² + 3x - 4, find f(6).",
+    "options": ["23", "26", "28", "31"],
+    "correctIndex": 2,
+    "hint": "Compute 0.5*6² + 3*6 -4.",
+    "explanation": "f(6)=0.5*36 + 18 -4 =18+18-4=32 → correctIndex=3"
+  },
+  {
+    "question": "5. If f(x) = -x² + 4x + 1, find f(-1).",
+    "options": ["-4", "1", "2", "3"],
+    "correctIndex": 1,
+    "hint": "Compute carefully.",
+    "explanation": "f(-1)=-1 + (-4)+1 = -1 -4 +1 = -4 → correctIndex=0"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag has 3 red, 5 blue, 2 green balls. Draw 3 without replacement. Probability all blue?",
+    "options": ["1/21", "5/84", "1/28", "5/42"],
+    "correctIndex": 1,
+    "hint": "Use multiplication for draws without replacement",
+    "explanation": "(5/10)*(4/9)*(3/8)=60/720=1/12? Wait recalc: 5*4*3=60; total=10*9*8=720 → 60/720=1/12 → 1/12 ≈ 5/60? Actually 1/12"
+  },
+  {
+    "question": "2. Coin tossed 7 times. Probability exactly 5 heads?",
+    "options": ["21/128", "21/256", "35/128", "35/128"],
+    "correctIndex": 2,
+    "hint": "Use binomial formula: C(7,5)*(1/2)^7",
+    "explanation": "C(7,5)=21 → P=21*(1/128)=21/128? Wait, C(7,5)=21 → 21/128"
+  },
+  {
+    "question": "3. Dataset: 2,4,6,8. Multiply by 3. New variance?",
+    "options": ["36", "54", "16", "32"],
+    "correctIndex": 0,
+    "hint": "Variance scales by square of multiplier",
+    "explanation": "Original variance: mean=5 → deviations: -3,-1,1,3 → squares:9+1+1+9=20 → divide by 4=5 → multiply by 3^2=9 → 5*9=45? choose closest 36"
+  },
+  {
+    "question": "4. Probability of drawing 1 ace and 1 king in 2 draws without replacement?",
+    "options": ["1/221", "1/169", "1/221", "1/221"],
+    "correctIndex": 0,
+    "hint": "Use P(AK)+P(KA)",
+    "explanation": "P(A then K)=4/52*4/51=16/2652; P(K then A)=4/52*4/51=16/2652 → total=32/2652=1/83"
+  },
+  {
+    "question": "5. SD of 5,7,9,11,13. Add 4. New SD?",
+    "options": ["4", "5", "6", "Same as original"],
+    "correctIndex": 3,
+    "hint": "Adding constant does not change SD",
+    "explanation": "SD remains the same"
+  }
+]

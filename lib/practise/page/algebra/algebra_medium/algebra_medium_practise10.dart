@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AlgebraMediumPractise10 extends StatefulWidget {
   const AlgebraMediumPractise10({super.key});
@@ -14,6 +17,15 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
   bool answerChecked = false;
   bool showHint = false;
 
+  int correctCount = 0;
+  int hintPenalty = 0;
+  int totalPoints = 0;
+  bool loadingPoints = true;
+
+  RewardedAd? _rewardedAd;
+  bool _isRewardedAdReady = false;
+  bool _hintAdShown = false;
+
   final List<Map<String, dynamic>> questions = [
     {
       'question': '1. Solve: x² - 5x + 6 = 0',
@@ -24,7 +36,7 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
     },
     {
       'question': '2. Solve: x² + x - 6 = 0',
-      'options': ['x=2,-3', 'x=-2,3', 'x=1,6', 'x=-1,-6'],
+      'options': ['x=-3,2', 'x=2,-3', 'x=1,6', 'x=-1,-6'],
       'correctIndex': 0,
       'hint': 'Factor: x² + x - 6 = (x+3)(x-2).',
       'explanation': 'x² + x - 6 = (x+3)(x-2)=0 → x=-3 or x=2.'
@@ -52,33 +64,200 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadUserPoints();
+    _loadRewardedAd();
+  }
+
+  Future<void> _loadUserPoints() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    setState(() {
+      loadingPoints = true;
+    });
+
+    try {
+      final doc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.uid)
+          .get();
+
+      if (doc.exists && doc.data() != null) {
+        final data = doc.data()!;
+        setState(() {
+          totalPoints = data["totalPoints"] ?? 0;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error loading points: $e");
+    }
+
+    setState(() {
+      loadingPoints = false;
+    });
+  }
+
+  Future<void> savePointsToFirebase(int pointsToAdd) async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    await FirebaseFirestore.instance
+        .collection("users")
+        .doc(user.uid)
+        .set({
+      "totalPoints": FieldValue.increment(pointsToAdd),
+    }, SetOptions(merge: true));
+
+    setState(() {
+      totalPoints += pointsToAdd;
+    });
+  }
+
   void checkAnswer(int index) {
     if (!answerChecked) {
       setState(() {
         selectedAnswerIndex = index;
         answerChecked = true;
+
+        if (index == questions[currentQuestionIndex]['correctIndex']) {
+          correctCount++;
+        }
       });
     }
   }
 
-  void nextQuestion() {
+  void nextQuestion() async {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
         currentQuestionIndex++;
         selectedAnswerIndex = null;
         answerChecked = false;
         showHint = false;
+        _hintAdShown = false;
+      });
+    } else {
+      int basePoints = 4 + correctCount;
+      int finalPoints = basePoints - hintPenalty;
+      if (finalPoints < 0) finalPoints = 0;
+
+      await savePointsToFirebase(finalPoints);
+      _showCompletionDialog(finalPoints);
+    }
+  }
+
+  void _showCompletionDialog(int finalPoints) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => AlertDialog(
+        title: const Text('🎉 Quiz Completed!'),
+        content: Text(
+          'Correct Answers: $correctCount\n'
+          'Hint Penalty: -$hintPenalty\n'
+          'Final Score: $finalPoints\n\n'
+          'Watch an ad to earn extra reward points!',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('No, Thanks'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _showRewardedAd(forHint: false);
+            },
+            child: const Text('Watch Ad'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _loadRewardedAd() {
+    RewardedAd.load(
+      adUnitId: 'ca-app-pub-6704136477020125/4913789019',
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          _rewardedAd = ad;
+          _isRewardedAdReady = true;
+        },
+        onAdFailedToLoad: (err) {
+          debugPrint('Failed to load rewarded ad: ${err.message}');
+          _isRewardedAdReady = false;
+        },
+      ),
+    );
+  }
+
+  void _showRewardedAd({required bool forHint}) {
+    if (!_isRewardedAdReady || _rewardedAd == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Ad not ready yet')),
+      );
+      return;
+    }
+
+    _rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+      onAdFailedToShowFullScreenContent: (ad, err) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+    );
+
+    _rewardedAd!.show(onUserEarnedReward: (ad, reward) async {
+      if (forHint) {
+        setState(() {
+          showHint = true;
+          _hintAdShown = true;
+        });
+      } else {
+        await savePointsToFirebase(5);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('You earned 5 reward points!')),
+        );
+      }
+    });
+
+    _rewardedAd = null;
+    _isRewardedAdReady = false;
+  }
+
+  Future<void> _useHint() async {
+    if (_hintAdShown) return;
+
+    if (totalPoints >= 2) {
+      await savePointsToFirebase(-2);
+      setState(() {
+        showHint = true;
+        hintPenalty += 2;
       });
     } else {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text('🎉 Well Done!'),
-          content: const Text('You have completed all practise questions!'),
+          title: const Text('Insufficient Points'),
+          content: const Text(
+              'You have less than 2 reward points. Watch an ad to unlock this hint?'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
+              child: const Text('No, Thanks'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                _showRewardedAd(forHint: true);
+              },
+              child: const Text('Watch Ad'),
             ),
           ],
         ),
@@ -97,14 +276,13 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
           'Algebra Medium - Practise 10',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.green.shade700,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            /// QUESTION CARD
             Card(
               elevation: 4,
               shape: RoundedRectangleBorder(
@@ -117,15 +295,11 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
                   style: const TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w600,
-                    height: 1.4,
                   ),
                 ),
               ),
             ),
-
             const SizedBox(height: 20),
-
-            /// OPTIONS
             ...List.generate(question['options'].length, (index) {
               final option = question['options'][index];
               final isSelected = selectedAnswerIndex == index;
@@ -151,29 +325,18 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
-                  title: Text(
-                    option,
-                    style: const TextStyle(fontSize: 17),
-                  ),
+                  title: Text(option, style: const TextStyle(fontSize: 17)),
                   onTap: () => checkAnswer(index),
                 ),
               );
             }),
-
             const SizedBox(height: 10),
-
-            /// HINT BUTTON
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: () {
-                    setState(() {
-                      showHint = !showHint;
-                    });
-                  },
-                  icon:
-                      const Icon(Icons.lightbulb_outline, color: Colors.white),
+                  onPressed: _useHint,
+                  icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
                   label: const Text(
                     "Hint",
                     style: TextStyle(fontSize: 16, color: Colors.white),
@@ -189,7 +352,6 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
                 ),
               ],
             ),
-
             if (showHint)
               Container(
                 margin: const EdgeInsets.only(top: 12),
@@ -203,9 +365,7 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-
             const SizedBox(height: 20),
-
             if (answerChecked)
               Container(
                 padding: const EdgeInsets.all(14),
@@ -218,16 +378,13 @@ class _AlgebraMediumPractise10State extends State<AlgebraMediumPractise10> {
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
-
             const SizedBox(height: 20),
-
-            /// NEXT BUTTON
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: nextQuestion,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green.shade700,
+                  backgroundColor: Colors.green,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),

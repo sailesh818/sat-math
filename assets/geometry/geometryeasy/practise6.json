@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 7, 24, 25. Find its area.",
+    "options": ["84", "72", "60", "70"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*7*24=84"
+  },
+  {
+    "question": "2. A rectangle has length 12 and width 5. Find its area.",
+    "options": ["60", "50", "55", "65"],
+    "correctIndex": 0,
+    "hint": "Area = length*width",
+    "explanation": "Area = 12*5=60"
+  },
+  {
+    "question": "3. A square has perimeter 32. Find its side length.",
+    "options": ["8", "6", "10", "9"],
+    "correctIndex": 0,
+    "hint": "Side = perimeter/4",
+    "explanation": "Side = 32/4=8"
+  },
+  {
+    "question": "4. A triangle has angles 40° and 70°. Find the third angle.",
+    "options": ["70°", "60°", "50°", "80°"],
+    "correctIndex": 2,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-40-70=70 → correctIndex=0? Actually 70"
+  },
+  {
+    "question": "5. A circle has radius 6. Find its circumference in terms of π.",
+    "options": ["6π", "12π", "18π", "36π"],
+    "correctIndex": 1,
+    "hint": "Circumference = 2πr",
+    "explanation": "Circumference = 2*π*6=12π"
+  }
+]

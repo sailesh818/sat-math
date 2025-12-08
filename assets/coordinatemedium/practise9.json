@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the slope of a line passing through (1,2) and (4,8).",
+    "options": ["2", "3", "1/2", "−2"],
+    "correctIndex": 0,
+    "hint": "Use slope formula: (y2−y1)/(x2−x1)",
+    "explanation": "Slope = (8−2)/(4−1) = 6/3 = 2"
+  },
+  {
+    "question": "2. Determine the midpoint of points (−6,4) and (2,−8).",
+    "options": ["(−2,−2)", "(−3,−2)", "(-2,2)", "(-1,-2)"],
+    "correctIndex": 0,
+    "hint": "Use midpoint formula: ((x1+x2)/2, (y1+y2)/2)",
+    "explanation": "Midpoint = ((−6+2)/2,(4+−8)/2) = (−4/2,−4/2) = (−2,−2)"
+  },
+  {
+    "question": "3. Are the points (2,5), (4,9), (6,13) collinear?",
+    "options": ["Yes", "No", "Cannot Determine", "Partially"],
+    "correctIndex": 0,
+    "hint": "Check if slopes between consecutive points are equal.",
+    "explanation": "Slope 1-2 = (9−5)/(4−2) = 4/2=2; slope 2-3 = (13−9)/(6−4)=4/2=2 ⇒ Yes, collinear"
+  },
+  {
+    "question": "4. Distance between points (−1,−1) and (4,3):",
+    "options": ["√41", "√25", "√35", "√40"],
+    "correctIndex": 0,
+    "hint": "Use distance formula: √[(x2−x1)² + (y2−y1)²]",
+    "explanation": "Distance = √[(4−(−1))² + (3−(−1))²] = √[25+16] = √41"
+  },
+  {
+    "question": "5. Equation of line passing through (0,−2) with slope −3:",
+    "options": ["y + 2 = -3(x − 0)", "y − 2 = -3(x − 0)", "y + 2 = 3(x − 0)", "y − 2 = 3(x − 0)"],
+    "correctIndex": 0,
+    "hint": "Use point-slope form: y−y1 = m(x−x1)",
+    "explanation": "y−y1 = m(x−x1) ⇒ y+2 = −3(x−0)"
+  }
+]

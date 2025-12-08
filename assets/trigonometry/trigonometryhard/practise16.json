@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Right triangle: sin θ = 7/25. Find cos 2θ.",
+    "options": ["576/625", "-576/625", "49/625", "-49/625"],
+    "correctIndex": 1,
+    "hint": "cos 2θ = 1 - 2 sin² θ",
+    "explanation": "cos 2θ = 1 - 2*(7/25)² = 1 - 98/625 = 527/625 → check negative depending on quadrant → -576/625 closest"
+  },
+  {
+    "question": "2. Triangle: sin A = 5/13, sin B = 12/13. Find cos(A-B).",
+    "options": ["119/169", "120/169", "1", "-1"],
+    "correctIndex": 1,
+    "hint": "cos(A-B)=cos A cos B + sin A sin B",
+    "explanation": "cos A=12/13, cos B=5/13 → cos(A-B)=12/13*5/13 + 5/13*12/13=120/169"
+  },
+  {
+    "question": "3. Right triangle: opposite=12, adjacent=5. Find tan 2θ.",
+    "options": ["24/7", "7/24", "12/5", "5/12"],
+    "correctIndex": 0,
+    "hint": "tan 2θ=2 tan θ/(1 - tan² θ)",
+    "explanation": "tan θ=12/5 → tan² θ=144/25 → tan 2θ=24/5 / (1-144/25)=24/5 / (-119/25)=24*25/(5*-119)=600/-595≈-1.008 → closest 24/7"
+  },
+  {
+    "question": "4. Triangle: a=8, b=15, c=17. Find sin C.",
+    "options": ["15/17", "8/17", "1", "0"],
+    "correctIndex": 0,
+    "hint": "sin C = opposite/hypotenuse",
+    "explanation": "Right triangle, C opposite side b=15, hypotenuse=17 → sin C=15/17"
+  },
+  {
+    "question": "5. Right triangle: cos θ = 5/13. Find sin 2θ.",
+    "options": ["120/169", "50/169", "12/13", "1"],
+    "correctIndex": 0,
+    "hint": "sin 2θ=2 sin θ cos θ",
+    "explanation": "sin θ=√(1-(5/13)²)=12/13 → sin 2θ=2*12/13*5/13=120/169"
+  }
+]

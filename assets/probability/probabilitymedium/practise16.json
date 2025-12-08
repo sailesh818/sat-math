@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Bag: 5 red, 5 blue. Draw 1. Probability blue?",
+    "options": ["1/2", "1/5", "1/3", "2/5"],
+    "correctIndex": 0,
+    "hint": "Favorable/total",
+    "explanation": "5/10=1/2"
+  },
+  {
+    "question": "2. Coin tossed 3 times. Probability all heads?",
+    "options": ["1/8", "1/4", "3/8", "1/2"],
+    "correctIndex": 0,
+    "hint": "(1/2)^3",
+    "explanation": "1/8"
+  },
+  {
+    "question": "3. Mean of 5 numbers: 10,12,15,18,x=14. Find x.",
+    "options": ["15", "16", "17", "18"],
+    "correctIndex": 0,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=14*5=70 → sum of 4 numbers=55 → x=15"
+  },
+  {
+    "question": "4. Probability of drawing ace or king?",
+    "options": ["2/13", "1/13", "1/4", "2/26"],
+    "correctIndex": 0,
+    "hint": "4+4=8 favorable/52",
+    "explanation": "8/52=2/13"
+  },
+  {
+    "question": "5. Multiply numbers by 3 → variance original=9 → new variance?",
+    "options": ["27", "81", "18", "36"],
+    "correctIndex": 1,
+    "hint": "Variance scales by square of multiplier",
+    "explanation": "9*(3^2)=9*9=81"
+  }
+]

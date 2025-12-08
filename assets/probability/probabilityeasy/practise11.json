@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A deck has 52 cards. What is the probability of drawing a heart?",
+    "options": ["1/4", "1/2", "1/13", "3/4"],
+    "correctIndex": 0,
+    "hint": "There are 13 hearts in 52 cards",
+    "explanation": "13/52 = 1/4"
+  },
+  {
+    "question": "2. A fair coin is flipped 5 times. What is the probability of getting all heads?",
+    "options": ["1/32", "1/16", "1/8", "1/64"],
+    "correctIndex": 0,
+    "hint": "Probability = (1/2)^number_of_flips",
+    "explanation": "(1/2)^5 = 1/32"
+  },
+  {
+    "question": "3. A bag contains 2 red, 4 green, and 4 blue balls. One ball is drawn at random. What is the probability it is green?",
+    "options": ["2/5", "1/2", "4/10", "4/9"],
+    "correctIndex": 1,
+    "hint": "Favorable / total",
+    "explanation": "4 green out of 10 total = 1/2"
+  },
+  {
+    "question": "4. A die is rolled twice. What is the probability the sum of the two rolls is 7?",
+    "options": ["1/6", "1/12", "1/8", "1/9"],
+    "correctIndex": 0,
+    "hint": "Count favourable outcomes for sum = 7",
+    "explanation": "Combinations for sum 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6/36 = 1/6"
+  },
+  {
+    "question": "5. The mean of 7 numbers is 14. If one of the numbers is 20, what is the mean of the remaining 6 numbers?",
+    "options": ["13", "12", "14", "13.5"],
+    "correctIndex": 0,
+    "hint": "Total sum minus one, divide by remaining",
+    "explanation": "Total sum = 98. Remaining sum = 98−20 = 78 → mean = 78/6 = 13"
+  }
+]

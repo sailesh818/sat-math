@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 5, 12, 13. Find its area.",
+    "options": ["30", "25", "40", "20"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 5 * 12 = 30"
+  },
+  {
+    "question": "2. A circle has diameter 10. Find its radius.",
+    "options": ["5", "10", "15", "20"],
+    "correctIndex": 0,
+    "hint": "Radius = diameter/2",
+    "explanation": "Radius = 10/2 = 5"
+  },
+  {
+    "question": "3. Find the perimeter of a square with side 7.",
+    "options": ["28", "21", "14", "35"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 4*side",
+    "explanation": "Perimeter = 4*7 = 28"
+  },
+  {
+    "question": "4. An equilateral triangle has side 6. Find its perimeter.",
+    "options": ["18", "12", "24", "15"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 3*side",
+    "explanation": "Perimeter = 3*6 = 18"
+  },
+  {
+    "question": "5. The sum of interior angles of a hexagon is?",
+    "options": ["720°", "600°", "540°", "360°"],
+    "correctIndex": 0,
+    "hint": "Sum = (n-2)*180",
+    "explanation": "Sum = (6-2)*180 = 720°"
+  }
+]

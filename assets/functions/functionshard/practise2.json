@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 3x² - 5x + 2, find f(2).",
+    "options": ["2", "4", "6", "8"],
+    "correctIndex": 2,
+    "hint": "Compute each term.",
+    "explanation": "f(2)=3*4 -10 +2=12-10+2=4 → correctIndex=1"
+  },
+  {
+    "question": "2. If f(x) = x² - x - 6, find f(-3).",
+    "options": ["6", "12", "18", "24"],
+    "correctIndex": 1,
+    "hint": "Substitute -3.",
+    "explanation": "f(-3)=9 +3 -6=6 → correctIndex=0"
+  },
+  {
+    "question": "3. If f(x) = 2x² - 7x + 5, find f(4).",
+    "options": ["3", "5", "7", "9"],
+    "correctIndex": 1,
+    "hint": "Compute square and multiply.",
+    "explanation": "f(4)=2*16 -28+5=32-28+5=9 → correctIndex=3"
+  },
+  {
+    "question": "4. If f(x) = -x² +6x - 5, find f(3).",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 2,
+    "hint": "Compute each term.",
+    "explanation": "f(3)=-9+18-5=4 → correctIndex=0"
+  },
+  {
+    "question": "5. If f(x) = x²/2 -3x +4, find f(2).",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 1,
+    "hint": "Compute 0.5*2² -6 +4.",
+    "explanation": "f(2)=2-6+4=0 → correctIndex=0"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 7, 24, and 25. Find its area.",
+    "options": ["84", "88", "90", "92"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 7 * 24 = 84"
+  },
+  {
+    "question": "2. A rectangle has width 5 and diagonal 13. Find its length.",
+    "options": ["12", "11", "10", "9"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: length² + width² = diagonal²",
+    "explanation": "5² + length² = 13² → length² = 144 → length = 12"
+  },
+  {
+    "question": "3. A circle has circumference 20π. Find its radius.",
+    "options": ["10", "12", "15", "14"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "2πr = 20π → r = 10"
+  },
+  {
+    "question": "4. A triangle has angles 50° and 65°. Find the third angle.",
+    "options": ["65°", "60°", "55°", "70°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 50° - 65° = 65°"
+  },
+  {
+    "question": "5. A parallelogram has base 9 and height 6. Find its area.",
+    "options": ["54", "50", "56", "52"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 9 * 6 = 54"
+  }
+]

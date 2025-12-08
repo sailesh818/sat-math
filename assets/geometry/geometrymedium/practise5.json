@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A triangle has sides 9, 40, 41. Find its area.",
+    "options": ["180", "160", "190", "200"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*9*40=180"
+  },
+  {
+    "question": "2. A rectangle has diagonal 10 and length 8. Find its width.",
+    "options": ["6", "7", "5", "4"],
+    "correctIndex": 0,
+    "hint": "Pythagoras: length² + width² = diagonal²",
+    "explanation": "8² + width² = 10² → width²=36 → width=6"
+  },
+  {
+    "question": "3. A circle has circumference 20π. Find its radius.",
+    "options": ["10", "15", "8", "12"],
+    "correctIndex": 0,
+    "hint": "C = 2πr",
+    "explanation": "2πr = 20π → r=10"
+  },
+  {
+    "question": "4. A triangle has angles 25° and 65°. Find the third angle.",
+    "options": ["90°", "85°", "80°", "75°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "180-25-65=90°"
+  },
+  {
+    "question": "5. A trapezoid has bases 9 and 13 and height 6. Find its area.",
+    "options": ["66", "60", "68", "64"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(base1+base2)*height",
+    "explanation": "Area = 1/2*(9+13)*6=66"
+  }
+]

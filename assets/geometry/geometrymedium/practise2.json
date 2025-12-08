@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has legs 9 and 12. Find its area.",
+    "options": ["54", "48", "60", "50"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*base*height",
+    "explanation": "Area = 1/2*9*12=54"
+  },
+  {
+    "question": "2. A circle has area 49π. Find its diameter.",
+    "options": ["14", "7", "12", "10"],
+    "correctIndex": 0,
+    "hint": "Area = π*r², Diameter = 2r",
+    "explanation": "r²=49 → r=7 → Diameter=14"
+  },
+  {
+    "question": "3. A rectangle has perimeter 50 and length 15. Find its width.",
+    "options": ["10", "12", "8", "9"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length+width)",
+    "explanation": "50 = 2*(15+width) → width=10"
+  },
+  {
+    "question": "4. A triangle has sides 8, 15, 17. Find its area.",
+    "options": ["60", "50", "55", "65"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*8*15=60"
+  },
+  {
+    "question": "5. A square has diagonal 10. Find its area.",
+    "options": ["50", "40", "45", "55"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(diagonal²)",
+    "explanation": "Area = 1/2*10²=50"
+  }
+]

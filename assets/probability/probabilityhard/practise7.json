@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Two dice rolled. Probability sum = 8 or 10?",
+    "options": ["5/18", "7/36", "1/6", "1/4"],
+    "correctIndex": 1,
+    "hint": "Count favorable outcomes for both sums",
+    "explanation": "Sum=8 (5 outcomes), sum=10 (3 outcomes) → total=8/36=2/9 ≈ 7/36? recalc: 8/36=2/9 → 2/9"
+  },
+  {
+    "question": "2. Bag: 4 red, 5 blue, 6 green. Draw 2 with replacement. Probability both red?",
+    "options": ["4/9", "16/81", "1/9", "2/9"],
+    "correctIndex": 1,
+    "hint": "Multiply probabilities for independent draws",
+    "explanation": "P=4/15*4/15=16/225 → choose closest 16/81? Actually 16/225"
+  },
+  {
+    "question": "3. Mean=12 of 5 numbers: 10,14,11,13,x. Find x.",
+    "options": ["12", "14", "15", "16"],
+    "correctIndex": 0,
+    "hint": "Sum = mean × count",
+    "explanation": "Sum=12*5=60 → sum of first 4=48 → x=12"
+  },
+  {
+    "question": "4. Probability of getting at least one head in 3 coin tosses?",
+    "options": ["7/8", "1/2", "3/4", "1/4"],
+    "correctIndex": 0,
+    "hint": "Use complement: 1 − P(no heads)",
+    "explanation": "P(no heads)=1/8 → P(at least one)=1−1/8=7/8"
+  },
+  {
+    "question": "5. Multiply dataset by 2 → original SD=3. New SD?",
+    "options": ["3", "6", "9", "12"],
+    "correctIndex": 1,
+    "hint": "SD scales linearly with multiplier",
+    "explanation": "3*2=6"
+  }
+]

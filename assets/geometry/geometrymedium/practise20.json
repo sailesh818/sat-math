@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A right triangle has one leg 6 and hypotenuse 10. Find the length of the other leg.",
+    "options": ["8", "9", "7", "6"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: a² + b² = c²",
+    "explanation": "6² + b² = 10² → b² = 64 → b = 8"
+  },
+  {
+    "question": "2. A rectangle has length 11 and width 5. Find its perimeter.",
+    "options": ["32", "30", "34", "28"],
+    "correctIndex": 0,
+    "hint": "Perimeter = 2*(length + width)",
+    "explanation": "Perimeter = 2*(11 + 5) = 32"
+  },
+  {
+    "question": "3. A circle has radius 8. Find its area in terms of π.",
+    "options": ["64π", "80π", "72π", "75π"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "Area = π*8² = 64π"
+  },
+  {
+    "question": "4. A triangle has angles 60° and 60°. Find the third angle.",
+    "options": ["60°", "50°", "40°", "70°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 60° - 60° = 60°"
+  },
+  {
+    "question": "5. A trapezoid has bases 4 and 8, height 3. Find its area.",
+    "options": ["18", "20", "22", "24"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2*(base1 + base2)*height",
+    "explanation": "Area = 1/2*(4 + 8)*3 = 18"
+  }
+]

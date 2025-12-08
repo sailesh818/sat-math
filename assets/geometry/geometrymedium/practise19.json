@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A rectangle has diagonal 17 and width 8. Find its length.",
+    "options": ["15", "16", "14", "13"],
+    "correctIndex": 0,
+    "hint": "Use Pythagoras: length² + width² = diagonal²",
+    "explanation": "8² + length² = 17² → length² = 225 → length = 15"
+  },
+  {
+    "question": "2. A square has side 10. Find its area.",
+    "options": ["100", "90", "110", "120"],
+    "correctIndex": 0,
+    "hint": "Area = side²",
+    "explanation": "Area = 10² = 100"
+  },
+  {
+    "question": "3. A circle has circumference 18π. Find its radius.",
+    "options": ["9", "8", "7", "6"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "2πr = 18π → r = 9"
+  },
+  {
+    "question": "4. A triangle has angles 40° and 70°. Find the third angle.",
+    "options": ["70°", "75°", "65°", "60°"],
+    "correctIndex": 0,
+    "hint": "Sum of angles in a triangle = 180°",
+    "explanation": "180° - 40° - 70° = 70°"
+  },
+  {
+    "question": "5. A parallelogram has base 10 and height 4. Find its area.",
+    "options": ["40", "45", "35", "50"],
+    "correctIndex": 0,
+    "hint": "Area = base * height",
+    "explanation": "Area = 10 * 4 = 40"
+  }
+]

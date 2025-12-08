@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the area of a rectangle with length 13 and width 3.",
+    "options": ["39", "36", "40", "42"],
+    "correctIndex": 0,
+    "hint": "Area = length*width",
+    "explanation": "Area = 13*3=39"
+  },
+  {
+    "question": "2. A square has side 7. Find its area.",
+    "options": ["49", "42", "50", "56"],
+    "correctIndex": 0,
+    "hint": "Area = side²",
+    "explanation": "Area = 7²=49"
+  },
+  {
+    "question": "3. A triangle has sides 6, 8, 10. Find its area.",
+    "options": ["24", "20", "28", "30"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2*base*height",
+    "explanation": "Area = 1/2*6*8=24"
+  },
+  {
+    "question": "4. A circle has radius 9. Find its area in terms of π.",
+    "options": ["81π", "72π", "90π", "100π"],
+    "correctIndex": 0,
+    "hint": "Area = π*r²",
+    "explanation": "Area = π*9²=81π"
+  },
+  {
+    "question": "5. A triangle has angles 45° and 45°. Find the third angle.",
+    "options": ["90°", "100°", "85°", "80°"],
+    "correctIndex": 0,
+    "hint": "Sum = 180°",
+    "explanation": "Third angle = 180-45-45=90°"
+  }
+]

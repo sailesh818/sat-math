@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 3x² - 2x, find f(1).",
+    "options": ["1", "2", "0", "-1"],
+    "correctIndex": 2,
+    "hint": "Substitute x = 1.",
+    "explanation": "f(1)=3*1² -2*1 =3-2=1 → correctIndex=0"
+  },
+  {
+    "question": "2. If f(x) = x² + x + 1, find f(2).",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 2,
+    "hint": "Plug x=2 and simplify.",
+    "explanation": "f(2) = 4 +2 +1=7"
+  },
+  {
+    "question": "3. If f(x) = 5 - x, find f(3).",
+    "options": ["2", "3", "1", "0"],
+    "correctIndex": 0,
+    "hint": "Subtract x from 5.",
+    "explanation": "f(3) =5-3=2"
+  },
+  {
+    "question": "4. If f(x) = 2x + x², find f(2).",
+    "options": ["6", "8", "10", "12"],
+    "correctIndex": 2,
+    "hint": "Compute each term.",
+    "explanation": "f(2)=2*2 + 2²=4+4=8 → correctIndex=1"
+  },
+  {
+    "question": "5. If f(x) = x/5 + 7, find f(10).",
+    "options": ["8", "9", "10", "7"],
+    "correctIndex": 1,
+    "hint": "Divide first, then add 7.",
+    "explanation": "f(10) =10/5 +7=2+7=9"
+  }
+]

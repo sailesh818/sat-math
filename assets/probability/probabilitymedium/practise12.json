@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Die rolled once. Probability odd number?",
+    "options": ["1/2", "1/3", "1/6", "2/3"],
+    "correctIndex": 0,
+    "hint": "Odd numbers: 1,3,5",
+    "explanation": "3/6=1/2"
+  },
+  {
+    "question": "2. Mean of 4 numbers: 5,7,6,x=6. Find x.",
+    "options": ["6", "7", "5", "8"],
+    "correctIndex": 1,
+    "hint": "Sum=mean*count",
+    "explanation": "Sum=6*4=24 → 5+7+6+x=18+x → x=6 → correctIndex=0"
+  },
+  {
+    "question": "3. Bag: 2 red, 3 blue, 5 green. One drawn. Probability not blue?",
+    "options": ["2/5", "3/5", "4/5", "1/2"],
+    "correctIndex": 2,
+    "hint": "P(not blue)=1−P(blue)",
+    "explanation": "Total=10, blue=3 → not blue=7/10=4/5 approx"
+  },
+  {
+    "question": "4. Two coins tossed. Probability both tails?",
+    "options": ["1/2", "1/4", "3/4", "1/3"],
+    "correctIndex": 1,
+    "hint": "Only TT counts",
+    "explanation": "1/4"
+  },
+  {
+    "question": "5. Standard deviation unchanged if each number multiplied by 1. True/False?",
+    "options": ["True", "False", "Cannot say", "Depends"],
+    "correctIndex": 0,
+    "hint": "Multiplier=1 does not change SD",
+    "explanation": "SD remains same"
+  }
+]

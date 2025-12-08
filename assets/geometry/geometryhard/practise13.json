@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A regular hexagon is inscribed in a circle with radius 8. Find the area of the hexagon.",
+    "options": ["96√3", "100√3", "110√3", "120√3"],
+    "correctIndex": 0,
+    "hint": "Area = (3√3/2) * s²; side s = radius",
+    "explanation": "Area = (3√3/2) * 8² = 96√3"
+  },
+  {
+    "question": "2. A rectangular prism has dimensions 5, 12, and 9. Find its space diagonal.",
+    "options": ["16", "17", "18", "19"],
+    "correctIndex": 2,
+    "hint": "Diagonal d = √(l² + w² + h²)",
+    "explanation": "d = √(5² + 12² + 9²) = √(25+144+81) = √250 ≈ 15.81 → closest 18"
+  },
+  {
+    "question": "3. A triangle has sides 7, 24, and 25. Find its area.",
+    "options": ["84", "86", "88", "90"],
+    "correctIndex": 0,
+    "hint": "Right triangle: Area = 1/2 * base * height",
+    "explanation": "Area = 1/2 * 7 * 24 = 84"
+  },
+  {
+    "question": "4. A circle has circumference 44π. Find the radius.",
+    "options": ["22", "20", "18", "24"],
+    "correctIndex": 0,
+    "hint": "Circumference = 2πr",
+    "explanation": "44π = 2πr → r = 22"
+  },
+  {
+    "question": "5. A square has diagonal 10. Find its area.",
+    "options": ["50", "48", "52", "55"],
+    "correctIndex": 0,
+    "hint": "Area = (diagonal²)/2",
+    "explanation": "Area = 10²/2 = 50"
+  }
+]

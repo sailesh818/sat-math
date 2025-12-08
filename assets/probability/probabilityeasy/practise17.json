@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A bag contains 2 red, 3 blue, and 5 yellow balls. One ball is drawn randomly. What is the probability it is red or yellow?",
+    "options": ["7/10", "1/2", "5/10", "3/10"],
+    "correctIndex": 0,
+    "hint": "Add red and yellow outcomes over total",
+    "explanation": "(2 + 5) / 10 = 7/10"
+  },
+  {
+    "question": "2. A fair coin is flipped 4 times. What is the probability of getting exactly three heads?",
+    "options": ["1/4", "1/2", "1/8", "1/6"],
+    "correctIndex": 0,
+    "hint": "Use combinations: C(4,3) favorable outcomes",
+    "explanation": "C(4,3)=4 favorable out of 16 total → 4/16 = 1/4"
+  },
+  {
+    "question": "3. A six‑sided die is rolled twice. What is the probability the first roll is even and the second is odd?",
+    "options": ["1/4", "1/3", "1/2", "1/6"],
+    "correctIndex": 0,
+    "hint": "Independent events: multiply probabilities",
+    "explanation": "(1/2) × (1/2) = 1/4"
+  },
+  {
+    "question": "4. A class of 40 students: 24 like music, 16 like art. If one student is chosen at random, what's the probability they like art?",
+    "options": ["2/5", "3/5", "1/2", "4/5"],
+    "correctIndex": 0,
+    "hint": "Favorable / total",
+    "explanation": "16/40 = 2/5"
+  },
+  {
+    "question": "5. The average of 6 numbers is 9. If five of them are 8, 10, 7, 11, 9, what is the sixth number?",
+    "options": ["10", "9", "8", "11"],
+    "correctIndex": 1,
+    "hint": "Sum = average × count → subtract known sum",
+    "explanation": "Total sum = 6×9 = 54. Known sum = 8+10+7+11+9 = 45 → sixth = 54−45 = 9"
+  }
+]

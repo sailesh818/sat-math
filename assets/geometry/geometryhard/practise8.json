@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. A regular polygon has 30 sides. Find the measure of each interior angle.",
+    "options": ["174°", "170°", "160°", "180°"],
+    "correctIndex": 0,
+    "hint": "Each interior angle = (n-2) * 180° / n",
+    "explanation": "Each interior angle = (30-2) * 180° / 30 = 174°"
+  },
+  {
+    "question": "2. A cone has height 18 and a slant height of 20. Find the radius of the cone's base.",
+    "options": ["12", "14", "16", "15"],
+    "correctIndex": 0,
+    "hint": "Use the Pythagorean theorem: r² = l² - h²",
+    "explanation": "r² = 20² - 18² = 400 - 324 = 76 → r = √76 ≈ 12"
+  },
+  {
+    "question": "3. The volume of a cylinder is 288π. If its radius is 6, find its height.",
+    "options": ["8", "9", "10", "12"],
+    "correctIndex": 0,
+    "hint": "Volume = π*r²*h",
+    "explanation": "288π = π*6²*h → h = 288π / 36π = 8"
+  },
+  {
+    "question": "4. A triangle has vertices at (3, 5), (7, 11), and (11, 7). Find its area.",
+    "options": ["16", "18", "20", "22"],
+    "correctIndex": 1,
+    "hint": "Use the formula for the area of a triangle with coordinates (x₁, y₁), (x₂, y₂), (x₃, y₃): Area = 1/2 * |x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)|",
+    "explanation": "Area = 1/2 * |3(11 - 7) + 7(7 - 5) + 11(5 - 11)| = 18"
+  },
+  {
+    "question": "5. A rhombus has diagonals of length 10 and 24. Find its area.",
+    "options": ["120", "130", "140", "150"],
+    "correctIndex": 0,
+    "hint": "Area = 1/2 * d₁ * d₂",
+    "explanation": "Area = 1/2 * 10 * 24 = 120"
+  }
+]

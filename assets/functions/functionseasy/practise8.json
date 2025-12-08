@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. If f(x) = 2x + 8, what is f(6)?",
+    "options": ["18", "20", "22", "24"],
+    "correctIndex": 2,
+    "hint": "Multiply by 2, then add 8.",
+    "explanation": "f(6) = 2(6) + 8 = 12 + 8 = 20"
+  },
+  {
+    "question": "2. If f(x) = x² - 2, what is f(5)?",
+    "options": ["23", "24", "25", "26"],
+    "correctIndex": 0,
+    "hint": "Square x first.",
+    "explanation": "f(5) = 25 - 2 = 23"
+  },
+  {
+    "question": "3. If f(x) = 4 - x, what is f(3)?",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 1,
+    "hint": "Subtract x from 4.",
+    "explanation": "f(3) = 4 - 3 = 1"
+  },
+  {
+    "question": "4. If f(x) = x/8, what is f(32)?",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 2,
+    "hint": "Divide x by 8.",
+    "explanation": "f(32) = 32/8 = 4"
+  },
+  {
+    "question": "5. If f(x) = 9x - 3, what is f(2)?",
+    "options": ["12", "13", "14", "15"],
+    "correctIndex": 0,
+    "hint": "Multiply x by 9, then subtract 3.",
+    "explanation": "f(2) = 18 - 3 = 15"
+  }
+]
