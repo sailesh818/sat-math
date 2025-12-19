@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 9x + x.",
+    "options": ["9", "10x", "x²", "8x"],
+    "correctIndex": 1,
+    "hint": "Add coefficients.",
+    "explanation": "9x + x = 10x."
+  },
+  {
+    "question": "2. Solve: x − 3 = 9.",
+    "options": ["12", "6", "3", "−6"],
+    "correctIndex": 0,
+    "hint": "Add 3.",
+    "explanation": "x = 12."
+  },
+  {
+    "question": "3. If y = 8, find y ÷ 4.",
+    "options": ["2", "4", "8", "12"],
+    "correctIndex": 0,
+    "hint": "Divide by 4.",
+    "explanation": "8 ÷ 4 = 2."
+  },
+  {
+    "question": "4. Simplify: 6 + x when x = 7.",
+    "options": ["12", "13", "14", "42"],
+    "correctIndex": 1,
+    "hint": "Substitute x.",
+    "explanation": "6 + 7 = 13."
+  },
+  {
+    "question": "5. Simplify: x − x.",
+    "options": ["x", "1", "0", "x²"],
+    "correctIndex": 2,
+    "hint": "Same terms subtract to zero.",
+    "explanation": "x − x = 0."
+  }
+]

@@ -16,7 +16,7 @@
   {
     "question": "3. Right triangle: opposite = 9, adjacent = 12. Find θ in degrees.",
     "options": ["36°, 37°, 38°, 39°"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "θ = arctan(opposite/adjacent)",
     "explanation": "θ = arctan(9/12) = arctan(0.75) ≈ 37°"
   },

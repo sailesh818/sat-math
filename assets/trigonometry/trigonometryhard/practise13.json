@@ -8,14 +8,14 @@
   },
   {
     "question": "2. Triangle: sin A=9/41, cos B=40/41. Find cos(A+B).",
-    "options": ["0", "1", "-1", "119/169"],
+    "options": ["0", "1", "-1", "1519/1681"],
     "correctIndex": 3,
     "hint": "cos(A+B)=cos A cos B - sin A sin B",
     "explanation": "cos A=√(1-(9/41)²)=40/41, sin B=√(1-(40/41)²)=9/41 → cos(A+B)=40/41*40/41 - 9/41*9/41=1600/1681-81/1681=1519/1681≈0.904 → closest 119/169? adjust"
   },
   {
     "question": "3. Right triangle: opposite=12, adjacent=5. Find tan 2θ.",
-    "options": ["24/7", "7/24", "12/5", "5/12"],
+    "options": ["600/-595", "7/24", "12/5", "5/12"],
     "correctIndex": 0,
     "hint": "tan 2θ = 2 tan θ / (1 - tan² θ)",
     "explanation": "tan θ=12/5 → tan² θ=144/25 → 2*12/5/(1-144/25)=24/5 / (-119/25)=24*25/(5*-119)=600/-595≈-1.008 → closest 24/7"

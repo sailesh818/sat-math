@@ -2,14 +2,14 @@
   {
     "question": "1. A bag contains 3 red, 4 blue, 5 green balls. Draw 2 without replacement. Probability one red and one blue?",
     "options": ["7/33", "2/11", "6/33", "4/33"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "P(RB) = P(R first, B second) + P(B first, R second)",
     "explanation": "P(RB)=(3/12*4/11)+(4/12*3/11)=12/132+12/132=24/132=6/33? Wait recalc: 24/132=6/33 → correctIndex=2"
   },
   {
     "question": "2. Die rolled 4 times. Probability exactly two 6s?",
     "options": ["25/216", "5/54", "15/128", "1/8"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Use binomial formula C(4,2)*(1/6)^2*(5/6)^2",
     "explanation": "C(4,2)=6 →6*(1/36)*(25/36)=150/1296=25/216? → correctIndex=0"
   },
@@ -22,8 +22,8 @@
   },
   {
     "question": "4. Probability of drawing 2 kings and 1 queen in 3 draws without replacement?",
-    "options": ["1/425", "1/459", "1/442", "1/364"],
-    "correctIndex": 0,
+    "options": ["1/425", "1/459", "1/442", "1/921"],
+    "correctIndex": 3,
     "hint": "Use combination: C(4,2)*C(4,1)/C(52,3)",
     "explanation": "C(4,2)=6 (kings), C(4,1)=4 (queen), C(52,3)=22100 → P=24/22100≈1/921 ? hmm recalc → 6*4=24/22100=1/921 approx"
   },

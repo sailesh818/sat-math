@@ -15,8 +15,8 @@
   },
   {
     "question": "3. Right triangle: opposite=12, adjacent=5. Find tan 2θ.",
-    "options": ["24/7", "7/24", "12/5", "5/12"],
-    "correctIndex": 0,
+    "options": ["24/7", "7/24", "-1.008", "5/12"],
+    "correctIndex": 2,
     "hint": "tan 2θ=2 tan θ/(1 - tan² θ)",
     "explanation": "tan θ=12/5 → tan² θ=144/25 → tan 2θ=24/5 / (1-144/25)=24/5 / (-119/25)=24*25/(5*-119)=600/-595≈-1.008 → closest 24/7"
   },

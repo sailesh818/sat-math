@@ -8,7 +8,7 @@
   },
   {
     "question": "2. A circle has radius 10. Find circumference.",
-    "options": ["20π", "30π", "40π", "50π"],
+    "options": ["40π", "30π", "20π", "50π"],
     "correctIndex": 2,
     "hint": "Circumference = 2πr",
     "explanation": "Circumference = 2π*10 = 20π → Correction: 20π"

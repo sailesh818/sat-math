@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 6y − 2y = ?",
+    "options": ["4", "8y", "4y", "y"],
+    "correctIndex": 2,
+    "hint": "Subtract coefficients.",
+    "explanation": "6y − 2y = 4y."
+  },
+  {
+    "question": "2. If x = 3, find 4x.",
+    "options": ["7", "10", "12", "16"],
+    "correctIndex": 2,
+    "hint": "Multiply x by 4.",
+    "explanation": "4 × 3 = 12."
+  },
+  {
+    "question": "3. Simplify: x + x + x.",
+    "options": ["x³", "2x", "3x", "x²"],
+    "correctIndex": 2,
+    "hint": "Add like terms.",
+    "explanation": "x + x + x = 3x."
+  },
+  {
+    "question": "4. Solve: x − 9 = 3.",
+    "options": ["6", "12", "−6", "9"],
+    "correctIndex": 1,
+    "hint": "Add 9 to both sides.",
+    "explanation": "x = 12."
+  },
+  {
+    "question": "5. Evaluate: 5 + x when x = 7.",
+    "options": ["10", "11", "12", "13"],
+    "correctIndex": 2,
+    "hint": "Substitute x.",
+    "explanation": "5 + 7 = 12."
+  }
+]

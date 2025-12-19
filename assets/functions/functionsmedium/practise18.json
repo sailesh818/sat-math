@@ -2,7 +2,7 @@
   {
     "question": "1. If f(x) = x² +3x -2, find f(2).",
     "options": ["6", "7", "8", "9"],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "hint": "Substitute x=2.",
     "explanation": "f(2)=4+6-2=8 → correctIndex=2"
   },
@@ -16,7 +16,7 @@
   {
     "question": "3. If f(x) = 2x² + x, find f(3).",
     "options": ["18", "19", "20", "21"],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "hint": "Compute each term.",
     "explanation": "f(3)=2*9 +3=18+3=21 → correctIndex=3"
   },

@@ -29,8 +29,8 @@
   },
   {
     "question": "5. A cone has a volume of 36π and height 6. Find the radius of its base.",
-    "options": ["3", "4", "5", "6"],
-    "correctIndex": 0,
+    "options": ["3", "4", "5", "3√2"],
+    "correctIndex": 3,
     "hint": "Volume = (1/3)πr²h",
     "explanation": "36π = (1/3)π*r²*6 → r² = 18 → r = 3√2 ≈ 4.24, closest to 3"
   }

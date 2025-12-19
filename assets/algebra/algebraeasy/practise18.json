@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 7x + 3x.",
+    "options": ["21x", "10x", "x", "4x"],
+    "correctIndex": 1,
+    "hint": "Add coefficients.",
+    "explanation": "7x + 3x = 10x."
+  },
+  {
+    "question": "2. Solve: x − 10 = 5.",
+    "options": ["15", "−5", "10", "5"],
+    "correctIndex": 0,
+    "hint": "Add 10.",
+    "explanation": "x = 15."
+  },
+  {
+    "question": "3. If y = 9, find 2y − 3.",
+    "options": ["12", "15", "18", "21"],
+    "correctIndex": 1,
+    "hint": "Substitute y.",
+    "explanation": "2(9) − 3 = 15."
+  },
+  {
+    "question": "4. Simplify: 10 − x when x = 6.",
+    "options": ["16", "6", "4", "10"],
+    "correctIndex": 2,
+    "hint": "Substitute x.",
+    "explanation": "10 − 6 = 4."
+  },
+  {
+    "question": "5. Simplify: 1x.",
+    "options": ["1", "x", "0", "x²"],
+    "correctIndex": 1,
+    "hint": "Coefficient of 1.",
+    "explanation": "1x = x."
+  }
+]

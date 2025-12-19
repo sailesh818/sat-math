@@ -1,7 +1,7 @@
 [
   {
     "question": "1. Right triangle: sin θ = 15/17. Find cos 2θ.",
-    "options": ["-7/17", "8/17", "7/17", "-8/17"],
+    "options": ["-7/17", "8/17", "-161/289", "-8/17"],
     "correctIndex": 2,
     "hint": "cos 2θ = 1 - 2 sin² θ",
     "explanation": "cos 2θ = 1 - 2*(15/17)²=1 - 450/289=-161/289 → negative → correct option: -161/289 → adjust options"

@@ -32,6 +32,6 @@
     "options": ["6π", "9π", "3π", "12π"],
     "correctIndex": 1,
     "hint": "Circumference = 2πr",
-    "explanation": "Circumference = 2*π*3 = 6π → correctIndex=0? Wait 6π"
+    "explanation": "Circumference = 2*π*3 = 6π "
   }
 ]

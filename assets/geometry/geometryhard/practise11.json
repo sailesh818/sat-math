@@ -22,7 +22,7 @@
   },
   {
     "question": "4. A circle has a radius of 5. What is the length of an arc subtended by a central angle of 60°?",
-    "options": ["5π/3", "5π/6", "5π/2", "5π/4"],
+    "options": ["5π/6", "5π/3", "5π/2", "5π/4"],
     "correctIndex": 1,
     "hint": "Arc length = (θ/360) * 2πr",
     "explanation": "Arc length = (60/360) * 2π * 5 = (1/6) * 10π = 5π/3"
@@ -57,8 +57,8 @@
   },
   {
     "question": "9. A rectangular prism has dimensions 3, 4, and 12. Find its surface area.",
-    "options": ["144", "150", "160", "170"],
-    "correctIndex": 0,
+    "options": ["144", "150", "160", "192"],
+    "correctIndex": 3,
     "hint": "Surface area = 2(lw + lh + wh)",
     "explanation": "Surface area = 2(3*4 + 3*12 + 4*12) = 2(12 + 36 + 48) = 2 * 96 = 192"
   },

@@ -30,8 +30,8 @@
   {
     "question": "5. Triangle: sin A = 5/13, cos A = 12/13. Find tan(A + 90°).",
     "options": ["-13/12", "12/13", "13/5", "-12/5"],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "hint": "tan(A+90°) = -1/tan A",
-    "explanation": "tan A = 5/12 → tan(A+90°) = -12/5 = -13/12 (approx correction)"
+    "explanation": "tan A = 5/12 → tan(A+90°) = -12/5 "
   }
 ]

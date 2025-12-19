@@ -1,8 +1,8 @@
 [
   {
     "question": "1. Bag: 4 red, 5 blue, 6 green. Draw 3 without replacement. Probability exactly 2 green?",
-    "options": ["10/77", "11/77", "15/77", "12/77"],
-    "correctIndex": 0,
+    "options": ["10/77", "11/77", "15/77", "27/91"],
+    "correctIndex": 3,
     "hint": "Use combinations for favorable outcomes",
     "explanation": "C(6,2)*C(9,1)/C(15,3)=15*9/455=135/455=27/91 ≈10/77? approximate"
   },
@@ -23,7 +23,7 @@
   {
     "question": "4. Two dice rolled. Probability sum = 6 or 8?",
     "options": ["5/18", "7/36", "2/9", "1/4"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Count favorable outcomes",
     "explanation": "Sum=6(5), sum=8(5) → total=10/36=5/18 → correctIndex=0"
   },

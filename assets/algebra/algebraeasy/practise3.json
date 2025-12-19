@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 4x + 3 = ? when x = 2",
+    "options": ["7", "11", "14", "10"],
+    "correctIndex": 1,
+    "hint": "Substitute x = 2.",
+    "explanation": "4(2) + 3 = 8 + 3 = 11."
+  },
+  {
+    "question": "2. Solve: x + 8 = 15.",
+    "options": ["5", "7", "8", "23"],
+    "correctIndex": 1,
+    "hint": "Subtract 8 from both sides.",
+    "explanation": "x = 15 − 8 = 7."
+  },
+  {
+    "question": "3. Simplify: 9a − 4a.",
+    "options": ["13a", "5", "5a", "a"],
+    "correctIndex": 2,
+    "hint": "Subtract coefficients.",
+    "explanation": "9a − 4a = 5a."
+  },
+  {
+    "question": "4. If y = 6, find 2y.",
+    "options": ["8", "10", "12", "14"],
+    "correctIndex": 2,
+    "hint": "Multiply y by 2.",
+    "explanation": "2 × 6 = 12."
+  },
+  {
+    "question": "5. Simplify: x + 10 − 3.",
+    "options": ["x + 7", "x + 13", "7x", "10x"],
+    "correctIndex": 0,
+    "hint": "Combine constants.",
+    "explanation": "10 − 3 = 7, so x + 7."
+  }
+]

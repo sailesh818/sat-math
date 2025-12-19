@@ -16,16 +16,16 @@
   {
     "question": "3. If f(x) = 3x² - x + 2, find f(1).",
     "options": ["4", "5", "6", "7"],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "hint": "Evaluate the expression for x = 1.",
-    "explanation": "f(1) = 3*1² -1 + 2 = 3 -1 +2 = 4 → correctIndex=0"
+    "explanation": "f(1) = 3*1² -1 + 2 = 3 -1 +2 = 4 "
   },
   {
     "question": "4. If f(x) = x/2 - 7, find f(14).",
     "options": ["0", "7", "14", "-7"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Divide 14 by 2 and subtract 7.",
-    "explanation": "f(14) = 14/2 -7 = 7 -7 = 0 → correctIndex=0"
+    "explanation": "f(14) = 14/2 -7 = 7 -7 = 0 "
   },
   {
     "question": "5. If f(x) = 2x - 3, find f(-2).",

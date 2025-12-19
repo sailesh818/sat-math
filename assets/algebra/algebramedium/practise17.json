@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 3x + 5 = 7x − 11.",
+    "options": ["3", "4", "−4", "−2"],
+    "correctIndex": 1,
+    "hint": "Move x terms together.",
+    "explanation": "3x − 7x = −11 − 5 → −4x = −16 → x = 4."
+  },
+  {
+    "question": "2. Simplify: 2(4y − 3) + 5y.",
+    "options": ["13y − 6", "8y − 6", "13y − 3", "9y − 3"],
+    "correctIndex": 0,
+    "hint": "Distribute and combine.",
+    "explanation": "8y − 6 + 5y = 13y − 6."
+  },
+  {
+    "question": "3. If x = 2, find x² + 4x − 1.",
+    "options": ["17", "9", "11", "13"],
+    "correctIndex": 2,
+    "hint": "Square then combine.",
+    "explanation": "4 + 8 − 1 = 11."
+  },
+  {
+    "question": "4. Solve: x/4 − 3 = 2.",
+    "options": ["20", "16", "10", "8"],
+    "correctIndex": 0,
+    "hint": "Add 3, multiply by 4.",
+    "explanation": "x/4 = 5 → x = 20."
+  },
+  {
+    "question": "5. Simplify: 3(a + 2) − 2(a − 1).",
+    "options": ["a + 8", "5a + 4", "a + 4", "5a + 8"],
+    "correctIndex": 1,
+    "hint": "Distribute both.",
+    "explanation": "3a + 6 − 2a + 2 = a + 8."
+  }
+]

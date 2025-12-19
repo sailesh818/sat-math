@@ -1,15 +1,15 @@
 [
   {
     "question": "1. Right triangle: sin θ = 12/37. Find tan 2θ.",
-    "options": ["24/35", "24/13", "13/24", "12/25"],
-    "correctIndex": 0,
+    "options": ["24/35", "24/13", "13/24", "29400/37835"],
+    "correctIndex": 3,
     "hint": "tan 2θ = 2 tan θ / (1 - tan² θ)",
     "explanation": "cos θ = √(1-(12/37)²)=35/37 → tan θ = 12/35 → tan 2θ = 2*12/35 / (1-(12/35)²)=24/35 / (1-144/1225)=24/35 /1081/1225=24*1225/(35*1081)=29400/37835≈0.777 → closest 24/35"
   },
   {
     "question": "2. Triangle: sin A = 5/13, cos B = 12/13. Find cos(A-B).",
     "options": ["119/169", "120/169", "1", "-1"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "cos(A-B) = cos A cos B + sin A sin B",
     "explanation": "cos A = √(1-(5/13)²)=12/13, sin B = √(1-(12/13)²)=5/13 → cos(A-B)=12/13*12/13 + 5/13*5/13=144/169+25/169=169/169=1 → option adjusted to 1"
   },

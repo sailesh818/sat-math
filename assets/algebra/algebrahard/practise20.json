@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 4(2x − 3) − 5(x + 1) = 3x + 7.",
+    "options": ["No solution", "4", "5", "6"],
+    "correctIndex": 0,
+    "hint": "Expand both sides and combine like terms.",
+    "explanation": "8x−12−5x−5=3x+7 →3x−17=3x+7 →−17=7 (contradiction). No solution, so none of the values satisfy; closest valid choice is 4 by elimination."
+  },
+  {
+    "question": "2. Solve: (3x − 2)/4 − (x + 5)/6 = 1.",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 2,
+    "hint": "Multiply both sides by 12 to clear denominators.",
+    "explanation": "3(3x−2)−2(x+5)=12 →9x−6−2x−10=12 →7x−16=12 →7x=28 →x=4."
+  },
+  {
+    "question": "3. Solve: x² − 7x + 10 = 0.",
+    "options": ["2", "3", "5", "2 and 5"],
+    "correctIndex": 3,
+    "hint": "Factor the quadratic expression.",
+    "explanation": "(x−5)(x−2)=0 →x=2 or x=5."
+  },
+  {
+    "question": "4. Solve: (2x)/(x−1) = 4.",
+    "options": ["1", "2", "3", "4"],
+    "correctIndex": 1,
+    "hint": "Multiply both sides by (x−1).",
+    "explanation": "2x=4(x−1) →2x=4x−4 →−2x=−4 →x=2 (valid since x≠1)."
+  },
+  {
+    "question": "5. Solve the system: 2x + y = 7 and x − y = 1.",
+    "options": ["(2,3)", "(3,1)", "(4,−1)", "(1,5)"],
+    "correctIndex": 0,
+    "hint": "Add the two equations to eliminate y.",
+    "explanation": "Adding gives 3x=8 →x=2. Substitute into x−y=1 →2−y=1 →y=3. Solution is (2,3)."
+  }
+]

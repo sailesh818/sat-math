@@ -22,8 +22,8 @@
   },
   {
     "question": "4. In a class of 36 students, 18 passed math, 24 passed English. 10 students passed both. If one student is chosen randomly, what is the probability they passed at least one subject?",
-    "options": ["(18+24−10)/36", "1", "2/3", "3/4"],
-    "correctIndex": 0,
+    "options": ["(18+24−20)/36", "1", "8/9", "3/4"],
+    "correctIndex": 2,
     "hint": "Use inclusion–exclusion for union of events",
     "explanation": "(18 + 24 − 10) / 36 = 32/36 = 8/9"
   },

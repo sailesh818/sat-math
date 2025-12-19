@@ -16,7 +16,7 @@
   {
     "question": "3. Mean of 6 numbers=12. Five numbers: 10,15,12,11,13. Find sixth number.",
     "options": ["12", "10", "11", "13"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "Sum=mean*count",
     "explanation": "Sum=12*6=72 → sum of first 5=61 → sixth=72−61=11 → correctIndex=2"
   },

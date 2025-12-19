@@ -29,8 +29,8 @@
   },
   {
     "question": "5. Right triangle: tan θ = 9/40. Find sin θ.",
-    "options": ["9/41", "40/41", "9/40", "40/9"],
-    "correctIndex": 0,
+    "options": ["9/40", "40/41", "9/41", "40/9"],
+    "correctIndex": 2,
     "hint": "opposite/adjacent → hypotenuse → sin θ = opposite/hypotenuse",
     "explanation": "Hypotenuse = √(9² + 40²) = 41 → sin θ = 9/41"
   }

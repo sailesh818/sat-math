@@ -15,8 +15,8 @@
   },
   {
     "question": "3. A sphere has a radius of 4. Find its volume.",
-    "options": ["256π", "268π", "270π", "280π"],
-    "correctIndex": 0,
+    "options": ["256π", "268π", "270π", "256π/3"],
+    "correctIndex": 3,
     "hint": "Volume of a sphere = (4/3)πr³",
     "explanation": "Volume = (4/3)π*4³ = (4/3)π*64 = 256π/3 ≈ 256π"
   },

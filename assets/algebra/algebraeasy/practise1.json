@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 2x + 5x = ?",
+    "options": ["7", "10x", "7x", "x + 7"],
+    "correctIndex": 2,
+    "hint": "Add coefficients of x.",
+    "explanation": "2x + 5x = 7x."
+  },
+  {
+    "question": "2. If x = 4, find the value of x + 6.",
+    "options": ["6", "8", "10", "12"],
+    "correctIndex": 2,
+    "hint": "Substitute x = 4.",
+    "explanation": "4 + 6 = 10."
+  },
+  {
+    "question": "3. Simplify: 3(a + 2).",
+    "options": ["3a + 2", "6a", "3a + 6", "a + 6"],
+    "correctIndex": 2,
+    "hint": "Distribute 3.",
+    "explanation": "3(a + 2) = 3a + 6."
+  },
+  {
+    "question": "4. Solve for x: x + 5 = 12.",
+    "options": ["5", "7", "12", "17"],
+    "correctIndex": 1,
+    "hint": "Subtract 5 from both sides.",
+    "explanation": "x = 12 − 5 = 7."
+  },
+  {
+    "question": "5. Evaluate: x² when x = 2.",
+    "options": ["2", "4", "6", "8"],
+    "correctIndex": 1,
+    "hint": "Square x.",
+    "explanation": "2² = 4."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 2(x+3) − 3(x−1) = 4.",
+    "options": ["1", "2", "3", "5"],
+    "correctIndex": 3,
+    "hint": "Expand both sides.",
+    "explanation": "2x+6−3x+3=4 → −x+9=4 → −x=−5 → x=5."
+  },
+  {
+    "question": "2. Solve: (x−2)/3 + (2x+1)/4 = 3.",
+    "options": ["2", "3", "41/10", "5"],
+    "correctIndex": 2,
+    "hint": "Multiply both sides by 12.",
+    "explanation": "4(x−2)+3(2x+1)=36 →4x−8+6x+3=36 →10x−5=36 →10x=41 → x=41/10."
+  },
+  {
+    "question": "3. Solve: 3(x−1) − 2(x+2) = x+5.",
+    "options": ["No solution", "2", "3", "4"],
+    "correctIndex": 0,
+    "hint": "Expand and simplify.",
+    "explanation": "3x−3−2x−4=x+5 → x−7=x+5 → −7=5 → No solution."
+  },
+  {
+    "question": "4. Solve: (2x−3)/3 + (3x+2)/4 = 5.",
+    "options": ["3", "4", "5", "66/17"],
+    "correctIndex": 3,
+    "hint": "Multiply both sides by 12.",
+    "explanation": "4(2x−3)+3(3x+2)=60 →8x−12+9x+6=60 →17x−6=60 →17x=66 → x=66/17."
+  },
+  {
+    "question": "5. Solve: 5(x−2) − 3(x+1) = 2x−4.",
+    "options": ["2", "No solution", "4", "5"],
+    "correctIndex": 1,
+    "hint": "Expand both sides.",
+    "explanation": "5x−10−3x−3=2x−4 →2x−13=2x−4 → −13=−4 → No solution."
+  }
+]

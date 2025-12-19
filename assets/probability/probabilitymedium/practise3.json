@@ -8,7 +8,7 @@
   },
   {
     "question": "2. A class of 25 students has a mean score of 80. One student scores 100. What is the mean of the remaining 24 students if the overall mean remains 80?",
-    "options": ["79", "80", "78", "81"],
+    "options": ["79", "80", "79.17", "81"],
     "correctIndex": 2,
     "hint": "Use weighted sum formula",
     "explanation": "Total sum = 25×80=2000. Remove 100 → remaining sum = 2000−100=1900 → mean = 1900/24≈79.17 → closest=78"

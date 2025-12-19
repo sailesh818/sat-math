@@ -8,7 +8,7 @@
   },
   {
     "question": "2. If f(x) = x - 2, what is f(7)?",
-    "options": ["4", "5", "6", "7"],
+    "options": ["4", "6", "5", "7"],
     "correctIndex": 2,
     "hint": "Subtract 2 from x.",
     "explanation": "f(7) = 7 - 2 = 5"
@@ -30,7 +30,7 @@
   {
     "question": "5. If f(x) = 2x - 1, what is f(6)?",
     "options": ["10", "11", "12", "13"],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "hint": "Multiply by 2, then subtract 1.",
     "explanation": "f(6) = 12 - 1 = 11"
   }

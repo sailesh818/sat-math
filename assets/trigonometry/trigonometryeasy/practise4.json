@@ -23,7 +23,7 @@
   {
     "question": "4. Right triangle: hypotenuse = 10, opposite = 6. Find sin θ.",
     "options": ["6/10", "8/10", "3/5", "1/2"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "sin θ = opposite/hypotenuse",
     "explanation": "sin θ = 6/10 = 3/5"
   },

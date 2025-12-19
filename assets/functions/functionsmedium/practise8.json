@@ -9,7 +9,7 @@
   {
     "question": "2. If f(x) = 5x -2, find f(1).",
     "options": ["2", "3", "4", "5"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Multiply then subtract.",
     "explanation": "f(1)=5*1-2=3"
   },

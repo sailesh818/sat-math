@@ -8,7 +8,7 @@
   },
   {
     "question": "2. Right triangle: tan θ = 7/24. Find sin 2θ.",
-    "options": ["336/625", "48/625", "7/24", "1"],
+    "options": ["8064/15000", "48/625", "7/24", "1"],
     "correctIndex": 0,
     "hint": "sin 2θ = 2 tan θ / (1 + tan² θ)",
     "explanation": "2*7/24 / (1 + (7/24)²) = 14/24 / (1+49/576) = 14/24 / 625/576=14*576/(24*625)=8064/15000≈336/625"
@@ -22,14 +22,14 @@
   },
   {
     "question": "4. Right triangle: hypotenuse = 25, opposite = 7. Find cos 2θ.",
-    "options": ["24/25", "49/625", "576/625", "-576/625"],
+    "options": ["24/25", "49/625", "527/625", "-576/625"],
     "correctIndex": 2,
     "hint": "cos 2θ = 2 cos² θ -1",
     "explanation": "cos θ=√(25²-7²)/25=24/25 → cos 2θ=2*(24/25)²-1=2*576/625-1=1152/625-625/625=527/625 → correct positive 527/625"
   },
   {
     "question": "5. Triangle: tan A = 9/12, tan B = 3/4. Find tan(A-B).",
-    "options": ["3/7", "7/3", "-3/7", "-7/3"],
+    "options": ["0", "7/3", "-3/7", "-7/3"],
     "correctIndex": 0,
     "hint": "tan(A-B) = (tan A - tan B)/(1 + tan A tan B)",
     "explanation": "tan(A-B)=(9/12 -3/4)/(1+ (9/12)*(3/4))=0/(1+27/48)=0 → correct 0 → adjust options"

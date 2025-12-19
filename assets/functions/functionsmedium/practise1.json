@@ -16,16 +16,16 @@
   {
     "question": "3. If f(x) = 2x² - x, what is f(2)?",
     "options": ["6", "7", "8", "9"],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "hint": "Plug in x = 2 and simplify.",
-    "explanation": "f(2) = 2*(2²) - 2 = 2*4 - 2 = 8 - 2 = 6 → wait correct answer is 6 → correctIndex=0"
+    "explanation": "f(2) = 2*(2²) - 2 = 2*4 - 2 = 8 - 2 = 6"
   },
   {
     "question": "4. If f(x) = x/3 + 5, find f(9).",
     "options": ["6", "8", "9", "10"],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "hint": "Divide x by 3 and add 5.",
-    "explanation": "f(9) = 9/3 + 5 = 3 + 5 = 8 → correctIndex=1"
+    "explanation": "f(9) = 9/3 + 5 = 3 + 5 = 8 "
   },
   {
     "question": "5. If f(x) = 4 - 2x, find f(-1).",

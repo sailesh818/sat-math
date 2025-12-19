@@ -11,7 +11,7 @@
     "options": ["0", "1", "2", "3"],
     "correctIndex": 3,
     "hint": "Compute carefully.",
-    "explanation": "f(2)=-4+10-3=3 → correctIndex=3"
+    "explanation": "f(2)=-4+10-3=3"
   },
   {
     "question": "3. If f(x) = x² -4x +6, find f(3).",
@@ -32,6 +32,6 @@
     "options": ["0", "1", "2", "3"],
     "correctIndex": 1,
     "hint": "Compute carefully.",
-    "explanation": "f(2)=-8+10-1=1 → correctIndex=1"
+    "explanation": "f(2)=-8+10-1=1 "
   }
 ]

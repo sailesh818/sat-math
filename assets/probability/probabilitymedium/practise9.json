@@ -16,7 +16,7 @@
   {
     "question": "3. Mean of 5 numbers: 10,12,15,18,x=14. Find x.",
     "options": ["13", "16", "15", "17"],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "hint": "Sum=mean*count",
     "explanation": "Sum=14*5=70 → 10+12+15+18+x=70 → x=15 → correctIndex=2"
   },

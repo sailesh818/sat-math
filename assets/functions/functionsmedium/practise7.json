@@ -16,9 +16,9 @@
   {
     "question": "3. If f(x) = 2x² + 5, find f(1).",
     "options": ["6", "7", "8", "9"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Compute the square term first.",
-    "explanation": "f(1)=2*1+5=2+5=7 → correctIndex=1"
+    "explanation": "f(1)=2*1+5=2+5=7 "
   },
   {
     "question": "4. If f(x) = x/4 +3, find f(8).",

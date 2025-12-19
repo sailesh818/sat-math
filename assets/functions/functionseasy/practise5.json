@@ -9,13 +9,13 @@
   {
     "question": "2. If f(x) = x² - 4, what is f(3)?",
     "options": ["3", "4", "5", "6"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "Square x first.",
     "explanation": "f(3) = 9 - 4 = 5"
   },
   {
     "question": "3. If f(x) = x/5, what is f(20)?",
-    "options": ["2", "3", "4", "5"],
+    "options": ["2", "3", "5", "4"],
     "correctIndex": 3,
     "hint": "Divide x by 5.",
     "explanation": "f(20) = 20/5 = 4"
@@ -29,7 +29,7 @@
   },
   {
     "question": "5. If f(x) = 2x - 10, what is f(8)?",
-    "options": ["4", "5", "6", "7"],
+    "options": ["6", "5", "4", "7"],
     "correctIndex": 0,
     "hint": "Multiply first, then subtract.",
     "explanation": "f(8) = 16 - 10 = 6"

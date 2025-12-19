@@ -9,7 +9,7 @@
   {
     "question": "2. A rectangle has length 20 and area 120. Find its width.",
     "options": ["5", "6", "7", "8"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Area = length * width",
     "explanation": "Width = 120 / 20 = 6"
   },

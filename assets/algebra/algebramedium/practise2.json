@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 4x − 6 = 2x + 10.",
+    "options": ["-8", "2", "8", "16"],
+    "correctIndex": 2,
+    "hint": "Move x terms together.",
+    "explanation": "2x = 16 → x = 8."
+  },
+  {
+    "question": "2. Simplify: 3(2y + 1) − y.",
+    "options": ["5y + 3", "6y + 1", "5y − 1", "6y − 1"],
+    "correctIndex": 0,
+    "hint": "Distribute first.",
+    "explanation": "6y + 3 − y = 5y + 3."
+  },
+  {
+    "question": "3. If x = 4, find 2x² − x.",
+    "options": ["67", "32", "28", "24"],
+    "correctIndex": 2,
+    "hint": "Square first.",
+    "explanation": "2(16) − 4 = 28."
+  },
+  {
+    "question": "4. Solve: 7x = 3x + 20.",
+    "options": ["4", "5", "10", "20"],
+    "correctIndex": 1,
+    "hint": "Subtract 3x.",
+    "explanation": "4x = 20 → x = 5."
+  },
+  {
+    "question": "5. Simplify: (x + 4) − (x − 2).",
+    "options": ["6", "2x + 2", "2", "x + 6"],
+    "correctIndex": 0,
+    "hint": "Distribute the minus sign.",
+    "explanation": "x + 4 − x + 2 = 6."
+  }
+]

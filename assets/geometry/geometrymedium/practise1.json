@@ -16,7 +16,7 @@
   {
     "question": "3. A circle has circumference 18π. Find its radius.",
     "options": ["9", "6", "12", "8"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Circumference = 2πr",
     "explanation": "2πr = 18π → r=9"
   },

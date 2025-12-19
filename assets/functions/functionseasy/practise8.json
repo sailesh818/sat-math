@@ -2,7 +2,7 @@
   {
     "question": "1. If f(x) = 2x + 8, what is f(6)?",
     "options": ["18", "20", "22", "24"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Multiply by 2, then add 8.",
     "explanation": "f(6) = 2(6) + 8 = 12 + 8 = 20"
   },
@@ -30,7 +30,7 @@
   {
     "question": "5. If f(x) = 9x - 3, what is f(2)?",
     "options": ["12", "13", "14", "15"],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "hint": "Multiply x by 9, then subtract 3.",
     "explanation": "f(2) = 18 - 3 = 15"
   }

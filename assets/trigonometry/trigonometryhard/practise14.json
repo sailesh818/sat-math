@@ -8,14 +8,14 @@
   },
   {
     "question": "2. Right triangle: tan θ=9/12. Find sin 2θ.",
-    "options": ["36/25", "216/625", "72/144", "72/25"],
+    "options": ["36/25", "216/225", "72/144", "72/25"],
     "correctIndex": 1,
     "hint": "sin 2θ=2 tan θ/(1+tan² θ)",
     "explanation": "2*9/12 / (1+(9/12)²)=3/2 / (1+81/144)=3/2 / 225/144=3/2 *144/225=432/450=216/225≈0.96 → 216/625 in option"
   },
   {
     "question": "3. Triangle: cos A=12/13, cos B=5/13. Find cos(A-B).",
-    "options": ["119/169", "0", "1", "-1"],
+    "options": ["120/169", "0", "1", "-1"],
     "correctIndex": 0,
     "hint": "cos(A-B)=cos A cos B + sin A sin B",
     "explanation": "sin A=5/13, sin B=12/13 → cos(A-B)=12/13*5/13 +5/13*12/13=60/169+60/169=120/169 → closest 119/169"

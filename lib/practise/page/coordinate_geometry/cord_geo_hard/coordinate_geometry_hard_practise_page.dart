@@ -49,7 +49,7 @@ class _CoordinateGeometryHardPractisePageState
   Future<void> loadQuestions() async {
     try {
       final String response = await rootBundle
-          .loadString('assets/coordinatehard/${widget.jsonFileName}');
+          .loadString('assets/coordinategeometry/coordinatehard/${widget.jsonFileName}');
       final data = json.decode(response);
       setState(() {
         questions = List<Map<String, dynamic>>.from(data);

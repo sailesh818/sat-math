@@ -16,7 +16,7 @@
   {
     "question": "3. Dataset: 2,4,6,8,10. Add 5 → new mean?",
     "options": ["10", "11", "12", "13"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Mean shifts by constant",
     "explanation": "Original mean=6 → add 5 → 11? Wait options: 6+5=11 → correctIndex=1"
   },

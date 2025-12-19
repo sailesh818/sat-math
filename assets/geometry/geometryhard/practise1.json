@@ -9,13 +9,13 @@
   {
     "question": "2. A circle has an arc of length 10π and radius 10. What is the measure of the central angle of the arc in radians?",
     "options": ["1", "2", "π", "3"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "Arc length = radius * central angle (in radians)",
     "explanation": "Arc length = 10π → 10π = 10 * central angle → central angle = π"
   },
   {
     "question": "3. A right triangle has one leg of length 9 and the hypotenuse of length 15. Find the length of the other leg.",
-    "options": ["12", "10", "11", "13"],
+    "options": ["10", "12", "11", "13"],
     "correctIndex": 1,
     "hint": "Use the Pythagorean theorem to solve for the missing leg.",
     "explanation": "9² + b² = 15² → 81 + b² = 225 → b² = 144 → b = 12"

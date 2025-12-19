@@ -2,9 +2,9 @@
   {
     "question": "1. If f(x) = 3x² - 2x, find f(1).",
     "options": ["1", "2", "0", "-1"],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "hint": "Substitute x = 1.",
-    "explanation": "f(1)=3*1² -2*1 =3-2=1 → correctIndex=0"
+    "explanation": "f(1)=3*1² -2*1 =3-2=1"
   },
   {
     "question": "2. If f(x) = x² + x + 1, find f(2).",
@@ -23,9 +23,9 @@
   {
     "question": "4. If f(x) = 2x + x², find f(2).",
     "options": ["6", "8", "10", "12"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Compute each term.",
-    "explanation": "f(2)=2*2 + 2²=4+4=8 → correctIndex=1"
+    "explanation": "f(2)=2*2 + 2²=4+4=8 "
   },
   {
     "question": "5. If f(x) = x/5 + 7, find f(10).",

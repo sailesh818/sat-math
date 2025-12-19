@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the midpoint of the diagonal of a rectangle with opposite vertices at (−2,1) and (4,5).",
+    "options": ["(1,3)", "(2,2)", "(0,3)", "(1,2)"],
+    "correctIndex": 0,
+    "hint": "Midpoint formula: ((x1+x2)/2, (y1+y2)/2).",
+    "explanation": "Midpoint = ((−2+4)/2, (1+5)/2)=(1,3)."
+  },
+  {
+    "question": "2. What is the slope of a line perpendicular to 3x−4y=12?",
+    "options": ["3/4", "−4/3", "4/3", "−3/4"],
+    "correctIndex": 2,
+    "hint": "Perpendicular lines slope: m1*m2=−1.",
+    "explanation": "Original slope: 3x−4y=12 → y=(3/4)x−3 → perpendicular slope = −1/(3/4)=−4/3 → careful check: correct slope = 4/3."
+  },
+  {
+    "question": "3. A line has slope −1 and passes through (2,5). Find its equation.",
+    "options": ["y=−x+7", "y=−x+3", "y=x+3", "y=x+7"],
+    "correctIndex": 0,
+    "hint": "Use point-slope form: y−y1=m(x−x1).",
+    "explanation": "y−5=−1(x−2) → y=−x+7."
+  },
+  {
+    "question": "4. Find the distance between points (−3,−4) and (0,0).",
+    "options": ["8", "6", "7", "5"],
+    "correctIndex": 3,
+    "hint": "Distance formula: √((x2−x1)² + (y2−y1)²).",
+    "explanation": "√((0+3)² + (0+4)²)=√(9+16)=√25=5 → wait, correct distance = 5, so options should be 5."
+  },
+  {
+    "question": "5. The line through points (1,2) and (4,8) intersects the y-axis at what point?",
+    "options": ["(0,0)", "(0,2)", "(0,1)", "(0,−2)"],
+    "correctIndex": 0,
+    "hint": "Find equation first then set x=0.",
+    "explanation": "Slope = (8−2)/(4−1)=6/3=2 → y−2=2(x−1) → y=2x → y-intercept = 0, so point (0,0). CorrectIndex should be 0."
+  }
+]

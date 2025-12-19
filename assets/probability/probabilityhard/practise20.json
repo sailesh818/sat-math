@@ -16,14 +16,14 @@
   {
     "question": "3. Dataset: 2,4,6,8. Multiply by 2 → new variance?",
     "options": ["16", "32", "8", "20"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Variance scales by square",
-    "explanation": "Original variance=4 → multiply 2^2=4 → 4*4=16? hmm check, correct=16 or 32? pick 32"
+    "explanation": "Original variance=4 → multiply 2^2=4 → 4*4=16"
   },
   {
     "question": "4. Two dice rolled. Probability sum = 3 or 11?",
     "options": ["1/12", "1/9", "1/18", "1/6"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Count outcomes",
     "explanation": "Sum=3(2),11(2) → total=4/36=1/9 → correctIndex=1"
   },

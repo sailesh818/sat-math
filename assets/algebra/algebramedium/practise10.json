@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 5x + 4 = 3x + 12.",
+    "options": ["2", "4", "6", "8"],
+    "correctIndex": 1,
+    "hint": "Move x terms to one side.",
+    "explanation": "5x − 3x = 12 − 4 → 2x = 8 → x = 4."
+  },
+  {
+    "question": "2. Simplify: 3(2y + 5) − 4y.",
+    "options": ["2y + 15", "6y + 15", "5y + 15", "2y + 5"],
+    "correctIndex": 0,
+    "hint": "Distribute 3 first.",
+    "explanation": "6y + 15 − 4y = 2y + 15."
+  },
+  {
+    "question": "3. If x = −2, find 3x² + x.",
+    "options": ["8", "10", "14", "12"],
+    "correctIndex": 1,
+    "hint": "Square first.",
+    "explanation": "3(4) + (−2) = 12 − 2 = 10."
+  },
+  {
+    "question": "4. Solve: 7x − 2 = 3x + 14.",
+    "options": ["2", "6", "4", "5"],
+    "correctIndex": 2,
+    "hint": "Move x terms together.",
+    "explanation": "7x − 3x = 14 + 2 → 4x = 16 → x = 4."
+  },
+  {
+    "question": "5. Simplify: (2a + 5) − (a − 3).",
+    "options": ["a + 8", "3a + 2", "a + 2", "2a + 8"],
+    "correctIndex": 0,
+    "hint": "Distribute minus.",
+    "explanation": "2a + 5 − a + 3 = a + 8."
+  }
+]

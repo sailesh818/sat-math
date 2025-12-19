@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find slope of line through (1,2) and (4,8).",
+    "options": ["1", "2", "3", "6"],
+    "correctIndex": 1,
+    "hint": "Slope = Δy/Δx.",
+    "explanation": "Slope=(8−2)/(4−1)=6/3=2."
+  },
+  {
+    "question": "2. Midpoint of (0,0) and (8,6)?",
+    "options": ["(4,3)", "(4,4)", "(3,4)", "(3,3)"],
+    "correctIndex": 0,
+    "hint": "Midpoint formula.",
+    "explanation": "((0+8)/2, (0+6)/2)=(4,3)."
+  },
+  {
+    "question": "3. Y-intercept of y=5x+2?",
+    "options": ["(0,2)", "(0,5)", "(2,0)", "(5,0)"],
+    "correctIndex": 0,
+    "hint": "Set x=0.",
+    "explanation": "y=5*0+2=2 → (0,2)."
+  },
+  {
+    "question": "4. Distance between (−2,−1) and (2,3)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 1,
+    "hint": "Distance formula.",
+    "explanation": "√((2+2)²+(3+1)²)=√(16+16)=√32≈5.66 → closest integer 5."
+  },
+  {
+    "question": "5. Does point (3,7) lie on y=2x+1?",
+    "options": ["Yes", "No"],
+    "correctIndex": 0,
+    "hint": "Check if y=2x+1.",
+    "explanation": "y=2*3+1=6+1=7 → Yes."
+  }
+]

@@ -1,14 +1,14 @@
 [
   {
     "question": "1. Right triangle: sin θ=15/17. Find tan 2θ.",
-    "options": ["120/56", "56/120", "15/17", "17/15"],
+    "options": ["-1.49", "56/120", "15/17", "17/15"],
     "correctIndex": 0,
     "hint": "tan 2θ = 2 tan θ/(1 - tan² θ)",
     "explanation": "cos θ=8/17 → tan θ=15/8 → tan 2θ=2*15/8 /(1-(15/8)²)=30/8 / (1-225/64)=30/8 / (-161/64)=1920/-1288≈-1.49 → closest 120/56"
   },
   {
     "question": "2. Triangle: sin A=9/41, cos B=40/41. Find sin(A+B).",
-    "options": ["0", "1", "119/169", "120/169"],
+    "options": ["0", "1", "119/169", "720/1681"],
     "correctIndex": 3,
     "hint": "sin(A+B)=sin A cos B + cos A sin B",
     "explanation": "cos A=√(1-(9/41)²)=40/41, sin B=√(1-(40/41)²)=9/41 → sin(A+B)=9/41*40/41 +40/41*9/41=720/1681≈0.428 → closest 120/169"

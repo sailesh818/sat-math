@@ -15,15 +15,15 @@
   },
   {
     "question": "3. A class has 14 girls and 6 boys. A student is chosen at random. What is the probability the student is a boy?",
-    "options": ["6/20", "3/10", "1/4", "2/5"],
-    "correctIndex": 0,
+    "options": ["6/10", "3/10", "1/4", "2/5"],
+    "correctIndex": 1,
     "hint": "Probability = number of boys / total students",
     "explanation": "6/20 = 3/10"
   },
   {
     "question": "4. A spinner is divided into 5 equal sections numbered 1 to 5. What is the probability of landing on a prime number?",
     "options": ["2/5", "3/5", "1/5", "2/3"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Primes between 1 and 5 are 2, 3, 5",
     "explanation": "3 favorable out of 5 → 3/5 (options list had 2/5 mistakenly) → correct should be 3/5. But based on given correctIndex 0 → 2/5 (mismatch). Let's adjust: favorable = 3 → 3/5. So correctIndex should be 1. But for JSON, keep as is? Better correct this: change options so correctIndex 0 means 3/5."
   },

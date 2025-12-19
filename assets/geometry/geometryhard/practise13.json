@@ -8,7 +8,7 @@
   },
   {
     "question": "2. A rectangular prism has dimensions 5, 12, and 9. Find its space diagonal.",
-    "options": ["16", "17", "18", "19"],
+    "options": ["16", "17", "√250", "19"],
     "correctIndex": 2,
     "hint": "Diagonal d = √(l² + w² + h²)",
     "explanation": "d = √(5² + 12² + 9²) = √(25+144+81) = √250 ≈ 15.81 → closest 18"

@@ -1,8 +1,8 @@
 [
   {
     "question": "1. A bag contains 4 red, 6 green, and 10 white balls. One ball is drawn at random. What is the probability it is green?",
-    "options": ["6/20", "3/10", "1/4", "2/5"],
-    "correctIndex": 0,
+    "options": ["6/10", "3/10", "1/4", "2/5"],
+    "correctIndex": 1,
     "hint": "Favorable / total",
     "explanation": "6 green out of 20 total = 6/20 = 3/10"
   },

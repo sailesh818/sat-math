@@ -9,7 +9,7 @@
   {
     "question": "2. Mean of 4 numbers: 5,7,6,x=6. Find x.",
     "options": ["6", "7", "5", "8"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Sum=mean*count",
     "explanation": "Sum=6*4=24 → 5+7+6+x=18+x → x=6 → correctIndex=0"
   },

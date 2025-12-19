@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 15x − 5x.",
+    "options": ["20x", "10", "10x", "5x"],
+    "correctIndex": 2,
+    "hint": "Subtract coefficients.",
+    "explanation": "15x − 5x = 10x."
+  },
+  {
+    "question": "2. Solve: x − 3 = 11.",
+    "options": ["8", "14", "11", "3"],
+    "correctIndex": 1,
+    "hint": "Add 3.",
+    "explanation": "x = 14."
+  },
+  {
+    "question": "3. Simplify: 6 + 2x when x = 3.",
+    "options": ["12", "18", "10", "14"],
+    "correctIndex": 0,
+    "hint": "Substitute x.",
+    "explanation": "6 + 6 = 12."
+  },
+  {
+    "question": "4. Simplify: 5y + 0.",
+    "options": ["0", "5", "5y", "y"],
+    "correctIndex": 2,
+    "hint": "Adding zero changes nothing.",
+    "explanation": "5y + 0 = 5y."
+  },
+  {
+    "question": "5. Solve: x + 1 = 6.",
+    "options": ["5", "7", "6", "1"],
+    "correctIndex": 0,
+    "hint": "Subtract 1.",
+    "explanation": "x = 5."
+  }
+]

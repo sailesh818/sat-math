@@ -2,13 +2,13 @@
   {
     "question": "1. If f(x) = 5x + 6, what is f(2)?",
     "options": ["15", "16", "17", "18"],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "hint": "Multiply by 5, then add 6.",
     "explanation": "f(2) = 10 + 6 = 16"
   },
   {
     "question": "2. If f(x) = x - 7, what is f(14)?",
-    "options": ["6", "7", "8", "9"],
+    "options": ["7", "6", "8", "9"],
     "correctIndex": 0,
     "hint": "Subtract 7 from x.",
     "explanation": "f(14) = 14 - 7 = 7"
@@ -30,7 +30,7 @@
   {
     "question": "5. If f(x) = 3x - 2, what is f(7)?",
     "options": ["18", "19", "20", "21"],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "hint": "Multiply by 3, then subtract 2.",
     "explanation": "f(7) = 21 - 2 = 19"
   }

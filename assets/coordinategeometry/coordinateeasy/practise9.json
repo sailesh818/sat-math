@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Slope of line through (1,2) and (4,5)?",
+    "options": ["1", "2", "3", "0.5"],
+    "correctIndex": 0,
+    "hint": "Slope = Δy/Δx.",
+    "explanation": "Slope = (5−2)/(4−1)=3/3=1."
+  },
+  {
+    "question": "2. Midpoint of (−3,−5) and (3,1)?",
+    "options": ["(0,−2)", "(0,−3)", "(0,−1)", "(1,−2)"],
+    "correctIndex": 0,
+    "hint": "Midpoint formula.",
+    "explanation": "((−3+3)/2, (−5+1)/2)=(0,−2)."
+  },
+  {
+    "question": "3. Y-intercept of y=4x+1?",
+    "options": ["(0,1)", "(0,4)", "(1,0)", "(4,0)"],
+    "correctIndex": 0,
+    "hint": "Set x=0.",
+    "explanation": "y=4*0+1=1 → (0,1)."
+  },
+  {
+    "question": "4. Distance between (−1,−1) and (2,2)?",
+    "options": ["3√2", "√9", "√12", "√18"],
+    "correctIndex": 0,
+    "hint": "Distance = √((x2−x1)² + (y2−y1)²).",
+    "explanation": "√((2+1)² + (2+1)²)=√(9+9)=√18=3√2."
+  },
+  {
+    "question": "5. Does (0,0) lie on y=3x−1?",
+    "options": ["Yes", "No"],
+    "correctIndex": 1,
+    "hint": "Plug x=0 into equation.",
+    "explanation": "y=3*0−1=−1 → does not match → No."
+  }
+]

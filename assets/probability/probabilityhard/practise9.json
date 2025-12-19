@@ -1,15 +1,15 @@
 [
   {
     "question": "1. Bag: 3 red, 4 blue, 5 green. Draw 2 without replacement. Probability at least one green?",
-    "options": ["25/33", "5/11", "3/11", "7/33"],
-    "correctIndex": 0,
+    "options": ["25/33", "5/11", "3/11", "7/22"],
+    "correctIndex": 3,
     "hint": "Use complement: 1 − P(no green)",
     "explanation": "P(no green)=3+4=7/12*6/11=42/132=7/22 → P(at least one green)=1−7/22=15/22 wait recalc: 15/22≈25/33? Choose 25/33"
   },
   {
     "question": "2. Coin tossed 6 times. Probability exactly 2 heads?",
     "options": ["15/64", "15/32", "15/48", "5/16"],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "hint": "Use binomial: C(6,2)*(1/2)^6",
     "explanation": "C(6,2)=15 → 15*(1/64)=15/64 ? hmm pick 15/64"
   },

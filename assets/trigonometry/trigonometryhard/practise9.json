@@ -16,14 +16,14 @@
   {
     "question": "3. Right triangle: tan θ = 9/12. Find cos 2θ.",
     "options": ["-7/25", "7/25", "24/25", "1"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "cos 2θ = (1 - tan² θ)/(1 + tan² θ)",
     "explanation": "tan² θ=81/144=9/16 → cos 2θ=(1-9/16)/(1+9/16)=7/16 /25/16=7/25"
   },
   {
     "question": "4. Triangle: sin A=5/13, cos B=12/13. Find sin(A+B).",
-    "options": ["56/65", "59/65", "60/65", "61/65"],
-    "correctIndex": 0,
+    "options": ["56/65", "59/65", "60/65", "120/169"],
+    "correctIndex": 3,
     "hint": "sin(A+B)=sin A cos B + cos A sin B",
     "explanation": "cos A=12/13, sin B=5/13 → sin(A+B)=5/13*12/13 +12/13*5/13=120/169≈0.710 → closest 56/65"
   },

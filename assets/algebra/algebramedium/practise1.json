@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 3x + 5 = 2x + 11.",
+    "options": ["6", "11", "−6", "16"],
+    "correctIndex": 0,
+    "hint": "Move x terms to one side.",
+    "explanation": "3x − 2x = 11 − 5 → x = 6."
+  },
+  {
+    "question": "2. Simplify: 4(x − 3) + 2x.",
+    "options": ["4x − 12", "6x − 12", "6x − 3", "8x − 12"],
+    "correctIndex": 1,
+    "hint": "Distribute, then combine.",
+    "explanation": "4x − 12 + 2x = 6x − 12."
+  },
+  {
+    "question": "3. If x = −2, find x² + 3x.",
+    "options": ["−2", "4", "10", "−10"],
+    "correctIndex": 0,
+    "hint": "Square first, then multiply.",
+    "explanation": "(−2)² + 3(−2) = 4 − 6 = −2."
+  },
+  {
+    "question": "4. Solve: 5x − 7 = 18.",
+    "options": ["7", "5", "25", "−5"],
+    "correctIndex": 1,
+    "hint": "Add 7, then divide.",
+    "explanation": "5x = 25 → x = 5."
+  },
+  {
+    "question": "5. Simplify: 2a + 3a − a.",
+    "options": ["4a", "6a", "a", "5a"],
+    "correctIndex": 0,
+    "hint": "Combine coefficients.",
+    "explanation": "2a + 3a − a = 4a."
+  }
+]

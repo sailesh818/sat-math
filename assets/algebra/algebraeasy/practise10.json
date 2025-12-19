@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 11x − x.",
+    "options": ["10x", "11", "x", "12x"],
+    "correctIndex": 0,
+    "hint": "Subtract coefficients.",
+    "explanation": "11x − x = 10x."
+  },
+  {
+    "question": "2. Solve: x + 4 = 9.",
+    "options": ["13", "5", "4", "9"],
+    "correctIndex": 1,
+    "hint": "Subtract 4.",
+    "explanation": "x = 5."
+  },
+  {
+    "question": "3. If x = 7, find 2x.",
+    "options": ["9", "12", "14", "21"],
+    "correctIndex": 2,
+    "hint": "Multiply by 2.",
+    "explanation": "2 × 7 = 14."
+  },
+  {
+    "question": "4. Simplify: 3(a + 1).",
+    "options": ["3a + 1", "3a + 3", "a + 3", "3a"],
+    "correctIndex": 1,
+    "hint": "Distribute 3.",
+    "explanation": "3a + 3."
+  },
+  {
+    "question": "5. Evaluate: x² when x = 1.",
+    "options": ["0", "1", "2", "3"],
+    "correctIndex": 1,
+    "hint": "Square 1.",
+    "explanation": "1² = 1."
+  }
+]

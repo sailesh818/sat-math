@@ -8,10 +8,10 @@
   },
   {
     "question": "2. A rectangle has length 8 and width 6. Find its perimeter.",
-    "options": ["28", "30", "32", "24"],
+    "options": ["32", "30", "28", "24"],
     "correctIndex": 2,
     "hint": "Perimeter = 2*(length+width)",
-    "explanation": "Perimeter = 2*(8+6)=28 → correctIndex=0"
+    "explanation": "Perimeter = 2*(8+6)=28 "
   },
   {
     "question": "3. A square has area 81. Find its side length.",
@@ -29,9 +29,9 @@
   },
   {
     "question": "5. A triangle has angles 40° and 80°. Find the third angle.",
-    "options": ["60°", "50°", "70°", "55°"],
+    "options": ["70°", "50°", "60°", "55°"],
     "correctIndex": 2,
     "hint": "Sum = 180°",
-    "explanation": "Third angle = 180-40-80=60 → correctIndex=0"
+    "explanation": "Third angle = 180-40-80=60 "
   }
 ]

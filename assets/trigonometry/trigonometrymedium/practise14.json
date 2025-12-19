@@ -9,7 +9,7 @@
   {
     "question": "2. Right triangle: cos θ = 12/13. Find sin θ and tan θ.",
     "options": ["sin θ = 5/13, tan θ = 5/12", "sin θ = 5/13, tan θ = 12/5", "sin θ = 12/13, tan θ = 12/5", "sin θ = 12/13, tan θ = 5/12"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "sin² + cos² = 1, tan θ = sin θ / cos θ",
     "explanation": "sin θ = √(1 - (12/13)²) = 5/13 → tan θ = 5/12"
   },

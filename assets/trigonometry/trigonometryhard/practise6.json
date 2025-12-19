@@ -1,15 +1,15 @@
 [
   {
     "question": "1. Right triangle: sin θ = 9/41. Find cos 2θ.",
-    "options": ["32/41", "32/1681", "-32/1681", "7/41"],
+    "options": ["32/41", "32/1681", "1519/1681", "7/41"],
     "correctIndex": 2,
     "hint": "Use cos 2θ = 1 - 2 sin² θ",
     "explanation": "cos 2θ = 1 - 2*(9/41)² = 1 - 162/1681 = 1519/1681 → positive, correct options should reflect this"
   },
   {
     "question": "2. Triangle: sin A = 5/13, cos B = 12/13. Find sin(A-B).",
-    "options": ["-56/65", "56/65", "1", "-1"],
-    "correctIndex": 0,
+    "options": ["-56/65", "56/65", "1", "0"],
+    "correctIndex": 3,
     "hint": "Use sin(A-B) = sin A cos B - cos A sin B",
     "explanation": "cos A=12/13, sin B=5/13 → sin(A-B) = 5/13*12/13 - 12/13*5/13 = 60/169 - 60/169 = 0 → correction: 0"
   },

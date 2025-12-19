@@ -1,8 +1,8 @@
 [
   {
     "question": "1. A bag contains 8 blue and 12 red balls. One ball is drawn at random. What is the probability it is red?",
-    "options": ["12/20", "2/5", "3/5", "4/5"],
-    "correctIndex": 0,
+    "options": ["12/10", "2/5", "3/5", "4/5"],
+    "correctIndex": 2,
     "hint": "Favorable / total",
     "explanation": "12 red / 20 total = 12/20 = 3/5"
   },

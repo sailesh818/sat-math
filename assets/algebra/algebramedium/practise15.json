@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 4x + 9 = 2x + 15.",
+    "options": ["2", "3", "4", "5"],
+    "correctIndex": 1,
+    "hint": "Move x terms together.",
+    "explanation": "4x − 2x = 15 − 9 → 2x = 6 → x = 3."
+  },
+  {
+    "question": "2. Simplify: 5(2y − 1) + 3y.",
+    "options": ["13y − 5", "10y − 5", "13y − 1", "10y − 1"],
+    "correctIndex": 0,
+    "hint": "Distribute then combine.",
+    "explanation": "10y − 5 + 3y = 13y − 5."
+  },
+  {
+    "question": "3. If x = 3, find x² − 2x + 5.",
+    "options": ["10", "8", "12", "14"],
+    "correctIndex": 1,
+    "hint": "Square first.",
+    "explanation": "9 − 6 + 5 = 8."
+  },
+  {
+    "question": "4. Solve: 3x − 7 = 2x + 5.",
+    "options": ["6", "10", "8", "12"],
+    "correctIndex": 3,
+    "hint": "Subtract 2x, add 7.",
+    "explanation": "x − 7 = 5 → x = 12."
+  },
+  {
+    "question": "5. Simplify: 2(a + 3) − (a − 4).",
+    "options": ["a + 10", "3a + 1", "a + 1", "3a + 10"],
+    "correctIndex": 0,
+    "hint": "Distribute minus.",
+    "explanation": "2a + 6 − a + 4 = a + 10."
+  }
+]

@@ -8,7 +8,7 @@
   },
   {
     "question": "2. Coin tossed 5 times. Probability at most 1 head?",
-    "options": ["3/16", "5/16", "6/16", "1/4"],
+    "options": ["5/16", "3/16", "6/16", "1/4"],
     "correctIndex": 1,
     "hint": "Add probabilities for 0 and 1 head",
     "explanation": "P(0 heads)=1/32, P(1 head)=5/32 → total=6/32=3/16? Actually 6/32=3/16"

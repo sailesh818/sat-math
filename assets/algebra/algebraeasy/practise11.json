@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 6x + 4x.",
+    "options": ["24x", "10x", "x", "2x"],
+    "correctIndex": 1,
+    "hint": "Add coefficients.",
+    "explanation": "6x + 4x = 10x."
+  },
+  {
+    "question": "2. Solve: x − 6 = 2.",
+    "options": ["8", "−4", "4", "6"],
+    "correctIndex": 0,
+    "hint": "Add 6.",
+    "explanation": "x = 8."
+  },
+  {
+    "question": "3. If y = 3, find y + 7.",
+    "options": ["9", "10", "11", "7"],
+    "correctIndex": 1,
+    "hint": "Add 7.",
+    "explanation": "3 + 7 = 10."
+  },
+  {
+    "question": "4. Simplify: 9 − x when x = 5.",
+    "options": ["14", "4", "5", "9"],
+    "correctIndex": 1,
+    "hint": "Substitute x.",
+    "explanation": "9 − 5 = 4."
+  },
+  {
+    "question": "5. Simplify: x + 0.",
+    "options": ["0", "x", "1", "2x"],
+    "correctIndex": 1,
+    "hint": "Zero changes nothing.",
+    "explanation": "x + 0 = x."
+  }
+]

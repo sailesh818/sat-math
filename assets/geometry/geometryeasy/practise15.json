@@ -8,10 +8,10 @@
   },
   {
     "question": "2. A rectangle has length 14 and width 6. Find its perimeter.",
-    "options": ["40", "42", "38", "36"],
+    "options": ["42", "40", "38", "36"],
     "correctIndex": 1,
     "hint": "Perimeter = 2*(length+width)",
-    "explanation": "Perimeter = 2*(14+6)=40 → correctIndex=0"
+    "explanation": "Perimeter = 2*(14+6)=40 "
   },
   {
     "question": "3. A square has area 100. Find its side length.",

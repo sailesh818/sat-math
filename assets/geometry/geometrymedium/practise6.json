@@ -9,7 +9,7 @@
   {
     "question": "2. A rectangle has length 18 and width 7. Find its perimeter.",
     "options": ["50", "48", "52", "46"],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "hint": "Perimeter = 2*(length + width)",
     "explanation": "Perimeter = 2*(18+7)=50 → correctIndex=0"
   },

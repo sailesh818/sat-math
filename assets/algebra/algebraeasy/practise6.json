@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 8x + 2x.",
+    "options": ["10", "16x", "10x", "8x"],
+    "correctIndex": 2,
+    "hint": "Add coefficients.",
+    "explanation": "8x + 2x = 10x."
+  },
+  {
+    "question": "2. Solve: x − 7 = 5.",
+    "options": ["12", "−2", "7", "2"],
+    "correctIndex": 0,
+    "hint": "Add 7 to both sides.",
+    "explanation": "x = 12."
+  },
+  {
+    "question": "3. If x = 6, find 3x + 1.",
+    "options": ["18", "19", "20", "21"],
+    "correctIndex": 1,
+    "hint": "Substitute x.",
+    "explanation": "3(6) + 1 = 19."
+  },
+  {
+    "question": "4. Simplify: 12 − x when x = 4.",
+    "options": ["16", "8", "4", "6"],
+    "correctIndex": 1,
+    "hint": "Substitute x.",
+    "explanation": "12 − 4 = 8."
+  },
+  {
+    "question": "5. Simplify: 2y + 5 − y.",
+    "options": ["y + 5", "3y + 5", "y", "2y"],
+    "correctIndex": 0,
+    "hint": "Combine like terms.",
+    "explanation": "2y − y = y, so y + 5."
+  }
+]

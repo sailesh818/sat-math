@@ -49,7 +49,7 @@ class _CoordinateGeometryMediumPractisePageState
   Future<void> loadQuestions() async {
     try {
       final String response = await rootBundle
-          .loadString('assets/coordinatemedium/${widget.jsonFileName}');
+          .loadString('assets/coordinategeometry/coordinatemedium/${widget.jsonFileName}');
       final data = json.decode(response);
       setState(() {
         questions = List<Map<String, dynamic>>.from(data);

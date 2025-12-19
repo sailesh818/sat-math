@@ -29,7 +29,7 @@
   },
   {
     "question": "5. If f(x) = 4x - 3, what is f(5)?",
-    "options": ["16", "17", "18", "19"],
+    "options": ["17", "16", "18", "19"],
     "correctIndex": 0,
     "hint": "Multiply by 4, then subtract 3.",
     "explanation": "f(5) = 20 - 3 = 17"

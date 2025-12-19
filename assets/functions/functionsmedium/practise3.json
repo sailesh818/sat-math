@@ -2,7 +2,7 @@
   {
     "question": "1. If f(x) = x² - 3x + 2, find f(3).",
     "options": ["2", "0", "1", "-1"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Plug in x = 3.",
     "explanation": "f(3) = 3² -3*3 + 2 = 9 -9 +2 = 2 → wait correctIndex=0"
   },

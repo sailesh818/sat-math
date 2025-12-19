@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 13x + 2x.",
+    "options": ["15", "15x", "26x", "11x"],
+    "correctIndex": 1,
+    "hint": "Add coefficients.",
+    "explanation": "13x + 2x = 15x."
+  },
+  {
+    "question": "2. Solve: x − 4 = 6.",
+    "options": ["10", "2", "6", "−10"],
+    "correctIndex": 0,
+    "hint": "Add 4.",
+    "explanation": "x = 10."
+  },
+  {
+    "question": "3. If y = 5, find y + 9.",
+    "options": ["13", "14", "15", "16"],
+    "correctIndex": 1,
+    "hint": "Add 9.",
+    "explanation": "5 + 9 = 14."
+  },
+  {
+    "question": "4. Simplify: 2x − x + 3.",
+    "options": ["x + 3", "3x", "x", "2x + 3"],
+    "correctIndex": 0,
+    "hint": "Combine like terms.",
+    "explanation": "2x − x = x, so x + 3."
+  },
+  {
+    "question": "5. Simplify: x² + 0.",
+    "options": ["0", "x", "x²", "1"],
+    "correctIndex": 2,
+    "hint": "Adding zero changes nothing.",
+    "explanation": "x² + 0 = x²."
+  }
+]

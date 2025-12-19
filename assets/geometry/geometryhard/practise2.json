@@ -2,7 +2,7 @@
   {
     "question": "1. A circle has a sector with an area of 36π square units and a radius of 6. Find the central angle of the sector in radians.",
     "options": ["1", "2", "3", "π"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Area of a sector = (1/2)r²θ, where r is the radius and θ is the central angle in radians.",
     "explanation": "36π = (1/2)*6²*θ → 36π = 18θ → θ = 2"
   },

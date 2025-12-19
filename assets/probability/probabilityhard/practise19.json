@@ -1,8 +1,8 @@
 [
   {
     "question": "1. Bag: 3 red, 4 blue, 5 green. Draw 2 with replacement. Probability at least one green?",
-    "options": ["61/72", "5/9", "7/12", "2/3"],
-    "correctIndex": 0,
+    "options": ["61/72", "5/9", "95/144", "2/3"],
+    "correctIndex": 2,
     "hint": "Use complement",
     "explanation": "P(no green)=(7/12)^2=49/144 → P(at least one)=95/144≈61/72"
   },

@@ -2,7 +2,7 @@
   {
     "question": "1. If f(x) = 3x + 5, what is f(4)?",
     "options": ["16", "17", "18", "19"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Multiply x by 3, then add 5.",
     "explanation": "f(4) = 3(4) + 5 = 12 + 5 = 17"
   },
@@ -30,7 +30,7 @@
   {
     "question": "5. If f(x) = 7x - 2, what is f(3)?",
     "options": ["18", "19", "20", "21"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Multiply x by 7, then subtract 2.",
     "explanation": "f(3) = 21 - 2 = 19"
   }

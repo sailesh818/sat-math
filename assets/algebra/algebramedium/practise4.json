@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 5x + 3 = 2x + 18.",
+    "options": ["15", "3", "7", "5"],
+    "correctIndex": 3,
+    "hint": "Move x terms to one side.",
+    "explanation": "3x = 15 → x = 5."
+  },
+  {
+    "question": "2. Simplify: 6(2y − 1) − 4y.",
+    "options": ["8y − 6", "12y − 6", "6y − 1", "8y + 6"],
+    "correctIndex": 0,
+    "hint": "Distribute then combine.",
+    "explanation": "12y − 6 − 4y = 8y − 6."
+  },
+  {
+    "question": "3. If x = 3, find x² − 4x.",
+    "options": ["−3", "3", "9", "12"],
+    "correctIndex": 0,
+    "hint": "Square then subtract.",
+    "explanation": "9 − 12 = −3."
+  },
+  {
+    "question": "4. Solve: 4x − 9 = 7.",
+    "options": ["-4", "4", "16", "2"],
+    "correctIndex": 1,
+    "hint": "Add 9, divide by 4.",
+    "explanation": "4x = 16 → x = 4."
+  },
+  {
+    "question": "5. Simplify: (a + 5) + (2a − 1).",
+    "options": ["3a + 4", "3a + 6", "a + 4", "2a + 4"],
+    "correctIndex": 0,
+    "hint": "Combine like terms.",
+    "explanation": "a + 2a + 5 − 1 = 3a + 4."
+  }
+]

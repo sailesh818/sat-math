@@ -1,8 +1,8 @@
 [
   {
     "question": "1. Bag: 5 red, 6 blue. Draw 3 without replacement. Probability all red?",
-    "options": ["1/22", "1/33", "5/33", "5/66"],
-    "correctIndex": 0,
+    "options": ["1/22", "1/33", "5/33", "60/990"],
+    "correctIndex": 3,
     "hint": "Use multiplication for without replacement",
     "explanation": "(5/11)*(4/10)*(3/9)=60/990=1/16.5≈1/22"
   },
@@ -22,8 +22,8 @@
   },
   {
     "question": "4. Probability drawing 2 cards, both hearts, without replacement?",
-    "options": ["1/221", "1/169", "1/78", "1/26"],
-    "correctIndex": 0,
+    "options": ["1/221", "1/169", "1/17", "1/26"],
+    "correctIndex": 2,
     "hint": "Use combination: P=13/52*12/51",
     "explanation": "13/52*12/51=156/2652=1/17? Actually 1/17"
   },

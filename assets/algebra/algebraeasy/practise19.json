@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 25x − 15x.",
+    "options": ["40x", "10", "10x", "x"],
+    "correctIndex": 2,
+    "hint": "Subtract coefficients.",
+    "explanation": "25x − 15x = 10x."
+  },
+  {
+    "question": "2. Solve: x + 1 = 9.",
+    "options": ["8", "10", "9", "1"],
+    "correctIndex": 0,
+    "hint": "Subtract 1.",
+    "explanation": "x = 8."
+  },
+  {
+    "question": "3. If x = 3, find 4x − 1.",
+    "options": ["11", "12", "10", "9"],
+    "correctIndex": 0,
+    "hint": "Substitute x.",
+    "explanation": "4(3) − 1 = 11."
+  },
+  {
+    "question": "4. Simplify: 5(a + 4).",
+    "options": ["5a + 4", "5a + 20", "a + 20", "20a"],
+    "correctIndex": 1,
+    "hint": "Distribute 5.",
+    "explanation": "5a + 20."
+  },
+  {
+    "question": "5. Evaluate: x² when x = 7.",
+    "options": ["14", "21", "49", "28"],
+    "correctIndex": 2,
+    "hint": "Square x.",
+    "explanation": "7² = 49."
+  }
+]

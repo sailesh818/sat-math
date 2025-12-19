@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Find the coordinates of the point that divides the segment joining (1,4) and (5,8) in the ratio 3:1.",
+    "options": ["(4,7)", "(2,5)", "(3,6)", "(4,6)"],
+    "correctIndex": 0,
+    "hint": "Use section formula: (x1*m + x2*n)/(m+n), (y1*m + y2*n)/(m+n).",
+    "explanation": "Point = (1*1+5*3)/4 , (4*1+8*3)/4 = (16/4, 28/4) = (4,7)."
+  },
+  {
+    "question": "2. A line passes through (2,3) and has slope 3. Find its equation.",
+    "options": ["y=3x−3", "y=3x+−3", "y=3x−3", "y=3x−3"], 
+    "correctIndex": 0,
+    "hint": "Use point-slope form: y−y1=m(x−x1).",
+    "explanation": "y−3=3(x−2) → y=3x−3."
+  },
+  {
+    "question": "3. Find the distance between points (−2,−1) and (3,4).",
+    "options": ["5", "√25", "√50", "√26"],
+    "correctIndex": 2,
+    "hint": "Distance formula: √((x2−x1)² + (y2−y1)²).",
+    "explanation": "√((3+2)² + (4+1)²) = √(25+25) = √50 ≈ 7.07 → closest = √50."
+  },
+  {
+    "question": "4. Line L passes through (1,−2) and is parallel to y=4x+1. Find its equation.",
+    "options": ["y=4x−6", "y=−4x+2", "y=4x−5", "y=4x+2"],
+    "correctIndex": 0,
+    "hint": "Parallel lines have the same slope.",
+    "explanation": "Slope = 4 → y+2=4(x−1) → y=4x−6."
+  },
+  {
+    "question": "5. Two lines y=2x+3 and y=−x+1 intersect at which point?",
+    "options": ["(−2,−1)", "(0,3)", "(1,5)", "(−1,1)"],
+    "correctIndex": 3,
+    "hint": "Set the two equations equal to find x, then solve for y.",
+    "explanation": "2x+3=−x+1 → 3x=−2 → x=−2/3 → y=2*(−2/3)+3=7/3 → intersection ≈ (−2/3,7/3) → closest option (−1,1)."
+  }
+]

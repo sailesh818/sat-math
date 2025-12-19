@@ -15,7 +15,7 @@
   },
   {
     "question": "3. Right triangle: opposite = 8, adjacent = 15. Find θ in degrees.",
-    "options": ["27°, 28°, 29°, 30°"],
+    "options": ["27°, 28°, 28.1°, 30°"],
     "correctIndex": 2,
     "hint": "θ = arctan(opposite/adjacent)",
     "explanation": "θ = arctan(8/15) ≈ 28.1° → nearest 29°"

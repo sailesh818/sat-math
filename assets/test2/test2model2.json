@@ -44,7 +44,7 @@
   {
     "question": "7. If 2x + 3y = 12 and x = 3, find y",
     "options": ["1.5", "2", "2.5", "3"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Substitute x and solve for y",
     "explanation": "2*3 + 3y = 12 → 6 + 3y = 12 → 3y = 6 → y = 2"
   },
@@ -57,7 +57,7 @@
   },
   {
     "question": "9. Solve: 5x - 15 = 10",
-    "options": ["x = 5", "x = 6", "x = 4", "x = 3"],
+    "options": ["x = 6", "x = 5", "x = 4", "x = 3"],
     "correctIndex": 1,
     "hint": "Add 15 then divide by 5",
     "explanation": "5x = 25 → x = 5"
@@ -78,15 +78,15 @@
   },
   {
     "question": "12. If 3x - 2 = 10, x = ?",
-    "options": ["4", "3", "5", "6"],
+    "options": ["5", "3", "4", "6"],
     "correctIndex": 2,
     "hint": "Add 2 then divide by 3",
     "explanation": "3x = 12 → x = 4"
   },
   {
     "question": "13. Solve: x/4 + 5 = 9",
-    "options": ["16", "12", "14", "20"],
-    "correctIndex": 1,
+    "options": ["20", "12", "14", "16"],
+    "correctIndex": 3,
     "hint": "Subtract 5 then multiply by 4",
     "explanation": "x/4 = 4 → x = 16"
   },
@@ -148,7 +148,7 @@
   },
   {
     "question": "22. Solve: 6x - 4 = 8",
-    "options": ["2", "3", "4", "5"],
+    "options": ["3", "2", "4", "5"],
     "correctIndex": 1,
     "hint": "Add 4 then divide by 6",
     "explanation": "6x = 12 → x = 2"
@@ -162,7 +162,7 @@
   },
   {
     "question": "24. Solve: 7x + 3 = 45",
-    "options": ["6", "7", "8", "5"],
+    "options": ["8", "7", "6", "5"],
     "correctIndex": 2,
     "hint": "Subtract 3 then divide by 7",
     "explanation": "7x = 42 → x = 6"
@@ -176,8 +176,8 @@
   },
   {
     "question": "26. Solve: x² + 6x = 16",
-    "options": ["2", "-8", "4", "-2"],
-    "correctIndex": 3,
+    "options": ["1", "-8", "4", "-2"],
+    "correctIndex": 1,
     "hint": "Convert to standard quadratic",
     "explanation": "x² + 6x -16 = 0 → x = 2 or -8 (closest correct choice = -2)"
   },

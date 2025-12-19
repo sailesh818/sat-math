@@ -16,16 +16,16 @@
   {
     "question": "3. If f(x) = 5x - 7, find f(3).",
     "options": ["6", "8", "10", "12"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Multiply then subtract 7.",
-    "explanation": "f(3)=5*3-7=15-7=8 → correctIndex=1"
+    "explanation": "f(3)=5*3-7=15-7=8 "
   },
   {
     "question": "4. If f(x) = x/2 +5, find f(4).",
     "options": ["6", "7", "8", "9"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Divide then add.",
-    "explanation": "f(4)=4/2+5=2+5=7 → correctIndex=1"
+    "explanation": "f(4)=4/2+5=2+5=7 "
   },
   {
     "question": "5. If f(x) = -x +8, find f(5).",

@@ -8,14 +8,14 @@
   },
   {
     "question": "2. Right triangle: hypotenuse = 15, opposite = 9. Find sin θ.",
-    "options": ["9/15", "12/15", "3/5", "1/2"],
-    "correctIndex": 0,
+    "options": ["8/15", "12/15", "3/5", "1/2"],
+    "correctIndex": 2,
     "hint": "sin θ = opposite/hypotenuse",
     "explanation": "sin θ = 9/15 = 3/5"
   },
   {
     "question": "3. Right triangle: hypotenuse = 15, adjacent = 12. Find cos θ.",
-    "options": ["12/15", "9/15", "4/5", "1/2"],
+    "options": ["12/15", "9/15", "3/5", "1/2"],
     "correctIndex": 0,
     "hint": "cos θ = adjacent/hypotenuse",
     "explanation": "cos θ = 12/15 = 4/5"

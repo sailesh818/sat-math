@@ -15,14 +15,14 @@
   },
   {
     "question": "3. Dataset: 2, 4, 6, 8, 10. Add 5 to each number. New variance?",
-    "options": ["10", "16", "25", "20"],
-    "correctIndex": 0,
+    "options": ["10", "16", "25", "8"],
+    "correctIndex": 3,
     "hint": "Adding constant does not change variance",
     "explanation": "Original variance = 8 → wait calculate: mean=6 → deviations: -4,-2,0,2,4 → squares:16,4,0,4,16 sum=40 → divide by 5=8 → adding 5 does not change variance=8"
   },
   {
     "question": "4. Two dice rolled. Probability sum=7 or 11?",
-    "options": ["8/36", "2/9", "5/36", "7/36"],
+    "options": ["8/36", "2/8", "5/36", "7/36"],
     "correctIndex": 0,
     "hint": "Sum=7 (6 outcomes), sum=11 (2 outcomes)",
     "explanation": "6+2=8 outcomes → 8/36=2/9"

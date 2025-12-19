@@ -30,8 +30,8 @@
   {
     "question": "5. If f(x) = -x +7, find f(3).",
     "options": ["3", "4", "5", "6"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Negate x then add 7.",
-    "explanation": "f(3)=-3+7=4 → correctIndex=1"
+    "explanation": "f(3)=-3+7=4"
   }
 ]

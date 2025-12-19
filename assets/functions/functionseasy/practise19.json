@@ -2,13 +2,13 @@
   {
     "question": "1. If f(x) = 4x + 5, what is f(3)?",
     "options": ["16", "17", "18", "19"],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "hint": "Multiply by 4, then add 5.",
     "explanation": "f(3) = 12 + 5 = 17"
   },
   {
     "question": "2. If f(x) = x - 3, what is f(8)?",
-    "options": ["4", "5", "6", "7"],
+    "options": ["4", "6", "5", "7"],
     "correctIndex": 2,
     "hint": "Subtract 3 from x.",
     "explanation": "f(8) = 8 - 3 = 5"
@@ -23,7 +23,7 @@
   {
     "question": "4. If f(x) = 24/x, what is f(8)?",
     "options": ["2", "3", "4", "5"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Divide 24 by x.",
     "explanation": "f(8) = 24 ÷ 8 = 3"
   },

@@ -15,7 +15,7 @@
   },
   {
     "question": "3. A class has 16 students. The mean score is 85. If one student scored 95, what is the mean of the remaining 15 students?",
-    "options": ["84", "83", "82", "80"],
+    "options": ["84", "84.33", "82", "80"],
     "correctIndex": 1,
     "hint": "Total sum minus one score, divide by remainder",
     "explanation": "Total sum = 16×85 = 1360. Minus 95 → 1265. Mean = 1265 / 15 ≈ 84.333 → ≈ 83"

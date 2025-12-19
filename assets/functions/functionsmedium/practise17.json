@@ -2,7 +2,7 @@
   {
     "question": "1. If f(x) = x² - 2x, find f(3).",
     "options": ["1", "2", "3", "4"],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "hint": "Compute each term carefully.",
     "explanation": "f(3)=9-6=3 → correctIndex=2"
   },
@@ -23,7 +23,7 @@
   {
     "question": "4. If f(x) = x/3 +5, find f(6).",
     "options": ["6", "7", "8", "9"],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "hint": "Divide then add 5.",
     "explanation": "f(6)=6/3 +5=2+5=7 → correctIndex=1"
   },

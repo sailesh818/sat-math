@@ -9,7 +9,7 @@
   {
     "question": "2. A rectangle has length 9 and width 4. Find the perimeter.",
     "options": ["26", "22", "24", "28"],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "hint": "Perimeter = 2*(length + width)",
     "explanation": "Perimeter = 2*(9+4)=26 → correctIndex=0"
   },

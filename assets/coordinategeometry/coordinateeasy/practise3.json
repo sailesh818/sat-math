@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Slope of line passing through (0,0) and (5,10)?",
+    "options": ["1", "2", "0.5", "5"],
+    "correctIndex": 1,
+    "hint": "Slope = Δy/Δx.",
+    "explanation": "Slope = (10−0)/(5−0)=10/5=2."
+  },
+  {
+    "question": "2. Midpoint of (−3,−4) and (3,2)?",
+    "options": ["(0,−1)", "(0,−2)", "(0,−3)", "(0,0)"],
+    "correctIndex": 0,
+    "hint": "Midpoint = ((x1+x2)/2, (y1+y2)/2).",
+    "explanation": "Midpoint = ((−3+3)/2, (−4+2)/2)=(0,−1)."
+  },
+  {
+    "question": "3. Y-intercept of y=−2x+5?",
+    "options": ["(0,−2)", "(0,5)", "(5,0)", "(−2,0)"],
+    "correctIndex": 1,
+    "hint": "Set x=0.",
+    "explanation": "y=−2(0)+5=5 → point (0,5)."
+  },
+  {
+    "question": "4. Distance between (−1,−1) and (2,3)?",
+    "options": ["4", "5", "6", "7"],
+    "correctIndex": 1,
+    "hint": "Distance formula: √((x2−x1)² + (y2−y1)²).",
+    "explanation": "Distance=√((2+1)²+(3+1)²)=√(9+16)=√25=5."
+  },
+  {
+    "question": "5. Does (3,4) lie on y=x+1?",
+    "options": ["Yes", "No"],
+    "correctIndex": 0,
+    "hint": "Check if y=x+1 holds.",
+    "explanation": "y=3+1=4 → matches → Yes."
+  }
+]

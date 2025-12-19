@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 20x − 10x.",
+    "options": ["30x", "10", "10x", "2x"],
+    "correctIndex": 2,
+    "hint": "Subtract coefficients.",
+    "explanation": "20x − 10x = 10x."
+  },
+  {
+    "question": "2. Solve: x + 6 = 18.",
+    "options": ["12", "24", "6", "18"],
+    "correctIndex": 0,
+    "hint": "Subtract 6.",
+    "explanation": "x = 12."
+  },
+  {
+    "question": "3. If x = 5, find 3x − 2.",
+    "options": ["10", "13", "15", "8"],
+    "correctIndex": 1,
+    "hint": "Substitute x.",
+    "explanation": "3(5) − 2 = 15 − 2 = 13."
+  },
+  {
+    "question": "4. Simplify: 4(a + 2).",
+    "options": ["4a + 2", "4a + 8", "a + 8", "8a"],
+    "correctIndex": 1,
+    "hint": "Distribute 4.",
+    "explanation": "4a + 8."
+  },
+  {
+    "question": "5. Evaluate: x² when x = 6.",
+    "options": ["12", "30", "36", "18"],
+    "correctIndex": 2,
+    "hint": "Square x.",
+    "explanation": "6² = 36."
+  }
+]

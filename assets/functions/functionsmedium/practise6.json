@@ -2,9 +2,9 @@
   {
     "question": "1. If f(x) = x² + 3x, find f(2).",
     "options": ["8", "10", "12", "14"],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "hint": "Substitute x = 2.",
-    "explanation": "f(2)=2² +3*2=4+6=10 → correctIndex=1"
+    "explanation": "f(2)=2² +3*2=4+6=10 "
   },
   {
     "question": "2. If f(x) = 4x -5, find f(3).",
@@ -16,9 +16,9 @@
   {
     "question": "3. If f(x) = 2x² - x +1, find f(1).",
     "options": ["2", "3", "4", "5"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Compute each term.",
-    "explanation": "f(1)=2*1² -1 +1=2-1+1=2 → correctIndex=0"
+    "explanation": "f(1)=2*1² -1 +1=2-1+1=2"
   },
   {
     "question": "4. If f(x) = x/3 + 2, find f(6).",

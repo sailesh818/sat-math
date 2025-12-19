@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 5x + x.",
+    "options": ["6", "5x", "6x", "x²"],
+    "correctIndex": 2,
+    "hint": "Add like terms.",
+    "explanation": "5x + x = 6x."
+  },
+  {
+    "question": "2. Solve: x − 8 = 1.",
+    "options": ["7", "9", "8", "−7"],
+    "correctIndex": 1,
+    "hint": "Add 8.",
+    "explanation": "x = 9."
+  },
+  {
+    "question": "3. If x = 10, find x ÷ 5.",
+    "options": ["1", "2", "5", "10"],
+    "correctIndex": 1,
+    "hint": "Divide by 5.",
+    "explanation": "10 ÷ 5 = 2."
+  },
+  {
+    "question": "4. Simplify: x + 3x − x.",
+    "options": ["3x", "x", "4x", "2x"],
+    "correctIndex": 0,
+    "hint": "Combine like terms.",
+    "explanation": "x + 3x − x = 3x."
+  },
+  {
+    "question": "5. Evaluate: 4 + x when x = 6.",
+    "options": ["8", "9", "10", "11"],
+    "correctIndex": 2,
+    "hint": "Substitute x.",
+    "explanation": "4 + 6 = 10."
+  }
+]

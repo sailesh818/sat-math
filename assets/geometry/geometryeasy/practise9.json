@@ -29,9 +29,9 @@
   },
   {
     "question": "5. A triangle has angles 40° and 80°. Find the third angle.",
-    "options": ["60°", "70°", "50°", "55°"],
+    "options": ["50°", "70°", "60°", "55°"],
     "correctIndex": 2,
     "hint": "Sum = 180°",
-    "explanation": "Third angle = 180-40-80=60° → correctIndex=0"
+    "explanation": "Third angle = 180-40-80=60°"
   }
 ]

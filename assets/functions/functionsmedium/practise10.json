@@ -23,7 +23,7 @@
   {
     "question": "4. If f(x) = x/5 -1, find f(10).",
     "options": ["1", "2", "3", "4"],
-    "correctIndex": 1,
+    "correctIndex": 0,
     "hint": "Divide then subtract 1.",
     "explanation": "f(10)=10/5-1=2-1=1 → correctIndex=0"
   },

@@ -22,8 +22,8 @@
   },
   {
     "question": "4. In a class of 25 students, 15 passed a test. If one student is selected at random, what is the probability that the student failed?",
-    "options": ["10/25", "3/5", "1/5", "2/5"],
-    "correctIndex": 0,
+    "options": ["1/25", "3/5", "1/5", "2/5"],
+    "correctIndex": 3,
     "hint": "Failed = total – passed",
     "explanation": "Total = 25, passed = 15 → failed = 10 → probability = 10/25 = 2/5 (i.e. 10/25)"
   },

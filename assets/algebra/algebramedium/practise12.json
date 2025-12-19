@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Solve: 6x − 5 = 2x + 11.",
+    "options": ["3", "4", "5", "6"],
+    "correctIndex": 1,
+    "hint": "Move x terms together.",
+    "explanation": "6x − 2x = 11 + 5 → 4x = 16 → x = 4."
+  },
+  {
+    "question": "2. Simplify: 2(5y + 3) − 3y.",
+    "options": ["7y + 3", "10y + 6", "2y + 3", "7y + 6"],
+    "correctIndex": 3,
+    "hint": "Distribute then combine.",
+    "explanation": "10y + 6 − 3y = 7y + 6."
+  },
+  {
+    "question": "3. If x = −1, find x² + 4x.",
+    "options": ["−3", "3", "5", "−5"],
+    "correctIndex": 0,
+    "hint": "Square first.",
+    "explanation": "1 − 4 = −3."
+  },
+  {
+    "question": "4. Solve: 5x/2 + 1 = 6.",
+    "options": ["4", "3", "2", "5"],
+    "correctIndex": 2,
+    "hint": "Subtract 1, multiply by 2/5.",
+    "explanation": "5x/2 = 5 → x = 2."
+  },
+  {
+    "question": "5. Simplify: (3a − 2) + (2a + 5).",
+    "options": ["5a + 3", "6a + 3", "a + 3", "5a + 7"],
+    "correctIndex": 0,
+    "hint": "Combine like terms.",
+    "explanation": "3a + 2a − 2 + 5 = 5a + 3."
+  }
+]

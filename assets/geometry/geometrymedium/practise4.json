@@ -29,7 +29,7 @@
   },
   {
     "question": "5. A triangle has angles 35° and 55°. Find the third angle.",
-    "options": ["90°", "80°", "85°", "75°"],
+    "options": ["80°", "90°", "85°", "75°"],
     "correctIndex": 1,
     "hint": "Sum = 180°",
     "explanation": "Third angle = 180-35-55=90°"

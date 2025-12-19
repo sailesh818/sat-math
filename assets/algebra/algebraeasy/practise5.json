@@ -1,0 +1,37 @@
+[
+  {
+    "question": "1. Simplify: 10x − 3x.",
+    "options": ["7", "13x", "7x", "x"],
+    "correctIndex": 2,
+    "hint": "Subtract coefficients.",
+    "explanation": "10x − 3x = 7x."
+  },
+  {
+    "question": "2. If x = 9, find x − 4.",
+    "options": ["3", "5", "13", "−5"],
+    "correctIndex": 1,
+    "hint": "Subtract 4.",
+    "explanation": "9 − 4 = 5."
+  },
+  {
+    "question": "3. Simplify: 5(a − 1).",
+    "options": ["5a − 1", "5a − 5", "a − 5", "5a + 5"],
+    "correctIndex": 1,
+    "hint": "Distribute 5.",
+    "explanation": "5a − 5."
+  },
+  {
+    "question": "4. Solve: x + 12 = 20.",
+    "options": ["8", "32", "12", "20"],
+    "correctIndex": 0,
+    "hint": "Subtract 12.",
+    "explanation": "x = 8."
+  },
+  {
+    "question": "5. Evaluate: x² when x = 5.",
+    "options": ["10", "20", "25", "15"],
+    "correctIndex": 2,
+    "hint": "Square x.",
+    "explanation": "5² = 25."
+  }
+]

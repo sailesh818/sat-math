@@ -16,7 +16,7 @@
   {
     "question": "3. What is the slope of the line passing through points (2, 3) and (5, 9)?",
     "options": ["2", "1/2", "3", "3/2"],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "hint": "Slope = Δy / Δx",
     "explanation": "Slope = (9 - 3)/(5 - 2) = 6/3 = 2"
   },
