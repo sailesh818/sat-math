@@ -22,7 +22,7 @@ class _TestPageState extends State<TestPage> {
   bool loadingPoints = true;
   bool autoLoginChecked = false;
 
-  final int requiredPoints = 1000;
+  final int requiredPoints = 0;
 
   @override
   void initState() {
@@ -330,7 +330,7 @@ class _TestPageState extends State<TestPage> {
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white)),
                             SizedBox(height: 8),
-                            Text("Requires 1000 points",
+                            Text("Free",
                                 style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white70,
@@ -372,7 +372,7 @@ class _TestPageState extends State<TestPage> {
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white)),
                             SizedBox(height: 8),
-                            Text("Requires 1000 points",
+                            Text("Free For Limited Time.",
                                 style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white70,

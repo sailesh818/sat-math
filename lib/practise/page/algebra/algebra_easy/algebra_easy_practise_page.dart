@@ -155,7 +155,7 @@ class _AlgebraEasyPractisePageState extends State<AlgebraEasyPractisePage> {
 
   void _loadRewardedAd() {
     RewardedAd.load(
-      adUnitId: 'ca-app-pub-3940256099942544/5224354917', // Real ID ca-app-pub-6704136477020125/4913789019  // Test Ad ca-app-pub-3940256099942544/5224354917 
+      adUnitId: 'ca-app-pub-6704136477020125/4913789019', // Real ID ca-app-pub-6704136477020125/4913789019  // Test Ad ca-app-pub-3940256099942544/5224354917 
       request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {

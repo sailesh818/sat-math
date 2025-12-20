@@ -1,48 +1,29 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:sat_math/navigation_button/page/navigation_button_bar_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'firebase_options.dart';
+
+final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+final FirebaseAnalyticsObserver analyticsObserver =
+    FirebaseAnalyticsObserver(analytics: analytics);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // 🔥 Crashlytics: Flutter framework errors
-  FlutterError.onError =
-      FirebaseCrashlytics.instance.recordFlutterFatalError;
-
-  // 🔥 Crashlytics: async / platform errors
-  PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(
-      error,
-      stack,
-      fatal: true,
-    );
-    return true;
-  };
-
-  // 📊 (Optional) Analytics instance (auto-initialized)
-  FirebaseAnalytics.instance;
-
-  // 📱 Google Mobile Ads (keep after Firebase)
   await MobileAds.instance.initialize();
 
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +31,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: NavigationButtonBarPage()
+      navigatorObservers: [analyticsObserver], // ✅ Screen tracking
+      home: NavigationButtonBarPage(),
     );
   }
 }
