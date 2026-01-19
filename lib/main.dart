@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:sat_math/navigation_button/page/navigation_button_bar_page.dart';
+//import 'package:sat_math/navigation_button/page/navigation_button_bar_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:sat_math/welcome/welcome_page.dart';
 import 'firebase_options.dart';
 
 final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
@@ -31,8 +32,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      navigatorObservers: [analyticsObserver], // ✅ Screen tracking
-      home: NavigationButtonBarPage(),
+      navigatorObservers: [analyticsObserver],
+      home: WelcomePage()
     );
   }
 }

@@ -1,97 +1,120 @@
-import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:sat_math/rewarded/rewarded_page.dart';
 
-class CoordinateGeometryEasyPractisePage extends StatefulWidget {
-  final String jsonFileName;
+class AiQuestionsShow extends StatefulWidget {
+  final String category;
+  final String difficulty;
   final String title;
 
-  const CoordinateGeometryEasyPractisePage({
+  const AiQuestionsShow({
     super.key,
-    required this.jsonFileName,
+    required this.category,
+    required this.difficulty,
     required this.title,
   });
 
   @override
-  State<CoordinateGeometryEasyPractisePage> createState() =>
-      _CoordinateGeometryEasyPractisePageState();
+  State<AiQuestionsShow> createState() => _AiQuestionsShowState();
 }
 
-class _CoordinateGeometryEasyPractisePageState
-    extends State<CoordinateGeometryEasyPractisePage> {
+class _AiQuestionsShowState extends State<AiQuestionsShow> {
+  static const int kHintPenalty = 2;
+
   int currentQuestionIndex = 0;
   int? selectedAnswerIndex;
   bool answerChecked = false;
   bool showHint = false;
 
   List<Map<String, dynamic>> questions = [];
+  bool loadingQuestions = true;
 
-  int correctCount = 0;
+  int hintsUsed = 0;
   int hintPenalty = 0;
-  int totalPoints = 0;
-  bool loadingPoints = true;
+  int correctAnswers = 0;
 
   RewardedAd? _rewardedAd;
   bool _isRewardedAdReady = false;
   bool _hintAdShown = false;
+  bool _adLoading = false;
 
   @override
   void initState() {
     super.initState();
-    loadQuestions();
-    _loadUserPoints();
+    _loadRandomQuestions();
     _loadRewardedAd();
   }
 
-  Future<void> loadQuestions() async {
-    try {
-      final String response = await rootBundle
-          .loadString('assets/coordinategeometry/coordinateeasy/${widget.jsonFileName}');
-      final data = json.decode(response);
-      setState(() {
-        questions = List<Map<String, dynamic>>.from(data);
-      });
-    } catch (e) {
-      debugPrint('Error loading JSON: $e');
-    }
-  }
-
-  Future<void> _loadUserPoints() async {
-    final user = FirebaseAuth.instance.currentUser;
-    if (user == null) return;
+  /// ================= LOAD QUESTIONS =================
+  Future<void> _loadRandomQuestions() async {
+    setState(() => loadingQuestions = true);
 
     try {
-      final doc = await FirebaseFirestore.instance
-          .collection("users")
-          .doc(user.uid)
+      final snap = await FirebaseFirestore.instance
+          .collection("sat_questions")
+          .where("category", isEqualTo: widget.category)
+          .where("difficulty", isEqualTo: widget.difficulty)
+          .orderBy("createdAt", descending: true)
           .get();
 
-      if (doc.exists && doc.data() != null) {
-        totalPoints = doc.data()!["totalPoints"] ?? 0;
+      if (snap.docs.isEmpty) {
+        setState(() {
+          questions = [];
+          loadingQuestions = false;
+        });
+        return;
       }
+
+      final docs = snap.docs.toList()..shuffle();
+      final selectedDocs = docs.take(min(5, docs.length)).toList();
+
+      final loadedQuestions = selectedDocs.map((doc) {
+        final data = doc.data();
+        Map<String, dynamic> optionsMap = {};
+        if (data['options'] != null && data['options'] is Map) {
+          optionsMap = Map<String, dynamic>.from(data['options']);
+        }
+        final optionKeys = optionsMap.keys.toList();
+        final optionValues = optionsMap.values.toList();
+        int correctIndex = optionKeys.indexOf(data['correct_answer'] ?? '');
+        if (correctIndex < 0) correctIndex = 0;
+
+        return {
+          "question": data['question'] ?? '',
+          "options": optionValues,
+          "correctIndex": correctIndex,
+          "hint": data['hint'] ?? '',
+          "explanation": data['final_explanation'] ?? '',
+        };
+      }).toList();
+
+      setState(() {
+        questions = loadedQuestions;
+        currentQuestionIndex = 0;
+        selectedAnswerIndex = null;
+        answerChecked = false;
+        showHint = false;
+        hintsUsed = 0;
+        hintPenalty = 0;
+        correctAnswers = 0;
+        loadingQuestions = false;
+      });
     } catch (e) {
-      debugPrint("Error loading points: $e");
+      debugPrint("Error loading questions: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Failed to load questions.")),
+      );
+      setState(() {
+        questions = [];
+        loadingQuestions = false;
+      });
     }
-
-    setState(() => loadingPoints = false);
   }
 
-  Future<void> savePointsToFirebase(int pointsToAdd) async {
-    final user = FirebaseAuth.instance.currentUser;
-    if (user == null) return;
-
-    await FirebaseFirestore.instance.collection("users").doc(user.uid).set({
-      "totalPoints": FieldValue.increment(pointsToAdd),
-    }, SetOptions(merge: true));
-
-    setState(() {
-      totalPoints += pointsToAdd;
-    });
-  }
-
+  /// ================= CHECK ANSWER =================
   void checkAnswer(int index) {
     if (!answerChecked) {
       setState(() {
@@ -99,13 +122,30 @@ class _CoordinateGeometryEasyPractisePageState
         answerChecked = true;
 
         if (index == questions[currentQuestionIndex]['correctIndex']) {
-          correctCount++;
+          correctAnswers++;
+        }
+
+        if (showHint) {
+          hintsUsed++;
+          hintPenalty += kHintPenalty;
         }
       });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            selectedAnswerIndex == questions[currentQuestionIndex]['correctIndex']
+                ? "Correct! 🎉"
+                : "Wrong ❌",
+          ),
+          duration: const Duration(seconds: 1),
+        ),
+      );
     }
   }
 
-  void nextQuestion() async {
+  /// ================= NEXT QUESTION =================
+  void nextQuestion() {
     if (currentQuestionIndex < questions.length - 1) {
       setState(() {
         currentQuestionIndex++;
@@ -115,65 +155,47 @@ class _CoordinateGeometryEasyPractisePageState
         _hintAdShown = false;
       });
     } else {
-      int basePoints = 8 + correctCount;
-      int finalPoints = basePoints - hintPenalty;
-      if (finalPoints < 0) finalPoints = 0;
-
-      await savePointsToFirebase(finalPoints);
-      _showCompletionDialog(finalPoints);
+      // Quiz finished → go to Reward Page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => RewardPage(
+            totalQuestions: questions.length,
+            correctAnswers: correctAnswers,
+            hintsUsed: hintsUsed,
+            hintPenalty: hintPenalty,
+          ),
+        ),
+      );
     }
   }
 
-  void _showCompletionDialog(int finalPoints) {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => AlertDialog(
-        title: const Text("🎉 Well Done!"),
-        content: Text(
-          "Correct Answers: $correctCount\n"
-          "Hint Penalty: -$hintPenalty\n"
-          "Final Score: $finalPoints\n\n"
-          "Watch an ad to earn extra reward points?",
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text("No, Thanks"),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              _showRewardedAd(forHint: false);
-            },
-            child: const Text("Watch Ad"),
-          ),
-        ],
-      ),
-    );
-  }
-
+  /// ================= LOAD REWARDED AD =================
   void _loadRewardedAd() {
+    _adLoading = true;
     RewardedAd.load(
-      adUnitId: 'ca-app-pub-6704136477020125/4913789019',  // real ad ca-app-pub-6704136477020125/4913789019   TEST AD ca-app-pub-3940256099942544/5224354917
+      adUnitId: 'ca-app-pub-6704136477020125/4036473926', // Test ID  ca-app-pub-6704136477020125/4036473926
       request: const AdRequest(),
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (ad) {
           _rewardedAd = ad;
           _isRewardedAdReady = true;
+          _adLoading = false;
         },
         onAdFailedToLoad: (err) {
           debugPrint('Failed to load rewarded ad: ${err.message}');
           _isRewardedAdReady = false;
+          _adLoading = false;
         },
       ),
     );
   }
 
-  void _showRewardedAd({required bool forHint}) {
+  /// ================= SHOW REWARDED AD =================
+  void _showRewardedAd({required VoidCallback onReward}) {
     if (!_isRewardedAdReady || _rewardedAd == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Ad not ready yet")),
+        const SnackBar(content: Text("Ad not ready yet.")),
       );
       return;
     }
@@ -190,18 +212,8 @@ class _CoordinateGeometryEasyPractisePageState
     );
 
     _rewardedAd!.show(
-      onUserEarnedReward: (ad, reward) async {
-        if (forHint) {
-          setState(() {
-            showHint = true;
-            _hintAdShown = true;
-          });
-        } else {
-          await savePointsToFirebase(8);
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text("You earned 8 reward points!")),
-          );
-        }
+      onUserEarnedReward: (ad, reward) {
+        onReward(); // Execute the reward logic
       },
     );
 
@@ -209,22 +221,18 @@ class _CoordinateGeometryEasyPractisePageState
     _isRewardedAdReady = false;
   }
 
+  /// ================= USE HINT =================
   Future<void> _useHint() async {
-    if (_hintAdShown) return;
+    if (_hintAdShown || _adLoading) return;
 
-    if (totalPoints >= 4) {
-      await savePointsToFirebase(-4);
-      setState(() {
-        showHint = true;
-        hintPenalty += 4;
-      });
-    } else {
+    if (hintPenalty < 2) {
+      // Not enough points → watch ad
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text("Not Enough Points"),
+          title: const Text("Hint Available"),
           content: const Text(
-              "You need 4 reward points. Watch an ad to unlock this hint?"),
+              "Watch an ad to unlock this hint?"),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -233,31 +241,65 @@ class _CoordinateGeometryEasyPractisePageState
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
-                _showRewardedAd(forHint: true);
+                _showRewardedAd(onReward: () {
+                  setState(() {
+                    showHint = true;
+                    _hintAdShown = true;
+                    hintsUsed++;
+                    hintPenalty += kHintPenalty;
+                  });
+                });
               },
               child: const Text("Watch Ad"),
             ),
           ],
         ),
       );
+    } else {
+      setState(() {
+        showHint = true;
+        hintsUsed++;
+        hintPenalty += kHintPenalty;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (questions.isEmpty) {
+    if (loadingQuestions) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    if (questions.isEmpty) {
+      return Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "No AI questions available",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(height: 12),
+              ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text("Go Back & Generate Questions"),
+              ),
+            ],
+          ),
+        ),
       );
     }
 
     final question = questions[currentQuestionIndex];
 
     return Scaffold(
-      backgroundColor: Colors.green.shade50,
+      backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -266,10 +308,12 @@ class _CoordinateGeometryEasyPractisePageState
           children: [
             LinearProgressIndicator(
               value: (currentQuestionIndex + 1) / questions.length,
-              color: Colors.green,
-              backgroundColor: Colors.green.shade100,
+              color: Colors.blue,
+              backgroundColor: Colors.blue.shade100,
             ),
             const SizedBox(height: 20),
+
+            // QUESTION CARD
             Card(
               color: Colors.white,
               elevation: 3,
@@ -281,13 +325,13 @@ class _CoordinateGeometryEasyPractisePageState
                 child: Text(
                   question['question'],
                   style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+                      fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
             ),
             const SizedBox(height: 20),
+
+            // OPTIONS
             ...List.generate(question['options'].length, (index) {
               final option = question['options'][index];
               final isSelected = selectedAnswerIndex == index;
@@ -306,33 +350,38 @@ class _CoordinateGeometryEasyPractisePageState
                 ),
                 child: ListTile(
                   title: Text(option),
+                  enabled: !answerChecked,
                   onTap: () => checkAnswer(index),
                 ),
               );
             }),
+
             const SizedBox(height: 10),
+
+            // HINT BUTTON
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton.icon(
-                  onPressed: _useHint,
+                  onPressed: _adLoading ? null : _useHint,
                   icon: const Icon(Icons.lightbulb_outline, color: Colors.white),
-                  label: const Text(
-                    "Hint",
-                    style: TextStyle(color: Colors.white),
+                  label: Text(
+                    _adLoading ? "Loading Ad..." : "Hint (-2 pts)",
+                    style: const TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.shade700,
+                    backgroundColor: Colors.blue.shade700,
                   ),
                 ),
               ],
             ),
+
             if (showHint)
               Container(
                 margin: const EdgeInsets.only(top: 12),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.green.shade100,
+                  color: Colors.blue.shade100,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -340,12 +389,14 @@ class _CoordinateGeometryEasyPractisePageState
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
+
             const SizedBox(height: 20),
+
             if (answerChecked)
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.green.shade100,
+                  color: Colors.blue.shade100,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -353,13 +404,15 @@ class _CoordinateGeometryEasyPractisePageState
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
+
             const SizedBox(height: 20),
+
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: nextQuestion,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -367,7 +420,7 @@ class _CoordinateGeometryEasyPractisePageState
                 ),
                 child: Text(
                   currentQuestionIndex == questions.length - 1
-                      ? "Finish"
+                      ? "Finish Quiz"
                       : "Next Question",
                   style: const TextStyle(color: Colors.white),
                 ),
